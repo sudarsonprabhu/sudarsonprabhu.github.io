@@ -604,6 +604,69 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: auto;
+  padding: 2.2rem 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(211, 19, 36, 0.4);
+}
+
+.cert-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  border-radius: calc(var(--radius-md) + 4px);
+  background: var(--surface-soft);
+  border: 1px solid var(--line-strong);
+  box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cert-icon-wrap.is-round {
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cert-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.cert-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  transition: transform 0.3s ease;
+}
+
+.cert-icon-wrap.is-round .cert-image {
+  object-fit: cover;
+}
+
+.cert-card:hover .cert-image {
+  transform: scale(1.08);
+}
+
 .stat-card,
 .teaser-card,
 .detail-card,
@@ -1128,6 +1191,30 @@ select {
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.footer-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.footer-views::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
 }
 
 @media (max-width: 1040px) {
