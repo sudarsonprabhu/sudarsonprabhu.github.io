@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="CISSP Domain 4 notes: Communication and Network Security." />
+
+    <title>CISSP Domain 4 | Sudarson Prabhu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+
+      href="https://fonts.googleapis.com/css2family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+
+      rel="stylesheet"
+
+    />
+
+    <link rel="stylesheet" href="styles.css?v=8" />
+
+    <script src="config.js?v=8" defer></script>
+
+    <script src="cissp-data.js?v=8" defer></script>
+
+    <script src="cissp.js?v=8" defer></script>
+
+    <script src="script.js?v=8" defer></script>
+
+    <script src="cissp-domain-4-data.js?v=8" defer></script>
+
+    <script src="cissp-domain-4.js?v=8" defer></script>
+
+  </head>
+
+  <body data-page="work" data-domain-id="4">
+
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+
+        <span class="brand-symbol">SP</span>
+
+        <span class="brand-copy">Sudarson Prabhu</span>
+
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+
+        <a href="index.html" data-page="home">Home</a>
+
+        <a href="work.html" data-page="work">Work</a>
+
+        <a href="about.html" data-page="about">About</a>
+
+        <a href="experience.html" data-page="experience">Experience</a>
+
+        <a href="services.html" data-page="services">Services</a>
+
+        <a href="credentials.html" data-page="credentials">Credentials</a>
+
+      </nav>
+
+    </header>
+
+    <main id="main-content" class="page-shell">
+
+      <section class="hero single-hero" data-reveal>
+
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+
+          <p id="cissp-domain-badge" class="eyebrow">Domain 4  13% average exam weight</p>
+
+          <h1 id="cissp-domain-title" class="hero-title">Communication &amp; Network Security</h1>
+
+          <p id="cissp-domain-summary" class="hero-summary">
+
+            Designing and protecting enterprise network architecture, secure communication
+
+            channels, and the technologies that move and protect data across them. This page
+
+            builds out <strong>4.1 &mdash; Apply secure design principles in network architectures</strong> in depth.
+
+          </p>
+
+          <div class="hero-actions">
+
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="section" data-reveal>
+
+        <div class="section-head">
+
+          <p class="section-label">Sub-domains</p>
+
+          <h2 class="section-title">Exam outline areas.</h2>
+
+          <p class="section-copy">
+
+            Domain 4 is broken into three exam outline areas covering secure design,
+
+            network components, and communication channels.
+
+          </p>
+
+        </div>
+
+        <div class="detail-grid">
+
+          <article class="panel detail-card" data-spotlight>
+
+            <p class="card-kicker">4.1  Detailed below &mdash;&ldquo;</p>
+
+            <h3 class="card-title">Secure Design Principles</h3>
+
+            <p class="card-copy">
+
+              Apply secure design principles in network architectures &mdash; OSI &amp; TCP/IP models,
+
+              IP addressing &amp; convergence, secure / auth / VPN protocols, and network attacks.
+
+            </p>
+
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+
+            <p class="card-kicker">4.2  Coming next</p>
+
+            <h3 class="card-title">Secure Network Components</h3>
+
+            <p class="card-copy">
+
+              Operation of hardware, transmission media, Network Access Control (NAC),
+
+              and endpoint security.
+
+            </p>
+
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+
+            <p class="card-kicker">4.3  Coming next</p>
+
+            <h3 class="card-title">Secure Communication Channels</h3>
+
+            <p class="card-copy">
+
+              Voice, video &amp; collaboration, remote access, data communications,
+
+              and third-party connectivity.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+      <section class="section" data-reveal>
+
+        <div class="section-head">
+
+          <p class="section-label">4.1 &mdash; Network architecture</p>
+
+          <h2 class="section-title">OSI model &amp; networking essentials.</h2>
+
+          <p class="section-copy">
+
+            A vertical walk-through of all seven layers, with every networking topic mapped to
+
+            the layer where it belongs &mdash; WAN and wireless low in the stack, IP addressing and SDN
+
+            at Layer&nbsp;3, converged protocols and authentication across it, plus the attack
+
+            lifecycle that spans every layer. Hover (or tap) any box for a plain-English
+
+            explanation, an example, and diagrams.
+
+          </p>
+
+        </div>
+
+        <div id="osi-container" class="osi-container">
+
+          <!-- Injected via cissp-domain-4.js -->
+
+        </div>
+
+      </section>
+
+      <!-- 4.1 &mdash; VPN protocols & IPSec (modes + AH/ESP) -->
+
+      <section class="section cissp-notes" data-reveal>
+
+        <div class="section-head">
+
+          <p class="section-label">4.1 &mdash; VPN protocols &amp; IPSec</p>
+
+          <h2 class="section-title">VPN protocols, IPSec &amp; its modes.</h2>
+
+          <p class="section-copy">
+
+            VPN protocols build the encrypted tunnels that protect data across untrusted networks.
+
+            IPSec is the modern standard &mdash; below are its key protocols (AH vs ESP) and its two
+
+            modes of operation.
+
+          </p>
+
+        </div>
+
+        <article class="panel note-panel" data-spotlight>
+
+          <h3 class="note-h">VPN protocols</h3>
+
+          <div class="note-grid">
+
+            <div class="note-card">
+
+              <h4>PPTP</h4>
+
+              <p>Point-to-Point Tunneling Protocol is an older, obsolete protocol that encapsulates data for transport across an IP network. Its initial tunnel negotiation is not encrypted, so usernames and hashed passwords can be intercepted.</p>
+
+            </div>
+
+            <div class="note-card">
+
+              <h4>L2TP / IPSec</h4>
+
+              <p>Layer 2 Tunneling Protocol only creates the tunnel &mdash; no encryption or strong authentication on its own. Paired with IPSec, L2TP/IPSec provides confidentiality, integrity, and authentication of the tunneled data.</p>
+
+            </div>
+
+            <div class="note-card">
+
+              <h4>IPSec</h4>
+
+              <p>Internet Protocol Security is the de facto standard for building VPNs, creating secure, encrypted tunnels between individual devices or entire networks.</p>
+
+            </div>
+
+          </div>
+
+          <h3 class="note-h">IPSec key protocols</h3>
+
+          <div class="note-grid">
+
+            <div class="note-card">
+
+              <h4>AH &mdash; Authentication Header</h4>
+
+              <p>Provides data integrity, non-repudiation, and primary authentication, with session access control and anti-replay protection &mdash; but it does <strong>not encrypt</strong> the data. For that reason ESP is preferred wherever privacy is required.</p>
+
+            </div>
+
+            <div class="note-card">
+
+              <h4>ESP &mdash; Encapsulating Security Payload</h4>
+
+              <p>The most common protocol used in VPNs. ESP provides encryption and anti-replay protection, delivering confidentiality, integrity, and limited authentication. It is often combined with AH for both privacy and authenticity.</p>
+
+            </div>
+
+          </div>
+
+          <h3 class="note-h">IPSec modes of operation</h3>
+
+          <div class="note-grid">
+
+            <div class="note-card">
+
+              <h4>Tunnel Mode <span class="layer-badge">site-to-site</span></h4>
+
+              <p>The entire original IP packet is encapsulated inside a new IP header that routes it to the VPN gateway. Used for site-to-site VPNs, where whole networks communicate securely over an untrusted network like the internet.</p>
+
+            </div>
+
+            <div class="note-card">
+
+              <h4>Transport Mode <span class="layer-badge">host-to-host</span></h4>
+
+              <p>Only the data payload of the original packet is encrypted; the original IP headers stay intact. Typically used for host-to-host communication or client-to-site VPNs.</p>
+
+            </div>
+
+          </div>
+
+          <div class="callout">
+
+            <h4>Split tunnel vs. full tunnel</h4>
+
+            <ul>
+
+              <li><strong>Split tunnel</strong> &mdash; only client traffic destined for the private network goes through the VPN tunnel.</li>
+
+              <li><strong>Full tunnel</strong> &mdash; all client traffic is sent through the VPN.</li>
+
+            </ul>
+
+          </div>
+
+          <figure class="note-fig">
+
+            <div data-osi-fig="vpn"></div>
+
+            <figcaption>VPN protocol security, IPSec AH vs. ESP, and IPSec transport vs. tunnel mode.</figcaption>
+
+          </figure>
+
+        </article>
+
+      </section>
+
+      <!-- 4.2 &mdash; Secure Network Components -->
+
+      <section class="section cissp-notes" data-reveal>
+
+        <div class="section-head">
+
+          <p class="section-label">4.2 &mdash; Secure Network Components</p>
+
+          <h2 class="section-title">Hardware, Media &amp; Endpoint Defense.</h2>
+
+          <p class="section-copy">
+
+            A visual breakdown of the key components that protect and deliver data across a network.
+
+            Hover over any component box to see specific details and technologies.
+
+          </p>
+
+        </div>
+
+        <!-- Video Summary -->
+
+        <div class="note-panel" style="margin-bottom: 2rem;">
+
+          <h3 class="note-subtitle">Network Defense Mechanisms</h3>
+
+          <ul class="note-list">
+
+            <li><strong>IDS vs IPS:</strong> An Intrusion Detection System (IDS) is a detective control typically connected to a promiscuous/SPAN port (out-of-band), whereas an Intrusion Prevention System (IPS) is a preventative control deployed inline (in-band) to actively block threats.</li>
+
+            <li><strong>Detection Methods:</strong> Pattern matching (signatures) is fast but only detects known threats. Anomaly-based detection establishes a baseline and looks for deviations, making it capable of catching zero-day attacks but with higher false positives.</li>
+
+            <li><strong>Advanced Inspection:</strong> Sandboxes provide isolated environments to detonate and observe untrusted code. Honeypots are decoy systems designed to lure and detect Advanced Persistent Threats (APTs) exploring the network.</li>
+
+            <li><strong>Ingress vs Egress Monitoring:</strong> Egress monitoring specifically watches outbound traffic to detect compromised internal systems attempting to call home to malicious IPs.</li>
+
+          </ul>
+
+        </div>
+
+        <!-- Section Graphic / Interactive Block -->
+
+        <div class="d42-diagram" style="margin-top: 2rem;">
+
+          <div class="d42-top-banner">
+
+            4.2 &mdash; SECURE NETWORK COMPONENTS
+
+          </div>
+
+          <div class="d42-main-area">
+
+            <div class="d42-content-grid">
+
+              <!-- Column 1: Transmission Media -->
+
+              <div class="d42-col">
+
+                <div class="d42-header">Transmission Media</div>
+
+                <div class="d42-row">
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Wired</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Twisted Pair</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Twisted Pair (UTP/STP)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Copper wire pairs twisted together to reduce crosstalk and EMI. UTP has no shielding; STP adds a metallic foil shield. Max distance: 100 meters. CISSP distinguishes UTP (cheaper, common) from STP (better protection, stiffer, higher cost).<br/><br/><strong>Example:</strong> A manufacturing plant uses STP near heavy industrial machinery to prevent EMI from corrupting signals, while office floors use standard Cat6 UTP.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Coaxial</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Coaxial Cable</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Central copper conductor wrapped in insulation, braided metallic shield, and outer jacket. Superior EMI/RFI resistance, significantly harder to tap than twisted pair. Expensive and rigid. Used in legacy 10Base2/10Base5 Ethernet and broadband ISP last-mile connections.<br/><br/><strong>Example:</strong> A broadband ISP runs coaxial as the last-mile connection &mdash; heavy shielding protects signals from outdoor weather interference.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Fiber Optic</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Fiber Optic Cable</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Transmits data as light pulses through glass or plastic. Most secure physical medium &mdash; immune to EMI/RFI, virtually impossible to tap without breaking the fiber (which drops the signal immediately). Single-mode (SMF): up to 80km. Multimode (MMF): up to 400m.<br/><br/><strong>Example:</strong> Two data centers 40km apart use single-mode fiber &mdash; a tap attempt snaps the fiber, immediately triggering a link-down alert at the NOC.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Wireless</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Wi-Fi (802.11)</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Wi-Fi Networks</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> WEP is broken &mdash; static RC4 keys with 24-bit IV space, crackable in minutes. WPA2 uses AES-CCMP. WPA3 introduces SAE (Dragonfly Key Exchange) preventing offline dictionary attacks even after handshake capture. WPA2-Enterprise with 802.1X is the recommended corporate deployment.<br/><br/><strong>Example:</strong> An attacker captures a WPA2-Personal handshake in a parking lot and cracks it offline. WPA3-SAE prevents this &mdash; key derivation requires real-time interaction with the AP.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Cellular</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Cellular (4G/5G)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Carrier-managed wide-area networks using SIM-based hardware authentication &mdash; one of the strongest mutual authentication mechanisms. Provides out-of-band connectivity independent of corporate infrastructure. 5G adds network slicing and improved encryption.<br/><br/><strong>Example:</strong> A field engineer uses a 5G hotspot instead of untrusted hotel Wi-Fi, ensuring corporate VPN traffic is protected far from HQ network perimeter.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Bluetooth / Sat</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Bluetooth &amp; Satellite</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Bluetooth (PAN, 2.4GHz) CISSP attacks: Bluejacking (unsolicited messages), Bluesnarfing (unauthorized data access), Bluebugging (full remote device control). Satellite: global reach with 600ms+ latency, signal jamming vulnerability, weather-based attenuation.<br/><br/><strong>Example:</strong> An attacker Bluesnarfs a phone in discoverable mode at a coffee shop, silently extracting contact list and calendar data.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Column 2: NAC -->
+
+              <div class="d42-col">
+
+                <div class="d42-header">Network Access Control (NAC)</div>
+
+                <div class="d42-row">
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Authentication</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">802.1X / EAP</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>802.1X &amp; EAP</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> IEEE standard for port-based NAC. Three roles: Supplicant (device), Authenticator (switch/WAP), Authentication Server (RADIUS). EAP variants weakest to strongest: LEAP (broken), EAP-MD5 (one-way auth only), PEAP (server cert only), EAP-TTLS (server cert only), EAP-TLS (mutual certs &mdash; gold standard).<br/><br/><strong>Example:</strong> A hospital deploys 802.1X with EAP-TLS &mdash; any rogue device plugged into an ethernet jack is blocked because it cannot present a valid client certificate to the RADIUS server.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">RADIUS / TACACS+</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>RADIUS &amp; TACACS+</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> RADIUS (UDP 1812/1813): combines auth/authorization, encrypts ONLY the password. TACACS+ (TCP 49): separates Authentication, Authorization, and Accounting independently, encrypts the ENTIRE payload. TACACS+ is Cisco-proprietary, preferred for device administration.<br/><br/><strong>Example:</strong> A bank uses RADIUS for employee Wi-Fi but TACACS+ for network engineers on routers &mdash; TACACS+ logs every command and encrypts the full session.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Posture Assessment</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Pre / Post Admission</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Health Checks</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> NAC verifies identity AND device health. Pre-admission: checks AV is active/current, OS patches applied, device meets policy BEFORE granting access. Post-admission: continuous monitoring AFTER connection &mdash; if device state changes (AV disabled, malware), NAC dynamically quarantines it.<br/><br/><strong>Example:</strong> An employee returning from vacation plugs in their laptop &mdash; NAC detects patches are 30 days behind and redirects to a remediation VLAN (patch server access only).</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Enforcement</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">VLAN &amp; Captive Portal</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>VLAN &amp; Captive Portals</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> VLANs create logical broadcast domain separation on a single physical switch &mdash; preventing sniffing across segments. NAC uses VLANs to quarantine non-compliant devices. Captive portals intercept HTTP and redirect to auth/acceptance pages.<br/><br/><strong>Example:</strong> A guest connects to office Wi-Fi, is intercepted by a captive portal, accepts terms, and is placed in an isolated guest VLAN with internet access only &mdash; completely separated from internal servers.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">MAC Filtering</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>MAC Filtering</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> A weak, easily bypassed control. MAC Flooding overwhelms the switch CAM table, forcing fail-open mode (acts as a hub, broadcasts all frames). MAC Spoofing changes a device's MAC to an authorized value, bypassing filtering entirely. CISSP treats MAC Filtering as a weak compensating control only.<br/><br/><strong>Example:</strong> An attacker sniffs a legitimate MAC with Wireshark, changes their laptop's MAC to match, and completely bypasses MAC filtering.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Column 3: Hardware & Delivery -->
+
+              <div class="d42-col">
+
+                <div class="d42-header">Hardware &amp; Delivery</div>
+
+                <div class="d42-vertical-split">
+
+                  <div class="d42-row">
+
+                    <div class="d42-box">
+
+                      <span class="d42-box-title">Hardware Operation</span>
+
+                      <div class="d42-inner-boxes">
+
+                        <div class="d42-inner-box has-tooltip">
+
+                          <span class="d42-inner-title">High Availability</span>
+
+                          <div class="d42-tooltip">
+
+                            <strong>Redundancy &amp; Failover</strong>
+
+                            <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Supports Availability (CIA). Eliminates single points of failure (SPOF) through hardware redundancy and clustering. Key metrics: MTBF (Mean Time Between Failures &mdash; reliability) and MTTR (Mean Time to Repair &mdash; recovery speed). Active/Active: both nodes handle load. Active/Passive: standby node takes over on failure.<br/><br/><strong>Example:</strong> Two firewalls in Active/Passive HA &mdash; when the primary fails at 2AM, the passive node takes over in under a second with zero traffic loss.</p>
+
+                          </div>
+
+                        </div>
+
+                        <div class="d42-inner-box has-tooltip">
+
+                          <span class="d42-inner-title">Config Management</span>
+
+                          <div class="d42-tooltip">
+
+                            <strong>Configuration &amp; Firmware</strong>
+
+                            <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Use SNMPv3 (with authentication and encryption) for device management. SNMPv1/v2 use plaintext community strings ("public"/"private") that are trivially sniffable. Centralized config management ensures all devices run authorized, patched firmware with no unauthorized services.<br/><br/><strong>Example:</strong> A pen tester finds SNMPv2 with the default "public" community string on a router and extracts the full running config including ACLs &mdash; without any credentials.</p>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-row">
+
+                    <div class="d42-box">
+
+                      <span class="d42-box-title">Content Delivery (CDN)</span>
+
+                      <div class="d42-inner-boxes">
+
+                        <div class="d42-inner-box has-tooltip">
+
+                          <span class="d42-inner-title">Caching &amp; WAF</span>
+
+                          <div class="d42-tooltip">
+
+                            <strong>Caching, Geo &amp; WAF</strong>
+
+                            <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> CDNs cache content at geographically distributed edge nodes, reducing latency. Security: absorb volumetric DDoS attacks at the edge before reaching origin. Trade-off: data at third-party locations introduces confidentiality risks. WAFs at CDN edge filter Layer 7 attacks (SQLi, XSS).<br/><br/><strong>Example:</strong> A global e-commerce site's CDN absorbs a 500Gbps DDoS flood across 200 edge nodes while the origin server experiences zero degradation.</p>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="d42-box">
+
+                      <span class="d42-box-title">Endpoint Security</span>
+
+                      <div class="d42-inner-boxes">
+
+                        <div class="d42-inner-box has-tooltip">
+
+                          <span class="d42-inner-title">EDR / XDR &amp; FW</span>
+
+                          <div class="d42-tooltip">
+
+                            <strong>EDR &amp; Host Firewalls</strong>
+
+                            <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> CISSP minimum endpoint requirements: (1) current antivirus/antimalware, (2) host-based firewall with default-deny rules, (3) hardened OS with unnecessary services disabled. EDR monitors process behavior in real time, detecting fileless malware that signature-based AV misses.<br/><br/><strong>Example:</strong> An EDR agent detects Word spawning a PowerShell process making outbound connections &mdash; a macro-based attack indicator &mdash; and kills it before data exfiltration occurs.</p>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Column 4: Firewalls -->
+
+              <div class="d42-col">
+
+                <div class="d42-header">Firewalls</div>
+
+                <div class="d42-row">
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Firewall Types</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Packet Filtering</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Packet Filtering (Stateless)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Operates at OSI Layer 3/4. Examines packets individually against ACL rules (src IP, dst IP, port, protocol). No memory of previous packets &mdash; cannot track connection state. Fastest but least intelligent. Vulnerable to IP spoofing and fragmentation attacks.<br/><br/><strong>Example:</strong> An ACL permits TCP port 80 from any source &mdash; a forged packet with dst-port 80 passes through even though it is not part of any legitimate HTTP session.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Stateful Inspection</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Stateful Inspection</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Operates at Layer 3/4. Maintains a state table of all active connections. Validates each incoming packet belongs to an established, legitimate session. Blocks unsolicited inbound packets even if the port is in an allow rule. The modern network security standard.<br/><br/><strong>Example:</strong> A stateful firewall drops an unsolicited TCP ACK from the internet &mdash; no matching SYN entry exists in the state table, exposing the packet as illegitimate.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Application Proxy</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Application-Level Proxy</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Operates at OSI Layer 7. Fully understands the specific application protocol (HTTP, FTP, DNS). Acts as intermediary &mdash; client connects to proxy, proxy opens a NEW separate connection to the server. Deepest inspection possible. Can detect malformed protocol commands. Highest latency of all firewall types.<br/><br/><strong>Example:</strong> An HTTP proxy strips a command injection embedded in an HTTP header &mdash; the proxy, deeply understanding HTTP, removes the malicious content before forwarding to the server.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Circuit Proxy</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Circuit-Level Proxy</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Operates at OSI Layer 5 (Session). Validates the TCP handshake and monitors sessions but does NOT inspect payload content (payload-blind). Faster than application proxy. SOCKS proxy is the classic example. Once circuit is validated, data flows freely without further inspection.<br/><br/><strong>Example:</strong> A SOCKS5 proxy validates a 3-way TCP handshake &mdash; but cannot detect encrypted malware flowing through the validated circuit.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">NGFW</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Next-Gen Firewall (NGFW)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Combines stateful inspection with deep packet inspection (DPI), application awareness, user identity integration, SSL/TLS inspection, and built-in IPS. Enforces policy by application (block Facebook, allow Salesforce) rather than just port/IP. The modern enterprise standard.<br/><br/><strong>Example:</strong> An NGFW identifies traffic on TCP 443 as BitTorrent (disguised as HTTPS) and blocks it by application signature &mdash; something a traditional stateful firewall cannot do.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Architectures</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Bastion Host</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Bastion Host</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> A single hardened system at the network perimeter exposed directly to untrusted networks. All unnecessary services removed, OS hardened, heavily monitored. Critical weakness: SPOF &mdash; if compromised, attackers have direct access to the internal network with no further barriers.<br/><br/><strong>Example:</strong> A small org's single public-facing web server hardened at the perimeter &mdash; if compromised, the attacker lands directly inside the internal network.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Dual-Homed</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Dual-Homed Host</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> A system with two NICs &mdash; one facing internet, one facing the internal network. IP routing/forwarding is DISABLED, forcing all traffic to be proxied through the dual-homed system. Stronger isolation than a bastion host but still a single point of failure.<br/><br/><strong>Example:</strong> A dual-homed proxy server where all employee web requests pass through it &mdash; preventing any direct internet-to-internal routing by disabling IP forwarding.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Screened Host</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Screened Host (1 Firewall)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Combines a packet-filtering router/firewall with a bastion host. The firewall sits at the perimeter and directs all external traffic to the bastion host. Provides two protection layers &mdash; the firewall and the bastion host &mdash; before internal access is granted.<br/><br/><strong>Example:</strong> All inbound internet traffic hits the perimeter firewall, which forwards only to the bastion host IP &mdash; the bastion validates all requests before passing to internal servers.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Screened Subnet (DMZ)</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Screened Subnet / DMZ (2 Firewalls)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Strongest standard architecture &mdash; two firewalls create three zones: Untrusted (internet), DMZ (public servers: web, mail, DNS), Trusted (internal LAN). Even if an attacker fully compromises a DMZ server, a second firewall still protects the internal network. Most heavily tested CISSP firewall architecture.<br/><br/><strong>Example:</strong> A bank's public web portal sits in the DMZ between two firewalls &mdash; a fully compromised web server still cannot reach core banking databases protected by the inner firewall.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Column 5: IDS / IPS -->
+
+              <div class="d42-col">
+
+                <div class="d42-header">IDS / IPS</div>
+
+                <div class="d42-row">
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Deployment</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Host-Based (HIDS/HIPS)</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Host-Based IDS/IPS</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Installed directly on a single host. Monitors OS calls, file system changes, logs, and running processes on that specific machine only. Excellent for detecting insider threats and malware that bypassed the network perimeter. Cannot see broader network traffic.<br/><br/><strong>Example:</strong> A HIDS on a file server detects svchost.exe unexpectedly modifying a core system DLL &mdash; a rootkit indicator &mdash; and immediately alerts the security team.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Network-Based (NIDS)</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Network-Based IDS/IPS</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Connected to a network segment &mdash; monitors all traffic for multiple hosts simultaneously. Two connection methods: Promiscuous/SPAN port (out-of-band copy, IDS only, cannot block), or Inline (all traffic passes through, IPS, can block, but creates SPOF if it fails closed).<br/><br/><strong>Example:</strong> A NIDS on a SPAN port detects a compromised internal server scanning all hosts on port 445 &mdash; a WannaCry lateral movement pattern &mdash; and alerts the SOC.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Inline vs SPAN Port</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Inline vs Promiscuous Port</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Inline IPS actively drops malicious packets in real time &mdash; but if it fails closed, it causes a DoS (all traffic blocked). SPAN/Promiscuous port IDS only receives copies, cannot block, only alerts &mdash; but failure does not disrupt the network. CISSP rule: IPS = inline; IDS = promiscuous port.<br/><br/><strong>Example:</strong> An inline IPS drops a SQL injection before it reaches the database. If it fails closed, all legitimate SQL traffic also stops &mdash; causing an outage.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">Detection Methods</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Pattern / Signature</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Pattern Matching (Signature)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> IDS maintains a database of known attack signatures (unique byte sequences). Fast and efficient with very low false positives. Critical weakness: can ONLY detect known threats. Zero-day attacks with no existing signature pass through completely undetected. The exam always pairs this weakness with zero-day scenarios.<br/><br/><strong>Example:</strong> An attacker launches a zero-day Apache exploit. The signature-based IDS generates zero alerts because the attack's byte pattern has never been catalogued in the signature database.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Anomaly-Based</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Anomaly-Based Detection</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> System learns normal behavior over a baseline period, then alerts on significant deviations. Can detect zero-day attacks. Sub-types: Stateful matching (session context), Statistical (traffic profiles), Protocol anomaly (non-standard protocol), Traffic anomaly (unusual volume/patterns). Higher false positive rate than signature-based.<br/><br/><strong>Example:</strong> A marketing employee's account downloads 50GB of IP files at 3AM &mdash; anomaly-based IPS flags this as a severe deviation from the established baseline even with no malware signatures involved.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Honeypots &amp; Honeynets</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Honeypots &amp; Honeynets</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> A honeypot is a decoy system mimicking a high-value target (database, file server) with no legitimate business purpose &mdash; any interaction is immediately treated as hostile. A honeynet is a full network of honeypots. Primary use: detecting APTs conducting internal reconnaissance after perimeter bypass.<br/><br/><strong>Example:</strong> An attacker who bypassed the perimeter via phishing attempts to log into what appears to be a legacy database &mdash; it is a honeypot, and the security team is instantly alerted to an active internal threat actor.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Column 6: VPN & Remote Access -->
+
+              <div class="d42-col">
+
+                <div class="d42-header">VPN &amp; Remote Access</div>
+
+                <div class="d42-row">
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">VPN Protocols</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">PPTP</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>PPTP (Point-to-Point Tunneling)</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> One of the earliest VPN protocols. Uses TCP 1723 and GRE for encapsulation. Cryptographically broken &mdash; weaknesses in MS-CHAPv2 authentication make credentials crackable offline. CISSP exam treats PPTP as the weakest, least secure VPN option. Never use in modern environments.<br/><br/><strong>Example:</strong> An attacker captures a PPTP handshake and cracks the MS-CHAPv2 credentials offline in hours using freely available tools, gaining full VPN access.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">L2TP / IPSec</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>L2TP / IPSec</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> L2TP provides the tunnel but NO encryption alone &mdash; always paired with IPSec. Uses UDP 1701 (L2TP), UDP 500 (IKE key exchange), UDP 4500 (NAT traversal). More secure than PPTP. Supports mutual machine authentication via certificates or pre-shared keys.<br/><br/><strong>Example:</strong> A remote worker uses L2TP/IPSec &mdash; the L2TP layer carries the PPP session while IPSec ESP provides AES encryption for all data flowing through the tunnel.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">SSL / TLS VPN</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>SSL / TLS VPN</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Operates at the Application layer using TLS. Works over TCP 443 &mdash; firewall-friendly (most firewalls allow 443 outbound). Two modes: Clientless (browser-based, specific web apps only &mdash; no VPN client needed) and Full Tunnel (all traffic routed through VPN, requires client software).<br/><br/><strong>Example:</strong> A contractor accesses a corporate portal via SSL VPN in clientless mode &mdash; they see only approved applications through their browser with no access to the broader internal network.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="d42-box">
+
+                    <span class="d42-box-title">IPSec</span>
+
+                    <div class="d42-inner-boxes">
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">AH (Auth Header)</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>AH &mdash; Authentication Header</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Provides authentication and integrity for the ENTIRE packet including the IP header via HMAC. Does NOT encrypt &mdash; payload is readable. Because it authenticates the outer IP header, it BREAKS with NAT (NAT modifies the source IP, invalidating the HMAC). Protocol number 51.<br/><br/><strong>Example:</strong> Two government routers use IPSec AH to verify routing update integrity &mdash; confirming messages weren't tampered with, but the routing table data is still visible in transit.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">ESP (Encap Security)</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>ESP &mdash; Encapsulating Security Payload</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Provides confidentiality (AES encryption), authentication, and integrity &mdash; but only for the PAYLOAD, NOT the outer IP header. Compatible with NAT (does not authenticate the outer header). The practical choice for most real-world VPN deployments. Protocol number 50.<br/><br/><strong>Example:</strong> A remote employee's laptop uses IPSec ESP &mdash; their home router performs NAT on the outer IP header (which ESP ignores) while payload remains AES-encrypted end-to-end.</p>
+
+                        </div>
+
+                      </div>
+
+                      <div class="d42-inner-box has-tooltip">
+
+                        <span class="d42-inner-title">Tunnel vs Transport</span>
+
+                        <div class="d42-tooltip">
+
+                          <strong>Tunnel Mode vs Transport Mode</strong>
+
+                          <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> Transport Mode: encrypts/authenticates only the payload &mdash; original IP header is intact. Used for host-to-host within same network. Tunnel Mode: encapsulates the ENTIRE original packet (including IP header) in a new IP packet. Used for gateway-to-gateway VPN tunnels. CISSP rule: office-to-office VPN = Tunnel Mode; host-to-host within LAN = Transport Mode.<br/><br/><strong>Example:</strong> Two offices connected via IPSec Tunnel Mode &mdash; the entire original packet (private 192.168.x.x source IP) is encrypted and wrapped in a new public IP, hiding the internal network topology from anyone inspecting transit traffic.</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="d42-side-wrapper has-tooltip">
+              <div class="d42-side-text">Zero Trust</div>
+              <div class="d42-tooltip">
+                <strong>Zero Trust Architecture (ZTA)</strong>
+                <p style="margin:0.5rem 0; font-size:0.85rem; color:var(--muted-strong);"><strong>Concept:</strong> A security model based on "Never Trust, Always Verify." No user, device, application, or network connection is trusted by default, even inside the corporate network. Every access request is continuously authenticated, authorized, and validated based on identity, device health, and risk. Users are granted only the minimum access required (least privilege) and network access is restricted through segmentation and microsegmentation. The primary goal is to prevent unauthorized access and limit lateral movement by assuming a breach may already exist.<br/><br/><strong>Example:</strong> An HR employee logs in to the payroll application using MFA from a company-managed laptop. The system verifies the user's identity, device health, and access permissions before granting access. The employee can access only the payroll application, not the entire corporate network.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Infographics Section -->
+
+          <div class="d42-infographics-row">
+  <!-- 1. Firewall Architectures -->
+  <div class="d42-infographic">
+    <div class="d42-infographic-title">Firewall Architectures — Network Topology</div>
+    <svg viewBox="0 0 720 360" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
+      <defs><marker id="fwA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8a8a8a"/></marker></defs>
+      <text x="14" y="44" fill="#ff8a93" font-size="11" font-weight="700">1 · Bastion Host</text>
+      <g font-size="10" text-anchor="middle">
+        <rect x="150" y="32" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="210" y="53" fill="#e6e6e6">Internet</text>
+        <rect x="300" y="32" width="150" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="375" y="48" fill="#f5f5f5">Bastion Host</text><text x="375" y="60" fill="#9aa3c7" font-size="8">single hardened host</text>
+        <rect x="480" y="32" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="540" y="53" fill="#e6e6e6">Internal LAN</text>
+      </g>
+      <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="270" y1="49" x2="298" y2="49"/><line x1="450" y1="49" x2="478" y2="49"/></g>
+      <text x="150" y="84" fill="#d8a23a" font-size="9">⚠ Single point of failure — compromise the bastion and the LAN is exposed.</text>
+
+      <text x="14" y="132" fill="#ff8a93" font-size="11" font-weight="700">2 · Dual-Homed Host</text>
+      <g font-size="10" text-anchor="middle">
+        <rect x="150" y="120" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="210" y="141" fill="#e6e6e6">Internet</text>
+        <rect x="300" y="120" width="150" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="375" y="136" fill="#f5f5f5">Dual-Homed Host</text><text x="375" y="148" fill="#9aa3c7" font-size="8">NIC1 | NIC2 · no IP forwarding</text>
+        <rect x="480" y="120" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="540" y="141" fill="#e6e6e6">Internal LAN</text>
+      </g>
+      <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="270" y1="137" x2="298" y2="137"/><line x1="450" y1="137" x2="478" y2="137"/></g>
+      <text x="150" y="172" fill="#9aa3c7" font-size="9">All traffic is proxied through the host — the two NICs never route to each other.</text>
+
+      <text x="14" y="220" fill="#ff8a93" font-size="11" font-weight="700">3 · Screened Host</text>
+      <g font-size="10" text-anchor="middle">
+        <rect x="150" y="208" width="96" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="198" y="229" fill="#e6e6e6">Internet</text>
+        <rect x="276" y="208" width="100" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="326" y="229" fill="#f5f5f5">Screening FW</text>
+        <rect x="406" y="208" width="100" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="456" y="225" fill="#f5f5f5">Bastion</text><text x="456" y="237" fill="#9aa3c7" font-size="8">proxy</text>
+        <rect x="536" y="208" width="96" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="584" y="229" fill="#e6e6e6">Internal</text>
+      </g>
+      <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="246" y1="225" x2="274" y2="225"/><line x1="376" y1="225" x2="404" y2="225"/><line x1="506" y1="225" x2="534" y2="225"/></g>
+      <text x="150" y="260" fill="#9aa3c7" font-size="9">Router filters first, then the bastion proxies — two layers of defence.</text>
+
+      <text x="14" y="308" fill="#ff8a93" font-size="11" font-weight="700">4 · Screened Subnet (DMZ) ★</text>
+      <g font-size="9.5" text-anchor="middle">
+        <rect x="150" y="296" width="80" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="190" y="317" fill="#e6e6e6">Internet</text>
+        <rect x="254" y="296" width="64" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="286" y="317" fill="#f5f5f5">FW1</text>
+        <rect x="342" y="296" width="130" height="34" rx="5" fill="#241016" stroke="#d8a23a"/><text x="407" y="312" fill="#f5d6a0">DMZ</text><text x="407" y="324" fill="#9aa3c7" font-size="8">Web / Mail · DNS</text>
+        <rect x="496" y="296" width="64" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="528" y="317" fill="#f5f5f5">FW2</text>
+        <rect x="584" y="296" width="96" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="632" y="317" fill="#e6e6e6">Internal</text>
+      </g>
+      <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="230" y1="313" x2="252" y2="313"/><line x1="318" y1="313" x2="340" y2="313"/><line x1="472" y1="313" x2="494" y2="313"/><line x1="560" y1="313" x2="582" y2="313"/></g>
+      <text x="150" y="348" fill="#3fb950" font-size="9">★ Strongest standard design — a compromised DMZ server is still blocked by FW2.</text>
+    </svg>
+  </div>
+
+  <!-- 2. IDS vs IPS -->
+  <div class="d42-infographic">
+    <div class="d42-infographic-title">IDS / IPS — Inline vs Promiscuous (SPAN) Port</div>
+    <svg viewBox="0 0 720 250" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
+      <defs><marker id="idA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8a8a8a"/></marker>
+      <marker id="idR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker></defs>
+      <text x="14" y="32" fill="#ff8a93" font-size="11" font-weight="700">Inline — IPS (preventative)</text>
+      <g font-size="10" text-anchor="middle">
+        <rect x="40" y="44" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="95" y="65" fill="#e6e6e6">Traffic</text>
+        <rect x="250" y="44" width="170" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="335" y="60" fill="#f5f5f5">IPS — in the path</text><text x="335" y="72" fill="#ffb3bb" font-size="8">inspects &amp; blocks</text>
+        <rect x="520" y="44" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="575" y="65" fill="#e6e6e6">Destination</text>
+      </g>
+      <g stroke="#8a8a8a" stroke-width="2" marker-end="url(#idA)"><line x1="150" y1="61" x2="248" y2="61"/><line x1="420" y1="61" x2="518" y2="61"/></g>
+      <text x="40" y="98" fill="#3fb950" font-size="9">✓ Drops malicious packets in real time.</text>
+      <text x="360" y="98" fill="#d8a23a" font-size="9">⚠ Fail-closed = full outage (single point of failure).</text>
+
+      <line x1="14" y1="118" x2="706" y2="118" stroke="rgba(255,255,255,0.08)"/>
+
+      <text x="14" y="146" fill="#ff8a93" font-size="11" font-weight="700">SPAN / TAP — IDS (detective)</text>
+      <g font-size="10" text-anchor="middle">
+        <rect x="40" y="158" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="95" y="179" fill="#e6e6e6">Traffic</text>
+        <rect x="250" y="158" width="120" height="34" rx="5" fill="#262626" stroke="#7a7a7a"/><text x="310" y="179" fill="#e6e6e6">Switch</text>
+        <rect x="470" y="158" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="525" y="179" fill="#e6e6e6">Destination</text>
+        <rect x="250" y="212" width="120" height="30" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="310" y="231" fill="#f5f5f5">IDS — copy only</text>
+      </g>
+      <g stroke="#8a8a8a" stroke-width="2" marker-end="url(#idA)"><line x1="150" y1="175" x2="248" y2="175"/><line x1="370" y1="175" x2="468" y2="175"/></g>
+      <line x1="310" y1="192" x2="310" y2="210" stroke="#d31324" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#idR)"/>
+      <text x="384" y="226" fill="#d8a23a" font-size="9" text-anchor="start">⚠ Detects &amp; alerts only — cannot block.</text>
+      <text x="384" y="240" fill="#3fb950" font-size="9" text-anchor="start">✓ A sensor failure does not disrupt traffic.</text>
+    </svg>
+  </div>
+
+  <!-- 3. IPSec AH vs ESP -->
+  <div class="d42-infographic">
+    <div class="d42-infographic-title">IPSec — AH vs ESP Packet Structure</div>
+    <svg viewBox="0 0 720 250" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
+      <text x="14" y="30" fill="#ff8a93" font-size="11" font-weight="700">AH — Authentication Header (Protocol 51)</text>
+      <g font-size="9.5" text-anchor="middle">
+        <rect x="60" y="52" width="170" height="36" fill="#2a2a2a" stroke="#7a7a7a"/><text x="145" y="68" fill="#f5f5f5">Original IP Header</text><text x="145" y="80" fill="#9aa3c7" font-size="8">authenticated</text>
+        <rect x="230" y="52" width="150" height="36" fill="#2a0d10" stroke="#d31324"/><text x="305" y="68" fill="#f5f5f5">AH Header</text><text x="305" y="80" fill="#9aa3c7" font-size="8">HMAC integrity</text>
+        <rect x="380" y="52" width="280" height="36" fill="#1c1c1c" stroke="#7a7a7a"/><text x="520" y="68" fill="#f5f5f5">Payload / Data</text><text x="520" y="80" fill="#ff8a93" font-size="8">NOT encrypted ✗</text>
+      </g>
+      <line x1="60" y1="44" x2="660" y2="44" stroke="#3fb950" stroke-width="1"/>
+      <text x="360" y="40" fill="#3fb950" font-size="8.5" text-anchor="middle">◀ authenticated — the ENTIRE packet, including the IP header ▶</text>
+      <text x="60" y="106" fill="#d8a23a" font-size="9">⚠ Because the IP header is authenticated, AH breaks NAT (NAT rewrites that header).</text>
+
+      <line x1="14" y1="124" x2="706" y2="124" stroke="rgba(255,255,255,0.08)"/>
+
+      <text x="14" y="150" fill="#ff8a93" font-size="11" font-weight="700">ESP — Encapsulating Security Payload (Protocol 50)</text>
+      <g font-size="9" text-anchor="middle">
+        <rect x="40" y="178" width="120" height="36" fill="#2a2a2a" stroke="#7a7a7a"/><text x="100" y="194" fill="#f5f5f5">New IP Header</text><text x="100" y="206" fill="#9aa3c7" font-size="8">not protected</text>
+        <rect x="160" y="178" width="110" height="36" fill="#2a0d10" stroke="#d31324"/><text x="215" y="194" fill="#f5f5f5">ESP Header</text><text x="215" y="206" fill="#9aa3c7" font-size="8">SPI + Seq#</text>
+        <rect x="270" y="178" width="230" height="36" fill="rgba(211,19,36,0.3)" stroke="#d31324"/><text x="385" y="194" fill="#ffd2d5">Payload</text><text x="385" y="206" fill="#ffd2d5" font-size="8">AES encrypted ✓</text>
+        <rect x="500" y="178" width="90" height="36" fill="#2a2a2a" stroke="#7a7a7a"/><text x="545" y="199" fill="#f5f5f5">ESP Trailer</text>
+        <rect x="590" y="178" width="90" height="36" fill="#2a0d10" stroke="#d31324"/><text x="635" y="194" fill="#f5f5f5">ESP Auth</text><text x="635" y="206" fill="#9aa3c7" font-size="8">tag</text>
+      </g>
+      <line x1="270" y1="170" x2="500" y2="170" stroke="#ff8a93" stroke-width="1"/><text x="385" y="166" fill="#ff8a93" font-size="8" text-anchor="middle">◀ encrypted ▶</text>
+      <line x1="160" y1="222" x2="680" y2="222" stroke="#3fb950" stroke-width="1"/><text x="420" y="234" fill="#3fb950" font-size="8" text-anchor="middle">◀ authenticated (ESP header → trailer) ▶ · headers stay clear, so ESP is NAT-compatible ✓</text>
+    </svg>
+  </div>
+
+  <!-- 4. 802.1X EAP flow -->
+  <div class="d42-infographic">
+    <div class="d42-infographic-title">802.1X — EAP Authentication Flow</div>
+    <svg viewBox="0 0 720 300" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
+      <defs><marker id="eA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker></defs>
+      <g text-anchor="middle">
+        <rect x="60" y="20" width="160" height="40" rx="6" fill="#1c1c1c" stroke="#7a7a7a"/><text x="140" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Supplicant</text><text x="140" y="53" fill="#9aa3c7" font-size="8">device / laptop</text>
+        <rect x="280" y="20" width="160" height="40" rx="6" fill="#2a0d10" stroke="#d31324"/><text x="360" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Authenticator</text><text x="360" y="53" fill="#9aa3c7" font-size="8">switch / WAP · port blocked</text>
+        <rect x="500" y="20" width="160" height="40" rx="6" fill="#1c1c1c" stroke="#7a7a7a"/><text x="580" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Auth Server</text><text x="580" y="53" fill="#9aa3c7" font-size="8">RADIUS / TACACS+</text>
+      </g>
+      <g stroke="#3a3a3a" stroke-width="1" stroke-dasharray="3 3"><line x1="140" y1="60" x2="140" y2="252"/><line x1="360" y1="60" x2="360" y2="252"/><line x1="580" y1="60" x2="580" y2="252"/></g>
+      <g font-size="9" fill="#e6e6e6">
+        <text x="250" y="80" text-anchor="middle">① EAP-Start / Identity Request</text>
+        <line x1="140" y1="86" x2="358" y2="86" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
+        <text x="470" y="108" text-anchor="middle">② RADIUS Access-Request</text>
+        <line x1="360" y1="114" x2="578" y2="114" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
+        <text x="470" y="136" text-anchor="middle">③ EAP Challenge</text>
+        <line x1="580" y1="142" x2="362" y2="142" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
+        <text x="250" y="164" text-anchor="middle">④ Challenge forwarded</text>
+        <line x1="360" y1="170" x2="142" y2="170" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
+        <text x="250" y="192" text-anchor="middle">⑤ EAP Response (credentials / cert)</text>
+        <line x1="140" y1="198" x2="358" y2="198" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
+        <line x1="360" y1="216" x2="578" y2="216" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
+        <text x="470" y="212" text-anchor="middle" font-size="8" fill="#9aa3c7">forwarded to server</text>
+        <text x="470" y="238" text-anchor="middle">⑥ RADIUS Access-Accept</text>
+        <line x1="580" y1="244" x2="362" y2="244" stroke="#3fb950" stroke-width="1.5" marker-end="url(#eA)"/>
+      </g>
+      <rect x="240" y="262" width="240" height="26" rx="6" fill="rgba(63,185,80,0.14)" stroke="#3fb950"/><text x="360" y="279" fill="#9fe6ab" font-size="9.5" text-anchor="middle">Port OPENED — network access granted ✓</text>
+    </svg>
+  </div>
+        </div>
+        <!-- closes d42-infographics-row -->
+      </div>
+      <!-- closes d42-diagram panel -->
+
+      </section>
+
+      <!-- 4.3 — Implement Secure Communication Channels -->
+      <section class="section cissp-notes" data-reveal>
+        <div class="section-head">
+          <p class="section-label">4.3 &mdash; Implement Secure Communication Channels</p>
+          <h2 class="section-title">Secure communication channels.</h2>
+          <p class="section-copy">
+            Implementing secure communication channels by design &mdash; voice and video,
+            remote access, data communications, and third-party connectivity. Hover any box for
+            the detail and an example.
+          </p>
+        </div>
+
+        <div class="note-panel" style="margin-bottom: 2rem;">
+          <h3 class="note-subtitle">Exam essentials</h3>
+          <ul class="note-list">
+            <li><strong>Voice:</strong> VoIP is packet-switched and latency-sensitive &mdash; prioritize it with QoS. SIP signals on port 5060 (MD5 integrity); SRTP encrypts the media. Secure VoIP = separate VLAN + VoIP-aware firewall + strong authentication.</li>
+            <li><strong>Email:</strong> S/MIME SIGNED = integrity + non-repudiation; ENVELOPED = + confidentiality (CA-based, enterprise). PGP = decentralized web of trust (personal/office).</li>
+            <li><strong>VPN:</strong> PPTP is legacy/weak (RC4 via MPPE, IP-only); L2TP alone has NO encryption &mdash; pair it with IPSec; SSL VPN is browser-based (no client). Split tunnel = HIGH RISK; full tunnel forces all traffic through corporate security.</li>
+            <li><strong>IPSec:</strong> AH authenticates the whole packet but BREAKS NAT; ESP encrypts the payload and is NAT-compatible. Transport mode = payload only (host-to-host); tunnel mode = whole packet (site-to-site). IKE = ISAKMP + Diffie-Hellman.</li>
+            <li><strong>AAA:</strong> RADIUS = UDP, encrypts only the password, combines auth + authz; <strong>TACACS+</strong> = TCP, encrypts everything, separates AAA &mdash; the most robust; Diameter = RADIUS successor (encrypts username + password, uses IPSec).</li>
+          </ul>
+        </div>
+
+        <div id="domain43-container" class="osi-container"></div>
+      </section>
+
+      
+    </main>
+
+    <footer class="site-footer">
+
+      <span>Sudarson Prabhu R.E</span>
+
+      <span>Information Security Consultant</span>
+
+      <span data-year></span>
+
+    </footer>
+
+  
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.d42-infographic').forEach(el => {
+      el.addEventListener('click', function(e) {
+        // Prevent click from immediately closing if we want to stop propagation
+        this.classList.toggle('expanded');
+      });
+    });
+  });
+</script>
+</body>
+
+
+</html>
+
+

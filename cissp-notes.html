@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CISSP notes hub by Sudarson Prabhu R.E covering all eight CISSP domains and their exam weightages."
+    />
+    <title>CISSP Notes | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="work">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <span class="brand-symbol">SP</span>
+        <span class="brand-copy">Sudarson Prabhu</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="work.html" data-page="work">Work</a>
+        <a href="about.html" data-page="about">About</a>
+        <a href="experience.html" data-page="experience">Experience</a>
+        <a href="services.html" data-page="services">Services</a>
+        <a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p class="eyebrow">CISSP Guide</p>
+          <h1 class="hero-title">CISSP Notes</h1>
+          <p class="hero-summary">
+            A structured study workspace for the eight CISSP domains. Hover a weightage in the diagram to highlight it,
+            or click it to expand the matching domain outline below.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="work.html">Back to Work</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Exam Blueprint</p>
+          <h2 class="section-title">8 domains of CISSP.</h2>
+          <p class="section-copy">
+            The diagram is built with HTML, CSS, SVG, and JavaScript, and the same domain data powers the expandable boxes
+            and individual notes pages.
+          </p>
+        </div>
+
+        <div class="panel cissp-map" data-spotlight>
+          <div id="cissp-labels-left" class="cissp-labels cissp-labels-left" aria-label="CISSP domain labels"></div>
+          <div id="cissp-diagram" class="cissp-diagram"></div>
+          <div id="cissp-labels-right" class="cissp-labels cissp-labels-right" aria-label="CISSP domain labels"></div>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Domain Notes</p>
+          <h2 class="section-title">Read the CISSP domain outline.</h2>
+          <p class="section-copy">
+            Use Show More to expand the subdomains here. The Open Notes pages are blank spaces that I will update manually.
+          </p>
+        </div>
+
+        <div id="cissp-domain-grid" class="cissp-domain-grid"></div>
+
+        <p class="cissp-source-note">
+          &copy; CISSP domain names, average weightages, and subdomain outline details above are sourced from the
+          official ISC2 CISSP Certification Exam Outline. This page is maintained as a personal study reference. ISC2 remain the owner of their respective property.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+  </body>
+</html>

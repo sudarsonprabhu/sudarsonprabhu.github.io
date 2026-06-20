@@ -42,6 +42,10 @@
         border-color: rgba(211, 19, 36, 0.5);
       }
 
+      .cs-card-link {
+        display: block;
+      }
+
       .cs-card::after {
         content: "";
         position: absolute;
@@ -1184,6 +1188,15 @@
             stake:
               "Without an accredited lab, connected device portfolios faced delays for regulatory clearance and planned product launches.",
           },
+          {
+            n: "08",
+            title: "CISSP Guide",
+            tags: ["CISSP", "Study Notes", "8 Domains"],
+            summary:
+              "A CISSP notes hub for the eight exam domains, with an interactive domain-weightage infographic and expandable subdomain outlines.",
+            href: "cissp-notes.html",
+            linkLabel: "Open Notes ->",
+          },
         ];
 
         var internalData = [
@@ -1257,6 +1270,43 @@
         ];
 
         function buildCard(c, prefix, isInternal) {
+          var tags = c.tags
+            .map(function (t) {
+              return '<span class="cs-tag">' + t + "</span>";
+            })
+            .join("");
+
+          if (c.href) {
+            return (
+              '<a class="panel cs-card cs-card-link" data-spotlight href="' +
+              c.href +
+              '" id="' +
+              prefix +
+              c.n +
+              '">' +
+              '<div class="cs-ch">' +
+              '<span class="cs-num">' +
+              c.n +
+              "</span>" +
+              "<div>" +
+              '<div class="cs-tags">' +
+              tags +
+              "</div>" +
+              '<h3 class="cs-title">' +
+              c.title +
+              "</h3>" +
+              '<p class="cs-sum">' +
+              c.summary +
+              "</p>" +
+              "</div>" +
+              '<div class="cs-tog">' +
+              (c.linkLabel || "Learn More ->") +
+              "</div>" +
+              "</div>" +
+              "</a>"
+            );
+          }
+
           var steps = c.how
             .map(function (h, j) {
               return (
@@ -1280,12 +1330,6 @@
           var skills = c.skills
             .map(function (s) {
               return '<span class="cs-skill">' + s + "</span>";
-            })
-            .join("");
-
-          var tags = c.tags
-            .map(function (t) {
-              return '<span class="cs-tag">' + t + "</span>";
             })
             .join("");
 
@@ -1351,7 +1395,7 @@
 
         function bindCardKeys(container) {
           if (!container) return;
-          var cards = container.querySelectorAll(".cs-card");
+          var cards = container.querySelectorAll(".cs-card:not(.cs-card-link)");
 
           for (var i = 0; i < cards.length; i += 1) {
             cards[i].addEventListener("click", function () {
@@ -1377,4 +1421,3 @@
     </script>
   </body>
 </html>
-
