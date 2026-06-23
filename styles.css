@@ -5144,3 +5144,67 @@ select {
   margin: 0 0 0.6rem;
 }
 
+/* ── D4 Panel Header (badge + eyebrow + title) ───────────────────────── */
+.d4-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.d4-panel-header .layer-badge {
+  width: fit-content;
+  font-size: 0.68rem;
+  padding: 0.18rem 0.55rem;
+}
+.d4-panel-header .note-eyebrow {
+  margin: 0;
+}
+.d4-panel-header .note-subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ── D4 Key-Fact Grid ─────────────────────────────────────────────────── */
+.d4-fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.6rem;
+}
+.d4-fact-card {
+  background: var(--surface-strong);
+  border: 1px solid var(--line-strong);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+.d4-fact-card h4 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+.d4-fact-card p {
+  font-size: 0.85rem;
+  color: var(--muted-strong);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── D4 Body + Sub-heading (kept from previous pass) ─────────────────── */
+.d4-body { color: var(--muted-strong); line-height: 1.9; font-size: 0.93rem; margin: 0 0 1rem; }
+.d4-body strong { color: var(--text); }
+.d4-body em { color: var(--muted-strong); font-style: italic; }
+.d4-h4 {
+  font-family: "Sora", sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--text);
+  margin: 1.6rem 0 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--accent);
+}
