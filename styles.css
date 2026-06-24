@@ -5208,3 +5208,168 @@ select {
   padding-left: 0.75rem;
   border-left: 3px solid var(--accent);
 }
+
+/* ============================================================
+   CISSP Domain 5 — Layout 1: Access Control hierarchy (icicle map)
+   A recursive nested-box tree. Branch node = header box + a row of
+   child nodes beneath it. Leaf node = a single box (vertical label
+   for narrow leaves). Widths derive from the leaves; depth = row.
+   ============================================================ */
+.ac-map {
+  position: relative;
+  background: #080808;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 18px;
+  overflow: hidden;
+}
+.ac-map * { box-sizing: border-box; }
+
+/* transposed (vertical) tree: it grows left-to-right so the whole map
+   reads top-to-bottom. The title is a tall bar on the left; each branch
+   node is [header on the left][stacked children to the right]. Laid out
+   at natural size, then scaled to fit the panel width by the fit script. */
+.ac-map-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 8px;
+  width: max-content;
+  transform-origin: top left;
+}
+
+.ac-title {
+  background: linear-gradient(0deg, #6a0a13, #d31324 55%, #ff3b4b);
+  color: #ffffff;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  flex: 0 0 auto;
+  box-shadow: 0 0 24px rgba(211, 19, 36, 0.35);
+}
+
+/* node = header box (left) + children column (right); never shrinks */
+.ac-node {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 0 0 auto;
+}
+
+.ac-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-left: 6px;
+}
+
+.ac-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 138px;
+  background: #161616;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  padding: 10px 8px;
+  min-height: 44px;
+  overflow-wrap: break-word;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.ac-box:hover { background: var(--accent-soft); border-color: var(--accent); }
+
+/* any box with a hover detail gets a pointer + red hover glow */
+.ac-box.has-detail { cursor: pointer; }
+.ac-box.has-detail:hover,
+.ac-box.has-detail:focus-visible {
+  border-color: #d31324;
+  box-shadow: 0 0 12px rgba(211, 19, 36, 0.35);
+  outline: none;
+}
+
+/* Layout 2: a full-height intro descriptor sitting after the title bar */
+.ac-intro {
+  flex: 0 0 auto;
+  width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #101010;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  color: var(--muted-strong);
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+  padding: 14px 16px;
+}
+
+/* header boxes that carry a subtitle line (Single Sign-on, FIM) */
+.ac-box.ac-withsub { flex-direction: column; gap: 5px; }
+.ac-sub {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* only boxes that reveal an infographic carry the small red dot */
+.ac-box.has-fig::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d31324;
+  opacity: 0.9;
+}
+
+/* leaves: horizontal-label boxes stacked vertically on the right edge */
+.ac-leaf { flex: 0 0 auto; }
+.ac-v {
+  width: 150px;
+  min-height: 40px;
+  padding: 9px 10px;
+}
+.ac-v span {
+  writing-mode: horizontal-tb;
+  transform: none;
+  white-space: normal;
+  text-align: center;
+}
+
+/* hierarchy tiers — top-level headers read as red-accented; leaves stay
+   neutral black so the structure is easy to scan */
+.ac-box.ac-strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #2a0c0f, #160707);
+  border-color: var(--accent);
+  color: #ffe9eb;
+}
+.ac-box.ac-accent { background: #1d0a0c; border-color: rgba(211, 19, 36, 0.55); }
+
+@media (max-width: 720px) {
+  .ac-title { font-size: 1.25rem; }
+  .ac-box { font-size: 0.74rem; padding: 8px 6px; }
+}
