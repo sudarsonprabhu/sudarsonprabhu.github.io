@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -18,7 +18,7 @@
 
     <link
 
-      href="https://fonts.googleapis.com/css2family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
 
       rel="stylesheet"
 
@@ -1123,28 +1123,28 @@
           <div class="d42-infographics-row">
   <!-- 1. Firewall Architectures -->
   <div class="d42-infographic">
-    <div class="d42-infographic-title">Firewall Architectures â€” Network Topology</div>
+    <div class="d42-infographic-title">Firewall Architectures — Network Topology</div>
     <svg viewBox="0 0 720 360" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
       <defs><marker id="fwA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8a8a8a"/></marker></defs>
-      <text x="14" y="44" fill="#ff8a93" font-size="11" font-weight="700">1 Â· Bastion Host</text>
+      <text x="14" y="44" fill="#ff8a93" font-size="11" font-weight="700">1 · Bastion Host</text>
       <g font-size="10" text-anchor="middle">
         <rect x="150" y="32" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="210" y="53" fill="#e6e6e6">Internet</text>
         <rect x="300" y="32" width="150" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="375" y="48" fill="#f5f5f5">Bastion Host</text><text x="375" y="60" fill="#9aa3c7" font-size="8">single hardened host</text>
         <rect x="480" y="32" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="540" y="53" fill="#e6e6e6">Internal LAN</text>
       </g>
       <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="270" y1="49" x2="298" y2="49"/><line x1="450" y1="49" x2="478" y2="49"/></g>
-      <text x="150" y="84" fill="#d8a23a" font-size="9">âš  Single point of failure â€” compromise the bastion and the LAN is exposed.</text>
+      <text x="150" y="84" fill="#d8a23a" font-size="9">⚠ Single point of failure — compromise the bastion and the LAN is exposed.</text>
 
-      <text x="14" y="132" fill="#ff8a93" font-size="11" font-weight="700">2 Â· Dual-Homed Host</text>
+      <text x="14" y="132" fill="#ff8a93" font-size="11" font-weight="700">2 · Dual-Homed Host</text>
       <g font-size="10" text-anchor="middle">
         <rect x="150" y="120" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="210" y="141" fill="#e6e6e6">Internet</text>
-        <rect x="300" y="120" width="150" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="375" y="136" fill="#f5f5f5">Dual-Homed Host</text><text x="375" y="148" fill="#9aa3c7" font-size="8">NIC1 | NIC2 Â· no IP forwarding</text>
+        <rect x="300" y="120" width="150" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="375" y="136" fill="#f5f5f5">Dual-Homed Host</text><text x="375" y="148" fill="#9aa3c7" font-size="8">NIC1 | NIC2 · no IP forwarding</text>
         <rect x="480" y="120" width="120" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="540" y="141" fill="#e6e6e6">Internal LAN</text>
       </g>
       <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="270" y1="137" x2="298" y2="137"/><line x1="450" y1="137" x2="478" y2="137"/></g>
-      <text x="150" y="172" fill="#9aa3c7" font-size="9">All traffic is proxied through the host â€” the two NICs never route to each other.</text>
+      <text x="150" y="172" fill="#9aa3c7" font-size="9">All traffic is proxied through the host — the two NICs never route to each other.</text>
 
-      <text x="14" y="220" fill="#ff8a93" font-size="11" font-weight="700">3 Â· Screened Host</text>
+      <text x="14" y="220" fill="#ff8a93" font-size="11" font-weight="700">3 · Screened Host</text>
       <g font-size="10" text-anchor="middle">
         <rect x="150" y="208" width="96" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="198" y="229" fill="#e6e6e6">Internet</text>
         <rect x="276" y="208" width="100" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="326" y="229" fill="#f5f5f5">Screening FW</text>
@@ -1152,110 +1152,110 @@
         <rect x="536" y="208" width="96" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="584" y="229" fill="#e6e6e6">Internal</text>
       </g>
       <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="246" y1="225" x2="274" y2="225"/><line x1="376" y1="225" x2="404" y2="225"/><line x1="506" y1="225" x2="534" y2="225"/></g>
-      <text x="150" y="260" fill="#9aa3c7" font-size="9">Router filters first, then the bastion proxies â€” two layers of defence.</text>
+      <text x="150" y="260" fill="#9aa3c7" font-size="9">Router filters first, then the bastion proxies — two layers of defence.</text>
 
-      <text x="14" y="308" fill="#ff8a93" font-size="11" font-weight="700">4 Â· Screened Subnet (DMZ) â˜…</text>
+      <text x="14" y="308" fill="#ff8a93" font-size="11" font-weight="700">4 · Screened Subnet (DMZ) ★</text>
       <g font-size="9.5" text-anchor="middle">
         <rect x="150" y="296" width="80" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="190" y="317" fill="#e6e6e6">Internet</text>
         <rect x="254" y="296" width="64" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="286" y="317" fill="#f5f5f5">FW1</text>
-        <rect x="342" y="296" width="130" height="34" rx="5" fill="#241016" stroke="#d8a23a"/><text x="407" y="312" fill="#f5d6a0">DMZ</text><text x="407" y="324" fill="#9aa3c7" font-size="8">Web / Mail Â· DNS</text>
+        <rect x="342" y="296" width="130" height="34" rx="5" fill="#241016" stroke="#d8a23a"/><text x="407" y="312" fill="#f5d6a0">DMZ</text><text x="407" y="324" fill="#9aa3c7" font-size="8">Web / Mail · DNS</text>
         <rect x="496" y="296" width="64" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="528" y="317" fill="#f5f5f5">FW2</text>
         <rect x="584" y="296" width="96" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="632" y="317" fill="#e6e6e6">Internal</text>
       </g>
       <g stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#fwA)"><line x1="230" y1="313" x2="252" y2="313"/><line x1="318" y1="313" x2="340" y2="313"/><line x1="472" y1="313" x2="494" y2="313"/><line x1="560" y1="313" x2="582" y2="313"/></g>
-      <text x="150" y="348" fill="#3fb950" font-size="9">â˜… Strongest standard design â€” a compromised DMZ server is still blocked by FW2.</text>
+      <text x="150" y="348" fill="#3fb950" font-size="9">★ Strongest standard design — a compromised DMZ server is still blocked by FW2.</text>
     </svg>
   </div>
 
   <!-- 2. IDS vs IPS -->
   <div class="d42-infographic">
-    <div class="d42-infographic-title">IDS / IPS â€” Inline vs Promiscuous (SPAN) Port</div>
+    <div class="d42-infographic-title">IDS / IPS — Inline vs Promiscuous (SPAN) Port</div>
     <svg viewBox="0 0 720 250" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
       <defs><marker id="idA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8a8a8a"/></marker>
       <marker id="idR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker></defs>
-      <text x="14" y="32" fill="#ff8a93" font-size="11" font-weight="700">Inline â€” IPS (preventative)</text>
+      <text x="14" y="32" fill="#ff8a93" font-size="11" font-weight="700">Inline — IPS (preventative)</text>
       <g font-size="10" text-anchor="middle">
         <rect x="40" y="44" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="95" y="65" fill="#e6e6e6">Traffic</text>
-        <rect x="250" y="44" width="170" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="335" y="60" fill="#f5f5f5">IPS â€” in the path</text><text x="335" y="72" fill="#ffb3bb" font-size="8">inspects &amp; blocks</text>
+        <rect x="250" y="44" width="170" height="34" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="335" y="60" fill="#f5f5f5">IPS — in the path</text><text x="335" y="72" fill="#ffb3bb" font-size="8">inspects &amp; blocks</text>
         <rect x="520" y="44" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="575" y="65" fill="#e6e6e6">Destination</text>
       </g>
       <g stroke="#8a8a8a" stroke-width="2" marker-end="url(#idA)"><line x1="150" y1="61" x2="248" y2="61"/><line x1="420" y1="61" x2="518" y2="61"/></g>
-      <text x="40" y="98" fill="#3fb950" font-size="9">âœ“ Drops malicious packets in real time.</text>
-      <text x="360" y="98" fill="#d8a23a" font-size="9">âš  Fail-closed = full outage (single point of failure).</text>
+      <text x="40" y="98" fill="#3fb950" font-size="9">✓ Drops malicious packets in real time.</text>
+      <text x="360" y="98" fill="#d8a23a" font-size="9">⚠ Fail-closed = full outage (single point of failure).</text>
 
       <line x1="14" y1="118" x2="706" y2="118" stroke="rgba(255,255,255,0.08)"/>
 
-      <text x="14" y="146" fill="#ff8a93" font-size="11" font-weight="700">SPAN / TAP â€” IDS (detective)</text>
+      <text x="14" y="146" fill="#ff8a93" font-size="11" font-weight="700">SPAN / TAP — IDS (detective)</text>
       <g font-size="10" text-anchor="middle">
         <rect x="40" y="158" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="95" y="179" fill="#e6e6e6">Traffic</text>
         <rect x="250" y="158" width="120" height="34" rx="5" fill="#262626" stroke="#7a7a7a"/><text x="310" y="179" fill="#e6e6e6">Switch</text>
         <rect x="470" y="158" width="110" height="34" rx="5" fill="#1c1c1c" stroke="#7a7a7a"/><text x="525" y="179" fill="#e6e6e6">Destination</text>
-        <rect x="250" y="212" width="120" height="30" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="310" y="231" fill="#f5f5f5">IDS â€” copy only</text>
+        <rect x="250" y="212" width="120" height="30" rx="5" fill="#2a0d10" stroke="#d31324"/><text x="310" y="231" fill="#f5f5f5">IDS — copy only</text>
       </g>
       <g stroke="#8a8a8a" stroke-width="2" marker-end="url(#idA)"><line x1="150" y1="175" x2="248" y2="175"/><line x1="370" y1="175" x2="468" y2="175"/></g>
       <line x1="310" y1="192" x2="310" y2="210" stroke="#d31324" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#idR)"/>
-      <text x="384" y="226" fill="#d8a23a" font-size="9" text-anchor="start">âš  Detects &amp; alerts only â€” cannot block.</text>
-      <text x="384" y="240" fill="#3fb950" font-size="9" text-anchor="start">âœ“ A sensor failure does not disrupt traffic.</text>
+      <text x="384" y="226" fill="#d8a23a" font-size="9" text-anchor="start">⚠ Detects &amp; alerts only — cannot block.</text>
+      <text x="384" y="240" fill="#3fb950" font-size="9" text-anchor="start">✓ A sensor failure does not disrupt traffic.</text>
     </svg>
   </div>
 
   <!-- 3. IPSec AH vs ESP -->
   <div class="d42-infographic">
-    <div class="d42-infographic-title">IPSec â€” AH vs ESP Packet Structure</div>
+    <div class="d42-infographic-title">IPSec — AH vs ESP Packet Structure</div>
     <svg viewBox="0 0 720 250" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
-      <text x="14" y="30" fill="#ff8a93" font-size="11" font-weight="700">AH â€” Authentication Header (Protocol 51)</text>
+      <text x="14" y="30" fill="#ff8a93" font-size="11" font-weight="700">AH — Authentication Header (Protocol 51)</text>
       <g font-size="9.5" text-anchor="middle">
         <rect x="60" y="52" width="170" height="36" fill="#2a2a2a" stroke="#7a7a7a"/><text x="145" y="68" fill="#f5f5f5">Original IP Header</text><text x="145" y="80" fill="#9aa3c7" font-size="8">authenticated</text>
         <rect x="230" y="52" width="150" height="36" fill="#2a0d10" stroke="#d31324"/><text x="305" y="68" fill="#f5f5f5">AH Header</text><text x="305" y="80" fill="#9aa3c7" font-size="8">HMAC integrity</text>
-        <rect x="380" y="52" width="280" height="36" fill="#1c1c1c" stroke="#7a7a7a"/><text x="520" y="68" fill="#f5f5f5">Payload / Data</text><text x="520" y="80" fill="#ff8a93" font-size="8">NOT encrypted âœ—</text>
+        <rect x="380" y="52" width="280" height="36" fill="#1c1c1c" stroke="#7a7a7a"/><text x="520" y="68" fill="#f5f5f5">Payload / Data</text><text x="520" y="80" fill="#ff8a93" font-size="8">NOT encrypted ✗</text>
       </g>
       <line x1="60" y1="44" x2="660" y2="44" stroke="#3fb950" stroke-width="1"/>
-      <text x="360" y="40" fill="#3fb950" font-size="8.5" text-anchor="middle">â—€ authenticated â€” the ENTIRE packet, including the IP header â–¶</text>
-      <text x="60" y="106" fill="#d8a23a" font-size="9">âš  Because the IP header is authenticated, AH breaks NAT (NAT rewrites that header).</text>
+      <text x="360" y="40" fill="#3fb950" font-size="8.5" text-anchor="middle">◀ authenticated — the ENTIRE packet, including the IP header ▶</text>
+      <text x="60" y="106" fill="#d8a23a" font-size="9">⚠ Because the IP header is authenticated, AH breaks NAT (NAT rewrites that header).</text>
 
       <line x1="14" y1="124" x2="706" y2="124" stroke="rgba(255,255,255,0.08)"/>
 
-      <text x="14" y="150" fill="#ff8a93" font-size="11" font-weight="700">ESP â€” Encapsulating Security Payload (Protocol 50)</text>
+      <text x="14" y="150" fill="#ff8a93" font-size="11" font-weight="700">ESP — Encapsulating Security Payload (Protocol 50)</text>
       <g font-size="9" text-anchor="middle">
         <rect x="40" y="178" width="120" height="36" fill="#2a2a2a" stroke="#7a7a7a"/><text x="100" y="194" fill="#f5f5f5">New IP Header</text><text x="100" y="206" fill="#9aa3c7" font-size="8">not protected</text>
         <rect x="160" y="178" width="110" height="36" fill="#2a0d10" stroke="#d31324"/><text x="215" y="194" fill="#f5f5f5">ESP Header</text><text x="215" y="206" fill="#9aa3c7" font-size="8">SPI + Seq#</text>
-        <rect x="270" y="178" width="230" height="36" fill="rgba(211,19,36,0.3)" stroke="#d31324"/><text x="385" y="194" fill="#ffd2d5">Payload</text><text x="385" y="206" fill="#ffd2d5" font-size="8">AES encrypted âœ“</text>
+        <rect x="270" y="178" width="230" height="36" fill="rgba(211,19,36,0.3)" stroke="#d31324"/><text x="385" y="194" fill="#ffd2d5">Payload</text><text x="385" y="206" fill="#ffd2d5" font-size="8">AES encrypted ✓</text>
         <rect x="500" y="178" width="90" height="36" fill="#2a2a2a" stroke="#7a7a7a"/><text x="545" y="199" fill="#f5f5f5">ESP Trailer</text>
         <rect x="590" y="178" width="90" height="36" fill="#2a0d10" stroke="#d31324"/><text x="635" y="194" fill="#f5f5f5">ESP Auth</text><text x="635" y="206" fill="#9aa3c7" font-size="8">tag</text>
       </g>
-      <line x1="270" y1="170" x2="500" y2="170" stroke="#ff8a93" stroke-width="1"/><text x="385" y="166" fill="#ff8a93" font-size="8" text-anchor="middle">â—€ encrypted â–¶</text>
-      <line x1="160" y1="222" x2="680" y2="222" stroke="#3fb950" stroke-width="1"/><text x="420" y="234" fill="#3fb950" font-size="8" text-anchor="middle">â—€ authenticated (ESP header â†’ trailer) â–¶ Â· headers stay clear, so ESP is NAT-compatible âœ“</text>
+      <line x1="270" y1="170" x2="500" y2="170" stroke="#ff8a93" stroke-width="1"/><text x="385" y="166" fill="#ff8a93" font-size="8" text-anchor="middle">◀ encrypted ▶</text>
+      <line x1="160" y1="222" x2="680" y2="222" stroke="#3fb950" stroke-width="1"/><text x="420" y="234" fill="#3fb950" font-size="8" text-anchor="middle">◀ authenticated (ESP header → trailer) ▶ · headers stay clear, so ESP is NAT-compatible ✓</text>
     </svg>
   </div>
 
   <!-- 4. 802.1X EAP flow -->
   <div class="d42-infographic">
-    <div class="d42-infographic-title">802.1X â€” EAP Authentication Flow</div>
+    <div class="d42-infographic-title">802.1X — EAP Authentication Flow</div>
     <svg viewBox="0 0 720 300" style="width:100%;height:auto;display:block;font-family:'Sora',sans-serif;">
       <defs><marker id="eA" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker></defs>
       <g text-anchor="middle">
         <rect x="60" y="20" width="160" height="40" rx="6" fill="#1c1c1c" stroke="#7a7a7a"/><text x="140" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Supplicant</text><text x="140" y="53" fill="#9aa3c7" font-size="8">device / laptop</text>
-        <rect x="280" y="20" width="160" height="40" rx="6" fill="#2a0d10" stroke="#d31324"/><text x="360" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Authenticator</text><text x="360" y="53" fill="#9aa3c7" font-size="8">switch / WAP Â· port blocked</text>
+        <rect x="280" y="20" width="160" height="40" rx="6" fill="#2a0d10" stroke="#d31324"/><text x="360" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Authenticator</text><text x="360" y="53" fill="#9aa3c7" font-size="8">switch / WAP · port blocked</text>
         <rect x="500" y="20" width="160" height="40" rx="6" fill="#1c1c1c" stroke="#7a7a7a"/><text x="580" y="40" fill="#f5f5f5" font-size="10" font-weight="700">Auth Server</text><text x="580" y="53" fill="#9aa3c7" font-size="8">RADIUS / TACACS+</text>
       </g>
       <g stroke="#3a3a3a" stroke-width="1" stroke-dasharray="3 3"><line x1="140" y1="60" x2="140" y2="252"/><line x1="360" y1="60" x2="360" y2="252"/><line x1="580" y1="60" x2="580" y2="252"/></g>
       <g font-size="9" fill="#e6e6e6">
-        <text x="250" y="80" text-anchor="middle">â‘  EAP-Start / Identity Request</text>
+        <text x="250" y="80" text-anchor="middle">① EAP-Start / Identity Request</text>
         <line x1="140" y1="86" x2="358" y2="86" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
-        <text x="470" y="108" text-anchor="middle">â‘¡ RADIUS Access-Request</text>
+        <text x="470" y="108" text-anchor="middle">② RADIUS Access-Request</text>
         <line x1="360" y1="114" x2="578" y2="114" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
-        <text x="470" y="136" text-anchor="middle">â‘¢ EAP Challenge</text>
+        <text x="470" y="136" text-anchor="middle">③ EAP Challenge</text>
         <line x1="580" y1="142" x2="362" y2="142" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
-        <text x="250" y="164" text-anchor="middle">â‘£ Challenge forwarded</text>
+        <text x="250" y="164" text-anchor="middle">④ Challenge forwarded</text>
         <line x1="360" y1="170" x2="142" y2="170" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
-        <text x="250" y="192" text-anchor="middle">â‘¤ EAP Response (credentials / cert)</text>
+        <text x="250" y="192" text-anchor="middle">⑤ EAP Response (credentials / cert)</text>
         <line x1="140" y1="198" x2="358" y2="198" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
         <line x1="360" y1="216" x2="578" y2="216" stroke="#d31324" stroke-width="1.5" marker-end="url(#eA)"/>
         <text x="470" y="212" text-anchor="middle" font-size="8" fill="#9aa3c7">forwarded to server</text>
-        <text x="470" y="238" text-anchor="middle">â‘¥ RADIUS Access-Accept</text>
+        <text x="470" y="238" text-anchor="middle">⑥ RADIUS Access-Accept</text>
         <line x1="580" y1="244" x2="362" y2="244" stroke="#3fb950" stroke-width="1.5" marker-end="url(#eA)"/>
       </g>
-      <rect x="240" y="262" width="240" height="26" rx="6" fill="rgba(63,185,80,0.14)" stroke="#3fb950"/><text x="360" y="279" fill="#9fe6ab" font-size="9.5" text-anchor="middle">Port OPENED â€” network access granted âœ“</text>
+      <rect x="240" y="262" width="240" height="26" rx="6" fill="rgba(63,185,80,0.14)" stroke="#3fb950"/><text x="360" y="279" fill="#9fe6ab" font-size="9.5" text-anchor="middle">Port OPENED — network access granted ✓</text>
     </svg>
   </div>
         </div>
@@ -1265,7 +1265,7 @@
 
       </section>
 
-      <!-- 4.3 â€” Implement Secure Communication Channels -->
+      <!-- 4.3 — Implement Secure Communication Channels -->
       <section class="section cissp-notes" data-reveal>
         <div class="section-head">
           <p class="section-label">4.3 &mdash; Implement Secure Communication Channels</p>

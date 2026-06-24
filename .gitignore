@@ -1,0 +1,14 @@
+# Large / non-source binaries
+assets/Antigravity.exe
+
+# Local backups & archives
+_removed_redundancies_*.zip
+*.bak
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Tooling
+.agents/
