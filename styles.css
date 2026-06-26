@@ -5196,6 +5196,33 @@ select {
   line-height: 1.65;
 }
 
+/* ── Key-Fact Grid (fact-card / fc-label / fc-val variant — used by D2 & D6) ── */
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-strong);
+  border: 1px solid var(--line-strong);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+.fc-label {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+.fc-val {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted-strong);
+  line-height: 1.65;
+}
+
 /* ── D4 Body + Sub-heading (kept from previous pass) ─────────────────── */
 .d4-body { color: var(--muted-strong); line-height: 1.9; font-size: 0.93rem; margin: 0 0 1rem; }
 .d4-body strong { color: var(--text); }

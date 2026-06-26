@@ -3,18 +3,1290 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CISSP Domain 2 notes: Asset Security." />
+    <meta name="description" content="CISSP Domain 2 notes: Asset Security — classification, ownership, data lifecycle, retention, remanence, and data protection controls." />
     <title>CISSP Domain 2 | Sudarson Prabhu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <script src="config.js" defer></script><script src="cissp-data.js" defer></script><script src="cissp.js" defer></script><script src="script.js" defer></script>
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-2-data.js" defer></script>
+    <script src="cissp-domain-2.js" defer></script>
   </head>
   <body data-page="work" data-domain-id="2">
-    <canvas id="particle-canvas" class="particle-canvas"></canvas><a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header"><a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary"><a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a></nav></header>
-    <main id="main-content" class="page-shell"><section class="hero single-hero" data-reveal><div class="panel hero-main full-span interactive-panel hero-content" data-spotlight><p id="cissp-domain-badge" class="eyebrow">CISSP Domain</p><h1 id="cissp-domain-title" class="hero-title">CISSP Domain Notes</h1><p id="cissp-domain-summary" class="hero-summary"></p><div class="hero-actions"><a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a></div></div></section><section class="section" data-reveal><div id="cissp-domain-page"></div></section></main>
-    <footer class="site-footer"><span>Sudarson Prabhu R.E</span><span>Information Security Consultant</span><span data-year></span></footer>
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 2 &middot; 10% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Asset Security</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            Protecting information and assets across their entire lifecycle &mdash; knowing what you have,
+            classifying it by value, assigning ownership, handling and protecting it according to its
+            classification, and finally retaining, sanitising, and destroying it defensibly.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 2 follows the life of data &mdash; from identifying and classifying it, through
+            establishing handling rules, provisioning it securely and managing its lifecycle, to ensuring
+            appropriate retention and selecting the right data-security controls.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">2.1 &mdash; Identify &amp; classify information and assets</h3>
+            <p class="card-copy">
+              Determining <strong>what</strong> you have and how sensitive it is &mdash;
+              <strong>data classification</strong> and <strong>asset classification</strong> based on the
+              value of the asset to the organisation.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">2.2 &mdash; Establish handling requirements</h3>
+            <p class="card-copy">
+              Defining the rules for how information and assets are <strong>marked, stored, transmitted,
+              and destroyed</strong> at each classification level &mdash; the handling standards that flow
+              from the label.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">2.3 &mdash; Provision information &amp; assets securely</h3>
+            <p class="card-copy">
+              Establishing <strong>ownership</strong>, maintaining an accurate <strong>asset inventory</strong>,
+              and practising disciplined <strong>asset management</strong> so nothing is unaccounted for.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">2.4 &mdash; Manage data lifecycle</h3>
+            <p class="card-copy">
+              The full lifecycle &mdash; <strong>data roles</strong> (owner, controller, custodian, processor,
+              user, subject), collection, location, maintenance, <strong>retention</strong>,
+              <strong>remanence</strong>, and <strong>destruction</strong>.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">2.5 &mdash; Ensure appropriate asset retention</h3>
+            <p class="card-copy">
+              Keeping assets only as long as needed and planning for <strong>End of Life (EOL)</strong> and
+              <strong>End of Support (EOS)</strong> &mdash; unsupported assets become unpatched liabilities.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">2.6 &mdash; Determine data security controls &amp; compliance</h3>
+            <p class="card-copy">
+              Protecting the three <strong>data states</strong> (at rest, in transit, in use),
+              <strong>scoping &amp; tailoring</strong>, <strong>standards selection</strong>, and protection
+              methods including <strong>DRM, DLP, and CASB</strong>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Asset Classification map (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Asset classification at a glance.</h2>
+          <p class="section-copy">
+            One map of the whole Asset Security domain &mdash; inventory and ownership come first, then you
+            <strong>classify</strong> assets based on their <em>value</em>, <strong>protect</strong> them based
+            on their <em>classification</em> (roles, the three data states, archival and defensible
+            destruction, plus DRM and DLP), and finally <strong>assess &amp; review</strong>. Hover (or tap)
+            any box for its concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Asset classification hierarchy: asset inventory and assign ownership; classify based on value (data classification policy, classification with security labels and markings, categorization); protect based on classification (data roles; protecting data at rest, in motion, in use; archive and retention; defensible destruction through clearing, purging and destruction; DRM and DLP); and assess and review.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Asset Classification</div>
+
+              <div class="ac-row">
+                <!-- ===== Asset Inventory / Assign Ownership ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Asset Inventory</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Assign Ownership</span></div></div>
+
+                <!-- ===== Classify ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="classify">Classify &mdash; based on Value</div>
+                  <div class="ac-row">
+                    <!-- Data classification policy -->
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="data-classification-policy">Data classification policy</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Standards</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Procedures</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Baselines</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Guidelines</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Classification -->
+                    <div class="ac-node">
+                      <div class="ac-box">Classification</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box ac-v"><span>Security Label</span></div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>System Readable</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node">
+                          <div class="ac-box ac-v"><span>Security Marking</span></div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Human Readable</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Categorization -->
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Categorization</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Protect ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="protect">Protect &mdash; based on Classification</div>
+                  <div class="ac-row">
+                    <!-- Roles -->
+                    <div class="ac-node">
+                      <div class="ac-box">Roles</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Owner / Controller</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Processor</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Custodian</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Steward</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Subject</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Rest -->
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="rest">Rest</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Encryption</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Access Control</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Backups</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Motion -->
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="motion">Motion</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>End-to-End</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Link</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Onion</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Use -->
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="use"><span>Use</span></div></div>
+
+                    <!-- Archive -->
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="archive">Archive</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Retention Period</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Defensible Destruction -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Defensible Destruction</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box">Destruction</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Media Destruction</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Shred / Disintegrate / Incinerate / Drill</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Degauss</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Crypto shredding</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Overwrite / Wipe / Erasure</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Format</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Purging</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Clearing</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- DRM / DLP -->
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>DRM</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>DLP</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Assess & Review ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Assess &amp; Review</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 1 mirrors the Asset Classification concept map for Domain 2 &mdash; inventory and ownership,
+            classification of assets by value (policy, classification labels/markings, categorization),
+            protection by classification (data roles; the at-rest / in-motion / in-use data states; archival
+            and retention; defensible destruction via clearing, purging and physical destruction; plus DRM and
+            DLP), and the final assess-and-review loop.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           DOMAIN 2 — EXPERT INSTRUCTOR GUIDE (TLDR)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Expert Instructor Guide</p>
+          <h2 class="section-title">Domain 2 &mdash; the complete walkthrough, sub-domain by sub-domain.</h2>
+          <p class="section-copy">
+            This is your full Domain 2 lecture in the style of an expert CISSP tutor. We march through the
+            official exam outline &mdash; <strong>2.1 to 2.6</strong> &mdash; and unpack every topic the way
+            the exam tests it: the precise definitions, the distinctions ISC&sup2; loves to trap you on, and a
+            concrete example for each. Nothing here repeats the map above &mdash; this is the deep dive. Read it
+            top to bottom and you will not need another source for Domain 2.
+          </p>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════
+             SUB-DOMAIN 2.1
+             ════════════════════════════════════════════════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 2.1</p>
+          <h2 class="section-title">Identify &amp; classify information and assets.</h2>
+          <p class="section-copy">
+            The starting point of the whole domain: knowing what you hold and grading it. The exam expects you
+            to separate <em>classification</em> (by sensitivity/value) from <em>categorization</em> (by impact),
+            to know both the government and commercial schemes, and to recite the classification process in order.
+          </p>
+        </div>
+
+        <!-- 2.1 - A -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.1</span>
+            <h3>Information &amp; Asset Classification &mdash; the Value Principle</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Driver</span><span class="fc-val">Value / sensitivity of the asset</span></div>
+            <div class="fact-card"><span class="fc-label">Goal</span><span class="fc-val">Proportional, cost-effective protection</span></div>
+            <div class="fact-card"><span class="fc-label">Who assigns</span><span class="fc-val">The data / asset owner (business role)</span></div>
+            <div class="fact-card"><span class="fc-label">Two failures</span><span class="fc-val">Over-classify = waste; under-classify = risk</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Classification</strong> is the process of grouping information and assets into tiers based
+              on the harm that would result if their confidentiality, integrity or availability were lost, and
+              then attaching a label to each tier. The entire reason it exists is <em>economics of security</em>:
+              you have a finite budget, so you spend the most protecting what matters most. You cannot defend
+              everything equally, and you shouldn't try.
+            </p>
+            <p>
+              <strong>Asset classification</strong> extends the same idea beyond data to the things that hold
+              and process it &mdash; servers, laptops, mobile devices, network gear, applications, and even
+              facilities. Assets are <em>tangible</em> (hardware, media, paper) or <em>intangible</em>
+              (data, intellectual property, software, reputation, goodwill). An asset typically inherits the
+              classification of the most sensitive data it stores or handles: a laptop that holds 'Confidential'
+              data is itself treated as a 'Confidential' asset.
+            </p>
+            <p>
+              Benefits the exam wants you to recognise: classification demonstrates due care, supports
+              regulatory compliance, focuses budget, and tells everyone &mdash; from the help desk to the
+              CISO &mdash; exactly how each piece of data must be handled, stored, transmitted and destroyed.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> Classification is always based on <strong>value/sensitivity</strong>, and
+            it is assigned by the <strong>owner</strong>, never by IT or the custodian. If an answer choice has
+            IT picking the classification, it's wrong.
+          </div>
+        </div>
+
+        <!-- 2.1 - B classification schemes -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.1</span>
+            <h3>Classification Schemes &mdash; Government vs. Commercial</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Gov / Military</span><span class="fc-val">Top Secret &middot; Secret &middot; Confidential &middot; (Unclassified)</span></div>
+            <div class="fact-card"><span class="fc-label">Harm test</span><span class="fc-val">Grave / Serious / Damage to national security</span></div>
+            <div class="fact-card"><span class="fc-label">Commercial</span><span class="fc-val">Confidential &middot; Private &middot; Sensitive &middot; Public</span></div>
+            <div class="fact-card"><span class="fc-label">Rule</span><span class="fc-val">Number of levels is a business decision</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The <strong>government/military scheme</strong> is defined by the harm to <em>national security</em>
+              if disclosed: <strong>Top Secret</strong> = exceptionally grave damage; <strong>Secret</strong> =
+              serious damage; <strong>Confidential</strong> = damage. Below those sit <strong>Sensitive but
+              Unclassified (SBU / Controlled Unclassified Information, CUI)</strong> and
+              <strong>Unclassified</strong>. Memorise the order and the harm words &mdash; the exam pairs them.
+            </p>
+            <p>
+              The <strong>commercial/private-sector scheme</strong> has no legal mandate, so labels vary, but a
+              common four-tier model is <strong>Confidential</strong> (highest &mdash; trade secrets, would
+              cause serious harm), <strong>Private</strong> (personal/PII &mdash; internal-only personal data),
+              <strong>Sensitive</strong> (needs more protection than public, e.g. internal financials), and
+              <strong>Public</strong> (no harm if disclosed). Some books swap 'Private' and 'Sensitive' order;
+              the exam tests the <em>concept</em> (relative harm), not a single canonical word list.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> Pair the harm word to the level &mdash; Top Secret &harr; <em>grave</em>,
+            Secret &harr; <em>serious</em>, Confidential &harr; <em>damage</em>. And remember: the
+            <em>number</em> of classification levels is chosen by the organisation; too many becomes unusable.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Government versus commercial classification ladders">
+              <text x="135" y="18" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="700">Government / Military</text>
+              <rect x="35" y="28" width="200" height="30" rx="5" fill="#3a0a0e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="135" y="48" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">TOP SECRET &mdash; grave damage</text>
+              <rect x="35" y="62" width="200" height="30" rx="5" fill="#2a0a12" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="135" y="82" text-anchor="middle" font-size="11" fill="#f0f0f0">SECRET &mdash; serious damage</text>
+              <rect x="35" y="96" width="200" height="30" rx="5" fill="#1d0a16" stroke="#a0303f" stroke-width="1.2"/>
+              <text x="135" y="116" text-anchor="middle" font-size="11" fill="#d8d8d8">CONFIDENTIAL &mdash; damage</text>
+              <rect x="35" y="130" width="200" height="28" rx="5" fill="#14141e" stroke="#555" stroke-width="1.2"/>
+              <text x="135" y="149" text-anchor="middle" font-size="10" fill="#bbb">SBU / CUI</text>
+              <rect x="35" y="162" width="200" height="26" rx="5" fill="#101018" stroke="#444" stroke-width="1.2"/>
+              <text x="135" y="180" text-anchor="middle" font-size="10" fill="#999">UNCLASSIFIED</text>
+
+              <text x="405" y="18" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="700">Commercial</text>
+              <rect x="305" y="28" width="200" height="34" rx="5" fill="#3a0a0e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="405" y="50" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">CONFIDENTIAL</text>
+              <rect x="305" y="66" width="200" height="34" rx="5" fill="#2a0a12" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="405" y="88" text-anchor="middle" font-size="11" fill="#f0f0f0">PRIVATE (PII)</text>
+              <rect x="305" y="104" width="200" height="34" rx="5" fill="#1d0a16" stroke="#a0303f" stroke-width="1.2"/>
+              <text x="405" y="126" text-anchor="middle" font-size="11" fill="#d8d8d8">SENSITIVE</text>
+              <rect x="305" y="142" width="200" height="34" rx="5" fill="#101018" stroke="#555" stroke-width="1.2"/>
+              <text x="405" y="164" text-anchor="middle" font-size="11" fill="#999">PUBLIC</text>
+              <text x="270" y="110" text-anchor="middle" font-size="20" fill="#666">&#8597;</text>
+            </svg>
+            <figcaption>Both schemes rank by harm-on-disclosure, high to low. Government labels are legally defined by national-security impact; commercial labels are chosen by the business.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 2.1 - C classification vs categorization -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.1</span>
+            <h3>Classification vs. Categorization &mdash; the Trap Question</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Classification</span><span class="fc-val">By sensitivity / value of the data</span></div>
+            <div class="fact-card"><span class="fc-label">Categorization</span><span class="fc-val">By impact to CIA (FIPS 199)</span></div>
+            <div class="fact-card"><span class="fc-label">FIPS 199 levels</span><span class="fc-val">Low &middot; Moderate &middot; High</span></div>
+            <div class="fact-card"><span class="fc-label">Guidance</span><span class="fc-val">FIPS 199 + NIST SP 800-60</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              ISC&sup2; deliberately blurs these two words, so lock down the difference now.
+              <strong>Classification</strong> looks at the data itself and asks &ldquo;how sensitive / valuable
+              is this?&rdquo; <strong>Categorization</strong> looks at an information <em>system</em> and asks
+              &ldquo;what would be the <em>impact</em> on confidentiality, integrity and availability if this
+              system were compromised?&rdquo;
+            </p>
+            <p>
+              Categorization is a U.S. federal (RMF) concept from <strong>FIPS 199</strong>, which defines three
+              impact levels &mdash; <strong>Low, Moderate, High</strong> &mdash; applied separately to each leg
+              of the CIA triad. <strong>NIST SP 800-60</strong> helps map information types to those impact
+              levels. The system's overall category uses the <em>high-water mark</em> &mdash; the highest impact
+              rating across C, I and A.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> See the words <em>impact</em>, <em>FIPS 199</em>, <em>Low/Moderate/High</em>,
+            or <em>high-water mark</em> &rarr; categorization. See <em>sensitivity</em>, <em>Top Secret</em>,
+            <em>labels</em> &rarr; classification.
+          </div>
+        </div>
+
+        <!-- 2.1 - D the classification process -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.1</span>
+            <h3>The Classification Process &mdash; in Order</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              The exam likes &ldquo;what comes first / next&rdquo; questions. The defensible order is:
+              <strong>(1)</strong> identify and inventory the assets; <strong>(2)</strong> define the
+              classification levels and the criteria for each (in policy); <strong>(3)</strong> the <em>owner</em>
+              determines and assigns each asset's classification; <strong>(4)</strong> apply the required
+              labels/markings and select controls for that level; <strong>(5)</strong> document handling,
+              storage, transmission and destruction requirements; and <strong>(6)</strong> periodically review
+              and re-classify (or declassify) as value changes.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Classification process six steps">
+              <defs><marker id="a2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#e53e3e"/></marker></defs>
+              <g font-size="8" fill="#c0c0c0" font-weight="600" text-anchor="middle">
+                <rect x="4" y="28" width="84" height="40" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="46" y="45" fill="#e53e3e" font-size="9">1 Inventory</text><text x="46" y="58">assets</text>
+                <rect x="98" y="28" width="84" height="40" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="140" y="45" fill="#e53e3e" font-size="9">2 Define</text><text x="140" y="58">levels</text>
+                <rect x="192" y="28" width="84" height="40" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="234" y="45" fill="#e53e3e" font-size="9">3 Owner</text><text x="234" y="58">assigns</text>
+                <rect x="286" y="28" width="84" height="40" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="328" y="45" fill="#e53e3e" font-size="9">4 Label +</text><text x="328" y="58">controls</text>
+                <rect x="380" y="28" width="98" height="40" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="429" y="45" fill="#e53e3e" font-size="9">5 Handling</text><text x="429" y="58">rules</text>
+                <rect x="488" y="28" width="88" height="40" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="532" y="45" fill="#e53e3e" font-size="9">6 Review /</text><text x="532" y="58">reclassify</text>
+              </g>
+              <line x1="88" y1="48" x2="97" y2="48" stroke="#e53e3e" marker-end="url(#a2)"/>
+              <line x1="182" y1="48" x2="191" y2="48" stroke="#e53e3e" marker-end="url(#a2)"/>
+              <line x1="276" y1="48" x2="285" y2="48" stroke="#e53e3e" marker-end="url(#a2)"/>
+              <line x1="370" y1="48" x2="379" y2="48" stroke="#e53e3e" marker-end="url(#a2)"/>
+              <line x1="478" y1="48" x2="487" y2="48" stroke="#e53e3e" marker-end="url(#a2)"/>
+            </svg>
+            <figcaption>The classification lifecycle. Step 6 loops back &mdash; classification is reviewed as an asset's value rises or falls (declassification).</figcaption>
+          </figure>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════
+             SUB-DOMAIN 2.2
+             ════════════════════════════════════════════════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 2.2</p>
+          <h2 class="section-title">Establish information &amp; asset handling requirements.</h2>
+          <p class="section-copy">
+            Once a label exists, it must translate into concrete rules for how the asset is marked, handled,
+            stored, moved and destroyed at every point in its life. This is where classification earns its keep.
+          </p>
+        </div>
+
+        <!-- 2.2 - A handling -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.2</span>
+            <h3>Marking, Handling, Storage &amp; Transmission Requirements</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Marking</span><span class="fc-val">Apply the classification to the asset</span></div>
+            <div class="fact-card"><span class="fc-label">Handling</span><span class="fc-val">Who can access &amp; how it's used</span></div>
+            <div class="fact-card"><span class="fc-label">Storage</span><span class="fc-val">Encryption + physical/logical protection</span></div>
+            <div class="fact-card"><span class="fc-label">Transmission</span><span class="fc-val">Encrypt in transit; controlled channels</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Marking &amp; labeling</strong> physically or logically tag the asset with its
+              classification so both humans (markings) and systems (labels) know how to treat it. Every copy,
+              backup and derivative inherits the marking.
+            </p>
+            <p>
+              <strong>Handling</strong> covers the rules of use &mdash; need-to-know access, whether the data
+              may be printed, copied, emailed externally, or taken off-site. <strong>Storage</strong> dictates
+              protection at rest: encryption strength, locked rooms or safes for physical media, and access
+              control. <strong>Transmission</strong> dictates protection in transit: approved encrypted
+              channels (TLS, VPN, SFTP) and approved couriers for physical media. Higher classification
+              tightens every one of these.
+            </p>
+            <p>
+              Two special handling concepts: <strong>collection limitation</strong> (only gather what you need)
+              and <strong>declassification</strong> (formally lowering a classification when the data's
+              sensitivity has genuinely decreased &mdash; it must be a deliberate, documented act, never an
+              accident).
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> The weakest link in handling is usually <em>people and process</em>, not
+            technology &mdash; e.g. an employee emailing a 'Confidential' file to a personal account. Handling
+            rules + DLP + training address this.
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════
+             SUB-DOMAIN 2.3
+             ════════════════════════════════════════════════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 2.3</p>
+          <h2 class="section-title">Provision information &amp; assets securely.</h2>
+          <p class="section-copy">
+            You can only protect what you have inventoried and assigned to an owner. This sub-domain is about
+            ownership, the asset inventory, and disciplined asset management.
+          </p>
+        </div>
+
+        <!-- 2.3 - A ownership -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.3</span>
+            <h3>Ownership &mdash; the Accountable Roles</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Data / Asset Owner</span><span class="fc-val">Accountable; sets classification</span></div>
+            <div class="fact-card"><span class="fc-label">System Owner</span><span class="fc-val">Owns the system that processes the data</span></div>
+            <div class="fact-card"><span class="fc-label">Business / Mission Owner</span><span class="fc-val">Owns the process the system supports</span></div>
+            <div class="fact-card"><span class="fc-label">Senior Management</span><span class="fc-val">Ultimately accountable for all of it</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Ownership</strong> establishes accountability, and accountability is what makes every other
+              control meaningful. The <strong>data owner</strong> (a.k.a. information owner) is a senior business
+              person accountable for a data set &mdash; they classify it, define who may access it, and approve
+              its protection requirements. The <strong>system owner</strong> is accountable for the security of
+              the information system that stores or processes that data (patching, configuration, the system
+              security plan). The <strong>business/mission owner</strong> owns the business process the system
+              enables and ensures it delivers value within acceptable risk.
+            </p>
+            <p>
+              Above all of them, <strong>senior management</strong> holds ultimate accountability for the
+              organisation's security &mdash; a recurring CISSP theme. Owners <em>set direction and accept
+              risk</em>; custodians <em>implement</em>; users <em>follow the rules</em>.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> &ldquo;Accountable&rdquo; almost always points to the <strong>owner</strong>
+            (or senior management); &ldquo;responsible for day-to-day protection&rdquo; points to the
+            <strong>custodian</strong>. Accountability cannot be delegated &mdash; responsibility can.
+          </div>
+        </div>
+
+        <!-- 2.3 - B inventory & management -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.3</span>
+            <h3>Asset Inventory &amp; Asset Management</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Inventory</span><span class="fc-val">Complete register of all assets (CMDB)</span></div>
+            <div class="fact-card"><span class="fc-label">Tangible</span><span class="fc-val">Hardware, media, facilities</span></div>
+            <div class="fact-card"><span class="fc-label">Intangible</span><span class="fc-val">Data, software, IP, licences, goodwill</span></div>
+            <div class="fact-card"><span class="fc-label">Watch for</span><span class="fc-val">Shadow IT &amp; unmanaged assets</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              An accurate <strong>asset inventory</strong> is the bedrock control of Domain 2 &mdash; it is
+              literally the first two controls in the CIS Controls list (inventory of hardware, then software).
+              Unknown assets cannot be patched, classified, or defended, and they are where breaches hide
+              (<strong>shadow IT</strong>). The inventory is often maintained in a <strong>Configuration
+              Management Database (CMDB)</strong> that records each asset, its owner, location, classification,
+              and configuration baseline.
+            </p>
+            <p>
+              <strong>Asset management</strong> is the disciplined lifecycle around that inventory:
+              <em>hardware asset management</em> (procurement &rarr; deployment &rarr; maintenance &rarr; secure
+              disposal), <em>software asset management</em> (tracking installations and licences to avoid both
+              legal exposure from over-deployment and waste from over-buying), and <em>configuration
+              management</em> (keeping assets in a known, hardened, documented state). Each asset is tracked from
+              cradle to grave so that nothing is lost, unpatched, or improperly disposed of.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> If a question describes a breach that happened on a server &ldquo;no one
+            knew was still running,&rdquo; the root-cause control gap is an incomplete <strong>asset
+            inventory</strong>. Inventory + ownership is always step one.
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════
+             SUB-DOMAIN 2.4
+             ════════════════════════════════════════════════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 2.4</p>
+          <h2 class="section-title">Manage the data lifecycle.</h2>
+          <p class="section-copy">
+            The heart of Domain 2. Data is born, lives, and must die securely. Here we cover the lifecycle
+            stages, the full set of data roles, and every topic ISC&sup2; lists: collection, location,
+            maintenance, retention, remanence and destruction.
+          </p>
+        </div>
+
+        <!-- 2.4 - A lifecycle -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>The Data Lifecycle &mdash; Create to Destroy</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              Think of data moving through stages, each needing its own controls:
+              <strong>Create / Collect</strong> (classify it the moment it is born; collect only what you need)
+              &rarr; <strong>Store</strong> (encrypt at rest, back up, control access) &rarr;
+              <strong>Use</strong> (protect it in memory; enforce least privilege) &rarr;
+              <strong>Share</strong> (encrypt in transit; control who it goes to) &rarr;
+              <strong>Archive</strong> (retain per policy in protected long-term storage) &rarr;
+              <strong>Destroy</strong> (sanitise defensibly at end of retention). The classification assigned at
+              the very first stage governs the controls applied at every later stage.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data lifecycle six stages">
+              <defs><marker id="a3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#e53e3e"/></marker></defs>
+              <g font-size="9" fill="#c0c0c0" font-weight="600" text-anchor="middle">
+                <rect x="4" y="30" width="84" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="46" y="52" fill="#e53e3e">Create</text>
+                <rect x="98" y="30" width="84" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="140" y="52" fill="#e53e3e">Store</text>
+                <rect x="192" y="30" width="84" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="234" y="52" fill="#e53e3e">Use</text>
+                <rect x="286" y="30" width="84" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="328" y="52" fill="#e53e3e">Share</text>
+                <rect x="380" y="30" width="84" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="422" y="52" fill="#e53e3e">Archive</text>
+                <rect x="474" y="30" width="100" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="524" y="52" fill="#e53e3e">Destroy</text>
+              </g>
+              <line x1="88" y1="47" x2="97" y2="47" stroke="#e53e3e" marker-end="url(#a3)"/>
+              <line x1="182" y1="47" x2="191" y2="47" stroke="#e53e3e" marker-end="url(#a3)"/>
+              <line x1="276" y1="47" x2="285" y2="47" stroke="#e53e3e" marker-end="url(#a3)"/>
+              <line x1="370" y1="47" x2="379" y2="47" stroke="#e53e3e" marker-end="url(#a3)"/>
+              <line x1="464" y1="47" x2="473" y2="47" stroke="#e53e3e" marker-end="url(#a3)"/>
+            </svg>
+            <figcaption>The data lifecycle. The classification set at Create flows through every stage and finally dictates the destruction method.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 2.4 - B data roles full -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Roles in Full &mdash; Owner, Controller, Custodian, Processor, Steward, User, Subject</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              This is the single most tested topic in Domain 2. Learn each role's one-line essence and the
+              exam's favourite contrasts.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 580 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data roles responsibility table">
+              <g font-size="10">
+                <rect x="4" y="6" width="572" height="26" fill="#3a0a0e" stroke="#e53e3e"/>
+                <text x="14" y="23" fill="#fff" font-weight="700" font-size="10">ROLE</text>
+                <text x="170" y="23" fill="#fff" font-weight="700" font-size="10">ESSENCE (what the exam wants)</text>
+                <g fill="#e0e0e0">
+                  <rect x="4" y="32" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="32" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="51" fill="#ff9ab0" font-weight="700">Owner / Controller</text><text x="172" y="51">ACCOUNTABLE &mdash; sets classification, purpose &amp; access (GDPR: controller)</text>
+                  <rect x="4" y="62" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="62" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="81" fill="#ff9ab0" font-weight="700">Custodian</text><text x="172" y="81">RESPONSIBLE for day-to-day protection &mdash; backups, encryption, patching (IT)</text>
+                  <rect x="4" y="92" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="92" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="111" fill="#ff9ab0" font-weight="700">Processor</text><text x="172" y="111">Processes personal data ON BEHALF OF the controller, under instruction (GDPR)</text>
+                  <rect x="4" y="122" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="122" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="141" fill="#ff9ab0" font-weight="700">Steward</text><text x="172" y="141">Ensures data QUALITY, meaning &amp; metadata &mdash; business context</text>
+                  <rect x="4" y="152" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="152" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="171" fill="#ff9ab0" font-weight="700">Custodian vs Steward</text><text x="172" y="171">Custodian = technical protection; Steward = data quality/governance</text>
+                  <rect x="4" y="182" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="182" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="201" fill="#ff9ab0" font-weight="700">User</text><text x="172" y="201">Accesses data to do their job; must follow handling rules / AUP</text>
+                  <rect x="4" y="212" width="160" height="30" fill="#160a10" stroke="#3a2030"/><rect x="164" y="212" width="412" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="231" fill="#ff9ab0" font-weight="700">Subject</text><text x="172" y="231">The individual the personal data is ABOUT (has privacy rights)</text>
+                </g>
+              </g>
+            </svg>
+            <figcaption>Owner = accountable (decides). Custodian = responsible (protects). Processor = acts under the controller's instruction. Steward = data quality. User = follows rules. Subject = the person the data describes.</figcaption>
+          </figure>
+          <div class="callout">
+            <strong>Exam traps:</strong> (1) Owner vs Custodian &mdash; <em>decides</em> vs <em>implements</em>.
+            (2) Controller vs Processor &mdash; the processor never decides purpose; it only follows
+            instructions. (3) Custodian vs Steward &mdash; custodian protects the bits, steward curates the
+            meaning.
+          </div>
+        </div>
+
+        <!-- 2.4 - C collection -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Collection &amp; Minimization</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Principle</span><span class="fc-val">Collect only what you need (minimization)</span></div>
+            <div class="fact-card"><span class="fc-label">Why</span><span class="fc-val">Data you don't hold can't be breached</span></div>
+            <div class="fact-card"><span class="fc-label">Purpose limitation</span><span class="fc-val">Use only for the stated purpose</span></div>
+            <div class="fact-card"><span class="fc-label">Driver</span><span class="fc-val">GDPR, privacy-by-design</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The lifecycle begins at <strong>collection</strong>, and the golden rule is <strong>data
+              minimization</strong>: gather only the data genuinely required for the defined purpose, and no
+              more. Every extra field you collect is extra liability &mdash; more to secure, more to expose in a
+              breach, more to disclose in litigation, and more regulatory obligation. Closely tied is
+              <strong>purpose limitation</strong> (use data only for the purpose it was collected for) and
+              <strong>consent</strong> where personal data is involved. These are core privacy-by-design and
+              GDPR principles the exam now emphasises.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> The best way to reduce the impact of a future data breach is often to
+            <strong>not collect or to delete</strong> unnecessary data &mdash; minimization beats adding more
+            controls to data you didn't need in the first place.
+          </div>
+        </div>
+
+        <!-- 2.4 - D location -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Location, Residency &amp; Sovereignty</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Data residency</span><span class="fc-val">Where data is physically stored</span></div>
+            <div class="fact-card"><span class="fc-label">Data sovereignty</span><span class="fc-val">Data obeys the laws of where it sits</span></div>
+            <div class="fact-card"><span class="fc-label">Localization</span><span class="fc-val">Law requiring data stay in-country</span></div>
+            <div class="fact-card"><span class="fc-label">Risk</span><span class="fc-val">Cross-border transfer &amp; cloud regions</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              In a cloud world, <em>where</em> your data physically lives is a security and legal issue.
+              <strong>Data residency</strong> is the physical/geographic location of stored data.
+              <strong>Data sovereignty</strong> is the principle that data is subject to the laws of the country
+              in which it is located &mdash; so storing EU citizens' data on a server in another jurisdiction can
+              subject it to that jurisdiction's surveillance and disclosure laws. <strong>Data localization</strong>
+              laws go further and <em>require</em> certain data to remain within national borders.
+            </p>
+            <p>
+              The practical controls: keep at least one protected copy, know exactly which cloud
+              <em>region</em> holds each dataset, and govern <strong>cross-border transfers</strong> with the
+              right legal mechanisms (e.g. GDPR Standard Contractual Clauses). Maintaining multiple geographically
+              separate copies also supports availability and disaster recovery.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> <em>Residency</em> = where it sits; <em>sovereignty</em> = whose laws
+            apply to it. A cloud question about &ldquo;which country's laws govern our customer data&rdquo; is a
+            data-sovereignty question.
+          </div>
+        </div>
+
+        <!-- 2.4 - E maintenance -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Maintenance</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Data maintenance</strong> is keeping data accurate, consistent, available and protected
+              throughout its useful life &mdash; integrity controls, version control, deduplication, keeping
+              metadata and classifications current, and ensuring backups remain restorable. A practical exam
+              angle is the <strong>online vs offline</strong> distinction: frequently used data stays on fast
+              online storage with full protection; rarely used data can move to cheaper offline/near-line
+              storage, but it still carries its classification and must remain protected and retrievable.
+              Maintenance is also where you keep an asset's classification <em>label</em> in sync if its
+              sensitivity changes.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2.4 - F retention -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Retention &amp; Legal Hold</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Retention policy</span><span class="fc-val">How long each data type is kept</span></div>
+            <div class="fact-card"><span class="fc-label">Keep too long</span><span class="fc-val">Liability &amp; breach surface</span></div>
+            <div class="fact-card"><span class="fc-label">Delete too soon</span><span class="fc-val">Compliance / legal violation</span></div>
+            <div class="fact-card"><span class="fc-label">Legal hold</span><span class="fc-val">Overrides retention &mdash; do NOT delete</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>data retention policy</strong> defines, for each data type, how long it must be kept,
+              based on legal, regulatory, and business needs. It is a balancing act: keeping data <em>too
+              long</em> increases breach exposure and e-discovery cost, while deleting it <em>too soon</em> can
+              break compliance (e.g. tax records, healthcare records) or destroy evidence. Retention should be
+              <em>automated and consistent</em> &mdash; selective or ad-hoc deletion looks like spoliation.
+            </p>
+            <p>
+              A <strong>legal hold (litigation hold)</strong> is a critical exception: when litigation is
+              reasonably anticipated, the organisation must <em>suspend</em> normal destruction for the relevant
+              data. Destroying data under legal hold &mdash; even on schedule &mdash; is <strong>spoliation of
+              evidence</strong> and carries severe legal penalties. Legal hold always overrides the retention
+              schedule.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> If a question mentions pending or anticipated litigation, the right answer
+            is <strong>legal hold &mdash; stop all destruction</strong> of relevant data, regardless of the
+            retention policy.
+          </div>
+        </div>
+
+        <!-- 2.4 - G remanence -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Remanence &mdash; Why &ldquo;Delete&rdquo; Lies</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Remanence</span><span class="fc-val">Residual data left after &ldquo;deletion&rdquo;</span></div>
+            <div class="fact-card"><span class="fc-label">Delete / format</span><span class="fc-val">Removes pointers, not the data</span></div>
+            <div class="fact-card"><span class="fc-label">HDD risk</span><span class="fc-val">Magnetic remanence recoverable in lab</span></div>
+            <div class="fact-card"><span class="fc-label">SSD risk</span><span class="fc-val">Wear-leveling hides copies in spare cells</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Data remanence</strong> is the residual representation of data that persists after you
+              believe it has been erased. Deleting a file or doing a quick <strong>format</strong> only removes
+              the file-system <em>pointers</em> &mdash; the actual blocks remain on the platter and are trivially
+              recovered with free tools. This is the entire reason media sanitisation is a discipline.
+            </p>
+            <p>
+              The problem is worse on <strong>SSDs</strong>. Because of <strong>wear-leveling</strong>, the
+              controller spreads writes across physical cells and remaps logical addresses, so a single
+              logical overwrite may leave the original data sitting untouched in spare or over-provisioned cells
+              that software can't even address. This is why traditional multi-pass overwriting is unreliable on
+              SSDs and why the recommended methods are the drive's built-in <strong>ATA Secure Erase / NVMe
+              Sanitize</strong>, <strong>cryptographic erase</strong>, or physical destruction.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> Remanence is the <em>concept</em>; clearing/purging/destruction are the
+            <em>cures</em>. A &ldquo;format&rdquo; never solves remanence on its own.
+          </div>
+        </div>
+
+        <!-- 2.4 - H destruction -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.4</span>
+            <h3>Data Destruction &amp; Media Sanitization (NIST SP 800-88)</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Clear</span><span class="fc-val">Overwrite; resists software recovery; reuse OK</span></div>
+            <div class="fact-card"><span class="fc-label">Purge</span><span class="fc-val">Resists lab recovery (degauss / secure erase / crypto)</span></div>
+            <div class="fact-card"><span class="fc-label">Destroy</span><span class="fc-val">Physical; media unusable afterwards</span></div>
+            <div class="fact-card"><span class="fc-label">Decide by</span><span class="fc-val">Data sensitivity + will media be reused / leave?</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>NIST SP 800-88</strong> is the authoritative media-sanitization standard, and its three
+              levels &mdash; <strong>Clear, Purge, Destroy</strong> &mdash; are heavily tested.
+              <strong>Clear</strong> overwrites user-addressable space to stop software/keyboard recovery; the
+              media stays usable, fine for internal reuse. <strong>Purge</strong> applies stronger methods
+              (degaussing, ATA Secure Erase / NVMe Sanitize, or cryptographic erase) that defeat even laboratory
+              recovery; appropriate before media leaves your control. <strong>Destroy</strong> physically ruins
+              the media (shred, disintegrate, incinerate, pulverise, melt) so it can never be reused &mdash; the
+              only acceptable choice for the most sensitive data or unrepairable/non-rewritable media.
+            </p>
+            <p>
+              You pick the level from two questions: <em>how sensitive is the data</em>, and <em>will the media
+              be reused or leave the organisation?</em> And you must match the method to the
+              <strong>media type</strong> &mdash; the classic exam trap below.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 580 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sanitization method by media type">
+              <g font-size="10">
+                <rect x="4" y="6" width="572" height="26" fill="#3a0a0e" stroke="#e53e3e"/>
+                <text x="14" y="23" fill="#fff" font-weight="700">MEDIA TYPE</text>
+                <text x="200" y="23" fill="#fff" font-weight="700">BEST METHOD</text>
+                <text x="404" y="23" fill="#fff" font-weight="700">DEGAUSS?</text>
+                <g>
+                  <rect x="4" y="32" width="192" height="30" fill="#160a10" stroke="#3a2030"/><rect x="196" y="32" width="204" height="30" fill="#0e0e16" stroke="#3a2030"/><rect x="400" y="32" width="176" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="51" fill="#ff9ab0" font-weight="700">Magnetic HDD / tape</text><text x="206" y="51" fill="#e0e0e0">Overwrite, degauss, or shred</text><text x="414" y="51" fill="#7CFC9A">YES</text>
+                  <rect x="4" y="62" width="192" height="30" fill="#160a10" stroke="#3a2030"/><rect x="196" y="62" width="204" height="30" fill="#0e0e16" stroke="#3a2030"/><rect x="400" y="62" width="176" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="81" fill="#ff9ab0" font-weight="700">SSD / flash / NVMe</text><text x="206" y="81" fill="#e0e0e0">Secure Erase, crypto-erase, shred</text><text x="414" y="81" fill="#ff6b6b" font-weight="700">NO &mdash; useless</text>
+                  <rect x="4" y="92" width="192" height="30" fill="#160a10" stroke="#3a2030"/><rect x="196" y="92" width="204" height="30" fill="#0e0e16" stroke="#3a2030"/><rect x="400" y="92" width="176" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="111" fill="#ff9ab0" font-weight="700">Optical (CD/DVD)</text><text x="206" y="111" fill="#e0e0e0">Shred / incinerate (destroy)</text><text x="414" y="111" fill="#ff6b6b" font-weight="700">NO &mdash; useless</text>
+                  <rect x="4" y="122" width="192" height="30" fill="#160a10" stroke="#3a2030"/><rect x="196" y="122" width="204" height="30" fill="#0e0e16" stroke="#3a2030"/><rect x="400" y="122" width="176" height="30" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="141" fill="#ff9ab0" font-weight="700">Cloud (no hardware)</text><text x="206" y="141" fill="#e0e0e0">Cryptographic erase (crypto-shred)</text><text x="414" y="141" fill="#888">N/A</text>
+                </g>
+              </g>
+            </svg>
+            <figcaption>Match the method to the media. Degaussing is magnetic-only &mdash; it does nothing to SSDs, flash or optical discs. For cloud and SSDs, cryptographic erase is the go-to.</figcaption>
+          </figure>
+          <div class="callout">
+            <strong>Exam tips:</strong> (1) Order of assurance: Clear &lt; Purge &lt; Destroy. (2)
+            <strong>Degauss is magnetic-only</strong> and also destroys an HDD's servo tracks (no reuse). (3)
+            For SSD/cloud, use <strong>cryptographic erase</strong>. (4) Always obtain a <strong>certificate of
+            destruction</strong> when a third party disposes of media.
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════
+             SUB-DOMAIN 2.5
+             ════════════════════════════════════════════════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 2.5</p>
+          <h2 class="section-title">Ensure appropriate asset retention.</h2>
+          <p class="section-copy">
+            Beyond <em>data</em> retention lies <em>asset</em> retention &mdash; deciding how long to keep
+            hardware and software, and what to do when a vendor stops supporting them.
+          </p>
+        </div>
+
+        <!-- 2.5 -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.5</span>
+            <h3>EOL, EOS / EOSL &amp; Asset Retention</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">EOL</span><span class="fc-val">End of Life &mdash; vendor stops selling/producing</span></div>
+            <div class="fact-card"><span class="fc-label">EOS / EOSL</span><span class="fc-val">End of Support/Life &mdash; no more patches</span></div>
+            <div class="fact-card"><span class="fc-label">The danger</span><span class="fc-val">Unpatchable = permanent vulnerability</span></div>
+            <div class="fact-card"><span class="fc-label">Action</span><span class="fc-val">Replace, isolate, or formally accept risk</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>End of Life (EOL)</strong> is the point at which a vendor stops actively
+              selling/marketing a product, though support may continue for a while. <strong>End of Support /
+              End of Service Life (EOS / EOSL)</strong> is the critical security milestone: the vendor will no
+              longer issue patches or security updates. From that day forward, every newly discovered
+              vulnerability in the product is <em>permanent</em>.
+            </p>
+            <p>
+              An EOS asset is therefore a standing liability that must be <strong>retired and replaced</strong>,
+              or &mdash; if it absolutely must stay (legacy industrial systems, etc.) &mdash; tightly
+              <strong>isolated/segmented</strong> with compensating controls, and the residual risk formally
+              <strong>documented and accepted by management</strong>. Track EOL/EOS dates in the asset inventory
+              so renewals and replacements are planned, not surprises. The flip side is <em>asset retention</em>
+              proper: don't keep hardware longer than its secure, supportable life just because it still powers
+              on.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> Running <strong>End-of-Support</strong> software (e.g. an unsupported OS)
+            on a production network is a classic exam &ldquo;what's the biggest risk&rdquo; &mdash; the answer is
+            it can no longer be patched, so vulnerabilities are unfixable. Segment or replace.
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════
+             SUB-DOMAIN 2.6
+             ════════════════════════════════════════════════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 2.6</p>
+          <h2 class="section-title">Determine data security controls &amp; compliance requirements.</h2>
+          <p class="section-copy">
+            Finally, how you actually choose and apply controls: protect the three data states, scope and tailor
+            a baseline, select the right standards, and deploy the modern data-protection toolkit &mdash; DRM,
+            DLP, CASB and de-identification.
+          </p>
+        </div>
+
+        <!-- 2.6 - A data states -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>Protecting the Three Data States</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">At rest</span><span class="fc-val">AES-256, FDE, DB/file encryption</span></div>
+            <div class="fact-card"><span class="fc-label">In transit</span><span class="fc-val">TLS, VPN/IPSec, SSH/SFTP</span></div>
+            <div class="fact-card"><span class="fc-label">In use</span><span class="fc-val">Enclaves, TEE, homomorphic (emerging)</span></div>
+            <div class="fact-card"><span class="fc-label">Goal</span><span class="fc-val">Cover all three &mdash; gaps get exploited</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A control set is only complete if it protects data in all three states. <strong>At rest</strong>:
+              symmetric encryption (AES-256), full-disk encryption, database/column and file-level encryption,
+              backed by access control. <strong>In transit</strong>: encrypt the channel with TLS for web,
+              VPN/IPSec for site-to-site, and SSH/SFTP for administrative transfers. <strong>In use</strong> is
+              the hard one &mdash; data must be decrypted to be processed, so defences rely on hardware
+              <strong>secure enclaves / Trusted Execution Environments</strong>, strict memory protection, and
+              the still-maturing <strong>homomorphic encryption</strong> (compute on ciphertext without
+              decrypting). Underpinning all of this is sound <strong>key management</strong> &mdash; encryption
+              is only as strong as the protection of its keys.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> &ldquo;In use&rdquo; is consistently the answer to &ldquo;which state is
+            hardest to protect?&rdquo; because the data must be in cleartext in memory to be processed.
+          </div>
+        </div>
+
+        <!-- 2.6 - B scoping & tailoring -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>Baselines, Scoping &amp; Tailoring</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Baseline</span><span class="fc-val">Standard starting set of controls</span></div>
+            <div class="fact-card"><span class="fc-label">Scoping</span><span class="fc-val">REMOVE controls that don't apply</span></div>
+            <div class="fact-card"><span class="fc-label">Tailoring</span><span class="fc-val">ADJUST the remaining controls to fit</span></div>
+            <div class="fact-card"><span class="fc-label">Supplement</span><span class="fc-val">ADD controls for unique risks</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              You don't invent controls from a blank page; you start from a <strong>baseline</strong> &mdash; a
+              predefined minimum set (e.g. a NIST SP 800-53 control baseline for a given impact level, or a CIS
+              Benchmark). Then you make it fit your environment in two steps the exam tests precisely.
+              <strong>Scoping</strong> is <em>removing</em> baseline controls that simply don't apply (no
+              wireless? drop the wireless controls). <strong>Tailoring</strong> is <em>adjusting</em> the
+              remaining controls &mdash; refining parameters, applying compensating controls, and
+              <em>supplementing</em> with extra controls for risks unique to you &mdash; so the final set
+              matches your actual risk.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> Scoping = <strong>remove</strong> (decide which controls are in/out of
+            scope). Tailoring = <strong>modify/adjust</strong> (and supplement). They are <em>not</em> synonyms.
+          </div>
+        </div>
+
+        <!-- 2.6 - C standards selection -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>Standards Selection &amp; Compliance Frameworks</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">ISO 27001/27002</span><span class="fc-val">ISMS &amp; control catalogue (global)</span></div>
+            <div class="fact-card"><span class="fc-label">NIST SP 800-53</span><span class="fc-val">U.S. federal control catalogue (RMF)</span></div>
+            <div class="fact-card"><span class="fc-label">PCI-DSS</span><span class="fc-val">Cardholder data (contractual)</span></div>
+            <div class="fact-card"><span class="fc-label">Privacy</span><span class="fc-val">GDPR, HIPAA, ISO 27701, 27018</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Standards selection</strong> is choosing which frameworks and standards your controls must
+              satisfy, driven by your industry, geography and contracts. <strong>ISO/IEC 27001</strong> defines
+              an Information Security Management System and <strong>27002</strong> the control set;
+              <strong>NIST SP 800-53</strong> is the U.S. federal control catalogue used in the Risk Management
+              Framework; <strong>PCI-DSS</strong> is contractually mandated for anyone handling payment cards;
+              and privacy obligations come from <strong>GDPR, HIPAA</strong>, with <strong>ISO 27701</strong>
+              (privacy management) and <strong>27018</strong> (cloud PII) layered on top. The right answer in an
+              exam scenario is usually the standard that <em>matches the data and the jurisdiction</em> in the
+              question.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2.6 - D DRM -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>Data Protection Method &mdash; DRM</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">DRM</span><span class="fc-val">Controls content AFTER it's distributed</span></div>
+            <div class="fact-card"><span class="fc-label">Enforces</span><span class="fc-val">No copy/print/forward; expiry</span></div>
+            <div class="fact-card"><span class="fc-label">IRM</span><span class="fc-val">DRM applied to enterprise documents</span></div>
+            <div class="fact-card"><span class="fc-label">Travels</span><span class="fc-val">Protection stays with the file</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Digital Rights Management (DRM)</strong> enforces usage rules that travel <em>with</em> the
+              content even after it leaves your network &mdash; preventing copying, printing or forwarding,
+              limiting the number of opens, watermarking, or expiring access after a date. Applied to corporate
+              documents it's often called <strong>Information Rights Management (IRM)</strong>. The key
+              distinction from DLP: DRM controls what an <em>authorised recipient</em> can do with content they
+              already have; DLP stops content from <em>leaving</em> in the first place.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> &ldquo;Prevent a contractor from forwarding or printing a document we
+            sent them&rdquo; &rarr; <strong>DRM/IRM</strong>. &ldquo;Stop the document from being emailed
+            outside&rdquo; &rarr; <strong>DLP</strong>.
+          </div>
+        </div>
+
+        <!-- 2.6 - E DLP -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>Data Protection Method &mdash; DLP</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">DLP</span><span class="fc-val">Detect &amp; block sensitive data exfiltration</span></div>
+            <div class="fact-card"><span class="fc-label">Network DLP</span><span class="fc-val">Scans email, web, uploads (in transit)</span></div>
+            <div class="fact-card"><span class="fc-label">Endpoint DLP</span><span class="fc-val">USB, clipboard, print (in use)</span></div>
+            <div class="fact-card"><span class="fc-label">Storage DLP</span><span class="fc-val">Discovers sensitive data (at rest)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Data Loss Prevention (DLP)</strong> inspects content and context to detect and block
+              sensitive data from leaving the organisation. It maps neatly onto the three data states:
+              <strong>network/gateway DLP</strong> watches data in transit (email, web uploads, FTP);
+              <strong>endpoint DLP</strong> watches data in use on the device (copying to USB, clipboard,
+              printing, screenshots); and <strong>storage/discovery DLP</strong> scans data at rest in file
+              shares and databases to find where sensitive data is hiding. DLP relies on knowing <em>what</em> is
+              sensitive &mdash; which comes straight from your classification labels and detection rules
+              (pattern matching, fingerprinting, exact data matching).
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> DLP is most effective when paired with good <strong>classification</strong>
+            &mdash; it can only block what it can identify. A common exam pairing: classify data first, then DLP
+            enforces.
+          </div>
+        </div>
+
+        <!-- 2.6 - F CASB -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>Data Protection Method &mdash; CASB</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">CASB</span><span class="fc-val">Policy broker between users &amp; cloud</span></div>
+            <div class="fact-card"><span class="fc-label">Visibility</span><span class="fc-val">Finds shadow IT / unsanctioned SaaS</span></div>
+            <div class="fact-card"><span class="fc-label">Compliance</span><span class="fc-val">Enforces policy in cloud apps</span></div>
+            <div class="fact-card"><span class="fc-label">Modes</span><span class="fc-val">API-based or inline (proxy)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>Cloud Access Security Broker (CASB)</strong> sits between your users and cloud services
+              to enforce security policy &mdash; the control point you otherwise lose when data moves to SaaS.
+              It's usually framed around <strong>four pillars</strong>: <em>Visibility</em> (discover which cloud
+              apps are in use, including unsanctioned shadow IT), <em>Compliance</em> (ensure cloud use meets
+              regulations), <em>Data Security</em> (extend DLP and encryption into cloud apps), and
+              <em>Threat Protection</em> (detect malware and anomalous account behaviour). CASBs deploy either
+              <strong>API-based</strong> (out-of-band, inspecting data already in the cloud) or
+              <strong>inline/proxy</strong> (in the live traffic path, able to block in real time).
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> CASB is the answer when the scenario is about <strong>gaining control and
+            visibility over cloud/SaaS usage</strong> &mdash; especially discovering and governing
+            <em>shadow IT</em>.
+          </div>
+        </div>
+
+        <!-- 2.6 - G de-identification -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">2.6</span>
+            <h3>De-identification &mdash; Anonymization, Pseudonymization, Tokenization &amp; Masking</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              A favourite modern exam cluster: techniques that reduce the sensitivity of data so it can be used
+              more freely. <strong>Anonymization</strong> irreversibly removes all identifiers so data can never
+              be linked back to a person &mdash; done properly it falls outside privacy laws like GDPR (but
+              beware re-identification through correlation). <strong>Pseudonymization</strong> replaces
+              identifiers with a reversible token/alias, keeping a separate mapping &mdash; still personal data
+              under GDPR because it <em>can</em> be reversed. <strong>Tokenization</strong> swaps a sensitive
+              value for a non-sensitive token, with the real value held in a secure token vault (heavily used for
+              PCI/credit cards). <strong>Data masking / obfuscation</strong> hides data with realistic-looking
+              but fake values, ideal for test/dev and screens (e.g. showing only the last 4 digits of a card).
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 580 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De-identification techniques and reversibility">
+              <g font-size="10">
+                <rect x="4" y="6" width="572" height="26" fill="#3a0a0e" stroke="#e53e3e"/>
+                <text x="14" y="23" fill="#fff" font-weight="700">TECHNIQUE</text>
+                <text x="230" y="23" fill="#fff" font-weight="700">REVERSIBLE?</text>
+                <text x="400" y="23" fill="#fff" font-weight="700">TYPICAL USE</text>
+                <g fill="#e0e0e0">
+                  <rect x="4" y="32" width="222" height="28" fill="#160a10" stroke="#3a2030"/><rect x="226" y="32" width="170" height="28" fill="#0e0e16" stroke="#3a2030"/><rect x="396" y="32" width="180" height="28" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="50" fill="#ff9ab0" font-weight="700">Anonymization</text><text x="236" y="50" fill="#ff6b6b">NO (irreversible)</text><text x="406" y="50">Open data, analytics</text>
+                  <rect x="4" y="60" width="222" height="28" fill="#160a10" stroke="#3a2030"/><rect x="226" y="60" width="170" height="28" fill="#0e0e16" stroke="#3a2030"/><rect x="396" y="60" width="180" height="28" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="78" fill="#ff9ab0" font-weight="700">Pseudonymization</text><text x="236" y="78" fill="#7CFC9A">YES (with mapping)</text><text x="406" y="78">GDPR-friendly processing</text>
+                  <rect x="4" y="88" width="222" height="28" fill="#160a10" stroke="#3a2030"/><rect x="226" y="88" width="170" height="28" fill="#0e0e16" stroke="#3a2030"/><rect x="396" y="88" width="180" height="28" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="106" fill="#ff9ab0" font-weight="700">Tokenization</text><text x="236" y="106" fill="#7CFC9A">YES (token vault)</text><text x="406" y="106">PCI / card numbers</text>
+                  <rect x="4" y="116" width="222" height="28" fill="#160a10" stroke="#3a2030"/><rect x="226" y="116" width="170" height="28" fill="#0e0e16" stroke="#3a2030"/><rect x="396" y="116" width="180" height="28" fill="#0e0e16" stroke="#3a2030"/>
+                  <text x="14" y="134" fill="#ff9ab0" font-weight="700">Masking / Obfuscation</text><text x="236" y="134" fill="#ffd27c">Usually NO</text><text x="406" y="134">Test/dev, screens</text>
+                </g>
+              </g>
+            </svg>
+            <figcaption>Anonymization is one-way (escapes GDPR if truly irreversible); pseudonymization and tokenization are reversible with a secret mapping/vault (still regulated); masking shows fake values for non-production use.</figcaption>
+          </figure>
+          <div class="callout">
+            <strong>Exam tip:</strong> Only <strong>anonymization</strong> (true, irreversible) takes data
+            outside GDPR. <strong>Pseudonymization is still personal data</strong> because it can be reversed.
+            Tokenization is the PCI go-to for card numbers.
+          </div>
+        </div>
+
+        <!-- ★ exam cheat sheet -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">&#9733;</span>
+            <h3>High-Yield Exam Cheat Sheet &mdash; Rapid-Fire Distinctions</h3>
+          </div>
+          <div class="d4-body">
+            <p><strong>Owner vs Custodian:</strong> owner is <em>accountable</em> and sets classification; custodian is <em>responsible</em> and implements protection.</p>
+            <p><strong>Controller vs Processor:</strong> controller decides purpose &amp; means; processor only acts on the controller's instructions.</p>
+            <p><strong>Classification vs Categorization:</strong> sensitivity/value (labels) vs impact to CIA (FIPS 199 Low/Mod/High).</p>
+            <p><strong>Label vs Marking:</strong> label = system-readable (enforces access); marking = human-readable (informs people).</p>
+            <p><strong>Policy / Standard / Baseline / Procedure / Guideline:</strong> all mandatory except <em>guidelines</em>.</p>
+            <p><strong>Clear &lt; Purge &lt; Destroy:</strong> overwrite (reuse) &rarr; lab-proof (degauss/secure-erase/crypto) &rarr; physical.</p>
+            <p><strong>Degaussing:</strong> magnetic media only &mdash; useless on SSD, flash &amp; optical; use crypto-erase or destroy.</p>
+            <p><strong>Remanence:</strong> delete/format leaves recoverable data; sanitization is the cure.</p>
+            <p><strong>Scoping vs Tailoring:</strong> remove non-applicable controls vs adjust/supplement the rest.</p>
+            <p><strong>DRM vs DLP:</strong> control content after it's sent vs stop it from leaving. <strong>CASB</strong> = control cloud/shadow IT.</p>
+            <p><strong>Legal hold</strong> overrides retention &mdash; never destroy data subject to it (spoliation).</p>
+            <p><strong>Data sovereignty</strong> = data obeys the laws of where it physically resides.</p>
+          </div>
+        </div>
+
+        <!-- ✓ recap -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">&#10003;</span>
+            <h3>Domain 2 in One Breath</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Inventory</strong> every asset and give each an <strong>owner</strong>.
+              <strong>Classify</strong> by <em>value</em> (don't confuse it with impact-based
+              <em>categorization</em>); carry the label via system-readable <strong>labels</strong> and
+              human-readable <strong>markings</strong>; and write the handling, storage and transmission rules
+              that flow from it. Manage the whole <strong>lifecycle</strong> &mdash; collect the minimum, mind
+              <strong>location/sovereignty</strong>, maintain integrity, <strong>retain</strong> per policy
+              (honour <strong>legal holds</strong>), and at end of life defeat <strong>remanence</strong> with
+              the right sanitization (<strong>Clear &rarr; Purge &rarr; Destroy</strong>; crypto-erase for
+              SSD/cloud). Retire <strong>EOL/EOS</strong> assets before they become unpatchable. Choose controls
+              by protecting the <strong>three data states</strong>, <strong>scoping &amp; tailoring</strong> a
+              baseline, selecting the right <strong>standards</strong>, and layering <strong>DRM, DLP, CASB</strong>
+              and <strong>de-identification</strong>. Then <strong>assess &amp; review</strong> &mdash; forever.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the assessment map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
   </body>
 </html>

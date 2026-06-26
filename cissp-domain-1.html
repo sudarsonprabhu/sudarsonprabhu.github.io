@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CISSP Domain 1 notes: Security and Risk Management." />
+    <meta name="description" content="CISSP Domain 1 notes: Security and Risk Management — governance, ethics, law, policy, risk management, BCP and security awareness." />
     <title>CISSP Domain 1 | Sudarson Prabhu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,10 +16,13 @@
     <script src="cissp-data.js" defer></script>
     <script src="cissp.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="cissp-domain-1-data.js" defer></script>
+    <script src="cissp-domain-1.js" defer></script>
   </head>
   <body data-page="work" data-domain-id="1">
     <canvas id="particle-canvas" class="particle-canvas"></canvas>
     <a class="skip-link" href="#main-content">Skip to content</a>
+
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -27,17 +30,245 @@
         <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
       </nav>
     </header>
+
     <main id="main-content" class="page-shell">
       <section class="hero single-hero" data-reveal>
         <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
-          <p id="cissp-domain-badge" class="eyebrow">CISSP Domain</p>
-          <h1 id="cissp-domain-title" class="hero-title">CISSP Domain Notes</h1>
-          <p id="cissp-domain-summary" class="hero-summary"></p>
-          <div class="hero-actions"><a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a></div>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 1 &middot; 16% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Security and Risk Management</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            The foundation of the entire CISSP &mdash; aligning security to business strategy through
+            governance, professional ethics, law and compliance, security policy, risk management, business
+            continuity, personnel security, and the awareness programmes that build the human firewall.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
         </div>
       </section>
-      <section class="section" data-reveal><div id="cissp-domain-page"></div></section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 1 is the heaviest-weighted domain (16%) and sets the conceptual foundation for all the
+            others &mdash; twelve outline areas covering ethics, core security concepts, governance, law,
+            policy, risk management, business continuity, personnel security, and security awareness.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.1 &mdash; Professional ethics</h3>
+            <p class="card-copy">Understand, adhere to and promote professional ethics &mdash; the <strong>(ISC)&sup2; Code of Professional Ethics</strong> and organisational codes of conduct.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.2 &mdash; Apply security concepts</h3>
+            <p class="card-copy">The <strong>CIA triad</strong> (confidentiality, integrity, availability), plus authenticity, non-repudiation, and the (DAD / IAAA) foundations.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.3 &mdash; Security governance principles</h3>
+            <p class="card-copy">Aligning security to business strategy, <strong>roles &amp; responsibilities</strong>, due care / due diligence, and governance frameworks.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.4 &mdash; Legal, regulatory &amp; compliance</h3>
+            <p class="card-copy">Cybercrime, licensing &amp; IP, <strong>import/export controls</strong>, transborder data flow, and <strong>privacy</strong> law in a holistic context.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.5 &mdash; Investigation types</h3>
+            <p class="card-copy">Administrative, <strong>criminal, civil, regulatory</strong> and industry-standard investigations and their differing requirements.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.6 &mdash; Security policy &amp; documents</h3>
+            <p class="card-copy">Develop and implement <strong>policy, standards, procedures, baselines and guidelines</strong> &mdash; and which are mandatory.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.7 &mdash; Business Continuity requirements</h3>
+            <p class="card-copy">Identify, analyse, assess, prioritise and implement BC requirements &mdash; including the <strong>BIA</strong>.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.8 &mdash; Personnel security</h3>
+            <p class="card-copy">Hiring (screening), employment (NDAs, AUP), and termination &mdash; plus <strong>separation of duties</strong> and job rotation.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.9 &mdash; Risk management concepts</h3>
+            <p class="card-copy">Identify and assess risk, <strong>ALE / SLE / ARO</strong>, risk treatment (mitigate / accept / transfer / avoid), and frameworks.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.10 &mdash; Threat modeling</h3>
+            <p class="card-copy">Apply threat-modeling concepts and methodologies such as <strong>STRIDE, PASTA and DREAD</strong>.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.11 &mdash; Supply Chain Risk Management</h3>
+            <p class="card-copy">Apply <strong>SCRM</strong> concepts &mdash; vetting suppliers, fourth-party risk, and security in contracts and SLAs.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.12 &mdash; Awareness, training &amp; education</h3>
+            <p class="card-copy">Establish and maintain a programme across the three levels &mdash; <strong>awareness, training and education</strong>.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Alignment of Security to Business Strategy
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Aligning security to business strategy.</h2>
+          <p class="section-copy">
+            One map of how security governance nests inside corporate governance and ties every Domain 1
+            governance topic back to the business &mdash; the focus of security, clearly defined roles, import /
+            export and privacy law, professional ethics, the policy-document hierarchy, risk management,
+            procurement, and security awareness. Hover (or tap) any box for its concept, an example, and &mdash;
+            where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Alignment of security to business strategy: corporate governance contains security governance, which spans focus of security (enable business, increase value), clearly defined roles and responsibilities (accountability, responsibility, due care, due diligence), import/export controls (ITAR & EAR, Wassenaar Arrangement), transborder data flow, privacy, ethics ((ISC)2 Code of Professional Ethics), corporate laws and the security policy hierarchy (overarching policy, functional policies, standards, procedures, baselines, guidelines), risk management, procurement (contracts and SLAs), and awareness, training and education.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Alignment of Security Function to Business Strategy</div>
+
+              <div class="ac-row">
+                <!-- ===== Corporate Governance > Security Governance ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Corporate Governance</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Security Governance</div>
+                      <div class="ac-row">
+
+                        <!-- Focus of Security -->
+                        <div class="ac-node">
+                          <div class="ac-box ac-strong">Focus of Security</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Enable Business</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Increase Value</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Roles & Responsibilities -->
+                        <div class="ac-node">
+                          <div class="ac-box ac-strong">Clearly Defined Roles &amp; Responsibilities</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accountability</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Responsibility</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Due Care</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Due Diligence</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Import/export controls -->
+                        <div class="ac-node">
+                          <div class="ac-box">Import/export controls</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>ITAR &amp; EAR</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Wassenaar Arrangement</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Transborder / Privacy -->
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Transborder data flow</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Privacy</span></div></div>
+
+                        <!-- Ethics -->
+                        <div class="ac-node">
+                          <div class="ac-box">Ethics</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>(ISC)&sup2; Code of Professional Ethics</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Policy hierarchy -->
+                        <div class="ac-node">
+                          <div class="ac-box">Corporate Laws</div>
+                          <div class="ac-row">
+                            <div class="ac-node">
+                              <div class="ac-box">Overarching Security Policy</div>
+                              <div class="ac-row">
+                                <div class="ac-node">
+                                  <div class="ac-box">Functional Security Policies</div>
+                                  <div class="ac-row">
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Standards</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Procedures</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Baselines</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Guidelines</span></div></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Risk Management -->
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent"><span>Risk Management</span></div></div>
+
+                        <!-- Procurement -->
+                        <div class="ac-node">
+                          <div class="ac-box">Procurement</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Contracts &amp; SLAs</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Awareness -->
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Awareness, Training &amp; Education</span></div></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 1 mirrors the &ldquo;Alignment of Security Function to Business Strategy&rdquo; map for Domain
+            1.3 &mdash; corporate governance containing security governance, which spans the focus of security
+            (enable business, increase value), clearly defined roles &amp; responsibilities (accountability,
+            responsibility, due care, due diligence), import/export controls (ITAR &amp; EAR, Wassenaar),
+            transborder data flow, privacy, professional ethics, the policy-document hierarchy (corporate laws
+            &rarr; overarching policy &rarr; functional policies &rarr; standards / procedures / baselines /
+            guidelines), risk management, procurement (contracts &amp; SLAs), and awareness, training &amp;
+            education.
+          </p>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer"><span>Sudarson Prabhu R.E</span><span>Information Security Consultant</span><span data-year></span></footer>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the assessment map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
   </body>
 </html>
