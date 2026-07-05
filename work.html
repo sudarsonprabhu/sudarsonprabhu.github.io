@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Work and project case studies by Sudarson Prabhu R.E across cybersecurity governance, ISO implementations, regulatory audits, conformity assessment, and assurance."
+    />
+    <title>Work | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+      defer
+    ></script>
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+      /* Work page: case study cards + community blocks, aligned to the site theme. */
+      .cs-root {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+
+      .cs-card {
+        padding: clamp(1.15rem, 2.1vw, 1.55rem);
+        cursor: pointer;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+        outline: none;
+      }
+
+      .cs-card:hover,
+      .cs-card:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(211, 19, 36, 0.5);
+      }
+
+      .cs-card-link {
+        display: block;
+      }
+
+      .cs-card::after {
+        content: "";
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--accent);
+        opacity: 0.25;
+        transition: opacity 0.25s ease;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .cs-card:hover::after,
+      .cs-card:focus-visible::after,
+      .cs-card.open::after {
+        opacity: 1;
+        animation: cs-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes cs-pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .cs-ch {
+        display: grid;
+        grid-template-columns: minmax(36px, 52px) 1fr auto;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .cs-num {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        padding-top: 2px;
+      }
+
+      .cs-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 0.6rem;
+      }
+
+      .cs-tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(211, 19, 36, 0.12);
+        color: var(--muted-strong);
+        white-space: nowrap;
+      }
+
+      .cs-title {
+        margin: 0 0 0.4rem;
+        font-size: 1.14rem;
+        line-height: 1.25;
+        font-weight: 760;
+        color: var(--text);
+      }
+
+      .cs-sum {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.65;
+        max-width: 85ch;
+      }
+
+      .cs-tog {
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        font-weight: 650;
+        font-size: 0.86rem;
+        padding-top: 0.25rem;
+        white-space: nowrap;
+      }
+
+      .cs-body {
+        display: none;
+        margin-top: 1.15rem;
+        padding-top: 1.15rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .cs-card.open .cs-body {
+        display: block;
+      }
+
+      .cs-slabel {
+        margin: 1.05rem 0 0.45rem;
+        font-family: "IBM Plex Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .cs-slabel:first-child {
+        margin-top: 0;
+      }
+
+      .cs-stext {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.75;
+      }
+
+      /* "What I did & how" - same for Client and Internal. */
+      #cs-client .cs-howbox,
+      #cs-internal .cs-howbox {
+        padding: 1.05rem;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(211, 19, 36, 0.12), rgba(211, 19, 36, 0) 68%),
+          var(--surface-soft);
+        border: 1px solid rgba(211, 19, 36, 0.22);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      }
+
+      #cs-client .cs-howstep,
+      #cs-internal .cs-howstep {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: start;
+        margin-bottom: 10px;
+        padding: 0.85rem 0.95rem;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      }
+
+      #cs-client .cs-howstep:last-child,
+      #cs-internal .cs-howstep:last-child {
+        margin-bottom: 0;
+      }
+
+      #cs-client .cs-howstep:hover,
+      #cs-internal .cs-howstep:hover {
+        border-color: rgba(211, 19, 36, 0.45);
+        background: rgba(211, 19, 36, 0.06);
+        transform: translateY(-1px);
+      }
+
+      #cs-client .cs-stepnum,
+      #cs-internal .cs-stepnum {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 750;
+        letter-spacing: 0.08em;
+        color: var(--text);
+        background: rgba(211, 19, 36, 0.14);
+        border: 1px solid rgba(211, 19, 36, 0.38);
+        box-shadow: 0 0 0 6px rgba(211, 19, 36, 0.04);
+      }
+
+      #cs-client .cs-steptitle,
+      #cs-internal .cs-steptitle {
+        margin: 0 0 0.25rem;
+        font-weight: 720;
+        color: var(--text);
+      }
+
+      #cs-client .cs-steptext,
+      #cs-internal .cs-steptext {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.65;
+      }
+
+      .cs-skills-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .cs-skill {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        font-weight: 650;
+        letter-spacing: 0.06em;
+        padding: 0.32rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--muted-strong);
+        white-space: nowrap;
+      }
+
+      .cs-snap {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.7;
+      }
+
+      .cs-stake,
+      .cs-impact {
+        margin-top: 0.6rem;
+        padding: 0.85rem 0.95rem;
+        border-radius: 16px;
+        background: var(--surface-soft);
+        border: 1px solid var(--line);
+        border-left-width: 2px;
+        color: var(--muted-strong);
+        line-height: 1.7;
+      }
+
+      .cs-stake {
+        border-left-color: var(--accent);
+      }
+
+      .cs-impact {
+        border-left-color: rgba(29, 158, 117, 0.9);
+      }
+
+      /* Community blocks. */
+      .pf-product-card,
+      .pf-webinar-card {
+        padding: 0;
+      }
+
+      .pf-product-hero {
+        padding: clamp(1.5rem, 3vw, 2.2rem);
+        background: radial-gradient(circle at top, rgba(211, 19, 36, 0.22), transparent 58%),
+          linear-gradient(135deg, #070707 0%, #16080c 70%, #24050b 100%);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pf-product-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--muted-strong);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        font-weight: 650;
+      }
+
+      .pf-badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #4ade80;
+      }
+
+      .pf-product-name {
+        margin: 1.1rem 0 0.35rem;
+        font-size: 1.55rem;
+        line-height: 1.18;
+        font-weight: 780;
+        color: var(--text);
+      }
+
+      .pf-product-tagline {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.7;
+        max-width: 75ch;
+      }
+
+      .pf-modules {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 1.2rem;
+      }
+
+      .pf-mod {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        font-weight: 650;
+        padding: 0.35rem 0.6rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--muted-strong);
+        white-space: nowrap;
+      }
+
+      .pf-product-body,
+      .pf-webinar-body {
+        padding: clamp(1.25rem, 2.4vw, 1.85rem);
+      }
+
+      .pf-product-why,
+      .pf-webinar-intro {
+        margin: 0 0 1.05rem;
+        color: var(--muted-strong);
+        line-height: 1.75;
+      }
+
+      .pf-feat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .pf-feat {
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 0.9rem 1rem;
+      }
+
+      .pf-feat-title {
+        margin: 0 0 0.35rem;
+        color: var(--text);
+        font-weight: 740;
+        line-height: 1.25;
+      }
+
+      .pf-feat-desc {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.6;
+      }
+
+      .pf-product-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        padding-top: 1.1rem;
+        margin-top: 1.2rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .pf-status-pill {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(211, 19, 36, 0.14);
+        border: 1px solid rgba(211, 19, 36, 0.24);
+        color: var(--muted-strong);
+      }
+
+      .pf-problem-pill {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .pf-webinar-hero {
+        padding: clamp(1.25rem, 2.4vw, 1.85rem);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 1.05rem;
+        align-items: start;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      }
+
+      .pf-webinar-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        background: var(--accent);
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        box-shadow: 0 0 0 10px rgba(211, 19, 36, 0.12);
+      }
+
+      .pf-webinar-type {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--muted);
+        margin-bottom: 0.4rem;
+      }
+
+      .pf-webinar-title {
+        margin: 0;
+        font-size: 1.18rem;
+        line-height: 1.35;
+        font-weight: 770;
+        color: var(--text);
+      }
+
+      .pf-webinar-org {
+        margin-top: 0.35rem;
+        color: var(--muted-strong);
+        line-height: 1.6;
+      }
+
+      /* Video thumbnail card (always works; avoids embed errors). */
+      .pf-video {
+        margin: 1.2rem 0;
+        padding: 1.2rem 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pf-video-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 22px;
+        overflow: hidden;
+        background: #000;
+        border: 1px solid var(--line);
+      }
+
+      .pf-video-thumb {
+        position: absolute;
+        inset: 0;
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .pf-video-thumb img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.98) contrast(1.02);
+        transform: scale(1.02);
+      }
+
+      .pf-video-thumb::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 22% 22%, rgba(211, 19, 36, 0.22), transparent 52%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.62));
+      }
+
+      .pf-video-play {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(211, 19, 36, 0.55);
+        background: rgba(0, 0, 0, 0.42);
+        backdrop-filter: blur(10px);
+        color: var(--text);
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+        font-weight: 650;
+        z-index: 2;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .pf-video-thumb:hover .pf-video-play {
+        transform: translateY(-2px);
+        border-color: rgba(211, 19, 36, 0.75);
+        background: rgba(211, 19, 36, 0.16);
+      }
+
+      .pf-video-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: rgba(211, 19, 36, 0.92);
+        box-shadow: 0 0 0 6px rgba(211, 19, 36, 0.12);
+      }
+
+      .pf-video-icon::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 10px solid #fff;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        margin-left: 2px;
+      }
+
+      .pf-video-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.8rem;
+        font-family: "IBM Plex Mono", monospace;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .pf-video-link {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .pf-video-link:hover {
+        text-decoration: underline;
+      }
+
+      .pf-stage-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .pf-stage {
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 0.95rem 1rem;
+      }
+
+      .pf-stage-label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 750;
+        margin-bottom: 0.4rem;
+      }
+
+      .pf-stage-title {
+        margin: 0 0 0.35rem;
+        color: var(--text);
+        font-weight: 750;
+      }
+
+      .pf-stage-desc {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.55;
+      }
+
+      .pf-takeaways {
+        display: grid;
+        gap: 10px;
+        margin-top: 1.2rem;
+      }
+
+      .pf-tw {
+        display: grid;
+        grid-template-columns: 10px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .pf-tw-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+        margin-top: 7px;
+      }
+
+      .pf-tw-text {
+        margin: 0;
+        color: var(--muted-strong);
+        line-height: 1.65;
+      }
+
+      .pf-webinar-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 1.1rem;
+        margin-top: 1.2rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .pf-wskill {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        font-weight: 650;
+        padding: 0.32rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--muted-strong);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 880px) {
+        .cs-ch {
+          grid-template-columns: minmax(36px, 52px) 1fr;
+        }
+
+        .cs-tog {
+          grid-column: 1 / -1;
+          padding-top: 0.7rem;
+        }
+
+        .pf-feat-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pf-stage-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="work">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <span class="brand-symbol">SP</span>
+        <span class="brand-copy">Sudarson Prabhu</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a>
+        <a href="work.html" data-page="work">Work</a>
+        <a href="about.html" data-page="about">About</a>
+        <a href="experience.html" data-page="experience">Experience</a>
+        <a href="services.html" data-page="services">Services</a>
+        <a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p class="eyebrow">Work &amp; Projects</p>
+          <h1 class="hero-title">
+            Engagements, Builds &amp; <span class="title-highlight">Contributions</span>
+          </h1>
+          <p class="hero-summary">
+            A deeper view of how I deliver governance, assurance, and implementation work.
+            Expand a card to see the context, the challenge, the actions taken, and the impact.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Client Delivery</p>
+          <h2 class="section-title">Engagements delivered end-to-end.</h2>
+          <p class="section-copy">
+            A curated set of high-stakes engagements: certification sprints, regulator-facing audits,
+            and board-ready maturity work. Expand any card to see the approach and outcome.
+          </p>
+        </div>
+        <div id="cs-client" class="cs-root"></div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Practice Building</p>
+          <h2 class="section-title">Systems built inside the organisation.</h2>
+          <p class="section-copy">
+            Work that turns standards into operating systems: ISMS foundations, conformity assessment playbooks,
+            and lab governance. Built for repeatability, not one-off audits.
+          </p>
+        </div>
+        <div id="cs-internal" class="cs-root"></div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Community</p>
+          <h2 class="section-title">Builds and knowledge sharing.</h2>
+          <p class="section-copy">
+            A product I am actively building, and a public session where I shared a maturity-based way to think about GRC.
+          </p>
+        </div>
+
+        <article class="panel pf-product-card" data-spotlight>
+          <div class="pf-product-hero">
+            <div class="pf-product-badge">
+              <span class="pf-badge-dot"></span>
+              In Active Development
+            </div>
+            <h3 class="pf-product-name">GRC Operating System</h3>
+            <p class="pf-product-tagline">
+              A SaaS platform I am building to make continuous GRC the default, not an audit-season scramble.
+              Designed from hands-on implementation experience across multiple frameworks.
+            </p>
+            <div class="pf-modules" aria-label="Core modules">
+              <span class="pf-mod">Policy Management</span>
+              <span class="pf-mod">Risk Assessment Engine</span>
+              <span class="pf-mod">Risk Register</span>
+              <span class="pf-mod">KCI Compliance Monitor</span>
+              <span class="pf-mod">Audit Readiness</span>
+              <span class="pf-mod">Control Mapping</span>
+            </div>
+          </div>
+          <div class="pf-product-body">
+            <p class="pf-product-why">
+              Across industries, one pattern repeats: teams achieve certification, then slowly drift because sustaining
+              a framework manually is genuinely hard. This product is designed around those real-world failure modes.
+            </p>
+            <div class="pf-feat-grid" aria-label="Key features">
+              <div class="pf-feat">
+                <p class="pf-feat-title">Policy lifecycle management</p>
+                <p class="pf-feat-desc">
+                  Create, version, approve, and track acknowledgements across your policy library, with audit trails.
+                </p>
+              </div>
+              <div class="pf-feat">
+                <p class="pf-feat-title">Automated risk assessment</p>
+                <p class="pf-feat-desc">
+                  Guided asset identification, threat mapping, scoring, and treatment tracking, designed to stay usable.
+                </p>
+              </div>
+              <div class="pf-feat">
+                <p class="pf-feat-title">KCI compliance monitoring</p>
+                <p class="pf-feat-desc">
+                  Define key compliance indicators and thresholds to spot drift before it becomes an audit problem.
+                </p>
+              </div>
+              <div class="pf-feat">
+                <p class="pf-feat-title">Live risk register</p>
+                <p class="pf-feat-desc">
+                  Owners, review cadences, escalation, and status tracking so risks are managed, not just recorded.
+                </p>
+              </div>
+            </div>
+            <div class="pf-product-footer">
+              <span class="pf-status-pill">Beta in progress</span>
+              <span class="pf-problem-pill">Built to solve what I have seen across client environments</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel pf-webinar-card" data-spotlight>
+          <div class="pf-webinar-hero">
+            <div class="pf-webinar-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="pf-webinar-type">Public Webinar - Payatu</div>
+              <h3 class="pf-webinar-title">GRC That Grows With You - A Maturity-Based Approach to ISO 27001</h3>
+              <p class="pf-webinar-org">
+                Presented by Sudarson Prabhu - Live audience - GRC and information security community
+              </p>
+            </div>
+          </div>
+          <div class="pf-webinar-body">
+            <p class="pf-webinar-intro">
+              Many ISO 27001 implementations fail not because of technical gaps, but because the framework is applied at the
+              wrong scale. This session introduced a maturity-based model: right-size the programme first, then evolve it
+              as the organisation grows.
+            </p>
+
+            <div class="pf-video" aria-label="Webinar playback link">
+              <div class="pf-video-frame">
+                <a
+                  class="pf-video-thumb"
+                  href="https://youtu.be/YAs03WULGvY?t=332"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Watch the webinar on YouTube (starts at 05:32)"
+                >
+                  <img
+                    src="https://i.ytimg.com/vi/YAs03WULGvY/maxresdefault.jpg"
+                    alt="Webinar video thumbnail"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/YAs03WULGvY/hqdefault.jpg';"
+                  />
+                  <span class="pf-video-play">
+                    <span class="pf-video-icon" aria-hidden="true"></span>
+                    Watch on YouTube
+                  </span>
+                </a>
+              </div>
+              <div class="pf-video-meta">
+                <a class="pf-video-link" href="https://youtu.be/YAs03WULGvY?t=332" target="_blank" rel="noreferrer">
+                  Watch on YouTube
+                </a>
+                <span>Starts at 05:32</span>
+              </div>
+            </div>
+
+            <div class="pf-stage-row" aria-label="Maturity stages">
+              <div class="pf-stage">
+                <div class="pf-stage-label">Stage 1</div>
+                <p class="pf-stage-title">The Kid Org</p>
+                <p class="pf-stage-desc">
+                  10 to 100 people. Informal and reactive. Focus on awareness and basic asset ownership. Do not over-engineer.
+                </p>
+              </div>
+              <div class="pf-stage">
+                <div class="pf-stage-label">Stage 2</div>
+                <p class="pf-stage-title">The Adult Org</p>
+                <p class="pf-stage-desc">
+                  Growing complexity. Multiple departments. Focus on a structured ISMS scope and centralised risk assessment.
+                </p>
+              </div>
+              <div class="pf-stage">
+                <div class="pf-stage-label">Stage 3</div>
+                <p class="pf-stage-title">The Mature Org</p>
+                <p class="pf-stage-desc">
+                  Security culture is embedded. GRC shifts from enforcement to advisory. Metrics drive decision-making.
+                </p>
+              </div>
+            </div>
+
+            <div class="pf-takeaways" aria-label="Session takeaways">
+              <div class="pf-tw">
+                <div class="pf-tw-dot" aria-hidden="true"></div>
+                <p class="pf-tw-text">
+                  Reframed GRC as a way to minimise surprises and enable confident decisions, not just produce documentation.
+                </p>
+              </div>
+              <div class="pf-tw">
+                <div class="pf-tw-dot" aria-hidden="true"></div>
+                <p class="pf-tw-text">
+                  Explained why over-complicating at Stage 1 creates resistance, and under-structuring at Stage 2 creates chaos.
+                </p>
+              </div>
+              <div class="pf-tw">
+                <div class="pf-tw-dot" aria-hidden="true"></div>
+                <p class="pf-tw-text">
+                  Positioned internal audits and management reviews as improvement engines, not compliance theatre.
+                </p>
+              </div>
+              <div class="pf-tw">
+                <div class="pf-tw-dot" aria-hidden="true"></div>
+                <p class="pf-tw-text">
+                  Live Q&amp;A: scaling compliance across departments with different risk profiles, and handling multi-subsidiary programmes.
+                </p>
+              </div>
+            </div>
+
+            <div class="pf-webinar-footer" aria-label="Skills highlighted">
+              <span class="pf-wskill">GRC Strategy</span>
+              <span class="pf-wskill">ISO 27001</span>
+              <span class="pf-wskill">Maturity Modelling</span>
+              <span class="pf-wskill">Public Speaking</span>
+              <span class="pf-wskill">Security Awareness</span>
+              <span class="pf-wskill">Framework Design</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      (function () {
+        var clientData = [
+          {
+            n: "01",
+            title: "ISO 27001:2022 Certification - EV Charging Manufacturer",
+            tags: ["ISO 27001:2022", "India", "EV / Manufacturing"],
+            summary:
+              "A Series B EV charging manufacturer needed ISO 27001 certification in 14 weeks to close an INR 40 Cr fleet contract. No ISMS existed. Delivered certification on time, solo.",
+            trigger:
+              "A state-owned fleet operator issued a conditional purchase order. Certification was a prerequisite to contract execution. The client had 14 weeks before the offer lapsed and had no documented security controls, risk register, or internal security team.",
+            blocker:
+              "Operational technology and IT shared a flat network. Charging station firmware, cloud telemetry, and corporate systems were unsiloed. Scoping the ISMS without disrupting production required daily coordination with engineering leads for three weeks before drafting began.",
+            how: [
+              {
+                t: "Gap assessment against Annex A",
+                d: "Conducted a structured gap assessment across all Annex A controls and converted gaps into a time-bound remediation plan.",
+              },
+              {
+                t: "Hybrid asset plus process risk assessment",
+                d: "Built a risk register by cataloguing information assets and overlaying process-level risk scenarios to surface OT-specific risks.",
+              },
+              {
+                t: "Policy and procedure authoring",
+                d: "Authored core policies and supporting procedures mapped to controls, written in operational language that teams could execute.",
+              },
+              {
+                t: "Internal audit execution",
+                d: "Planned and executed the internal audit aligned to ISO 19011, including sampling, nonconformity handling, and formal reporting.",
+              },
+              {
+                t: "External audit support",
+                d: "Managed evidence presentation during Stage 1 and Stage 2 audits and handled assessor queries to avoid delays.",
+              },
+            ],
+            skills: [
+              "Gap Assessment",
+              "Risk Register Design",
+              "Annex A Mapping",
+              "Policy Authoring",
+              "ISO 19011 Audit Methodology",
+              "OT/IT Scoping",
+              "Evidence Management",
+              "Nonconformity Management",
+            ],
+            snap:
+              "14-week programme - Annex A assessed - ISMS built from zero - Internal audit executed - Stage 1 and Stage 2 certification achieved",
+            stake:
+              "Missing the certification window would have forfeited the purchase order and stalled entry into the enterprise fleet segment.",
+          },
+          {
+            n: "02",
+            title: "ISO 22301:2019 Certification - AI Product Company",
+            tags: ["ISO 22301:2019", "India", "AI / SaaS"],
+            summary:
+              "An AI SaaS company's largest banking client triggered a BCMS audit clause mid-contract. With no continuity plans, they had 10 weeks to certify or risk termination.",
+            trigger:
+              "A Tier-1 private bank exercised a vendor audit right requiring ISO 22301 certification within 90 days. The clause was missed at signing. The internal GRC team flagged delivery risk without external support.",
+            blocker:
+              "No BIA, no recovery objectives, and no tested continuity plans existed. Critical services ran in a single cloud region. Controls had to be designed around current architecture within the timeline.",
+            how: [
+              {
+                t: "Business Impact Analysis (BIA)",
+                d: "Facilitated BIA workshops to identify critical services, dependencies, and business impacts across time horizons. Defined RTOs and RPOs for key processes.",
+              },
+              {
+                t: "Continuity strategy and compensating controls",
+                d: "Designed practical compensating controls to meet ISO 22301 requirements without major architectural changes.",
+              },
+              {
+                t: "BCMS documentation suite",
+                d: "Developed the BCMS documentation set including policy, service BCPs, crisis communication plan, and incident log templates.",
+              },
+              {
+                t: "Tabletop exercises",
+                d: "Designed and facilitated tabletop exercises simulating cloud outage and key-person dependency failures, producing reports as evidence.",
+              },
+              {
+                t: "Certification audit coordination",
+                d: "Coordinated evidence packs and assessor queries alongside the internal GRC team through the external audit.",
+              },
+            ],
+            skills: [
+              "Business Impact Analysis",
+              "RTO/RPO Definition",
+              "BCMS Documentation",
+              "Compensating Controls",
+              "Tabletop Exercise Facilitation",
+              "ISO 22301 Mapping",
+              "Certification Audit Management",
+            ],
+            snap:
+              "10-week delivery - BIA across critical services - Tabletop exercises completed - BCMS documentation delivered - Certified before contractual deadline",
+            stake:
+              "Contract termination would have represented major revenue loss and triggered similar clauses across other enterprise agreements.",
+          },
+          {
+            n: "03",
+            title: "RBI PPI Master Direction Audit - Fintech Payments Firm",
+            tags: ["RBI PPI / PSS", "India", "Fintech / Payments"],
+            summary:
+              "A licensed PPI issuer faced its first supervisory inspection with scattered evidence. Delivered a regulator-ready SAR-format report across requirements under tight timelines.",
+            trigger:
+              "A supervisory inspection notice was issued with a limited lead time. Controls existed informally but there was no structured audit trail or prior SAR-format experience.",
+            blocker:
+              "Evidence was fragmented across departments with ownership gaps due to turnover. Audit trails had to be reconstructed from logs, email, and transaction records under time pressure.",
+            how: [
+              {
+                t: "Audit checklist design",
+                d: "Built a requirement-by-requirement checklist with evidence expectations, owners, and sampling criteria.",
+              },
+              {
+                t: "Evidence collection and sampling",
+                d: "Conducted interviews and mapped evidence samples to requirements to create a defensible evidence trail.",
+              },
+              {
+                t: "Audit trail reconstruction",
+                d: "Reconstructed missing documentation from system logs and records and documented the reconstruction method for credibility.",
+              },
+              {
+                t: "SAR-aligned report drafting",
+                d: "Produced a SAR-format report listing evidence reviewed, sampling detail, and objective findings suitable for regulator correspondence.",
+              },
+            ],
+            skills: [
+              "Regulatory Audit Execution",
+              "RBI PPI / PSS",
+              "SAR Report Drafting",
+              "Evidence Sampling",
+              "Audit Trail Reconstruction",
+            ],
+            snap:
+              "Preparation and evidence mapping completed - Multi-department sampling executed - SAR-format report delivered",
+            stake:
+              "Poorly evidenced inspection outcomes could have triggered enforcement action or licence risk, halting payment operations.",
+          },
+          {
+            n: "04",
+            title: "SOC 2 Type I Audit - Australian SaaS Platform",
+            tags: ["SOC 2 Type I", "Australia", "Technology / SaaS"],
+            summary:
+              "An Australian SaaS company lost enterprise deals due to lack of SOC 2 reporting. Coordinated the engagement with a CPA firm and delivered an attested Type I report.",
+            trigger:
+              "Enterprise prospects requested SOC 2 during vendor security reviews and deals stalled at procurement.",
+            blocker:
+              "Strong engineering practices existed but control documentation was minimal and ownership was implicit rather than auditable.",
+            how: [
+              {
+                t: "Scoping and mapping",
+                d: "Defined boundary and Trust Services Criteria, mapping existing practices to points of focus and identifying design gaps.",
+              },
+              {
+                t: "Control documentation",
+                d: "Documented controls with owners, frequency, and evidence types, reflecting real practice rather than aspirational statements.",
+              },
+              {
+                t: "Design adequacy sampling",
+                d: "Sampled evidence to validate design adequacy across access, encryption, change management, and monitoring controls.",
+              },
+              {
+                t: "CPA coordination",
+                d: "Served as liaison through fieldwork and reporting, managing requests and reviewing drafts before issuance.",
+              },
+            ],
+            skills: ["SOC 2 TSC", "Control Documentation", "Evidence Sampling", "CPA Liaison", "System Description Support"],
+            snap:
+              "Type I engagement executed - Controls documented - CPA fieldwork supported - Attestation issued to unblock deals",
+            stake:
+              "Without SOC 2, market expansion was delayed and procurement windows risked closing for enterprise prospects.",
+          },
+          {
+            n: "05",
+            title: "DFSA Cybersecurity Compliance - Dubai BFSI Client",
+            tags: ["DFSA GEN Module", "Dubai / UAE", "Banking / BFSI"],
+            summary:
+              "A DIFC-registered financial firm received a regulator observation letter citing gaps. Took them from exposure to demonstrable compliance within a remediation window.",
+            trigger:
+              "A DFSA examination issued a formal observation letter for inadequate governance and outdated incident response. The firm needed to demonstrate remediation within the regulatory deadline.",
+            blocker:
+              "Policies were copied from a parent framework and not localised. Several controls referenced systems that no longer existed. Remediation required parallel rebuild and regulator correspondence management.",
+            how: [
+              { t: "Gap assessment", d: "Mapped DFSA requirements to existing controls and prioritised remediation sequencing by criticality." },
+              { t: "Policy framework rebuild", d: "Redrafted documents to match DFSA obligations and the actual environment, removing misrepresentations." },
+              { t: "Implementation guidance", d: "Facilitated cross-functional sessions to convert policy requirements into operational controls and evidence." },
+              { t: "Regulatory response drafting", d: "Drafted responses structured to address each observation with remediation detail and evidence references." },
+            ],
+            skills: ["DFSA Mapping", "Policy Localisation", "Regulatory Response", "Implementation Guidance", "Evidence Planning"],
+            snap:
+              "DFSA requirements assessed - Policy suite rebuilt - Remediation evidenced - Follow-up examination cleared",
+            stake:
+              "A second citation could have triggered enforcement and public censure, damaging trust in a high-visibility financial environment.",
+          },
+          {
+            n: "06",
+            title: "NIST CSF 2.0 Gap Assessment - Insurance Provider",
+            tags: ["NIST CSF 2.0", "India", "Insurance"],
+            summary:
+              "A board-mandated cybersecurity maturity review after a peer ransomware incident. Delivered an evidence-backed gap assessment and a decision-ready roadmap.",
+            trigger:
+              "A peer incident prompted the board to commission an independent maturity review. The CISO needed a structured output suitable for board discussion and investment planning.",
+            blocker:
+              "Multiple overlapping tools existed but control coverage was unclear. Mapping showed duplication in Protect while Govern and Respond had limited formal coverage.",
+            how: [
+              { t: "Assessment framework", d: "Built an evidence-based assessment across all CSF 2.0 functions at subcategory level." },
+              { t: "Evidence sampling", d: "Sampled evidence across multiple business units and rated maturity with justification tied to evidence." },
+              { t: "Gap analysis", d: "Mapped tools and practices to subcategories and identified duplications and critical gaps to prioritise." },
+              { t: "Executive reporting", d: "Produced a board-ready summary plus a detailed annex for security leadership execution." },
+            ],
+            skills: ["NIST CSF 2.0", "Maturity Assessment", "Control Mapping", "Executive Reporting", "Roadmapping"],
+            snap:
+              "All CSF functions assessed - Evidence sampled across business units - Roadmap delivered for the next 12 months",
+            stake:
+              "Without a structured gap view, leadership had no basis for investment decisions and risk exposure remained comparable to the peer incident.",
+          },
+          {
+            n: "07",
+            title: "ISO 17025 Cybersecurity Testing Lab - Medical Device Manufacturer",
+            tags: ["ISO/IEC 17025:2017", "International", "Medical Devices / MedTech"],
+            summary:
+              "A global manufacturer needed a certified cybersecurity testing lab to support regulatory submissions. Built lab governance, processes, and quality system from zero through accreditation.",
+            trigger:
+              "Updated regulatory expectations required structured independent cybersecurity testing. Existing testing was informal and performed by product teams, creating an impartiality conflict.",
+            blocker:
+              "Engineers were embedded in product teams. Creating genuine independence required organisational design changes that needed stakeholder alignment.",
+            how: [
+              { t: "Laboratory design", d: "Defined roles, reporting lines, and governance to preserve independence from product development." },
+              { t: "Impartiality framework", d: "Established conflict-of-interest controls and monitoring suitable for cybersecurity testing contexts." },
+              { t: "Documentation suite", d: "Authored procedures covering method validation, calibration, reporting, nonconforming work, and management review." },
+              { t: "Accreditation support", d: "Coordinated evidence presentation and assessor queries through the accreditation assessment." },
+            ],
+            skills: ["ISO 17025 Implementation", "Lab Governance", "Impartiality", "QMS Documentation", "Accreditation Support"],
+            snap:
+              "Lab structure defined - QMS procedures authored - Internal review completed - Accreditation assessment supported",
+            stake:
+              "Without an accredited lab, connected device portfolios faced delays for regulatory clearance and planned product launches.",
+          },
+          {
+            n: "08",
+            title: "CISSP Guide",
+            tags: ["CISSP", "Study Notes", "8 Domains"],
+            summary:
+              "A CISSP notes hub for the eight exam domains, with an interactive domain-weightage infographic and expandable subdomain outlines.",
+            href: "cissp-notes.html",
+            linkLabel: "Open Notes ->",
+          },
+        ];
+
+        var internalData = [
+          {
+            n: "01",
+            title: "End-to-End ISO 27001:2022 Implementation - Internal ISMS",
+            tags: ["ISO 27001:2022", "Internal", "Information Security"],
+            summary:
+              "Led an internal ISO 27001:2022 implementation from scratch: ISMS build, internal audits, awareness programmes, and integration with ISO 9001 to form a unified management system.",
+            trigger:
+              "The organisation needed ISO 27001:2022 certification for client trust and business development. Implementation responsibility sat with this role.",
+            blocker:
+              "Integrating ISO 27001 with an existing ISO 9001 QMS without duplicating processes required careful mapping and strong stakeholder alignment.",
+            how: [
+              { t: "ISMS implementation", d: "Implemented ISO 27001 requirements end-to-end, including scope, context, leadership, and Annex A controls." },
+              { t: "Policy suite rebuild", d: "Redrafted policies and procedures to be audit-ready and operationally usable." },
+              { t: "Risk and monitoring", d: "Established risk assessment and introduced KCI-style monitoring to sustain compliance between audits." },
+              { t: "Awareness and phishing", d: "Delivered role-based awareness training and phishing simulations to reinforce behavioural controls." },
+              { t: "Internal audits and management review", d: "Executed internal audits and supported management review reporting to drive continual improvement." },
+            ],
+            skills: ["ISMS Implementation", "Policy Authoring", "Risk Assessment", "KCI Monitoring", "Awareness Training", "Internal Audit"],
+            snap:
+              "ISMS built from scratch - Policies redrafted - Awareness and simulations run - Internal audits executed - Certification achieved",
+            impact:
+              "Established a living compliance posture supported by monitoring and structured management reporting.",
+          },
+          {
+            n: "02",
+            title: "Certification Body Setup - ISO 17021-1 and ISO 17020 Implementation",
+            tags: ["ISO 17021-1 / 17020", "Internal", "Conformity Assessment"],
+            summary:
+              "Architected and implemented the management system to establish an accredited certification body and inspection body, covering ISO 17021-1 and ISO 17020 requirements end-to-end.",
+            trigger:
+              "Strategic direction required becoming an accredited CB and IB. No conformity assessment management system existed and had to be built from the ground up.",
+            blocker:
+              "Designing a system that satisfied impartiality, competence, and process requirements across two standards required careful architecture and sustained leadership engagement.",
+            how: [
+              { t: "System architecture", d: "Designed scope, process architecture, documentation hierarchy, and competence framework." },
+              { t: "Requirement implementation", d: "Implemented requirements from impartiality governance through audit planning, decisions, and surveillance management." },
+              { t: "Independent internal audit", d: "Coordinated a qualified third-party internal auditor and prepared evidence packs and process owners." },
+              { t: "Management review reporting", d: "Produced a management review report covering progress, findings, resources, and forward plans for top leadership." },
+            ],
+            skills: ["ISO 17021-1", "ISO 17020", "CB/IB Process Architecture", "Impartiality", "Management Review Reporting"],
+            snap:
+              "CB and IB management system designed - Requirements implemented - Independent internal audit coordinated - Leadership reporting delivered",
+            impact:
+              "Created the operational and documented foundation needed to pursue accreditation for conformity assessment services.",
+          },
+          {
+            n: "03",
+            title: "ISO 17025 Implementation - IT Security Testing Laboratory",
+            tags: ["ISO/IEC 17025:2017", "Internal", "Cybersecurity / Testing Lab"],
+            summary:
+              "Led implementation of ISO 17025 for an internal IT security testing lab, including agreements, training, internal audit, and accreditation preparation.",
+            trigger:
+              "A formally accredited lab was required to credibly deliver cybersecurity testing services and demonstrate technical competence and impartiality.",
+            blocker:
+              "ISO 17025 language is lab-science oriented and required contextualisation to practical IT security testing workflows.",
+            how: [
+              { t: "Implementation", d: "Implemented structure, resources, process requirements, and management system requirements for lab operations." },
+              { t: "Agreements and acknowledgements", d: "Drafted lab agreements and collected acknowledgements to enforce confidentiality and impartiality obligations." },
+              { t: "Awareness training", d: "Designed and delivered ISO 17025 awareness training for lab personnel tailored to cybersecurity testing work." },
+              { t: "Internal audit", d: "Executed the internal audit, raised findings, and supported corrective action closure before the external assessment." },
+            ],
+            skills: ["ISO 17025", "Lab QMS", "Training", "Internal Audit", "Corrective Actions"],
+            snap:
+              "ISO 17025 implemented - Agreements signed - Training delivered - Internal audit executed - Accreditation readiness achieved",
+            impact:
+              "Strengthened the organisation's credibility for cybersecurity testing through an accredited management system foundation.",
+          },
+        ];
+
+        function buildCard(c, prefix, isInternal) {
+          var tags = c.tags
+            .map(function (t) {
+              return '<span class="cs-tag">' + t + "</span>";
+            })
+            .join("");
+
+          if (c.href) {
+            return (
+              '<a class="panel cs-card cs-card-link" data-spotlight href="' +
+              c.href +
+              '" id="' +
+              prefix +
+              c.n +
+              '">' +
+              '<div class="cs-ch">' +
+              '<span class="cs-num">' +
+              c.n +
+              "</span>" +
+              "<div>" +
+              '<div class="cs-tags">' +
+              tags +
+              "</div>" +
+              '<h3 class="cs-title">' +
+              c.title +
+              "</h3>" +
+              '<p class="cs-sum">' +
+              c.summary +
+              "</p>" +
+              "</div>" +
+              '<div class="cs-tog">' +
+              (c.linkLabel || "Learn More ->") +
+              "</div>" +
+              "</div>" +
+              "</a>"
+            );
+          }
+
+          var steps = c.how
+            .map(function (h, j) {
+              return (
+                '<div class="cs-howstep">' +
+                '<span class="cs-stepnum">' +
+                (j + 1) +
+                "</span>" +
+                "<div>" +
+                '<p class="cs-steptitle">' +
+                h.t +
+                "</p>" +
+                '<p class="cs-steptext">' +
+                h.d +
+                "</p>" +
+                "</div>" +
+                "</div>"
+              );
+            })
+            .join("");
+
+          var skills = c.skills
+            .map(function (s) {
+              return '<span class="cs-skill">' + s + "</span>";
+            })
+            .join("");
+
+          var bottom = isInternal
+            ? '<div class="cs-slabel">Impact</div><div class="cs-impact">' + c.impact + "</div>"
+            : '<div class="cs-slabel">What was at stake</div><div class="cs-stake">' + c.stake + "</div>";
+
+          return (
+            '<div class="panel cs-card" data-spotlight tabindex="0" role="button" aria-expanded="false" id="' +
+            prefix +
+            c.n +
+            '">' +
+            '<div class="cs-ch">' +
+            '<span class="cs-num">' +
+            c.n +
+            "</span>" +
+            "<div>" +
+            '<div class="cs-tags">' +
+            tags +
+            "</div>" +
+            '<h3 class="cs-title">' +
+            c.title +
+            "</h3>" +
+            '<p class="cs-sum">' +
+            c.summary +
+            "</p>" +
+            "</div>" +
+            '<div class="cs-tog">Learn More -&gt;</div>' +
+            "</div>" +
+            '<div class="cs-body">' +
+            '<div class="cs-slabel">Context</div><p class="cs-stext">' +
+            c.trigger +
+            "</p>" +
+            '<div class="cs-slabel">The challenge</div><p class="cs-stext">' +
+            c.blocker +
+            "</p>" +
+            '<div class="cs-slabel">What I did &amp; how</div><div class="cs-howbox">' +
+            steps +
+            "</div>" +
+            '<div class="cs-slabel">Skills applied</div><div class="cs-skills-row">' +
+            skills +
+            "</div>" +
+            '<div class="cs-slabel">Snapshot</div><p class="cs-snap">' +
+            c.snap +
+            "</p>" +
+            bottom +
+            "</div>" +
+            "</div>"
+          );
+        }
+
+        function toggleCard(card) {
+          if (!card) return;
+
+          card.classList.toggle("open");
+          card.setAttribute("aria-expanded", card.classList.contains("open") ? "true" : "false");
+
+          var action = card.querySelector(".cs-tog");
+          if (action) {
+            action.textContent = card.classList.contains("open") ? "Hide Details <-" : "Learn More ->";
+          }
+        }
+
+        function bindCardKeys(container) {
+          if (!container) return;
+          var cards = container.querySelectorAll(".cs-card:not(.cs-card-link)");
+
+          for (var i = 0; i < cards.length; i += 1) {
+            cards[i].addEventListener("click", function () {
+              toggleCard(this);
+            });
+
+            cards[i].addEventListener("keydown", function (event) {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleCard(this);
+              }
+            });
+          }
+        }
+
+        var cc = document.getElementById("cs-client");
+        var ic = document.getElementById("cs-internal");
+        if (cc) cc.innerHTML = clientData.map(function (c) { return buildCard(c, "cl", false); }).join("");
+        if (ic) ic.innerHTML = internalData.map(function (c) { return buildCard(c, "in", true); }).join("");
+        bindCardKeys(cc);
+        bindCardKeys(ic);
+      })();
+    </script>
+  </body>
+</html>

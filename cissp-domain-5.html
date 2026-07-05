@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CISSP Domain 5 notes: Identity and Access Management (IAM)." />
+    <title>CISSP Domain 5 | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-5-data.js?v=3" defer></script>
+    <script src="cissp-domain-5.js?v=3" defer></script>
+  </head>
+  <body data-page="work" data-domain-id="5">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 5 &middot; 13% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Identity and Access Management (IAM)</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            Controlling who and what can reach an organisation&rsquo;s assets &mdash; how identities are
+            proved, how access is granted and enforced, and how that access is governed across its
+            entire lifecycle.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 5 is broken into six exam outline areas that follow an identity from the moment it
+            is created, through how it proves itself and what it is allowed to do, to how that access
+            is reviewed and eventually removed.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">5.1 &mdash; Control physical &amp; logical access to assets</h3>
+            <p class="card-copy">
+              Governing access to the six asset types &mdash; <strong>information, systems, devices,
+              facilities, applications, and services</strong> &mdash; using both <strong>physical</strong>
+              controls (locks, guards, mantraps, badges) and <strong>logical</strong> controls
+              (permissions, ACLs, authentication). The principle: only the right subject reaches the
+              right object, in the right way.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">5.2 &mdash; Identification &amp; authentication strategy</h3>
+            <p class="card-copy">
+              Designing how <strong>people, devices, and services</strong> prove who they are &mdash;
+              identity proofing and registration, the three factor types, <strong>MFA and
+              passwordless</strong>, session management, <strong>SSO and federated identity</strong>,
+              credential vaults, and <strong>just-in-time access</strong>.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">5.3 &mdash; Federated identity with a third party</h3>
+            <p class="card-copy">
+              Extending trust across organisational boundaries &mdash; <strong>on-premise, cloud, and
+              hybrid</strong> federation &mdash; so an identity issued in one domain is honoured in
+              another (SAML, OIDC, OAuth), removing the need for separate accounts everywhere.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">5.4 &mdash; Implement &amp; manage authorization</h3>
+            <p class="card-copy">
+              Enforcing what an authenticated subject may do using access-control models &mdash;
+              <strong>RBAC, rule-based, MAC, DAC, ABAC, and risk-based</strong> &mdash; together with
+              policy enforcement architecture: <strong>policy decision points (PDP)</strong> and
+              <strong>policy enforcement points (PEP)</strong>.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">5.5 &mdash; Identity &amp; access provisioning lifecycle</h3>
+            <p class="card-copy">
+              Running identity end-to-end &mdash; <strong>provisioning and deprovisioning</strong>,
+              periodic <strong>account access reviews</strong>, role definition and transition,
+              <strong>privilege escalation and sudo auditing</strong>, and disciplined
+              <strong>service-account management</strong>.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">5.6 &mdash; Implement authentication systems</h3>
+            <p class="card-copy">
+              Deploying the protocols that operationalise authentication across the enterprise &mdash;
+              <strong>Kerberos, RADIUS / TACACS+ / Diameter, SAML, OpenID Connect, and OAuth 2.0</strong>
+              &mdash; and knowing where each fits and how each fails.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Access Control hierarchy (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Access control at a glance.</h2>
+          <p class="section-copy">
+            One map of how the access-control universe of Domain 5 fits together &mdash; from the
+            guiding principles and administration approaches, through the core access-control services
+            of identification, authentication, authorization and accountability, down to the specific
+            factors, biometrics and authorization models. Read it top-down: each box breaks into the
+            row beneath it.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Access Control hierarchy: principles, administration approaches, and access control services broken down into identification, authentication, authorization, accountability and session management.">
+            <div class="ac-map-inner">
+            <div class="ac-title">Access Control</div>
+
+            <div class="ac-row">
+              <!-- ===== Access Control Principles ===== -->
+              <div class="ac-node">
+                <div class="ac-box ac-strong">Access Control Principles</div>
+                <div class="ac-row">
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Separation of Duties</span></div></div>
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Need to Know</span></div></div>
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Least Privilege</span></div></div>
+                </div>
+              </div>
+
+              <!-- ===== Administration Approaches ===== -->
+              <div class="ac-node">
+                <div class="ac-box ac-strong">Administration Approaches</div>
+                <div class="ac-row">
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Centralized</span></div></div>
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Decentralized</span></div></div>
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Hybrid</span></div></div>
+                </div>
+              </div>
+
+              <!-- ===== Access Controls Services ===== -->
+              <div class="ac-node">
+                <div class="ac-box ac-strong">Access Controls Services</div>
+                <div class="ac-row">
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Identification</span></div></div>
+
+                  <!-- Authentication -->
+                  <div class="ac-node">
+                    <div class="ac-box ac-strong">Authentication</div>
+                    <div class="ac-row">
+                      <!-- Knowledge -->
+                      <div class="ac-node">
+                        <div class="ac-box">Knowledge</div>
+                        <div class="ac-row">
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Password</span></div></div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Passphrase</span></div></div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Questions</span></div></div>
+                        </div>
+                      </div>
+
+                      <!-- Ownership -->
+                      <div class="ac-node">
+                        <div class="ac-box">Ownership</div>
+                        <div class="ac-row">
+                          <div class="ac-node">
+                            <div class="ac-box">One-time Passwords</div>
+                            <div class="ac-row">
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Hard Tokens</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Soft Tokens</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Synchronous</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Asynchronous</span></div></div>
+                            </div>
+                          </div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Smart / Memory Cards</span></div></div>
+                        </div>
+                      </div>
+
+                      <!-- Characteristic -->
+                      <div class="ac-node">
+                        <div class="ac-box">Characteristic</div>
+                        <div class="ac-row">
+                          <div class="ac-node">
+                            <div class="ac-box">Physiological</div>
+                            <div class="ac-row">
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Fingerprint</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Hand Geometry</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Vascular Pattern</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Facial</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Iris</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Retina</span></div></div>
+                            </div>
+                          </div>
+                          <div class="ac-node">
+                            <div class="ac-box">Behavioural</div>
+                            <div class="ac-row">
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Voice</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Signature</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Key Stroke</span></div></div>
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Gait</span></div></div>
+                            </div>
+                          </div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Templates</span></div></div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Type 1: False Reject</span></div></div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Type 2: False Accept</span></div></div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Crossover Error Rate</span></div></div>
+                        </div>
+                      </div>
+
+                      <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Single / Multifactor</span></div></div>
+                      <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Authenticator Assurance Levels (AAL)</span></div></div>
+                      <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Just-in-time Access</span></div></div>
+                    </div>
+                  </div>
+
+                  <!-- Authorization -->
+                  <div class="ac-node">
+                    <div class="ac-box ac-strong">Authorization</div>
+                    <div class="ac-row">
+                      <div class="ac-node">
+                        <div class="ac-box">Discretionary</div>
+                        <div class="ac-row">
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rule</span></div></div>
+                          <div class="ac-node">
+                            <div class="ac-box ac-v"><span>Role</span></div>
+                            <div class="ac-row">
+                              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Types of RBAC</span></div></div>
+                            </div>
+                          </div>
+                          <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Attribute / Content</span></div></div>
+                        </div>
+                      </div>
+                      <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Non-discretionary</span></div></div>
+                      <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Mandatory</span></div></div>
+                      <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Principle of Access Control</span></div></div>
+                    </div>
+                  </div>
+
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accountability</span></div></div>
+                  <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Session Hijacking</span></div></div>
+                </div>
+              </div>
+
+              <!-- ===== Session Management ===== -->
+              <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Session Management</span></div></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 2 — Single Sign-on / Federated Access (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 2 &mdash; Visual summary</p>
+          <h2 class="section-title">Single sign-on &amp; federated access.</h2>
+          <p class="section-copy">
+            How one identity reaches many systems &mdash; single sign-on <em>within</em> an organisation
+            (Kerberos, Sesame) and federated identity <em>across</em> organisations (SAML, WS-Federation,
+            OpenID Connect, OAuth). Hover any box for its concept, an example, and &mdash; where it helps
+            &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Single sign-on and federated access hierarchy: SSO within an organisation (Kerberos, Sesame) and federated identity across organisations (Trust Relationship, SAML, WS-Federation, OpenID, OAuth).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Single Sign-on / Federated Access</div>
+              <div class="ac-intro">Allows users to access multiple systems with a single set of credentials</div>
+
+              <div class="ac-row">
+                <!-- ===== Single Sign-on ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong ac-withsub" data-ac-key="Single Sign-on"><span>Single Sign-on</span><span class="ac-sub">Access systems within the same organization</span></div>
+                  <div class="ac-row">
+                    <!-- Kerberos -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Kerberos</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box" data-ac-key="kerberos-components">Components</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>User / Client</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Key Distribution Center</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Authentication Service</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Ticket Granting Ticket (TGT)</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Ticket Granting Service</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Service Tickets</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Service</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Sesame -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Sesame</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Symmetric encryption only</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Symmetric &amp; Asymmetric encryption</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ===== Federated Identity Management ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong ac-withsub" data-ac-key="Federated Identity Management (FIM)"><span>Federated Identity Management (FIM)</span><span class="ac-sub">Access systems across multiple entities</span></div>
+                  <div class="ac-row">
+                    <!-- Trust Relationship -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Trust Relationship</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Principal / User</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Identity Provider</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Relying Party / Service Provider</span></div></div>
+                      </div>
+                    </div>
+                    <!-- SAML -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">SAML</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Tokens</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Assertions written in XML</span></div></div>
+                        <div class="ac-node">
+                          <div class="ac-box" data-ac-key="saml-components">Components</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Profiles</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Bindings</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Protocol</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Assertion</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Standalone federation protocols -->
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>WS-Federation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OpenID</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OAuth</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           DOMAIN 5 — COMPLETE INSTRUCTOR GUIDE
+           ============================================================ -->
+      <section class="section cissp-notes" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Domain 5 &mdash; Complete Guide</p>
+          <h2 class="section-title">Identity &amp; Access Management</h2>
+          <p class="section-copy">A complete instructor-led walkthrough of every concept tested in CISSP Domain 5, written the way a classroom trainer would teach a beginner &mdash; plain language first, then the exam-grade precision. No prior knowledge assumed. Each concept is built from the ground up: what it is, why it exists, how it actually works, and the exact distinction the exam will try to trick you on.</p>
+        </div>
+
+        <!-- ═══ SECTION 1: DOMAIN OVERVIEW & IAAA ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">01</span>
+            <p class="note-eyebrow">Domain Overview</p>
+            <h3 class="note-subtitle">Section 1 &mdash; What Domain 5 Is Really About: The IAAA Model</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>13% Exam Weight</h4><p>One of the larger domains. IAM concepts also bleed into Domains 1, 3 and 7.</p></div>
+            <div class="d4-fact-card"><h4>The Core: IAAA</h4><p>Identification &rarr; Authentication &rarr; Authorization &rarr; Accountability.</p></div>
+            <div class="d4-fact-card"><h4>Subject &amp; Object</h4><p>Subject = the <em>active</em> entity (user). Object = the <em>passive</em> resource (file).</p></div>
+            <div class="d4-fact-card"><h4>Exam Style</h4><p>Definitions, ordering, and &ldquo;which factor / which model&rdquo; selection questions.</p></div>
+          </div>
+          <p class="d4-body">Let me start the way I would on the first day of class. Every other domain in the CISSP is, in some sense, about protecting <em>things</em> &mdash; networks, software, data centres, cryptographic keys. Domain 5 is about protecting <em>access to those things</em>. It answers one deceptively simple question that sits underneath the entire security profession: <strong>&ldquo;Are you allowed to be here, and how do I know?&rdquo;</strong> Get this domain right and you understand the gatekeeping logic that every system on earth depends on. Get it wrong and an attacker simply walks in the front door wearing a borrowed badge.</p>
+          <p class="d4-body">Before we touch a single technology, you must internalise two words that the exam uses constantly: <strong>subject</strong> and <strong>object</strong>. A <em>subject</em> is the active entity that requests access &mdash; usually a person, but it can also be a process, a service, or a device acting on someone&rsquo;s behalf. An <em>object</em> is the passive resource being accessed &mdash; a file, a database row, a printer, a door. Access control, at its heart, is simply the set of rules that governs how subjects are permitted to interact with objects. Whenever a CISSP question feels abstract, re-read it and label the subject and the object; the fog usually clears immediately.</p>
+          <p class="d4-body">Now the spine of the whole domain: a four-step model the industry calls <strong>IAAA</strong> &mdash; Identification, Authentication, Authorization, and Accountability (some texts add a fifth A for Auditing, which is really the mechanism behind Accountability). These four steps always happen in this exact order, and the exam loves to test whether you know which step is which. Think of walking into a secure office building. First you <strong>claim</strong> who you are by stating your name at reception &mdash; that is <em>Identification</em>. Then you <strong>prove</strong> it by showing your photo ID &mdash; that is <em>Authentication</em>. The guard then checks a list to decide <strong>which floors</strong> your badge may open &mdash; that is <em>Authorization</em>. And finally, the building <strong>logs</strong> every door your badge touches so that later, if something goes wrong, your movements can be reconstructed &mdash; that is <em>Accountability</em>.</p>
+          <p class="d4-body">Hold onto the difference between the first two steps, because beginners confuse them more than anything else in this domain. <strong>Identification is a claim; authentication is the proof of that claim.</strong> Typing your username is identification &mdash; anyone can type your username, it is not a secret. Typing your password is authentication &mdash; that is the part only you should be able to do. A username uniquely identifies you in the system; a password (or fingerprint, or token) is what verifies that the person typing the username really is you. If you remember nothing else from this section, remember that identification asserts an identity and authentication validates it.</p>
+          <p class="d4-body">Accountability is the step people forget, but it is the reason audit logs exist. Accountability means that every action on a system can be traced back to a unique, authenticated individual &mdash; it makes <strong>non-repudiation</strong> possible, the property that a user cannot credibly deny having performed an action. This is precisely why <strong>shared accounts are a cardinal sin</strong> in security: if five administrators all log in as &ldquo;admin&rdquo;, the logs can prove that &ldquo;admin&rdquo; deleted the database, but they can never prove <em>which human</em> did it. No individual accountability, no non-repudiation. The exam will reward you every time for choosing &ldquo;assign unique individual accounts&rdquo; over any answer that tolerates shared credentials.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Memorise the IAAA order and the one-word essence of each: Identification = <em>claim</em>, Authentication = <em>prove</em>, Authorization = <em>permit</em>, Accountability = <em>trace</em>. The classic trap: a question describes typing a username and asks what just happened &mdash; the answer is <strong>identification</strong>, not authentication. And remember the golden rule of accountability: it requires <strong>unique</strong> identities, which is why shared/generic accounts destroy non-repudiation.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style>
+                <marker id="ar5" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker>
+              </defs>
+              <rect width="700" height="200" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">IAAA &mdash; The Access Control Lifecycle</text>
+              <!-- four stages -->
+              <g>
+                <rect x="20" y="56" width="150" height="86" rx="8" fill="#1a0505" stroke="#d31324" stroke-width="1.5"/>
+                <text x="95" y="80" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#d31324">1 &middot; Identification</text>
+                <text x="95" y="102" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">&ldquo;I am Alice&rdquo;</text>
+                <text x="95" y="120" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">claim an identity</text>
+                <text x="95" y="133" text-anchor="middle" class="om" font-size="8" fill="#6e7681">username, user ID</text>
+              </g>
+              <g>
+                <rect x="190" y="56" width="150" height="86" rx="8" fill="#1a0505" stroke="#d31324" stroke-width="1.5"/>
+                <text x="265" y="80" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#d31324">2 &middot; Authentication</text>
+                <text x="265" y="102" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">&ldquo;Here is my proof&rdquo;</text>
+                <text x="265" y="120" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">prove the claim</text>
+                <text x="265" y="133" text-anchor="middle" class="om" font-size="8" fill="#6e7681">password, token, biometric</text>
+              </g>
+              <g>
+                <rect x="360" y="56" width="150" height="86" rx="8" fill="#1a0505" stroke="#d31324" stroke-width="1.5"/>
+                <text x="435" y="80" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#d31324">3 &middot; Authorization</text>
+                <text x="435" y="102" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">&ldquo;What may I do?&rdquo;</text>
+                <text x="435" y="120" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">permit / deny access</text>
+                <text x="435" y="133" text-anchor="middle" class="om" font-size="8" fill="#6e7681">permissions, rights</text>
+              </g>
+              <g>
+                <rect x="530" y="56" width="150" height="86" rx="8" fill="#1a0505" stroke="#d31324" stroke-width="1.5"/>
+                <text x="605" y="80" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#d31324">4 &middot; Accountability</text>
+                <text x="605" y="102" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">&ldquo;It was logged&rdquo;</text>
+                <text x="605" y="120" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">trace the action</text>
+                <text x="605" y="133" text-anchor="middle" class="om" font-size="8" fill="#6e7681">audit logs, monitoring</text>
+              </g>
+              <line x1="170" y1="99" x2="188" y2="99" stroke="#d31324" stroke-width="2" marker-end="url(#ar5)"/>
+              <line x1="340" y1="99" x2="358" y2="99" stroke="#d31324" stroke-width="2" marker-end="url(#ar5)"/>
+              <line x1="510" y1="99" x2="528" y2="99" stroke="#d31324" stroke-width="2" marker-end="url(#ar5)"/>
+              <text x="350" y="172" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Identity proofing happens <tspan fill="#f5f5f5">before</tspan> step 1 &middot; Auditing is the mechanism that makes step 4 possible</text>
+              <text x="350" y="189" text-anchor="middle" class="om" font-size="8.5" fill="#6e7681">Non-repudiation depends on UNIQUE identities &mdash; never shared accounts</text>
+            </svg>
+            <figcaption>IAAA &mdash; the four ordered steps every access decision follows. Identification claims, authentication proves, authorization permits, accountability traces.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 2: 5.1 PHYSICAL & LOGICAL ACCESS ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">02</span>
+            <p class="note-eyebrow">5.1 &mdash; Controlling Access to Assets</p>
+            <h3 class="note-subtitle">Section 2 &mdash; Physical and Logical Controls Over the Six Asset Types</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Six Asset Types</h4><p>Information, Systems, Devices, Facilities, Applications, Services.</p></div>
+            <div class="d4-fact-card"><h4>Physical Controls</h4><p>Locks, guards, fences, mantraps, badges, bollards, lighting.</p></div>
+            <div class="d4-fact-card"><h4>Logical / Technical</h4><p>Permissions, ACLs, authentication, encryption, firewalls.</p></div>
+            <div class="d4-fact-card"><h4>Administrative</h4><p>Policies, procedures, training, background checks, separation of duties.</p></div>
+          </div>
+          <p class="d4-body">Sub-domain 5.1 asks you to control access to <strong>assets</strong>, and the exam outline names six categories you should be able to recite: <strong>information</strong> (the data itself), <strong>systems</strong> (servers and the platforms that run workloads), <strong>devices</strong> (laptops, phones, removable media), <strong>facilities</strong> (buildings, data centres, wiring closets), <strong>applications</strong> (the software users interact with), and <strong>services</strong> (APIs, cloud services, and the functions other systems consume). The reason this list matters is that a complete access-control programme must address all six &mdash; it is no good hardening your servers if anyone can walk into the data centre, and no good locking the data centre if your web application leaks records to the internet.</p>
+          <p class="d4-body">Controls themselves come in two great families that you must never blur: <strong>physical</strong> and <strong>logical</strong> (the latter often called <em>technical</em>). Physical controls operate in the tangible world &mdash; they stop a body from reaching an asset. Think of locked doors, security guards, fences, bollards, lighting, security dogs, and the famous <strong>mantrap</strong> (a small two-door vestibule where the second door will not open until the first has closed and locked, defeating <em>tailgating</em>, where an unauthorised person slips in behind an authorised one). Logical controls operate inside the machine &mdash; they stop a digital request from reaching a digital resource. Think of passwords, permissions, access control lists, encryption, firewalls, and intrusion prevention. The same conceptual goal &mdash; keep the wrong subject away from the object &mdash; is enforced once in atoms and once in bits.</p>
+          <p class="d4-body">There is a third family the exam weaves in here: <strong>administrative</strong> (or managerial) controls &mdash; the policies, procedures, training, background checks, and the human-process rules such as separation of duties and mandatory vacations. The big-picture model the CISSP wants you to hold is that strong security <em>layers</em> all three: administrative controls set the rules, physical controls enforce them in the building, and technical controls enforce them in the systems. This layering is the essence of <strong>defence in depth</strong> &mdash; no single control is trusted to be perfect, so controls are stacked such that an attacker who defeats one still faces the next.</p>
+          <p class="d4-body">When you operate on objects, the exam frequently borrows the database vocabulary of <strong>CRUD</strong> &mdash; Create, Read, Update, Delete &mdash; as the canonical set of operations a subject might be permitted to perform. Authorization, which we cover in depth later, is really about deciding which of these verbs each subject may apply to each object. A junior clerk might be permitted to <em>read</em> a record but not <em>delete</em> it; an auditor might be permitted to <em>read</em> everything and <em>write</em> nothing at all. Keep CRUD in mind: it is the granular language of permissions.</p>
+          <p class="d4-body">One asset-access technology that appears in exam scenarios is <strong>RFID (Radio Frequency Identification)</strong> &mdash; a system where physical objects carry electronic tags that communicate wirelessly with a reader, which then queries a back-end database. The three components are the <em>RFID tag</em> (passive, no battery, powered by the reader&rsquo;s field), the <em>RFID reader</em>, and the <em>back-end database</em>. RFID is the <strong>best choice for automated inventory control</strong> because passive tags require no line-of-sight, are cost-effective at scale, and require no manual scanning. The security weakness is that data can be intercepted between the tag and reader; the countermeasure is <strong>encryption</strong>, though this is limited because passive RFID tags have very low processing power and cannot run heavy cryptographic algorithms. For the exam: RFID = inventory automation; encryption = the countermeasure; processing power limitation = why strong encryption is difficult to implement on passive tags.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Know the three control <em>types</em> by implementation &mdash; <strong>physical</strong> (tangible: locks, guards, mantraps), <strong>technical/logical</strong> (systems: passwords, ACLs, encryption), <strong>administrative</strong> (people/process: policy, training). A mantrap is a <strong>physical, preventive</strong> control that defeats <strong>tailgating/piggybacking</strong>. For RFID: best for <strong>automated inventory tracking</strong>; security risk = <strong>interception between tag and reader</strong>; countermeasure = encryption, limited by low processing power of passive tags.</p>
+          </div>
+        </article>
+
+        <!-- ═══ SECTION 3: IDENTIFICATION & IDENTITY PROOFING ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">03</span>
+            <p class="note-eyebrow">5.2 &mdash; Identification</p>
+            <h3 class="note-subtitle">Section 3 &mdash; Identification, Registration, and Identity Proofing</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Identity Proofing</h4><p>Verifying a person is who they claim <em>before</em> issuing credentials.</p></div>
+            <div class="d4-fact-card"><h4>Registration</h4><p>Enrolling the verified identity and binding it to credentials.</p></div>
+            <div class="d4-fact-card"><h4>IAL 1/2/3</h4><p>NIST Identity Assurance Levels &mdash; rising rigour of proofing.</p></div>
+            <div class="d4-fact-card"><h4>Uniqueness</h4><p>Every identifier must map to exactly one subject &mdash; no sharing.</p></div>
+          </div>
+          <p class="d4-body">We said identification is the act of <em>claiming</em> an identity, but a claim is only meaningful if, at some earlier point, the organisation actually confirmed that the person behind the identity is real. That earlier point is called <strong>identity proofing</strong>, and it is one of the most under-appreciated steps in the whole domain. Before a bank ever issues you online-banking credentials, it verifies your real-world identity &mdash; checking a passport or driving licence, perhaps asking knowledge-based questions only you should be able to answer, perhaps a video call. Identity proofing is the foundation everything else stands on: if you authenticate a credential that was issued to an impostor, every subsequent control is faithfully protecting the wrong person.</p>
+          <p class="d4-body">Once a person is proofed, they go through <strong>registration</strong> (also called enrolment), where the verified identity is recorded in the system and <strong>bound</strong> to one or more credentials &mdash; a username paired with a password, a smart card, an enrolled fingerprint. This binding is the moment a real human becomes a digital subject. The quality of this whole process is graded by NIST SP 800-63 into <strong>Identity Assurance Levels (IAL)</strong>: IAL1 requires no real-world proofing (self-asserted, like signing up for a free newsletter), IAL2 requires evidence that the claimed identity is real and belongs to the person (remote or in-person verification of documents), and IAL3 requires in-person or supervised verification by a trained agent with physical document inspection. The higher the stakes, the higher the IAL you demand.</p>
+          <p class="d4-body">The non-negotiable property of any identifier is <strong>uniqueness</strong>. Every username, employee ID, or account must map to exactly one subject &mdash; we are back to the accountability principle from Section 1. Identifiers should also generally be <em>non-descriptive</em> and not reveal sensitive information: a username like &ldquo;admin&rdquo; or &ldquo;ceo&rdquo; advertises a high-value target, and an identifier that embeds a national ID number leaks data. Good practice issues identifiers that are unique, consistent, and reveal as little as possible about the privilege or the person behind them.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Distinguish the three lifecycle moments: <strong>proofing</strong> (verify the human is real, before issuance) &rarr; <strong>registration/enrolment</strong> (bind the identity to credentials) &rarr; <strong>identification</strong> (claim the identity at login). The exam test of judgement: increasing <strong>identity assurance</strong> means strengthening <em>proofing</em>, not strengthening the password. Higher-risk systems demand higher IAL.</p>
+          </div>
+        </article>
+
+        <!-- ═══ SECTION 4: AUTHENTICATION & THE THREE FACTORS ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">04</span>
+            <p class="note-eyebrow">5.2 &mdash; Authentication Factors</p>
+            <h3 class="note-subtitle">Section 4 &mdash; The Three Authentication Factors</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Type 1 &mdash; Knowledge</h4><p>Something you <strong>know</strong>: password, PIN, passphrase, security question.</p></div>
+            <div class="d4-fact-card"><h4>Type 2 &mdash; Ownership</h4><p>Something you <strong>have</strong>: token, smart card, phone, OTP device.</p></div>
+            <div class="d4-fact-card"><h4>Type 3 &mdash; Biometric</h4><p>Something you <strong>are</strong>: fingerprint, iris, face, voice, gait.</p></div>
+            <div class="d4-fact-card"><h4>Two more (context)</h4><p>Somewhere you are (location) &middot; Something you do (behaviour).</p></div>
+          </div>
+          <p class="d4-body">Authentication is where the domain gets its richest detail, and it all organises around <strong>three factor types</strong> that you must know cold, including their &ldquo;Type&rdquo; numbers because the exam uses them as shorthand. <strong>Type 1, something you know</strong> &mdash; knowledge in your head, like a password, a PIN, a passphrase, or the answer to a security question. <strong>Type 2, something you have</strong> &mdash; a physical possession, like a hardware token, a smart card, or your phone receiving a one-time code. <strong>Type 3, something you are</strong> &mdash; a physical or behavioural characteristic of your body, like a fingerprint, an iris pattern, or your voice. Two further factors appear in modern texts as context: <strong>somewhere you are</strong> (geolocation, IP, GPS) and <strong>something you do</strong> (behavioural patterns such as how you type or swipe).</p>
+          <p class="d4-body">Each factor type has a characteristic strength and a characteristic weakness, and understanding the trade-off is what the exam actually tests. Knowledge factors are cheap and easy to deploy but easy to steal &mdash; they can be guessed, phished, shoulder-surfed, or cracked, and crucially a stolen password can be used remotely by anyone with no further obstacle. Ownership factors are stronger because an attacker must physically obtain the token, but tokens can be lost, stolen, or cloned, and the user is inconvenienced when they leave it at home. Biometric factors are the hardest to forge and impossible to forget, but they are expensive, raise privacy concerns, and carry a unique problem: <strong>you cannot reset your fingerprint</strong> &mdash; if biometric template data is breached, the user is compromised for life.</p>
+          <p class="d4-body">This is the precise reason we combine factors into <strong>multi-factor authentication</strong>, which we cover fully in Section 8. But here is the single most important definitional point in the entire authentication topic, and the exam tests it relentlessly: <strong>multi-factor means factors of different TYPES, not multiple instances of the same type.</strong> A password plus a security question is <em>not</em> multi-factor &mdash; both are Type 1, something you know, so a single phishing attack harvests both. A password plus a code from your phone <em>is</em> multi-factor &mdash; one is Type 1, the other is Type 2, so the attacker must both steal your password and physically possess your phone. The whole value of MFA comes from forcing an attacker to defeat two fundamentally different kinds of obstacle at once.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">The most-tested trap in this domain: a scenario lists two credentials and asks if it is multi-factor. Count the <strong>types</strong>, not the credentials. Password + PIN + security question = still <strong>single-factor</strong> (all Type 1). Password + smartphone OTP = <strong>two-factor</strong>. True MFA crosses factor categories. Also remember: biometrics are the only factor you <em>cannot change</em> after a breach.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style></defs>
+              <rect width="700" height="230" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">The Three Authentication Factors</text>
+              <!-- Type 1 -->
+              <rect x="24" y="46" width="210" height="150" rx="10" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="129" y="74" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">TYPE 1</text>
+              <text x="129" y="94" text-anchor="middle" class="ot" font-size="13" font-weight="700" fill="#f5f5f5">Something you KNOW</text>
+              <circle cx="129" cy="124" r="16" fill="none" stroke="#d31324" stroke-width="2"/><text x="129" y="130" text-anchor="middle" class="ot" font-size="16" fill="#d31324">&#128273;</text>
+              <text x="129" y="160" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Password &middot; PIN</text>
+              <text x="129" y="174" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Passphrase &middot; Q&amp;A</text>
+              <text x="129" y="189" text-anchor="middle" class="om" font-size="8" fill="#6e7681">cheap &middot; easy to steal</text>
+              <!-- Type 2 -->
+              <rect x="245" y="46" width="210" height="150" rx="10" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="350" y="74" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">TYPE 2</text>
+              <text x="350" y="94" text-anchor="middle" class="ot" font-size="13" font-weight="700" fill="#f5f5f5">Something you HAVE</text>
+              <rect x="338" y="110" width="24" height="30" rx="3" fill="none" stroke="#d31324" stroke-width="2"/><text x="350" y="131" text-anchor="middle" class="ot" font-size="13" fill="#d31324">&#128241;</text>
+              <text x="350" y="160" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Token &middot; Smart card</text>
+              <text x="350" y="174" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Phone OTP &middot; Key fob</text>
+              <text x="350" y="189" text-anchor="middle" class="om" font-size="8" fill="#6e7681">stronger &middot; can be lost</text>
+              <!-- Type 3 -->
+              <rect x="466" y="46" width="210" height="150" rx="10" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="571" y="74" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">TYPE 3</text>
+              <text x="571" y="94" text-anchor="middle" class="ot" font-size="13" font-weight="700" fill="#f5f5f5">Something you ARE</text>
+              <text x="571" y="132" text-anchor="middle" class="ot" font-size="20" fill="#d31324">&#128070;</text>
+              <text x="571" y="160" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Fingerprint &middot; Iris</text>
+              <text x="571" y="174" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Face &middot; Voice &middot; Gait</text>
+              <text x="571" y="189" text-anchor="middle" class="om" font-size="8" fill="#6e7681">hard to forge &middot; can&rsquo;t reset</text>
+              <text x="350" y="220" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">MFA = combine <tspan fill="#d31324">different types</tspan> &mdash; two of the same type is still single-factor</text>
+            </svg>
+            <figcaption>The three factors: know, have, are. Multi-factor authentication requires combining factors from different columns &mdash; never two from the same column.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 5: TYPE 1 KNOWLEDGE ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">05</span>
+            <p class="note-eyebrow">5.2 &mdash; Knowledge Factors</p>
+            <h3 class="note-subtitle">Section 5 &mdash; Passwords, Passphrases, and Why Knowledge Is the Weakest Factor</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Passphrase &gt; Password</h4><p>Length beats complexity. A long phrase resists brute force better.</p></div>
+            <div class="d4-fact-card"><h4>Cognitive Q&amp;A</h4><p>Security questions &mdash; weak; answers are often public/guessable.</p></div>
+            <div class="d4-fact-card"><h4>Salt + Hash</h4><p>Never store plaintext. Salt defeats rainbow tables.</p></div>
+            <div class="d4-fact-card"><h4>NIST 800-63B</h4><p>Favour length, screen against breached lists, drop forced rotation.</p></div>
+          </div>
+          <p class="d4-body">Knowledge factors are the oldest and most common form of authentication, and also the weakest, so the exam expects you to understand both how they work and how they fail. A <strong>password</strong> is a secret string; a <strong>PIN</strong> is a short numeric password; a <strong>passphrase</strong> is a longer sequence of words that is easier for a human to remember and far harder for a machine to brute-force because its strength comes from <em>length</em> rather than from a few substituted symbols. The modern guidance &mdash; reflected in NIST SP 800-63B and very testable &mdash; is that a long passphrase such as &ldquo;correct-horse-battery-staple&rdquo; is stronger and more usable than a short, tortured password like &ldquo;P@ssw0rd!&rdquo;. Length is the dominant lever for resisting brute force.</p>
+          <p class="d4-body">A weaker cousin is the <strong>cognitive password</strong>, better known as the security question &mdash; &ldquo;What was your first pet&rsquo;s name?&rdquo; These are convenient for account recovery but genuinely insecure, because the answers are often discoverable on social media, guessable, or shared across many sites. Treat them as a low-assurance fallback, never as a serious second factor. Remember from Section 4: a password plus a security question is still single-factor, because both live in your memory as Type 1 knowledge. An important nuance the exam tests: authorising the <em>request</em> for a new user account happens <strong>before</strong> account creation, but that authorisation step is <strong>not</strong> a standard element of user account administration &mdash; it is a separate approval step. User account administration covers establishing, issuing, and closing accounts; tracking access; and periodic verification. Authorising the request is a prerequisite, not part of the administration cycle itself.</p>
+          <p class="d4-body">How a password is <em>stored</em> matters as much as how strong it is, and this is a favourite exam theme. Systems must never store passwords in plaintext. Instead they store a <strong>hash</strong> &mdash; a one-way cryptographic fingerprint that cannot be reversed back into the password. When you log in, the system hashes what you typed and compares it to the stored hash. To defeat precomputed attack tables (<strong>rainbow tables</strong>), each password is combined with a unique random value called a <strong>salt</strong> before hashing, so that two users with the same password produce completely different stored hashes. Modern systems go further and use deliberately slow, memory-hard hashing functions (bcrypt, scrypt, Argon2, PBKDF2) so that even a stolen hash database is painfully expensive to crack.</p>
+          <p class="d4-body">You must also be able to name the attacks. A <strong>brute-force attack</strong> tries every possible combination. A <strong>dictionary attack</strong> tries lists of likely words and known-common passwords. A <strong>hybrid attack</strong> mutates dictionary words with numbers and symbols. <strong>Credential stuffing</strong> replays username/password pairs stolen from one breached site against many other sites, exploiting password reuse. <strong>Password spraying</strong> flips the logic &mdash; it tries one or two very common passwords against many accounts to stay under lockout thresholds. The countermeasures are equally testable: enforce account <strong>lockout</strong> after a few failed attempts to stop online guessing, screen new passwords against <strong>breached-password lists</strong>, and crucially &mdash; per current NIST guidance &mdash; <em>stop</em> forcing arbitrary periodic password rotation, because mandatory frequent changes drive users toward weak, predictable patterns. Rotate only on evidence of compromise.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Modern NIST 800-63B positions: favour <strong>length</strong> over forced complexity, <strong>screen against breach lists</strong>, allow long passphrases and paste, and <strong>do not mandate periodic rotation</strong> without cause &mdash; this reverses older &ldquo;change every 90 days&rdquo; dogma, and the exam now tests the new view. Storage answer is always <strong>salted hash</strong> with a slow function (bcrypt/Argon2), never encryption and never plaintext. Salt specifically defeats <strong>rainbow tables</strong>.</p>
+          </div>
+        </article>
+
+        <!-- ═══ SECTION 6: TYPE 2 OWNERSHIP / TOKENS / OTP ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">06</span>
+            <p class="note-eyebrow">5.2 &mdash; Ownership Factors</p>
+            <h3 class="note-subtitle">Section 6 &mdash; Tokens, One-Time Passwords, and Smart Cards</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Synchronous OTP</h4><p>Time-based (TOTP) &mdash; code changes every ~30s, clock-synced.</p></div>
+            <div class="d4-fact-card"><h4>Asynchronous OTP</h4><p>Counter / challenge-response (HOTP) &mdash; event-based.</p></div>
+            <div class="d4-fact-card"><h4>Hard vs Soft Token</h4><p>Hard = physical device; Soft = app (Google/Microsoft Authenticator).</p></div>
+            <div class="d4-fact-card"><h4>Smart vs Memory Card</h4><p>Smart card has a <em>processor</em>; memory card only <em>stores</em> data.</p></div>
+          </div>
+          <p class="d4-body">Ownership factors prove possession of a physical thing, and the workhorse of this category is the <strong>one-time password (OTP)</strong> &mdash; a code that is valid for a single login and then useless, which defeats replay attacks because a stolen code cannot be reused. OTPs come in two flavours, and distinguishing them is a guaranteed exam point. <strong>Synchronous</strong> tokens are usually <em>time-based</em>: the token and the server share a secret seed and both run the same clock, so they independently compute the same code every interval (typically 30 seconds). This is the <strong>TOTP</strong> algorithm (Time-based One-Time Password) that powers Google Authenticator and most modern apps. <strong>Asynchronous</strong> tokens are <em>event/counter-based</em> or <em>challenge-response</em>: the code advances each time you press a button (the <strong>HOTP</strong> algorithm, HMAC-based One-Time Password using a counter), or the server issues a random challenge that the token must transform into a correct response. A simple memory hook: <em>synchronous = synchronised clocks (time); asynchronous = a counter or a challenge.</em></p>
+          <p class="d4-body">Tokens also split by physical form. A <strong>hard token</strong> is a dedicated physical device &mdash; the classic RSA SecurID key fob with its rolling six-digit display, or a USB security key. A <strong>soft token</strong> is software that turns a general-purpose device into a token, like an authenticator app on your phone. Hard tokens are harder to compromise remotely because malware on your laptop cannot reach into a separate device, but they cost money and get lost; soft tokens are free and convenient but inherit the security of the phone they run on. Both are legitimately Type 2 because possession of the device is what is being proven.</p>
+          <p class="d4-body">Then there are cards, and the exam loves the distinction between two that sound alike. A <strong>memory card</strong> only <em>stores</em> data &mdash; think of an old hotel key card or a magnetic-stripe card; it has no processing ability and is easily copied. A <strong>smart card</strong> contains an embedded <em>microprocessor</em> chip that can perform cryptographic operations internally, so secrets never leave the chip &mdash; this is your modern chip-and-PIN bank card or a government PIV/CAC card. Because a smart card can compute, it can prove possession without exposing its secret key, making it dramatically more secure than a memory card. The one-line discriminator: <strong>smart card processes, memory card only stores.</strong></p>
+          <p class="d4-body">One honest caveat the exam increasingly reflects: OTPs delivered by <strong>SMS text message are the weakest form of second factor</strong>, vulnerable to SIM-swapping and interception, and NIST has deprecated SMS for high-assurance use. App-based TOTP is better; hardware security keys using FIDO2/WebAuthn (which also resist phishing because they are cryptographically bound to the legitimate site) are best. When a question contrasts second-factor methods, the security ranking is roughly: hardware key &gt; authenticator app (TOTP) &gt; push notification &gt; SMS.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Lock these pairs: <strong>Synchronous = time-based (TOTP)</strong>; <strong>Asynchronous = counter/event or challenge-response (HOTP)</strong>. <strong>Hard token = physical device</strong>; <strong>soft token = app</strong>. <strong>Smart card = on-board processor</strong>; <strong>memory card = storage only</strong>. And the modern ranking: <strong>SMS OTP is the weakest 2FA</strong> (SIM swap), hardware FIDO2 keys are phishing-resistant and strongest.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style></defs>
+              <rect width="700" height="200" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">One-Time Passwords: Synchronous vs Asynchronous</text>
+              <!-- synchronous -->
+              <rect x="24" y="44" width="320" height="138" rx="10" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="184" y="68" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">SYNCHRONOUS &mdash; Time-based (TOTP)</text>
+              <circle cx="90" cy="112" r="26" fill="none" stroke="#f5f5f5" stroke-width="2"/>
+              <line x1="90" y1="112" x2="90" y2="92" stroke="#d31324" stroke-width="2"/><line x1="90" y1="112" x2="105" y2="118" stroke="#d31324" stroke-width="2"/>
+              <text x="90" y="156" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">shared clock</text>
+              <text x="210" y="100" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">seed + current time</text>
+              <text x="210" y="118" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">&rarr; same code both ends</text>
+              <text x="210" y="138" text-anchor="middle" class="om" font-size="9" fill="#6e7681">refreshes every ~30 s</text>
+              <!-- asynchronous -->
+              <rect x="356" y="44" width="320" height="138" rx="10" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="516" y="68" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">ASYNCHRONOUS &mdash; Counter / Challenge</text>
+              <rect x="392" y="92" width="40" height="40" rx="5" fill="none" stroke="#f5f5f5" stroke-width="2"/>
+              <text x="412" y="117" text-anchor="middle" class="ot" font-size="13" fill="#d31324">&#43;1</text>
+              <text x="412" y="156" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">counter (HOTP)</text>
+              <text x="540" y="100" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">event increments counter</text>
+              <text x="540" y="118" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">or server sends challenge</text>
+              <text x="540" y="138" text-anchor="middle" class="om" font-size="9" fill="#6e7681">token returns the response</text>
+            </svg>
+            <figcaption>Synchronous OTP relies on synchronised clocks (TOTP); asynchronous OTP relies on a shared counter or a challenge-response exchange (HOTP).</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 7: TYPE 3 BIOMETRICS / FAR FRR CER ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">07</span>
+            <p class="note-eyebrow">5.2 &mdash; Biometric Factors</p>
+            <h3 class="note-subtitle">Section 7 &mdash; Biometrics: Accuracy, FAR, FRR, and the Crossover Error Rate</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Type I = FRR</h4><p>False Rejection &mdash; a <em>legitimate</em> user is denied. Hurts usability.</p></div>
+            <div class="d4-fact-card"><h4>Type II = FAR</h4><p>False Acceptance &mdash; an <em>impostor</em> is admitted. The security risk.</p></div>
+            <div class="d4-fact-card"><h4>CER / EER</h4><p>Where FRR = FAR. <strong>Lower CER = more accurate</strong> device.</p></div>
+            <div class="d4-fact-card"><h4>Physiological vs Behavioural</h4><p>Who you <em>are</em> (fingerprint) vs how you <em>act</em> (voice, gait).</p></div>
+          </div>
+          <p class="d4-body">Biometrics authenticate you by measuring something about your body, and they divide into two groups. <strong>Physiological</strong> biometrics measure static physical traits: fingerprint, hand geometry, vascular (vein) pattern, facial structure, iris, and retina. <strong>Behavioural</strong> biometrics measure <em>how you do something</em>: your voice, signature dynamics, keystroke rhythm, and gait (the way you walk). A quick rule of thumb &mdash; physiological is &ldquo;what you are&rdquo;, behavioural is &ldquo;what you do&rdquo;, but both are still classed as Type 3. Of the physiological methods, <strong>iris scanning</strong> is generally regarded as the most accurate and stable over a lifetime, while retina scanning is highly accurate but intrusive (it requires a close eye scan and can reveal medical conditions, raising privacy concerns). When a biometric is enrolled, the system does not store a raw image; it extracts and stores a mathematical <strong>template</strong>, which is what makes a biometric database breach so serious &mdash; remember, you cannot reissue a fingerprint.</p>
+          <p class="d4-body">Now the part the exam tests more than any other biometric concept: <strong>accuracy errors</strong>. No biometric is perfect, so every system makes two kinds of mistake. A <strong>False Rejection</strong>, also called a <strong>Type I error</strong>, happens when a <em>legitimate</em> user is wrongly denied &mdash; the system fails to recognise its own authorised person. The rate at which this happens is the <strong>False Rejection Rate (FRR)</strong>. A <strong>False Acceptance</strong>, also called a <strong>Type II error</strong>, happens when an <em>impostor</em> is wrongly accepted &mdash; the system mistakes a stranger for an authorised user. The rate is the <strong>False Acceptance Rate (FAR)</strong>. Keep them straight with this logic: rejection annoys the <em>right</em> people (an availability and usability problem), while acceptance admits the <em>wrong</em> people (a genuine security breach). For that reason, in high-security environments you tune the sensitivity to minimise FAR even if it means a higher FRR &mdash; better to occasionally re-scan a legitimate employee than to ever let an impostor through.</p>
+          <p class="d4-body">FAR and FRR move in opposite directions as you adjust the device&rsquo;s sensitivity. Crank sensitivity up and you reject more impostors but also more legitimate users (FAR falls, FRR rises); loosen it and you admit legitimate users more easily but also more impostors (FRR falls, FAR rises). Plot both curves against sensitivity and they cross at a single point. That crossing point is the <strong>Crossover Error Rate (CER)</strong>, also called the Equal Error Rate (EER) &mdash; the sensitivity setting at which FRR equals FAR. The CER is the headline figure for comparing biometric devices: <strong>the lower the CER, the more accurate the device overall</strong>. If device A has a CER of 1% and device B has a CER of 3%, device A is the better biometric, full stop. This single fact &mdash; lower CER is better &mdash; is one of the highest-yield exam points in Domain 5.</p>
+          <p class="d4-body">Two more practical biometric concepts round this out. <strong>Enrolment</strong> is the one-time process of registering your biometric and building the template; if it takes too long or fails too often, the system has poor usability. <strong>Throughput rate</strong> is the time required to scan and approve or deny each person &mdash; how quickly the system processes individuals in a queue &mdash; and it directly determines whether a biometric is practical in a high-volume environment like a data-centre entrance with hundreds of daily badge-ins. And then there is <strong>user acceptance</strong>: this is the <em>most common difficulty</em> with biometric systems, and the exam tests this exact point. Accuracy issues and cost matter, but when a question asks what the biggest real-world obstacle to biometric deployment is, the answer is <strong>gaining user acceptance</strong>. People resist having their fingerprints, irises, or faces scanned &mdash; for privacy reasons, cultural reasons, or simply discomfort &mdash; and a technically superb biometric that employees refuse to enrol in is a failed control. Design a biometric rollout and user acceptance must be your first concern, before you even consider accuracy metrics.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Burn this in: <strong>Type I error = False Rejection (FRR)</strong> = legitimate user denied; <strong>Type II error = False Acceptance (FAR)</strong> = impostor admitted &mdash; Type II is the dangerous one. They are inversely related as sensitivity changes, and they meet at the <strong>Crossover Error Rate (CER/EER)</strong>. To compare two biometric devices, pick the one with the <strong>lower CER</strong>. In high-security settings, bias toward a <strong>low FAR</strong> even at the cost of higher FRR. The two <strong>most accurate</strong> biometric systems are <strong>iris scans</strong> (most accurate, hardest to counterfeit, stable over a lifetime) and <strong>vascular pattern scans</strong> (unique vein patterns). When sensitivity <strong>increases</strong>: FRR increases and FAR decreases. The <strong>most common difficulty</strong> with biometric deployment is gaining <strong>user acceptance</strong> &mdash; not accuracy, not cost.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style></defs>
+              <rect width="700" height="300" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="28" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">Biometric Accuracy &mdash; FRR, FAR &amp; the Crossover Error Rate</text>
+              <!-- axes -->
+              <line x1="80" y1="240" x2="640" y2="240" stroke="#6e7681" stroke-width="1.5"/>
+              <line x1="80" y1="60" x2="80" y2="240" stroke="#6e7681" stroke-width="1.5"/>
+              <text x="360" y="270" text-anchor="middle" class="om" font-size="10" fill="#a6a6a6">Sensitivity &nbsp;&rarr;&nbsp; (stricter to the right)</text>
+              <text x="40" y="150" text-anchor="middle" class="om" font-size="10" fill="#a6a6a6" transform="rotate(-90 40 150)">Error rate</text>
+              <!-- FRR rising: low at left, high at right -->
+              <path d="M80,235 C220,225 320,150 640,70" fill="none" stroke="#ff6b81" stroke-width="2.5"/>
+              <text x="600" y="62" class="om" font-size="10" fill="#ff6b81">FRR (Type I)</text>
+              <text x="600" y="76" class="om" font-size="8" fill="#6e7681">legit denied</text>
+              <!-- FAR falling: high at left, low at right -->
+              <path d="M80,70 C220,150 320,225 640,235" fill="none" stroke="#d31324" stroke-width="2.5"/>
+              <text x="600" y="226" class="om" font-size="10" fill="#d31324">FAR (Type II)</text>
+              <text x="600" y="240" class="om" font-size="8" fill="#6e7681">impostor admitted</text>
+              <!-- crossover -->
+              <circle cx="360" cy="170" r="7" fill="#f5cf3d"/>
+              <line x1="360" y1="170" x2="360" y2="240" stroke="#f5cf3d" stroke-width="1" stroke-dasharray="4 3"/>
+              <line x1="80" y1="170" x2="360" y2="170" stroke="#f5cf3d" stroke-width="1" stroke-dasharray="4 3"/>
+              <text x="372" y="160" class="ot" font-size="12" font-weight="800" fill="#f5cf3d">CER / EER</text>
+              <text x="372" y="176" class="om" font-size="8.5" fill="#a6a6a6">where FRR = FAR</text>
+              <text x="350" y="294" text-anchor="middle" class="om" font-size="10" fill="#f5f5f5">Lower CER &rarr; <tspan fill="#d31324" font-weight="700">more accurate device</tspan> &middot; High-security &rarr; tune for low FAR (accept higher FRR)</text>
+            </svg>
+            <figcaption>As sensitivity rises, false acceptances fall and false rejections climb. They intersect at the Crossover Error Rate &mdash; the single best metric for comparing biometric accuracy.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 8: MFA, PASSWORDLESS, AAL, SESSION ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">08</span>
+            <p class="note-eyebrow">5.2 &mdash; MFA, Passwordless &amp; Sessions</p>
+            <h3 class="note-subtitle">Section 8 &mdash; Multi-Factor, Passwordless, Assurance Levels and Session Management</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>MFA</h4><p>Two or more <em>different</em> factor types &mdash; the single biggest account-takeover defence.</p></div>
+            <div class="d4-fact-card"><h4>Passwordless</h4><p>FIDO2 / WebAuthn, passkeys, biometrics &mdash; no shared secret to phish.</p></div>
+            <div class="d4-fact-card"><h4>AAL 1/2/3</h4><p>NIST Authenticator Assurance Levels &mdash; AAL3 needs a hardware crypto authenticator.</p></div>
+            <div class="d4-fact-card"><h4>JIT Access</h4><p>Just-in-time: grant elevated rights only for the moment they are needed.</p></div>
+          </div>
+          <p class="d4-body">We have met the three factors; now we combine and govern them. <strong>Multi-factor authentication (MFA)</strong> requires two or more factors of <em>different types</em>, and it is, empirically, the most effective single control against account takeover &mdash; even a phished password is useless to an attacker who lacks the second factor. The exam will reward MFA as the answer to a huge range of &ldquo;how do we stop credential theft&rdquo; scenarios. Be careful, though, with the closely related term <strong>two-step verification</strong>: a password followed by an emailed code is two <em>steps</em> but, if both arrive through things-you-know channels, may not be two true <em>factors</em>. Always re-check that the steps cross factor types.</p>
+          <p class="d4-body"><strong>Passwordless authentication</strong> is the modern direction of travel: it removes the shared secret entirely. Instead of a password, the user authenticates with a cryptographic key stored on a device (FIDO2/WebAuthn, increasingly marketed as <strong>passkeys</strong>) often unlocked by a local biometric or PIN. Because there is no password to phish, reuse, or steal from a server, passwordless methods eliminate whole categories of attack &mdash; phishing, credential stuffing, and database password breaches all become moot. The device proves possession of a private key that never leaves it, and the matching public key is all the server stores. When a question asks for the most phishing-resistant approach, FIDO2-based passwordless is the modern best answer.</p>
+          <p class="d4-body">NIST grades authentication strength with <strong>Authenticator Assurance Levels (AAL)</strong>, the authentication-side counterpart to the IAL we met in Section 3. <strong>AAL1</strong> permits single-factor authentication (e.g. a password alone) for low-risk access. <strong>AAL2</strong> requires multi-factor authentication, proving possession and control of two distinct factors. <strong>AAL3</strong> is the highest level: it requires a <em>hardware-based</em> cryptographic authenticator that is verifier-impersonation-resistant (phishing-resistant) &mdash; think a FIDO2 hardware key or PIV smart card. The pattern to remember: the more sensitive the system, the higher the AAL you mandate, and AAL3 specifically demands hardware crypto, not just an app code.</p>
+          <p class="d4-body">Modern IAM also embraces <strong>just-in-time (JIT) access</strong>: rather than granting standing elevated privileges that sit dormant and dangerous, the system grants the elevated right only at the moment it is needed and revokes it immediately after &mdash; shrinking the window an attacker can exploit. JIT is a pillar of <strong>Zero Trust</strong> because it verifies every access request and grants only the minimum necessary access for that specific moment. The exam recognises three distinct forms: <strong>JIT Identity</strong> (a temporary user account provisioned on demand and removed after the task), <strong>JIT Privileged Access</strong> (admin-level rights granted for a specific operation, then immediately revoked), and <strong>Ephemeral accounts</strong> (accounts created for a single session and immediately deleted after use &mdash; the most restrictive form, since nothing persists to compromise). All three reduce insider threats, limit privilege abuse, and prevent lateral movement because standing privileges simply do not exist. JIT pairs naturally with Privileged Access Management (PAM). Also know <strong>context-aware authentication</strong>: it evaluates <em>location</em>, <em>time of day</em>, and <em>device type</em> &mdash; especially in MDM environments &mdash; and demands step-up authentication when those signals indicate elevated risk. Finally, none of this matters if the <strong>session</strong> established after login is left unguarded. Good <strong>session management</strong> means binding the session to a strong, random, unpredictable session identifier; enforcing <em>idle timeouts</em> (log the user out after inactivity) and <em>absolute timeouts</em> (cap the total session length); regenerating the session ID after privilege changes; and invalidating the session on logout. We meet the attack this defends against &mdash; session hijacking &mdash; in Section 15, but the design principle belongs here: authentication proves who you are once, while session management keeps that proof from being stolen for the rest of your visit.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Map the two NIST ladders: <strong>IAL</strong> grades <em>identity proofing</em>, <strong>AAL</strong> grades <em>authentication strength</em> (AAL2 = MFA, AAL3 = hardware crypto authenticator). MFA is the go-to answer for stopping account takeover; <strong>FIDO2/passwordless</strong> is the most phishing-resistant. And remember session controls: short <strong>idle timeout</strong> + <strong>absolute timeout</strong> + a strong random session ID regenerated after login.</p>
+          </div>
+        </article>
+
+        <!-- ═══ SECTION 9: AUTHORIZATION MODELS ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">09</span>
+            <p class="note-eyebrow">5.4 &mdash; Authorization Models</p>
+            <h3 class="note-subtitle">Section 9 &mdash; DAC, MAC, RBAC, Rule-Based, ABAC and Risk-Based Access Control</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>DAC</h4><p>Owner decides. Flexible, used in commercial OSes. Identity-based.</p></div>
+            <div class="d4-fact-card"><h4>MAC</h4><p>System enforces labels (Top Secret). Rigid, used in military.</p></div>
+            <div class="d4-fact-card"><h4>RBAC</h4><p>Access by job <em>role</em>. Scales to large enterprises.</p></div>
+            <div class="d4-fact-card"><h4>ABAC</h4><p>Access by <em>attributes</em> &amp; policy. Most granular &amp; dynamic.</p></div>
+          </div>
+          <p class="d4-body">Once a subject is authenticated, <strong>authorization</strong> decides what that subject may actually do, and the CISSP expects fluency in the major access-control <em>models</em>. The first is <strong>Discretionary Access Control (DAC)</strong>, where the <em>owner</em> of a resource decides who may access it &mdash; access is at the owner&rsquo;s discretion. When you right-click a file and share it with a colleague, that is DAC in action. It is flexible and intuitive, which is why it underpins commercial operating systems like Windows and Linux file permissions, but that same flexibility is its weakness: an owner can carelessly or maliciously over-share, and DAC is therefore vulnerable to malware running with a user&rsquo;s rights and to the spread of access through Trojan horses. DAC is <em>identity-based</em> &mdash; the access control list names the specific users or groups allowed.</p>
+          <p class="d4-body">At the opposite pole is <strong>Mandatory Access Control (MAC)</strong>, where the <em>system</em>, not the owner, enforces access based on <strong>security labels</strong>. Every object carries a classification (Unclassified, Confidential, Secret, Top Secret) and every subject carries a clearance, and the operating system mechanically enforces the rules &mdash; no owner can override them. MAC is rigid, expensive, and used where confidentiality is paramount: military and government systems, and specialised secure OSes like SELinux. The exam association is fixed: <strong>MAC = labels, clearances, lattice, military/government, non-discretionary and rigid</strong>. Because the rules are imposed top-down rather than left to owners, MAC is the textbook example of <em>non-discretionary</em> access control.</p>
+          <p class="d4-body"><strong>Role-Based Access Control (RBAC)</strong> is the model that actually runs most large enterprises, because it solves a scaling problem. Instead of assigning permissions to individuals one by one, you define <strong>roles</strong> that mirror job functions &mdash; &ldquo;Accounts Payable Clerk&rdquo;, &ldquo;Help-Desk Tier 1&rdquo;, &ldquo;Database Administrator&rdquo; &mdash; attach the appropriate permissions to each role, and then simply assign people to roles. When someone changes jobs, you move them to a new role and their access realigns automatically; when a thousand new hires arrive, you drop them into existing roles rather than hand-crafting a thousand permission sets. RBAC is the natural enforcement engine for <em>least privilege</em> at scale. One nuance the exam tests: <strong>RBAC is technically a form of DAC</strong>, because the roles themselves are determined by data owners and managers per company policy &mdash; the owner ultimately decides who belongs to which role. This surprises many students but it is the authoritative CISSP position: RBAC falls under the DAC family because discretionary decisions are made at the role-definition level, even though individual users do not directly set permissions. RBAC is most efficient when assignments to data permissions for user groups change frequently. Do not confuse it with <strong>Rule-Based Access Control</strong> (sometimes also abbreviated RBAC, which is why context matters): rule-based control applies global <em>if/then</em> rules to everyone regardless of identity &mdash; a firewall ruleset is the classic example, as is &ldquo;no one may log in outside business hours.&rdquo; Rule-based is most commonly a form of DAC as well, since system owners create the rules.</p>
+          <p class="d4-body">The most modern and granular model is <strong>Attribute-Based Access Control (ABAC)</strong>, which makes decisions by evaluating four categories of <em>attributes</em> against a written policy: <strong>subject attributes</strong> (age, clearance, role, department), <strong>object attributes</strong> (type, classification, sensitivity), <strong>action attributes</strong> (read, write, delete &mdash; what the subject wants to do), and <strong>contextual/environment attributes</strong> (time of day, location, device health). ABAC can express rich, dynamic rules such as &ldquo;permit a finance-department employee to read salary records only from a managed device, during business hours, from inside the corporate network.&rdquo; ABAC policies are written in a structured language called <strong>XACML (eXtensible Access Control Markup Language)</strong> &mdash; a point the exam tests directly. ABAC enforces elements of both DAC and MAC and is the foundation of <strong>zero-trust</strong> and modern policy-based cloud authorization. A close relative is <strong>risk-based (adaptive) access control</strong>, which evaluates the risk of each request in real time &mdash; an impossible-travel login or an unrecognised device raises the risk score and triggers step-up authentication or denial. Where ABAC asks &ldquo;do the attributes satisfy policy?&rdquo;, risk-based control asks &ldquo;how risky does this specific attempt look right now?&rdquo;</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Match each model to its trigger words: <strong>DAC</strong> = owner&rsquo;s discretion, identity-based, flexible, commercial OS. <strong>MAC</strong> = labels/clearances, non-discretionary, rigid, military. <strong>RBAC</strong> = job roles, scales for enterprises &mdash; and <strong>RBAC is a form of DAC</strong> (roles set by owners/managers). <strong>Rule-based</strong> = global if/then rules (firewalls, time-of-day) applied to all. <strong>ABAC</strong> = subject/object/action/environment attributes + policy, most granular, powers zero-trust; policy language = <strong>XACML</strong>. <strong>Risk-based</strong> = real-time adaptive scoring with step-up auth. ABAC is best for complex contextual rules like &ldquo;salespeople from managed devices on corporate wireless between 8am&ndash;6pm.&rdquo;</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style></defs>
+              <rect width="700" height="250" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">Authorization Models &mdash; Who Decides Access?</text>
+              <!-- DAC -->
+              <rect x="20" y="46" width="160" height="180" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.3"/>
+              <text x="100" y="70" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#d31324">DAC</text>
+              <text x="100" y="90" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">Owner decides</text>
+              <text x="100" y="118" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">identity-based</text>
+              <text x="100" y="134" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">ACL names users</text>
+              <text x="100" y="150" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">flexible</text>
+              <text x="100" y="206" text-anchor="middle" class="om" font-size="8" fill="#6e7681">Windows/Linux</text>
+              <text x="100" y="219" text-anchor="middle" class="om" font-size="8" fill="#6e7681">file permissions</text>
+              <!-- MAC -->
+              <rect x="192" y="46" width="160" height="180" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.3"/>
+              <text x="272" y="70" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#d31324">MAC</text>
+              <text x="272" y="90" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">System enforces labels</text>
+              <text x="272" y="118" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">clearance + classification</text>
+              <text x="272" y="134" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">non-discretionary</text>
+              <text x="272" y="150" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">rigid</text>
+              <text x="272" y="206" text-anchor="middle" class="om" font-size="8" fill="#6e7681">military / govt</text>
+              <text x="272" y="219" text-anchor="middle" class="om" font-size="8" fill="#6e7681">Top Secret labels</text>
+              <!-- RBAC -->
+              <rect x="364" y="46" width="160" height="180" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.3"/>
+              <text x="444" y="70" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#d31324">RBAC</text>
+              <text x="444" y="90" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">Access by job role</text>
+              <text x="444" y="118" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">role = permission set</text>
+              <text x="444" y="134" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">assign people to roles</text>
+              <text x="444" y="150" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">scales well</text>
+              <text x="444" y="206" text-anchor="middle" class="om" font-size="8" fill="#6e7681">enterprise HR-driven</text>
+              <text x="444" y="219" text-anchor="middle" class="om" font-size="8" fill="#6e7681">least privilege at scale</text>
+              <!-- ABAC -->
+              <rect x="536" y="46" width="160" height="180" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.3"/>
+              <text x="616" y="70" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#d31324">ABAC</text>
+              <text x="616" y="90" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">Access by attributes</text>
+              <text x="616" y="118" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">subject + object +</text>
+              <text x="616" y="134" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">action + environment</text>
+              <text x="616" y="150" text-anchor="middle" class="om" font-size="8.5" fill="#a6a6a6">most granular</text>
+              <text x="616" y="206" text-anchor="middle" class="om" font-size="8" fill="#6e7681">zero-trust / cloud</text>
+              <text x="616" y="219" text-anchor="middle" class="om" font-size="8" fill="#6e7681">policy-driven</text>
+              <text x="350" y="244" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Flexible &nbsp;DAC &rarr; RBAC &rarr; ABAC&nbsp; Granular &nbsp;&middot;&nbsp; MAC = most rigid / highest confidentiality</text>
+            </svg>
+            <figcaption>The four primary authorization models arranged from owner-driven (DAC) to attribute-driven (ABAC), with MAC as the rigid, label-enforced military model.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 10: ACCESS CONTROL MECHANISMS / PDP-PEP ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">10</span>
+            <p class="note-eyebrow">5.4 &mdash; Enforcement Architecture</p>
+            <h3 class="note-subtitle">Section 10 &mdash; Access Control Matrix, ACLs, Capabilities, and the PDP/PEP</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>Access Control Matrix</h4><p>Master table of subjects (rows) &times; objects (columns).</p></div>
+            <div class="d4-fact-card"><h4>ACL = column</h4><p>Per-<em>object</em> list: who can touch this file.</p></div>
+            <div class="d4-fact-card"><h4>Capability = row</h4><p>Per-<em>subject</em> list: what this user can touch.</p></div>
+            <div class="d4-fact-card"><h4>PDP / PEP</h4><p>PDP <em>decides</em>; PEP <em>enforces</em> at the gate.</p></div>
+          </div>
+          <p class="d4-body">Models describe the philosophy of authorization; <strong>mechanisms</strong> are how that philosophy is actually represented and enforced inside a system. The conceptual master structure is the <strong>access control matrix</strong> &mdash; a giant table with subjects as rows and objects as columns, where each cell records the permissions that subject holds over that object. Real systems rarely store the full matrix (it would be enormous and mostly empty), so they slice it two ways, and the exam wants you to know which slice is which. Reading the matrix <em>column by column</em> gives you an <strong>Access Control List (ACL)</strong>: attached to each <em>object</em>, it lists every subject and what they may do to <em>it</em> &mdash; &ldquo;this file: Alice can read/write, Bob can read.&rdquo; Reading the matrix <em>row by row</em> gives you a <strong>capability table</strong>: attached to each <em>subject</em>, it lists every object that subject may reach &mdash; &ldquo;Alice: read/write file1, read file2.&rdquo; The crisp distinction: <strong>ACL is object-centric (a column), capability is subject-centric (a row).</strong></p>
+          <p class="d4-body">In a modern, policy-driven environment &mdash; especially ABAC and zero-trust &mdash; authorization is split into clearly named architectural roles that the exam increasingly references. The <strong>Policy Enforcement Point (PEP)</strong> is the gate that actually sits in the request path and lets traffic through or blocks it; it does not make the decision itself, it asks. The <strong>Policy Decision Point (PDP)</strong> is the brain that evaluates the applicable policy and returns a permit/deny verdict. Supporting them, the <strong>Policy Administration Point (PAP)</strong> is where policies are authored and managed, and the <strong>Policy Information Point (PIP)</strong> supplies the attribute data (user department, device health, time) the PDP needs to decide. The flow is: a subject hits the <strong>PEP</strong>, the PEP forwards the request to the <strong>PDP</strong>, the PDP pulls attributes from the <strong>PIP</strong>, evaluates the policy from the <strong>PAP</strong>, and returns a decision the PEP then enforces. Remember the two-word essence: <strong>PDP decides, PEP enforces.</strong></p>
+          <p class="d4-body">Two more enforcement ideas deserve a mention because they show up in scenario questions. A <strong>constrained user interface</strong> limits what a subject can even attempt &mdash; greying out menu options, hiding records, or presenting a restricted view &mdash; so that unauthorised actions are never offered in the first place (database views and restricted shells are examples). And <strong>content-dependent</strong> versus <strong>context-dependent</strong> control: content-dependent decisions hinge on the <em>data inside</em> the object (you may see the employee table but the salary column is masked), while context-dependent decisions hinge on the <em>circumstances</em> of the request (the sequence of prior actions, the time, the location). These granular controls are how the abstract models of Section 9 become concrete enforcement.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">The classic mechanism trap: <strong>ACL = bound to the object (column of the matrix)</strong>; <strong>capability table = bound to the subject (row)</strong>. For policy architecture, memorise <strong>PDP decides / PEP enforces</strong>, with the PIP feeding attributes and the PAP holding the policies. <strong>Content-dependent</strong> = based on the data; <strong>context-dependent</strong> = based on the situation/sequence.</p>
+          </div>
+        </article>
+
+        <!-- ═══ SECTION 11: SSO & KERBEROS ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">11</span>
+            <p class="note-eyebrow">5.2 / 5.6 &mdash; SSO &amp; Kerberos</p>
+            <h3 class="note-subtitle">Section 11 &mdash; Single Sign-On and the Kerberos Protocol in Depth</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>SSO Trade-off</h4><p>One login for many systems &mdash; convenient, but a single point of failure.</p></div>
+            <div class="d4-fact-card"><h4>KDC</h4><p>Key Distribution Center = the trusted core (AS + TGS).</p></div>
+            <div class="d4-fact-card"><h4>TGT</h4><p>Ticket-Granting Ticket &mdash; your proof you already logged in.</p></div>
+            <div class="d4-fact-card"><h4>Tickets, not passwords</h4><p>Kerberos uses symmetric keys + time-stamped tickets; needs synced clocks.</p></div>
+          </div>
+          <p class="d4-body"><strong>Single Sign-On (SSO)</strong> lets a user authenticate once and then reach many systems without logging in again. The benefit is obvious &mdash; fewer passwords to remember and reuse, less helpdesk burden, a smoother experience. But the exam always wants you to name the trade-off: SSO concentrates risk into a <strong>single point of failure</strong>. If an attacker captures that one set of credentials, they inherit access to <em>everything</em> the user could reach. That is precisely why SSO must be paired with strong, ideally multi-factor, authentication at the front door &mdash; the stronger the single sign-on, the more it must be protected.</p>
+          <p class="d4-body">The canonical SSO protocol for a single organisation &mdash; and the one CISSP tests in real detail &mdash; is <strong>Kerberos</strong>, the authentication system at the heart of Microsoft Active Directory. Learn its vocabulary first. The <strong>KDC (Key Distribution Center)</strong> is the trusted central server and the brain of the system; it contains two services: the <strong>Authentication Service (AS)</strong>, which verifies who you are at initial login, and the <strong>Ticket-Granting Service (TGS)</strong>, which issues tickets for specific resources afterward. A <strong>principal</strong> is any entity Kerberos knows (a user or a service). A <strong>ticket</strong> is a time-stamped, encrypted token that proves you have authenticated, and the most important of these is the <strong>Ticket-Granting Ticket (TGT)</strong> &mdash; think of it as a wristband you receive at the door proving you have already been verified, so you do not have to show your ID again at every counter inside.</p>
+          <p class="d4-body">Here is the flow, told as a story. You log in, and your client sends a request to the <strong>AS</strong>. The AS verifies you and returns a <strong>TGT</strong> encrypted with a key only the KDC knows, plus a session key &mdash; crucially, your password itself is never sent across the network. Later, when you want to reach a specific service (say a file server), your client presents the TGT to the <strong>TGS</strong> and says &ldquo;I&rsquo;ve already been verified, please give me a ticket for the file server.&rdquo; The TGS validates your TGT and issues a <strong>service ticket</strong> for that specific server. Your client then presents that service ticket directly to the file server, which trusts it because it is encrypted with a key the server shares with the KDC &mdash; and you are granted access. Every ticket is time-stamped and short-lived, which is why <strong>Kerberos absolutely depends on synchronised clocks</strong>: if a client&rsquo;s clock drifts more than a few minutes (typically five) from the KDC&rsquo;s, tickets are rejected as expired or invalid. Time synchronisation (usually via NTP) is therefore a hard requirement, and &ldquo;clock skew&rdquo; is a favourite Kerberos exam answer.</p>
+          <p class="d4-body">Kerberos was designed around four core requirements that are occasionally tested by name: <strong>Security</strong> (credentials never cross the network in plaintext), <strong>Reliability</strong> (it must always be available, hence redundant KDCs), <strong>Transparency</strong> (users experience SSO without seeing the ticket machinery), and <strong>Scalability</strong> (it must work for thousands of users and services). Know these four properties as the design goals Kerberos was built to satisfy.</p>
+          <p class="d4-body">Know the weaknesses too. Because the KDC holds all the keys and issues all the tickets, it is a <strong>single point of failure</strong> &mdash; if it goes down, no one can authenticate, so KDCs are deployed redundantly. It is also a high-value target: compromise the KDC and you compromise the realm. Kerberos is also vulnerable to <strong>password guessing</strong> because the KDC cannot detect dictionary attacks against the initial authentication. Short key lengths increase brute-force risk. And all clocks must be synchronised &mdash; a clock drift of more than the permitted skew (typically five minutes) causes ticket rejection. Kerberos-specific attacks the exam tests include: <strong>Pass-the-Ticket</strong> (steal and reuse a valid Kerberos ticket from memory), <strong>Kerberoasting</strong> (request service tickets for service accounts and crack the encrypted TGS tickets offline to recover service-account passwords), the devastating <strong>Golden Ticket</strong> (forge a TGT using the KDC&rsquo;s KRBTGT account hash &mdash; grants complete domain control because a forged TGT bypasses the AS entirely), and the <strong>Silver Ticket</strong> (forge a <em>Service Ticket</em> using a service account&rsquo;s hash &mdash; grants access to that specific service only, no domain-wide control; less dangerous than Golden but harder to detect since it never touches the KDC). The key distinguisher: <strong>Golden Ticket forges a TGT = domain control; Silver Ticket forges a Service Ticket = single service access only.</strong> For contrast, <strong>SESAME</strong> is a European project that extended Kerberos to address some of its limitations &mdash; notably it added <em>public-key (asymmetric) cryptography</em> and used Privilege Attribute Certificates (PACs) &mdash; whereas classic Kerberos relies on <em>symmetric</em> cryptography throughout. If a question contrasts the two, the headline is: <strong>Kerberos = symmetric only; SESAME added asymmetric/public-key support.</strong></p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Kerberos essentials: <strong>KDC = AS + TGS</strong>; login gets you a <strong>TGT</strong> from the AS; the TGS exchanges your TGT for a <strong>Service Ticket</strong>; the password never crosses the wire. Four design goals: <strong>Security, Reliability, Transparency, Scalability</strong>. Attacks to know: <strong>Golden Ticket</strong> = forged TGT (domain control, uses KRBTGT hash); <strong>Silver Ticket</strong> = forged Service Ticket (single service only); <strong>Kerberoasting</strong> = offline crack of TGS tickets; <strong>Pass-the-Ticket</strong> = reuse a stolen live ticket. Kerberos needs <strong>synchronised clocks</strong> (clock skew rejects tickets) and the <strong>KDC is a single point of failure</strong>. Kerberos is <strong>symmetric</strong>; <strong>SESAME</strong> adds <strong>asymmetric</strong> crypto and PACs.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style>
+                <marker id="ark" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker>
+              </defs>
+              <rect width="700" height="300" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">Kerberos Ticket Flow</text>
+              <!-- Client -->
+              <rect x="30" y="120" width="120" height="70" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="90" y="150" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#f5f5f5">Client</text>
+              <text x="90" y="168" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">the user</text>
+              <!-- KDC -->
+              <rect x="290" y="60" width="170" height="180" rx="10" fill="#1a0505" stroke="#d31324" stroke-width="1.8"/>
+              <text x="375" y="84" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">KDC</text>
+              <text x="375" y="99" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">Key Distribution Center</text>
+              <rect x="308" y="112" width="134" height="48" rx="7" fill="#160707" stroke="#6e7681" stroke-width="1"/>
+              <text x="375" y="132" text-anchor="middle" class="ot" font-size="11" font-weight="700" fill="#f5f5f5">AS</text>
+              <text x="375" y="148" text-anchor="middle" class="om" font-size="7.5" fill="#a6a6a6">Authentication Service</text>
+              <rect x="308" y="168" width="134" height="48" rx="7" fill="#160707" stroke="#6e7681" stroke-width="1"/>
+              <text x="375" y="188" text-anchor="middle" class="ot" font-size="11" font-weight="700" fill="#f5f5f5">TGS</text>
+              <text x="375" y="204" text-anchor="middle" class="om" font-size="7.5" fill="#a6a6a6">Ticket-Granting Service</text>
+              <!-- Service -->
+              <rect x="560" y="120" width="120" height="70" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="620" y="150" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#f5f5f5">Service</text>
+              <text x="620" y="168" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">file / app server</text>
+              <!-- arrows -->
+              <line x1="150" y1="135" x2="306" y2="125" stroke="#d31324" stroke-width="1.8" marker-end="url(#ark)"/>
+              <text x="225" y="118" text-anchor="middle" class="om" font-size="8" fill="#f5f5f5">1. login &rarr; AS</text>
+              <line x1="306" y1="140" x2="150" y2="150" stroke="#2ea043" stroke-width="1.8" marker-end="url(#ark)"/>
+              <text x="225" y="166" text-anchor="middle" class="om" font-size="8" fill="#2ea043">2. AS returns TGT</text>
+              <line x1="150" y1="178" x2="306" y2="188" stroke="#d31324" stroke-width="1.8" marker-end="url(#ark)"/>
+              <text x="225" y="200" text-anchor="middle" class="om" font-size="8" fill="#f5f5f5">3. present TGT &rarr; TGS</text>
+              <line x1="306" y1="200" x2="172" y2="206" stroke="#2ea043" stroke-width="1.8" marker-end="url(#ark)"/>
+              <text x="235" y="224" text-anchor="middle" class="om" font-size="8" fill="#2ea043">4. TGS issues service ticket</text>
+              <line x1="460" y1="150" x2="558" y2="150" stroke="#d31324" stroke-width="1.8" marker-end="url(#ark)"/>
+              <text x="509" y="142" text-anchor="middle" class="om" font-size="8" fill="#f5f5f5">5. service ticket</text>
+              <line x1="558" y1="170" x2="462" y2="178" stroke="#2ea043" stroke-width="1.8" marker-end="url(#ark)"/>
+              <text x="512" y="192" text-anchor="middle" class="om" font-size="8" fill="#2ea043">6. access granted</text>
+              <text x="350" y="270" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Password never crosses the wire &middot; every ticket is time-stamped</text>
+              <text x="350" y="288" text-anchor="middle" class="om" font-size="9" fill="#d31324" font-weight="700">Requires synchronised clocks &middot; KDC is a single point of failure</text>
+            </svg>
+            <figcaption>Kerberos: the client gets a TGT from the AS at login, trades it at the TGS for a service ticket, and presents that ticket to the target service. Clocks must be synchronised.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 12: FEDERATION SAML OAUTH OIDC ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">12</span>
+            <p class="note-eyebrow">5.3 / 5.6 &mdash; Federated Identity</p>
+            <h3 class="note-subtitle">Section 12 &mdash; Federation: SAML, OAuth 2.0, OpenID Connect and WS-Federation</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>IdP vs SP</h4><p>Identity Provider <em>asserts</em>; Service Provider (relying party) <em>trusts</em>.</p></div>
+            <div class="d4-fact-card"><h4>SAML</h4><p>XML assertions. Enterprise web SSO. AuthN + AuthZ.</p></div>
+            <div class="d4-fact-card"><h4>OAuth 2.0</h4><p>Delegated <em>authorization</em> (access), not authentication. Tokens.</p></div>
+            <div class="d4-fact-card"><h4>OIDC</h4><p>Authentication layer <em>on top of</em> OAuth 2.0. JSON/JWT, mobile-friendly.</p></div>
+          </div>
+          <p class="d4-body">SSO works beautifully inside one organisation, but what happens when you want to log in to a partner&rsquo;s application, or sign in to a third-party site using your Google account? That is <strong>federated identity management (FIM)</strong> &mdash; extending trust <em>across</em> organisational boundaries so an identity proven in one domain is honoured in another, without the second organisation ever holding your password. The whole thing rests on a <strong>trust relationship</strong> between two roles you must name precisely. The <strong>Identity Provider (IdP)</strong> is the party that authenticates the user and <em>asserts</em> their identity (Google, your corporate Azure AD, Okta). The <strong>Service Provider (SP)</strong>, also called the <strong>relying party (RP)</strong>, is the application the user wants to reach; it <em>relies</em> on the IdP&rsquo;s assertion and trusts it rather than authenticating the user itself. The <strong>principal</strong> is the user in the middle. Federation, in one sentence: the SP outsources authentication to a trusted IdP.</p>
+          <p class="d4-body"><strong>SAML (Security Assertion Markup Language)</strong> is the long-standing enterprise standard for browser-based web SSO and federation. It is <strong>XML</strong>-based, and its core artefact is the <strong>assertion</strong> &mdash; a signed XML statement from the IdP that conveys three kinds of information: <em>authentication</em> assertions (the user proved who they are), <em>attribute</em> assertions (here are facts about the user, like department or email), and <em>authorization decision</em> assertions (whether the user may access a resource). SAML&rsquo;s building blocks &mdash; which appear in Layout 2 above &mdash; are <em>assertions</em> (the statements), <em>protocols</em> (request/response rules), <em>bindings</em> (how messages ride on transport like HTTP POST or redirect), and <em>profiles</em> (combinations for specific use cases, most famously the Web Browser SSO profile). When you log in to a corporate SaaS app and get redirected to your company&rsquo;s login page and back, that is almost certainly SAML at work.</p>
+          <p class="d4-body">Now the distinction the exam tests most ruthlessly in this section: <strong>OAuth versus OpenID Connect</strong>. <strong>OAuth 2.0</strong> is a framework for delegated <em>authorization</em>, not authentication &mdash; its job is to let you grant one application limited access to your data on another <em>without sharing your password</em>. The classic example: a photo-printing site asks for permission to read your Google Photos; you approve, and Google issues the printing site an <strong>access token</strong> scoped to just that permission. OAuth answers &ldquo;what is this app allowed to do on my behalf?&rdquo; It says nothing, by itself, about <em>who you are</em>. Four key roles in OAuth: <em>Resource owner</em> (the user), <em>Client</em> (the requesting app), <em>Authorization server</em> (issues tokens), and <em>Resource server</em> (holds the protected data). <strong>OpenID Connect (OIDC)</strong> fixes the identity gap by adding a thin <em>authentication</em> layer <strong>on top of OAuth 2.0</strong>: it introduces the <strong>ID token</strong> &mdash; a signed <strong>JWT (JSON Web Token)</strong> that actually proves the user&rsquo;s identity. So the clean mental model is: <strong>OAuth = authorization (access/permissions); OIDC = authentication (identity) built on OAuth.</strong> &ldquo;Sign in with Google&rdquo; is OIDC; &ldquo;let this app post to your timeline&rdquo; is OAuth. OIDC uses short token TTLs plus refresh tokens for continuous authentication &mdash; the right answer for microservices spanning multiple cloud environments.</p>
+          <p class="d4-body">The <strong>JWT (JSON Web Token)</strong> deserves its own paragraph because it is the carrier for OIDC identity and appears in many modern authorization schemes. A JWT has exactly three parts separated by dots: the <strong>Header</strong> (specifies the token type and the signing algorithm, e.g. HMAC SHA256 or RSA SHA256), the <strong>Payload</strong> (contains the claims &mdash; a JSON object with assertions about the user such as sub, email, role), and the <strong>Signature</strong> (a cryptographic value that verifies the token has not been tampered with). JWTs are compact, self-contained, and digitally signed &mdash; the server can verify them without a database lookup, which makes them ideal for stateless API authentication. Know the three-part structure: <strong>Header.Payload.Signature</strong>.</p>
+          <p class="d4-body">Before OIDC, there was <strong>OpenID (Legacy)</strong> &mdash; an earlier authentication-only standard for user-centric SSO without password sharing. It is largely superseded by OIDC today. Its primary risk was credential phishing through federated login redirects to a fake IdP &mdash; a risk OIDC inherits in a different form. The <strong>primary risk of OIDC</strong> that the exam flags is <strong>transitive trust</strong>: because every federated application trusts the IdP, a single IdP compromise exposes every application that relies on it. This is the &ldquo;all eggs in one basket&rdquo; problem of federation at scale. Related: when <strong>SAML session tokens are not revoked when a user account is disabled</strong>, the organisation loses the ability to enforce <strong>real-time deprovisioning</strong> &mdash; the session token remains valid even after the HR system marks the user as terminated, leaving a window where an ex-employee or attacker using a stolen token can still access federated services.</p>
+          <p class="d4-body">Two more federation terms complete the picture. <strong>WS-Federation</strong> is a Microsoft-led standard (part of the WS-* family) that provides federation primarily in Microsoft-centric environments &mdash; functionally an alternative to SAML for similar web-SSO problems. Use the <strong>CISSP heuristics</strong> the exam rewards: <em>API access or delegated resource access</em> &rarr; <strong>OAuth 2.0</strong>. <em>Identity verification and SSO</em> &rarr; <strong>OIDC</strong>. <em>Legacy enterprise browser-based SSO</em> &rarr; <strong>SAML</strong>. <em>Continuous multi-cloud microservice authentication</em> &rarr; <strong>OIDC with short TTL + refresh tokens</strong>. The technology split: SAML is XML-based and enterprise-browser-centric; OAuth/OIDC are JSON/JWT-based and suited to modern mobile apps, single-page apps, and REST APIs.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Cannot-miss distinctions: <strong>IdP asserts, SP/RP relies</strong>. <strong>SAML = XML, enterprise SSO</strong>. <strong>OAuth 2.0 = AUTHORIZATION only (access tokens), NOT identity</strong>. <strong>OIDC = AUTHENTICATION on top of OAuth (JWT ID token)</strong>. JWT = <strong>Header.Payload.Signature</strong>. <strong>OIDC primary risk = transitive trust</strong> (IdP breach &rarr; all federated apps exposed). <strong>SAML session tokens not revoked on disable = real-time deprovisioning failure</strong>. Heuristics: API &rarr; OAuth; SSO/identity &rarr; OIDC; legacy enterprise browser &rarr; SAML.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style>
+                <marker id="arf" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker>
+              </defs>
+              <rect width="700" height="220" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">Federated Login &mdash; the Trust Triangle</text>
+              <!-- principal -->
+              <rect x="40" y="120" width="140" height="64" rx="9" fill="#160707" stroke="#d31324" stroke-width="1.5"/>
+              <text x="110" y="148" text-anchor="middle" class="ot" font-size="12" font-weight="700" fill="#f5f5f5">Principal</text>
+              <text x="110" y="166" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">the user</text>
+              <!-- IdP -->
+              <rect x="280" y="40" width="160" height="70" rx="9" fill="#1a0505" stroke="#d31324" stroke-width="1.6"/>
+              <text x="360" y="68" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">Identity Provider</text>
+              <text x="360" y="86" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">authenticates &amp; ASSERTS</text>
+              <text x="360" y="100" text-anchor="middle" class="om" font-size="8" fill="#6e7681">Google / Okta / Azure AD</text>
+              <!-- SP -->
+              <rect x="520" y="120" width="160" height="70" rx="9" fill="#1a0505" stroke="#d31324" stroke-width="1.6"/>
+              <text x="600" y="148" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">Service Provider</text>
+              <text x="600" y="166" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">relies on the assertion</text>
+              <text x="600" y="180" text-anchor="middle" class="om" font-size="8" fill="#6e7681">the app you want (RP)</text>
+              <!-- arrows -->
+              <line x1="180" y1="140" x2="278" y2="92" stroke="#d31324" stroke-width="1.8" marker-end="url(#arf)"/>
+              <text x="205" y="108" class="om" font-size="8" fill="#f5f5f5">1. log in</text>
+              <line x1="360" y1="110" x2="360" y2="150" stroke="#6e7681" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arf)"/>
+              <text x="368" y="134" class="om" font-size="8" fill="#a6a6a6">2. signed assertion / token</text>
+              <line x1="280" y1="92" x2="180" y2="130" stroke="#2ea043" stroke-width="1.8" marker-end="url(#arf)"/>
+              <line x1="180" y1="160" x2="518" y2="160" stroke="#2ea043" stroke-width="1.8" marker-end="url(#arf)"/>
+              <text x="330" y="178" text-anchor="middle" class="om" font-size="8" fill="#2ea043">3. present token &rarr; access granted, no password shared with SP</text>
+              <text x="350" y="210" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">SAML carries an XML <tspan fill="#f5f5f5">assertion</tspan> &middot; OIDC carries a <tspan fill="#f5f5f5">JWT ID token</tspan> &middot; OAuth carries an <tspan fill="#f5f5f5">access token</tspan></text>
+            </svg>
+            <figcaption>Federation&rsquo;s trust triangle: the IdP authenticates the user and issues a signed assertion/token; the SP trusts it and grants access &mdash; the user&rsquo;s password never reaches the SP.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 13: IDaaS ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">13</span>
+            <p class="note-eyebrow">5.3 &mdash; Identity as a Service</p>
+            <h3 class="note-subtitle">Section 13 &mdash; IDaaS: Cloud Identity, On-Premise vs Cloud IAM and Integration</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>IDaaS</h4><p>Extension of federated identity delivered as SaaS &mdash; SSO + federated IdM in the cloud.</p></div>
+            <div class="d4-fact-card"><h4>Top Risk</h4><p>Availability is CRITICAL &mdash; IDaaS outage = enterprise-wide authentication failure.</p></div>
+            <div class="d4-fact-card"><h4>Loss of Control</h4><p>Outsourcing identity management to a third party means trusting their uptime and breach defences.</p></div>
+            <div class="d4-fact-card"><h4>Latency Risk</h4><p>Termination changes may not propagate immediately &mdash; revoked access may lag in cloud.</p></div>
+          </div>
+          <p class="d4-body"><strong>Identity as a Service (IDaaS)</strong> is an extension of federated identity delivered as a Software-as-a-Service offering &mdash; think Okta, Azure Active Directory, or Ping Identity hosted in the cloud. IDaaS enables access management across teams, business units, and partner organisations, and is the standard approach for connecting SaaS applications to a central identity authority. Its value proposition is rapid setup, built-in federation connectors, and lower capital cost compared to building and running your own identity infrastructure. When the exam asks what is essential for federated authentication in a cloud-heavy environment, IDaaS is the answer.</p>
+          <p class="d4-body">There are three deployment models and the exam wants you to distinguish them. <strong>On-premise IAM</strong> gives the organisation total control over hardware, software, and security settings, but comes with high capital cost and a full maintenance burden &mdash; the organisation is responsible for uptime, patching, and breach response. It may need additional plugins or gateways to federate with cloud services. <strong>Cloud-native IDaaS</strong> offers rapid setup, lower CapEx, and built-in federation connectors for popular SaaS apps, but the organisation surrenders direct control and must trust the provider&rsquo;s uptime and security posture. Multi-tenant logs are often opaque &mdash; you cannot see activity from other tenants &mdash; which creates auditing gaps. <strong>Hybrid IAM</strong> (synchronising on-premise Active Directory with cloud IDaaS) gives the smoothest migration path and provides a single identity usable everywhere, but incurs dual-maintenance overhead and remains exposed to third-party provider risks.</p>
+          <p class="d4-body">The two <strong>key concerns</strong> with IDaaS the exam returns to repeatedly are: (1) <strong>Availability is critical</strong> &mdash; if the IDaaS provider goes down, every user across every connected application cannot authenticate, making IDaaS itself a high-impact single point of failure; and (2) <strong>loss of control</strong> &mdash; the organisation outsources the most sensitive function in its security architecture, identity management, to an external party it cannot fully audit or direct. Cost is a significant implementation factor but it is a secondary concern compared to these two.</p>
+          <p class="d4-body">When deploying cloud IAM, the exam expects you to know six specific <strong>integration considerations</strong>. <em>APIs</em>: cloud IAM may need custom connectors or gateway plugins to communicate with legacy on-premise applications. <em>Authorization mapping</em>: access control rules written for an on-premise environment may need to be rewritten to match the cloud provider&rsquo;s attribute model. <em>Audit</em>: multi-tenant cloud environments limit full log access &mdash; you can see your own tenant&rsquo;s activity but not the infrastructure beneath it. <em>Privacy</em>: user attributes (department, role, location) now travel outside the corporate network to a third-party provider, raising data-protection obligations. <em>Latency</em>: when a user is terminated and access is revoked, the change may not propagate immediately to all cloud services, leaving a window where the former employee&rsquo;s cloud session tokens remain valid &mdash; this is the <strong>latency risk</strong> and is a specific exam scenario. <em>App identity</em>: middleware and automated processes need their own service identities that the cloud IAM system must manage alongside human users. On-premise IAM components must connect to cloud mechanisms via <strong>encrypted communication paths</strong> to protect credential and identity data in transit.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">IDaaS top two concerns: <strong>Availability</strong> (IdP outage = no one authenticates anywhere) and <strong>Loss of Control</strong> (identity management outsourced to third party). <strong>Latency risk</strong>: termination changes may not propagate immediately &mdash; revoked user may still authenticate via a live session token. When a scenario says an organisation has no in-house identity staff and uses Active Directory, the best option is an <strong>on-premises third-party identity service</strong> (not full cloud IDaaS). On-premise &harr; cloud connections must use <strong>encrypted communication paths</strong>.</p>
+          </div>
+        </article>
+
+        <!-- ═══ SECTION 14: PROVISIONING LIFECYCLE ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">14</span>
+            <p class="note-eyebrow">5.5 &mdash; Provisioning Lifecycle</p>
+            <h3 class="note-subtitle">Section 14 &mdash; The Identity Lifecycle: Joiners, Movers, Leavers and Access Reviews</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>JML</h4><p>Joiner &middot; Mover &middot; Leaver &mdash; provision, adjust, deprovision.</p></div>
+            <div class="d4-fact-card"><h4>Privilege Creep</h4><p>Access accumulates on &ldquo;movers&rdquo; &mdash; the top reason for access reviews.</p></div>
+            <div class="d4-fact-card"><h4>Access Review</h4><p>Periodic recertification &mdash; confirm each access is still warranted.</p></div>
+            <div class="d4-fact-card"><h4>Deprovisioning</h4><p>Disable on exit &mdash; fastest path to revoke; orphan accounts are a breach risk.</p></div>
+          </div>
+          <p class="d4-body">An identity is not a one-time grant; it has a <strong>lifecycle</strong> that the organisation must manage from the day someone joins to the day they leave. The full IAM lifecycle has five phases the exam may name: <strong>Provisioning</strong> (account creation, identity proofing, role assignment, credential issuance) &rarr; <strong>Access Granted</strong> (authentication, authorisation, least-privilege enforcement) &rarr; <strong>Access In Use</strong> (monitoring, audit logging, User/Entity Behaviour Analytics &mdash; UBA/UEBA) &rarr; <strong>Periodic Review</strong> (access recertification, entitlement audit, orphan account check) &rarr; <strong>Deprovisioning</strong> (account disabled, credentials revoked, badge retrieved, NDA reviewed). This lifecycle is how Zero Trust is operationalised: trust is continuously verified at every stage, not assumed once at provisioning.</p>
+          <p class="d4-body">The industry shorthand for the human side is <strong>JML &mdash; Joiner, Mover, Leaver</strong>. <strong>Provisioning</strong> happens for a <em>joiner</em>: a new employee&rsquo;s accounts and access are created, ideally driven automatically from the authoritative HR system and granted strictly according to least privilege for their role. The <em>mover</em> is the employee who transfers, gets promoted, or changes departments, and this is where the most insidious problem in identity management lives: <strong>privilege creep</strong> (also called access creep or entitlement creep). Each time someone moves, they tend to <em>gain</em> the new role&rsquo;s access but rarely <em>lose</em> the old role&rsquo;s access, so over years an employee silently accumulates a sprawling, excessive set of permissions that violates least privilege.</p>
+          <p class="d4-body">The control that catches privilege creep is the <strong>account access review</strong> &mdash; a periodic <em>recertification</em> in which managers and data owners re-examine who has access to what and formally confirm that each grant is still justified, revoking anything that is not. This is one of the most heavily tested operational concepts in Domain 5: when a question describes an employee who has changed roles several times and now holds far more access than their current job needs, the answer is almost always &ldquo;conduct (or conduct more frequent) <strong>access reviews / recertification</strong>&rdquo;. Reviews should be risk-based: privileged and high-sensitivity accounts get reviewed more often than ordinary users. Periodic recertification is also the primary control that prevents <strong>orphan account</strong> accumulation.</p>
+          <p class="d4-body">Before deprovisioning, the exam also tests <strong>privilege escalation</strong> &mdash; and distinguishes two directions. <strong>Vertical privilege escalation</strong> is what most people picture: a regular user elevates to a higher-privilege level, such as a standard employee exploiting a vulnerability to gain administrator rights. <strong>Horizontal privilege escalation</strong> is the subtler and often overlooked cousin: a user gains access to <em>another user&rsquo;s resources at the same privilege level</em>, without elevating their rights &mdash; think of a bank customer accessing a different customer&rsquo;s account. Horizontal privilege escalation across a network is also called <strong>lateral movement</strong>. Both types are attacks, but they exploit different weaknesses: vertical attacks exploit missing boundaries between privilege tiers; horizontal attacks exploit missing boundaries between accounts of equal rank.</p>
+          <p class="d4-body"><strong>Deprovisioning</strong> handles the <em>leaver</em>, and the exam is precise about the sequence. When an employee is terminated the <strong>first action is always to disable the account</strong> &mdash; even <em>before</em> the termination conversation if a hostile termination is anticipated, to prevent retaliation. After the account is disabled: recover physical property (badge, laptop, access cards), conduct the exit interview, and review the NDA obligations. The standard secure practice is to <em>disable</em> rather than immediately <em>delete</em> the account (disabling instantly cuts access while preserving the audit trail and any encryption keys; deletion can destroy evidence and leave encrypted data unrecoverable). Accounts that survive a departure become <strong>orphaned accounts</strong> &mdash; still-valid credentials belonging to no current employee &mdash; a prime target for attackers and former staff.</p>
+          <p class="d4-body">The lifecycle also covers special account types and privileged operations. <strong>Service accounts</strong> &mdash; non-human identities used by applications and automated processes &mdash; are dangerous precisely because they are often forgotten: they tend to have high privilege, passwords that never change, and no owner watching them, so they must be inventoried, tightly scoped, and their secrets rotated and vaulted. <strong>Privilege escalation</strong> through tools like <code>sudo</code> must be controlled and audited so that elevated actions are traceable to an individual. This whole area is the domain of <strong>Privileged Access Management (PAM)</strong>, which combines credential vaulting, session recording, just-in-time elevation, and tight review of every privileged identity.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">Lifecycle phases: <strong>Provisioning &rarr; Access Granted &rarr; Access In Use &rarr; Periodic Review &rarr; Deprovisioning</strong>. Excessive access from role changes = <strong>privilege creep</strong>; cure = <strong>access recertification</strong>. Termination sequence: <strong>disable account FIRST</strong> (even before the conversation for hostile terminations) &rarr; recover property &rarr; exit interview &rarr; review NDA. Un-deprovisioned accounts = <strong>orphan accounts</strong>. <strong>Vertical escalation</strong> = higher privilege tier; <strong>horizontal escalation = lateral movement</strong> at the same privilege level. Always <strong>disable, not delete</strong> at termination.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style>
+                <marker id="arj" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d31324"/></marker>
+              </defs>
+              <rect width="700" height="200" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">Identity Lifecycle &mdash; Joiner / Mover / Leaver</text>
+              <!-- joiner -->
+              <rect x="40" y="58" width="170" height="96" rx="10" fill="#160707" stroke="#2ea043" stroke-width="1.6"/>
+              <text x="125" y="84" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#2ea043">JOINER</text>
+              <text x="125" y="106" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">Provision</text>
+              <text x="125" y="124" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">create accounts,</text>
+              <text x="125" y="137" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">least-privilege grant</text>
+              <!-- mover -->
+              <rect x="265" y="58" width="170" height="96" rx="10" fill="#160707" stroke="#e0a800" stroke-width="1.6"/>
+              <text x="350" y="84" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#e0a800">MOVER</text>
+              <text x="350" y="106" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">Adjust &amp; re-certify</text>
+              <text x="350" y="124" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">beware privilege creep</text>
+              <text x="350" y="137" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">access reviews catch it</text>
+              <!-- leaver -->
+              <rect x="490" y="58" width="170" height="96" rx="10" fill="#160707" stroke="#d31324" stroke-width="1.6"/>
+              <text x="575" y="84" text-anchor="middle" class="ot" font-size="12" font-weight="800" fill="#d31324">LEAVER</text>
+              <text x="575" y="106" text-anchor="middle" class="om" font-size="9" fill="#f5f5f5">Deprovision</text>
+              <text x="575" y="124" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">disable immediately</text>
+              <text x="575" y="137" text-anchor="middle" class="om" font-size="8" fill="#a6a6a6">avoid orphan accounts</text>
+              <line x1="210" y1="106" x2="263" y2="106" stroke="#d31324" stroke-width="1.8" marker-end="url(#arj)"/>
+              <line x1="435" y1="106" x2="488" y2="106" stroke="#d31324" stroke-width="1.8" marker-end="url(#arj)"/>
+              <text x="350" y="184" text-anchor="middle" class="om" font-size="9" fill="#a6a6a6">Periodic <tspan fill="#f5f5f5">access reviews</tspan> run across the whole lifecycle to enforce least privilege</text>
+            </svg>
+            <figcaption>The Joiner-Mover-Leaver lifecycle. Privilege creep accumulates at the &ldquo;mover&rdquo; stage; access reviews and prompt deprovisioning are the controls that keep access aligned to need.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ SECTION 15: AAA PROTOCOLS & SESSION ATTACKS ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:2rem;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">15</span>
+            <p class="note-eyebrow">5.6 &mdash; AAA Protocols &amp; Attacks</p>
+            <h3 class="note-subtitle">Section 15 &mdash; RADIUS, TACACS+, Diameter, and Access-Control Attacks</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="d4-fact-card"><h4>RADIUS</h4><p>UDP. Encrypts <em>only the password</em>. Combines authN+authZ. Common for Wi-Fi/VPN.</p></div>
+            <div class="d4-fact-card"><h4>TACACS+</h4><p>TCP. Encrypts the <em>whole payload</em>. <strong>Separates</strong> AAA. Cisco, device admin.</p></div>
+            <div class="d4-fact-card"><h4>Diameter</h4><p>RADIUS successor &mdash; more reliable, used in mobile/4G networks.</p></div>
+            <div class="d4-fact-card"><h4>Session Hijacking</h4><p>Steal a live session token/cookie &mdash; counter with timeouts &amp; TLS.</p></div>
+          </div>
+          <p class="d4-body">Sub-domain 5.6 operationalises everything from the previous sections into the actual protocols enterprises deploy. The central comparison is the <strong>AAA protocols</strong> &mdash; so named because they provide Authentication, Authorization, and Accounting for network access (think Wi-Fi, VPN, and switch/router administration). <strong>RADIUS (Remote Authentication Dial-In User Service)</strong> is the workhorse for remote and wireless access. Its exam-critical properties: it runs over <strong>UDP</strong>, it <strong>combines</strong> authentication and authorization into a single step, and &mdash; crucially &mdash; it <strong>encrypts only the password</strong> in the access request, leaving the rest of the packet (including the username and accounting data) in the clear. RADIUS is an open standard, so it is vendor-neutral and ubiquitous.</p>
+          <p class="d4-body"><strong>TACACS+ (Terminal Access Controller Access-Control System Plus)</strong> is the Cisco-developed alternative, and the exam wants you to contrast it point-for-point with RADIUS. TACACS+ runs over <strong>TCP</strong> (more reliable, connection-oriented), it <strong>encrypts the entire payload</strong> rather than just the password (more confidential), and it <strong>separates</strong> the three A&rsquo;s into independent functions &mdash; which is exactly why it is preferred for <em>device administration</em>: you can grant an operator the right to authenticate to a router and run a narrow set of commands (fine-grained authorization) while logging each command separately (granular accounting). The memory hook: <strong>RADIUS = UDP, password-only encryption, combined AA, network access; TACACS+ = TCP, full encryption, separated AAA, device administration.</strong> <strong>Diameter</strong> is the modern successor to RADIUS &mdash; more reliable and feature-rich, with broader attribute support &mdash; and shows up heavily in mobile/cellular (LTE/4G) networks; remember it as &ldquo;RADIUS, upgraded.&rdquo;</p>
+          <p class="d4-body">Finally, the domain closes the loop with the <strong>attacks</strong> against access control, because knowing how a control fails is how the exam confirms you understand it. The headline is <strong>session hijacking</strong>: once you have authenticated, the server tracks you with a <em>session token</em> (often a cookie), and if an attacker can steal or guess that token &mdash; by sniffing unencrypted traffic, cross-site scripting, or predicting a weak token &mdash; they can <em>impersonate your live session</em> without ever knowing your password. The countermeasures tie straight back to Section 8: transmit tokens only over <strong>TLS</strong> so they cannot be sniffed, use long random unpredictable session IDs, regenerate the ID after login, and enforce short <strong>idle and absolute timeouts</strong> so a stolen token expires quickly. Related attacks worth naming are <strong>session fixation</strong> (the attacker plants a known session ID on the victim before login &mdash; defeated by regenerating the ID at authentication) and <strong>replay attacks</strong> (capturing and re-sending valid authentication data &mdash; defeated by the time-stamps, nonces, and one-time values we saw in OTP and Kerberos). And tying back to accountability from Section 1: robust <strong>logging and monitoring</strong> of authentication and authorization events is what lets you detect these attacks in the first place &mdash; the &ldquo;auditing&rdquo; that makes accountability real.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Exam Insight</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">The RADIUS vs TACACS+ table is near-guaranteed: <strong>RADIUS</strong> &mdash; UDP, encrypts only the password, combines authN+authZ, vendor-neutral, used for network/remote access. <strong>TACACS+</strong> &mdash; TCP, encrypts the whole payload, separates all three A&rsquo;s, Cisco, ideal for device administration. <strong>Diameter</strong> succeeds RADIUS (mobile/4G). For session hijacking, the defences are <strong>TLS + strong random session IDs + short timeouts + regenerate ID after login</strong>.</p>
+          </div>
+          <figure class="note-fig" style="margin-top:1.5rem;">
+            <svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <defs><style>.ot{font-family:'Sora','Segoe UI',sans-serif}.om{font-family:'IBM Plex Mono','Consolas',monospace}</style></defs>
+              <rect width="700" height="210" fill="#0c0c0c" rx="6"/>
+              <text x="350" y="26" text-anchor="middle" class="ot" font-size="13" font-weight="800" fill="#f5f5f5">RADIUS vs TACACS+</text>
+              <!-- header row -->
+              <text x="150" y="58" text-anchor="middle" class="om" font-size="9" fill="#6e7681">PROPERTY</text>
+              <rect x="270" y="44" width="200" height="20" rx="3" fill="#1a0505"/>
+              <text x="370" y="58" text-anchor="middle" class="ot" font-size="11" font-weight="800" fill="#d31324">RADIUS</text>
+              <rect x="486" y="44" width="200" height="20" rx="3" fill="#1a0505"/>
+              <text x="586" y="58" text-anchor="middle" class="ot" font-size="11" font-weight="800" fill="#d31324">TACACS+</text>
+              <!-- rows -->
+              <g class="om" font-size="9">
+                <text x="30" y="88" fill="#a6a6a6">Transport</text>
+                <text x="370" y="88" text-anchor="middle" fill="#f5f5f5">UDP (connectionless)</text>
+                <text x="586" y="88" text-anchor="middle" fill="#f5f5f5">TCP (reliable)</text>
+                <line x1="20" y1="98" x2="686" y2="98" stroke="#222" stroke-width="1"/>
+                <text x="30" y="118" fill="#a6a6a6">Encryption</text>
+                <text x="370" y="118" text-anchor="middle" fill="#ff6b81">password only</text>
+                <text x="586" y="118" text-anchor="middle" fill="#2ea043">entire payload</text>
+                <line x1="20" y1="128" x2="686" y2="128" stroke="#222" stroke-width="1"/>
+                <text x="30" y="148" fill="#a6a6a6">AAA handling</text>
+                <text x="370" y="148" text-anchor="middle" fill="#f5f5f5">combines authN + authZ</text>
+                <text x="586" y="148" text-anchor="middle" fill="#2ea043">separates all three A&rsquo;s</text>
+                <line x1="20" y1="158" x2="686" y2="158" stroke="#222" stroke-width="1"/>
+                <text x="30" y="178" fill="#a6a6a6">Best for</text>
+                <text x="370" y="178" text-anchor="middle" fill="#f5f5f5">Wi-Fi / VPN / remote</text>
+                <text x="586" y="178" text-anchor="middle" fill="#f5f5f5">device administration</text>
+                <line x1="20" y1="188" x2="686" y2="188" stroke="#222" stroke-width="1"/>
+                <text x="30" y="204" fill="#a6a6a6">Origin</text>
+                <text x="370" y="204" text-anchor="middle" fill="#6e7681">open standard</text>
+                <text x="586" y="204" text-anchor="middle" fill="#6e7681">Cisco &middot; Diameter succeeds RADIUS</text>
+              </g>
+            </svg>
+            <figcaption>RADIUS vs TACACS+ at a glance &mdash; transport, what gets encrypted, whether the three A&rsquo;s are combined or separated, and where each fits. Diameter is the modern RADIUS successor.</figcaption>
+          </figure>
+        </article>
+
+        <!-- ═══ CLOSING SUMMARY ═══ -->
+        <article class="panel note-panel" data-spotlight style="margin-bottom:0;">
+          <div class="d4-panel-header">
+            <span class="layer-badge">&#10003;</span>
+            <p class="note-eyebrow">Domain 5 &mdash; Wrap-Up</p>
+            <h3 class="note-subtitle">Bringing It All Together</h3>
+          </div>
+          <p class="d4-body">Step back and see the arc of the whole domain as a single story about one identity. It is <strong>proofed</strong> and <strong>registered</strong> (Section 3), it <strong>identifies</strong> and then <strong>authenticates</strong> with one or more of the three factors (Sections 4&ndash;8), it is <strong>authorized</strong> by a model and enforced by a mechanism (Sections 9&ndash;10), it reaches many systems through <strong>SSO, Kerberos, and federation</strong> (Sections 11&ndash;12), it is extended across cloud boundaries via <strong>IDaaS</strong> (Section 13), it is governed across its <strong>lifecycle</strong> from provisioning to deprovisioning &mdash; with privilege escalation guarded at every turn (Section 14), and every step is carried by real <strong>protocols</strong> (RADIUS, TACACS+, Diameter) and watched for attacks (Section 15). That is IAM end to end &mdash; the gatekeeping logic of the entire security profession.</p>
+          <p class="d4-body">If you are revising under time pressure, prioritise the highest-yield discriminators: the IAAA order and what each step means; multi-factor means different factor <em>types</em> not multiple credentials; Type I (FRR) vs Type II (FAR) errors and the lower-CER rule; user acceptance as the top biometric challenge; DAC/MAC/RBAC/ABAC trigger words with RBAC-is-a-form-of-DAC and ABAC-uses-XACML; Kerberos Golden (TGT, domain) vs Silver (ST, service) tickets plus synchronised clocks; OAuth-is-authorization vs OIDC-is-authentication vs SAML-is-XML; OIDC transitive trust risk; IDaaS availability and latency risks; three JIT types including ephemeral accounts; privilege creep cured by access reviews; disable-first on termination; horizontal (lateral) vs vertical escalation; and RADIUS-versus-TACACS+ side by side. Master those and you have the spine of Domain 5 &mdash; everything else hangs naturally off it.</p>
+          <div class="callout" style="border-color:#3fb950;">
+            <h4>&#127775; Final Exam Strategy</h4>
+            <p style="font-size:0.9rem;color:var(--muted-strong);margin:0;">When a Domain 5 question feels ambiguous, label the <strong>subject</strong> and <strong>object</strong>, decide which IAAA stage it concerns, then pick the answer that best upholds <strong>least privilege</strong> and <strong>individual accountability</strong>. Those two principles are the tie-breakers behind the majority of correct IAM answers. For protocol selection: <strong>API &rarr; OAuth; SSO &rarr; OIDC; legacy enterprise browser &rarr; SAML; device admin &rarr; TACACS+; network/VPN access &rarr; RADIUS</strong>.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the Access Control map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+<div class="d42-infographics-row">' in data['content']:
+            print("Found block!")
+            content = data['content']
+            idx = content.find('<div class="d42-infographics-row">')
+            # Extract everything from infographics row to the end of that section
+            end_idx = content.find('

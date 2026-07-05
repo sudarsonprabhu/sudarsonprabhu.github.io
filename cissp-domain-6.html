@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CISSP Domain 6 notes: Security Assessment and Testing." />
+    <title>CISSP Domain 6 | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-6-data.js?v=3" defer></script>
+    <script src="cissp-domain-6.js?v=3" defer></script>
+  </head>
+  <body data-page="work" data-domain-id="6">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 6 &middot; 12% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Security Assessment and Testing</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            Proving that controls actually work &mdash; designing assessment, test, and audit strategies,
+            then testing controls, collecting process data, analysing the results, and facilitating the
+            audits that turn &ldquo;we think we&rsquo;re secure&rdquo; into evidence.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 6 is broken into five exam outline areas that follow the assessment lifecycle &mdash;
+            from designing a testing strategy, through running the tests and gathering the data, to
+            analysing the output and running formal audits.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">6.1 &mdash; Design &amp; validate assessment, test &amp; audit strategies</h3>
+            <p class="card-copy">
+              Building a strategy that decides <strong>what</strong> to test, <strong>how rigorously</strong>,
+              and <strong>by whom</strong> &mdash; covering <strong>internal, external, and third-party</strong>
+              assessments across on-premise, cloud, and hybrid environments, then validating that the
+              strategy itself is sound.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">6.2 &mdash; Conduct security control testing</h3>
+            <p class="card-copy">
+              The hands-on testing toolbox &mdash; <strong>vulnerability assessment, penetration testing,
+              log review, synthetic transactions, code review &amp; testing, misuse-case testing, test
+              coverage analysis, interface testing</strong>, breach-attack simulations, and compliance
+              checks.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">6.3 &mdash; Collect security process data</h3>
+            <p class="card-copy">
+              Gathering operational evidence &mdash; <strong>account management, management review and
+              approval, key performance and risk indicators (KPIs / KRIs)</strong>, backup verification,
+              training and awareness, and disaster-recovery / business-continuity data.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">6.4 &mdash; Analyze test output &amp; generate report</h3>
+            <p class="card-copy">
+              Turning raw findings into action &mdash; interpreting results, prioritising
+              <strong>remediation</strong>, handling <strong>exceptions</strong>, and following
+              <strong>ethical disclosure</strong> so issues reach the right people and actually get fixed.
+            </p>
+          </article>
+
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">6.5 &mdash; Conduct or facilitate security audits</h3>
+            <p class="card-copy">
+              Running the formal audits that provide assurance &mdash; <strong>internal, external, and
+              third-party</strong> audits (including the <strong>SOC 1 / 2 / 3</strong> report family and
+              Type I vs Type II attestations) across every deployment location.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Security Assessment & Testing map (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Security assessment at a glance.</h2>
+          <p class="section-copy">
+            One map of how the assessment-and-testing universe of Domain 6 fits together &mdash; from the
+            guiding ideas of validation, verification and rigour, through the levels at which a system is
+            tested and the full toolbox of testing techniques, to who performs the assessment and the
+            metrics that track it. Hover (or tap) any box for its concept, an example, and &mdash; where it
+            helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Security assessment and testing hierarchy: validation, verification and rigour; testing a system by level; testing techniques; testers and assessors including third-party SOC reports and roles; and metrics.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Security Assessment and Testing</div>
+
+              <div class="ac-row">
+                <!-- ===== Validation / Verification / Rigour ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Validation</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Verification</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rigour</span></div></div>
+
+                <!-- ===== Testing a System ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Testing a System</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Unit</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Interface</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Integration</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>System</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Testing Techniques ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Testing Techniques</div>
+                  <div class="ac-row">
+                    <!-- Methods & Tools -->
+                    <div class="ac-node">
+                      <div class="ac-box">Methods &amp; Tools</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Manual</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Automated</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Runtime -->
+                    <div class="ac-node">
+                      <div class="ac-box">Runtime</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Static</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Dynamic</span></div></div>
+                        <div class="ac-node">
+                          <div class="ac-box ac-v"><span>Fuzz</span></div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Mutation</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Generation</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Access to Code -->
+                    <div class="ac-node">
+                      <div class="ac-box">Access to Code</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>White</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Black</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Techniques -->
+                    <div class="ac-node">
+                      <div class="ac-box">Techniques</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Positive</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Negative</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Misuse</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Decision table analysis</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>State-based analysis</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Boundary Value Analysis</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Equivalence Partitioning</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Efficiency -->
+                    <div class="ac-node">
+                      <div class="ac-box">Efficiency</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Real User Monitoring</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Synthetic Performance Monitoring</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Operational -->
+                    <div class="ac-node">
+                      <div class="ac-box">Operational</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Regression Testing</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ===== Testers / Assessors ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Testers / Assessors</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Internal</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>External</span></div></div>
+
+                    <!-- Third-Party -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Third-Party</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SOC 1</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SOC 2</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SOC 3</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Type 1</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Type 2</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Roles -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Roles</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Executive Management</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Audit Committee</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Security Officer</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Compliance Manager</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Internal Auditors</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>External Auditors</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ===== Metrics ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Metrics</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Focus</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>KPIs</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>KRIs</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 1 mirrors the Security Assessment &amp; Testing concept map for Domain 6 &mdash;
+            validation / verification / rigour, the levels of testing a system, the full testing-technique
+            toolbox, the testers and assessors (internal, external, third-party SOC reports, and governance
+            roles), and the metrics that track it all.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 2 — Identifying Vulnerabilities (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 2 &mdash; Visual summary</p>
+          <h2 class="section-title">Identifying vulnerabilities.</h2>
+          <p class="section-copy">
+            How weaknesses are found, classified, and understood &mdash; from broad vulnerability assessment
+            and deep penetration testing, through the pen-test process and the techniques that frame it
+            (perspective, approach, knowledge), to scan types and the standards used to interpret results
+            (CVE, CVSS, SCAP) and the false-positive / false-negative trade-off. Hover any box for its
+            concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Identifying vulnerabilities hierarchy: vulnerability assessment and penetration testing, the pen-test process, testing techniques (perspective, approach, knowledge), types of scans, banner grabbing and fingerprinting, interpreting results with CVE and CVSS, SCAP, and false positive versus false negative.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Identifying Vulnerabilities</div>
+
+              <div class="ac-row">
+                <!-- ===== Vulnerability Assessment / Penetration Testing ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Vulnerability Assessment</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Penetration Testing</span></div></div>
+
+                <!-- ===== Process ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Process</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Reconnaissance</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Enumeration</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Vulnerability Analysis</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Execution</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Document Findings</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Testing Techniques (pen-test) ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="pentest-techniques">Testing Techniques</div>
+                  <div class="ac-row">
+                    <!-- Perspective -->
+                    <div class="ac-node">
+                      <div class="ac-box">Perspective</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="perspective-internal"><span>Internal</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="perspective-external"><span>External</span></div></div>
+                      </div>
+                    </div>
+                    <!-- Approach -->
+                    <div class="ac-node">
+                      <div class="ac-box">Approach</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Blind</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Double-blind</span></div></div>
+                      </div>
+                    </div>
+                    <!-- Knowledge -->
+                    <div class="ac-node">
+                      <div class="ac-box">Knowledge</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Zero (black)</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Partial (gray)</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Full (white)</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ===== Types of Scans ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Types of Scans</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Credentialed / Authenticated</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Uncredentialed / Unauthenticated</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Banner grabbing & Fingerprinting ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Banner grabbing &amp; Fingerprinting</span></div></div>
+
+                <!-- ===== Interpreting & understanding results ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Interpreting &amp; understanding results</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>CVE</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>CVSS</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== SCAP ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SCAP</span></div></div>
+
+                <!-- ===== False positive vs. False negative ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>False positive vs. False negative</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 2 maps how vulnerabilities are identified &mdash; vulnerability assessment vs penetration
+            testing, the pen-test process (reconnaissance &rarr; enumeration &rarr; vulnerability analysis
+            &rarr; execution &rarr; document findings), the techniques that frame a test (perspective,
+            approach, knowledge), credentialed vs uncredentialed scans, banner grabbing / fingerprinting,
+            and interpreting results with CVE, CVSS, and SCAP &mdash; down to the false-positive vs
+            false-negative trade-off.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 3 — Log Review & Analysis (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 3 &mdash; Visual summary</p>
+          <h2 class="section-title">Log review &amp; analysis.</h2>
+          <p class="section-copy">
+            How log data becomes security insight &mdash; what to monitor for (errors, modification,
+            breaches), the full log-management lifecycle that a SIEM runs (generation &rarr; transmission
+            &rarr; collection &rarr; normalization &rarr; analysis &rarr; retention &rarr; disposal),
+            including log-size controls and the synchronised timestamps that make correlation possible, and
+            the role of continuous monitoring. Hover any box for its concept, an example, and &mdash; where
+            it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Log review and analysis hierarchy: what to monitor for; the SIEM log-management lifecycle of generation, transmission, collection, normalization, analysis, retention and disposal, including log-size controls and timestamps; and continuous monitoring.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Log Review &amp; Analysis</div>
+
+              <div class="ac-row">
+                <!-- ===== Monitor for ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Monitor for</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Errors</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Modification</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Breaches</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== SIEM ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Security Information and Event Management (SIEM)</div>
+                  <div class="ac-row">
+                    <!-- Generation (log) -->
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="log-generation">Generation</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box">Limiting log file size</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Circular Overwrite</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Clipping Levels</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node">
+                          <div class="ac-box">Time Stamps</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Consistent</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Network Time Protocol (NTP)</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Transmission</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Collection / Aggregation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Normalization</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Analysis</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Retention</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Disposal</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Continuous Monitoring ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Continuous Monitoring</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 3 maps log review &amp; analysis &mdash; the events to monitor for (errors, modification,
+            breaches), the SIEM-driven log-management lifecycle (generation, transmission, collection /
+            aggregation, normalization, analysis, retention, disposal) with its log-size controls (circular
+            overwrite, clipping levels) and timestamp requirements (consistent time via NTP), and the role
+            of continuous monitoring.
+          </p>
+        </div>
+      </section>
+      <!-- ============================================================
+           DOMAIN 6 — EXPERT INSTRUCTOR GUIDE (TLDR)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Expert Instructor Guide</p>
+          <h2 class="section-title">Domain 6 &mdash; everything a beginner needs to master.</h2>
+          <p class="section-copy">
+            Think of this as your personal Prabh Nair lecture on Domain 6. We go section by section through
+            every concept the exam can test &mdash; assessment strategy, audit types, vulnerability scanning,
+            penetration testing, log management, SIEM, SOC reports, metrics, and management review.
+            Read it once, understand it deeply, pass the exam.
+          </p>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             01 · Why Domain 6 Matters — Assessment Strategy
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">01</span>
+            <h3>Why Domain 6 Matters &mdash; Assessment Strategy</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Core question</span><span class="fc-val">Are our controls actually working?</span></div>
+            <div class="fact-card"><span class="fc-label">Exam weight</span><span class="fc-val">12% — roughly 24 questions</span></div>
+            <div class="fact-card"><span class="fc-label">Key output</span><span class="fc-val">Evidence, not opinion</span></div>
+            <div class="fact-card"><span class="fc-label">Foundation</span><span class="fc-val">Risk management (Domain 1)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Domain 6 is the proof-of-work domain. Domains 1–5 tell you how to design and build security
+              controls. Domain 6 asks the uncomfortable follow-up: how do you <em>know</em> those controls
+              are working? The answer is a structured, repeatable assessment programme.
+            </p>
+            <p>
+              An <strong>assessment strategy</strong> is the master plan that decides <em>what</em> to
+              test, <em>how</em> to test it, and <em>how often</em>. It must be grounded in the risk
+              register from Domain 1 — there is no point testing low-risk, non-critical controls at the
+              same intensity as controls that protect crown-jewel assets.
+            </p>
+            <p>
+              The assessment lifecycle has four phases that mirror the ISO 9000 Plan-Do-Check-Act loop:
+              <strong>Plan</strong> (set goals, define scope, pick methods), <strong>Do</strong>
+              (run the tests), <strong>Check</strong> (analyse results — this is most of Domain 6), and
+              <strong>Act</strong> (management review and continuous improvement). Every topic in this
+              domain slots into one of these four phases.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> The CISSP exam loves to test the <em>order</em> of planning steps.
+            The most important first step in planning any audit is setting <strong>clear goals</strong>.
+            Without a well-defined scope and purpose, you cannot choose the right test type, interpret
+            findings meaningfully, or write a useful report.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Assessment lifecycle: Plan, Do, Check, Act">
+              <defs>
+                <marker id="arr6" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                  <polygon points="0 0,8 3,0 6" fill="#e53e3e"/>
+                </marker>
+              </defs>
+              <rect x="10" y="30" width="100" height="60" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="60" y="55" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">PLAN</text>
+              <text x="60" y="72" text-anchor="middle" font-size="9" fill="#c0c0c0">Set goals, scope,</text>
+              <text x="60" y="83" text-anchor="middle" font-size="9" fill="#c0c0c0">choose methods</text>
+              <line x1="110" y1="60" x2="128" y2="60" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6)"/>
+
+              <rect x="130" y="30" width="100" height="60" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="180" y="55" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">DO</text>
+              <text x="180" y="72" text-anchor="middle" font-size="9" fill="#c0c0c0">Run scans, tests,</text>
+              <text x="180" y="83" text-anchor="middle" font-size="9" fill="#c0c0c0">pen tests, audits</text>
+              <line x1="230" y1="60" x2="248" y2="60" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6)"/>
+
+              <rect x="250" y="30" width="100" height="60" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="300" y="55" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">CHECK</text>
+              <text x="300" y="72" text-anchor="middle" font-size="9" fill="#c0c0c0">Analyse results,</text>
+              <text x="300" y="83" text-anchor="middle" font-size="9" fill="#c0c0c0">log review, SIEM</text>
+              <line x1="350" y1="60" x2="368" y2="60" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6)"/>
+
+              <rect x="370" y="30" width="100" height="60" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="420" y="55" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">ACT</text>
+              <text x="420" y="72" text-anchor="middle" font-size="9" fill="#c0c0c0">Mgmt review,</text>
+              <text x="420" y="83" text-anchor="middle" font-size="9" fill="#c0c0c0">improve controls</text>
+              <path d="M470 90 Q500 110 500 15 Q500 5 420 5 Q60 5 60 28" stroke="#e53e3e" stroke-width="1.5" fill="none" marker-end="url(#arr6)" stroke-dasharray="4,3"/>
+            </svg>
+            <figcaption>Plan-Do-Check-Act — the ISO 9000 loop that ties Domain 6 together. Domain 6 primarily lives in the Check phase; Act is the management review.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             02 · Security Audit Types
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">02</span>
+            <h3>Security Audit Types — Internal, External &amp; Third-Party</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Internal audit</span><span class="fc-val">Familiar with systems; potential bias</span></div>
+            <div class="fact-card"><span class="fc-label">External audit</span><span class="fc-val">Contract-driven; contractor checked by client</span></div>
+            <div class="fact-card"><span class="fc-label">Third-party audit</span><span class="fc-val">Independent firm; broader experience, costlier</span></div>
+            <div class="fact-card"><span class="fc-label">Test coverage</span><span class="fc-val">% of system examined by a specific test</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Before running a single scan, you must decide <em>who</em> will conduct the audit.
+              The answer affects cost, credibility, depth of knowledge, and objectivity — all of
+              which shape the value of the results.
+            </p>
+            <p>
+              <strong>Internal audits</strong> are performed by staff within the organisation.
+              The biggest advantage is deep familiarity with the systems, architecture, and history.
+              The biggest weakness is that familiarity can create blind spots — internal teams may
+              not know the latest attack techniques used by adversaries against systems exactly like
+              theirs. Internal audits also risk confirmation bias: people tend to look where they
+              expect to find problems, and ignore unexpected attack surfaces.
+            </p>
+            <p>
+              <strong>External audits</strong> are triggered when a contract between two organisations
+              includes security obligations. The contracting party — say, a bank that outsources payment
+              processing — has the contractual right to audit the contractor to verify those obligations
+              are being met. The audit scope is usually defined by the contract.
+            </p>
+            <p>
+              <strong>Third-party audits</strong> (independent audit firms) typically bring the broadest
+              range of experience because they audit many different industries and environments. They have
+              seen the attack vectors that internal teams may never encounter, and they bring objectivity
+              that internal teams cannot. The trade-off is cost — these engagements can be expensive,
+              and the auditors must spend time learning your environment from scratch.
+            </p>
+            <p>
+              <strong>Test coverage</strong> is the metric that describes what percentage of a system is
+              actually examined by a given test. A vulnerability scanner that only covers the web DMZ
+              has low test coverage. An assessment that includes internal network segments, end-points,
+              databases, and APIs has high test coverage. Always ask: "what is <em>out of scope</em>?"
+              because out-of-scope areas represent coverage gaps.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> When the exam describes a scenario where an organisation wants
+            an objective, unbiased assessment and cost is not the primary concern — the answer is
+            almost always <strong>third-party audit</strong>. When the scenario says "our security team
+            will evaluate our own systems" — that's <strong>internal audit</strong>.
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             03 · Vulnerability Assessment
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">03</span>
+            <h3>Vulnerability Assessment — Identify, Define, Rank</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Purpose</span><span class="fc-val">Find &amp; rank weaknesses — not exploit them</span></div>
+            <div class="fact-card"><span class="fc-label">CVE</span><span class="fc-val">Common Vulnerabilities &amp; Exposures — names/IDs</span></div>
+            <div class="fact-card"><span class="fc-label">CVSS</span><span class="fc-val">Severity score 0–10; drives prioritisation</span></div>
+            <div class="fact-card"><span class="fc-label">SCAP</span><span class="fc-val">Automated checking protocol suite (NIST)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>vulnerability assessment</strong> is a systematic examination of a system
+              to <em>identify, define, and rank</em> vulnerabilities. The key word is <em>rank</em>
+              — not every vulnerability deserves the same urgent attention, and risk-based prioritisation
+              is what separates a useful assessment from a raw scanner dump.
+            </p>
+            <p>
+              The industry uses three complementary standards to talk about vulnerabilities in a common
+              language. <strong>CVE (Common Vulnerabilities and Exposures)</strong> is the naming standard
+              — every known vulnerability gets a unique CVE identifier (e.g. CVE-2021-44228 for Log4Shell).
+              This common naming prevents the confusion of different vendors calling the same flaw by
+              different names.
+            </p>
+            <p>
+              <strong>CVSS (Common Vulnerability Scoring System)</strong> attaches a severity score from
+              0 to 10 to each CVE. A CVSS score of 9.8 (Critical) demands emergency patching; a score
+              of 3.1 (Low) can be deferred to the next maintenance window. CVSS considers attack vector
+              (network vs physical), complexity, privileges required, user interaction, confidentiality
+              impact, integrity impact, and availability impact.
+            </p>
+            <p>
+              <strong>SCAP (Security Content Automation Protocol)</strong> is NIST's framework for
+              automating the checking process. SCAP bundles standards like OVAL (Open Vulnerability and
+              Assessment Language) and XCCDF (checklists) so that scanners can check systems against known
+              vulnerability definitions in a machine-readable, automated way.
+            </p>
+            <p>
+              <strong>False positives vs false negatives</strong> are critical concepts in any automated
+              scan. A <strong>false positive</strong> is when the scanner reports a vulnerability that
+              does not actually exist — wastes remediation effort. A <strong>false negative</strong> is
+              when the scanner misses a real vulnerability — creates dangerous false confidence. Both
+              require manual analyst review to catch. Tune your scanner and validate findings before
+              presenting them to leadership.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — CVE vs CVSS vs SCAP:</strong> CVE = <em>name/ID</em> (what it is called).
+            CVSS = <em>score</em> (how bad it is, 0–10). SCAP = <em>automation protocol</em>
+            (how to check for it automatically). The exam tests these as distinct concepts.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 480 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CVE, CVSS, SCAP relationship">
+              <rect x="10" y="20" width="130" height="70" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="75" y="48" text-anchor="middle" font-size="13" fill="#e53e3e" font-weight="700">CVE</text>
+              <text x="75" y="64" text-anchor="middle" font-size="9" fill="#c0c0c0">Unique name/ID</text>
+              <text x="75" y="77" text-anchor="middle" font-size="9" fill="#888">CVE-2021-44228</text>
+
+              <rect x="175" y="20" width="130" height="70" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="240" y="48" text-anchor="middle" font-size="13" fill="#e53e3e" font-weight="700">CVSS</text>
+              <text x="240" y="64" text-anchor="middle" font-size="9" fill="#c0c0c0">Severity score 0–10</text>
+              <text x="240" y="77" text-anchor="middle" font-size="9" fill="#888">Critical = 9.0–10.0</text>
+
+              <rect x="340" y="20" width="130" height="70" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="405" y="48" text-anchor="middle" font-size="13" fill="#e53e3e" font-weight="700">SCAP</text>
+              <text x="405" y="64" text-anchor="middle" font-size="9" fill="#c0c0c0">Automation protocol</text>
+              <text x="405" y="77" text-anchor="middle" font-size="9" fill="#888">OVAL + XCCDF</text>
+
+              <text x="157" y="59" text-anchor="middle" font-size="14" fill="#e53e3e">→</text>
+              <text x="323" y="59" text-anchor="middle" font-size="14" fill="#e53e3e">→</text>
+            </svg>
+            <figcaption>CVE names the flaw. CVSS scores its severity. SCAP automates the checking. All three work together in a modern vulnerability management programme.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             04 · Penetration Testing Methodology
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">04</span>
+            <h3>Penetration Testing — Simulated Attack, Real Evidence</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Definition</span><span class="fc-val">Simulated attack at owner's request</span></div>
+            <div class="fact-card"><span class="fc-label">VA vs Pen-test</span><span class="fc-val">VA finds; pen-test actively exploits</span></div>
+            <div class="fact-card"><span class="fc-label">5 phases</span><span class="fc-val">Recon → Enum → Analysis → Execution → Document</span></div>
+            <div class="fact-card"><span class="fc-label">Rules of Engagement</span><span class="fc-val">Written scope, time window, emergency contact</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>penetration test</strong> goes further than a vulnerability assessment. Where a VA
+              identifies and ranks weaknesses, a pen test actively <em>exploits</em> them — just as a real
+              attacker would — to determine the actual business impact. The critical legal requirement is
+              that the testing must be explicitly authorised by the <em>owner</em> of the system. Pen
+              testing without authorisation is a crime.
+            </p>
+            <p>
+              <strong>Phase 1 — Reconnaissance:</strong> The tester gathers intelligence about the target
+              using passive (OSINT, Shodan, social media) or active (direct probing) techniques. This is
+              where war dialing fits — dialling large blocks of phone numbers to find exposed modems or
+              fax machines. Modern equivalents include scanning for exposed services on cloud ports.
+            </p>
+            <p>
+              <strong>Phase 2 — Enumeration:</strong> Active probing to map the attack surface — open
+              ports, running services, software versions, OS fingerprinting. The goal is a precise
+              inventory of what exists and can be targeted.
+            </p>
+            <p>
+              <strong>Phase 3 — Vulnerability Analysis:</strong> Matching the enumerated services against
+              known weaknesses. This overlaps with vulnerability assessment but in the pen-test context
+              the tester is specifically looking for exploitable attack paths, not just a ranked list.
+            </p>
+            <p>
+              <strong>Phase 4 — Execution:</strong> Actually exploiting vulnerabilities to demonstrate
+              impact — gaining a shell, escalating privileges, moving laterally, or accessing sensitive
+              data. <strong>Credential-based attacks</strong> like Pass-the-Hash (PtH) and Pass-the-Ticket
+              (PtT) are commonly used here when credential scanning reveals NTLM hashes or Kerberos tickets.
+            </p>
+            <p>
+              <strong>Phase 5 — Document Findings:</strong> Producing a professional report (covered in
+              Section 14) that translates technical exploits into business risk language, with
+              recommendations ordered by severity.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — VA vs Penetration Test:</strong> If the scenario says "identify and rank
+            weaknesses" → Vulnerability Assessment. If it says "simulate an attacker" or "exploit
+            vulnerabilities to prove impact" → Penetration Test. The explicit owner authorisation and
+            active exploitation are the distinguishing factors.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pen-test 5-phase lifecycle">
+              <defs>
+                <marker id="arr6b" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+                  <polygon points="0 0,7 2.5,0 5" fill="#e53e3e"/>
+                </marker>
+              </defs>
+              <rect x="5" y="20" width="90" height="50" rx="5" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="50" y="42" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">01</text>
+              <text x="50" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Reconnais-</text>
+              <text x="50" y="65" text-anchor="middle" font-size="8.5" fill="#c0c0c0">sance</text>
+              <line x1="95" y1="45" x2="108" y2="45" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6b)"/>
+
+              <rect x="110" y="20" width="90" height="50" rx="5" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="155" y="42" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">02</text>
+              <text x="155" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Enumera-</text>
+              <text x="155" y="65" text-anchor="middle" font-size="8.5" fill="#c0c0c0">tion</text>
+              <line x1="200" y1="45" x2="213" y2="45" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6b)"/>
+
+              <rect x="215" y="20" width="90" height="50" rx="5" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="260" y="42" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">03</text>
+              <text x="260" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Vuln</text>
+              <text x="260" y="65" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Analysis</text>
+              <line x1="305" y1="45" x2="318" y2="45" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6b)"/>
+
+              <rect x="320" y="20" width="90" height="50" rx="5" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="365" y="42" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">04</text>
+              <text x="365" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Execution</text>
+              <text x="365" y="65" text-anchor="middle" font-size="8.5" fill="#c0c0c0">(Exploit)</text>
+              <line x1="410" y1="45" x2="423" y2="45" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arr6b)"/>
+
+              <rect x="425" y="20" width="120" height="50" rx="5" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="485" y="42" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">05</text>
+              <text x="485" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Document</text>
+              <text x="485" y="65" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Findings</text>
+            </svg>
+            <figcaption>Penetration test lifecycle — Reconnaissance → Enumeration → Vulnerability Analysis → Execution → Document Findings. Each phase feeds the next.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             05 · Testing Perspectives — Black / White / Gray Box
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">05</span>
+            <h3>Testing Perspectives — Black, White &amp; Gray Box; Blind &amp; Double-Blind</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Black box</span><span class="fc-val">No insider knowledge — pure outsider view</span></div>
+            <div class="fact-card"><span class="fc-label">White box</span><span class="fc-val">Full knowledge of internals — deepest testing</span></div>
+            <div class="fact-card"><span class="fc-label">Gray box</span><span class="fc-val">Partial knowledge — realistic insider threat</span></div>
+            <div class="fact-card"><span class="fc-label">Double-blind</span><span class="fc-val">Staff unaware + tester uses only public data</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The <em>perspective</em> of a test describes how much knowledge the tester starts with.
+              It dramatically changes what the test can find and what it costs in time.
+            </p>
+            <p>
+              <strong>Black box testing</strong> treats the target as a completely opaque system — exactly
+              as an outside attacker would see it. The tester has no architecture diagrams, no source code,
+              no credentials, no network maps. This produces the most realistic simulation of an external
+              attacker but is the most time-consuming because the tester must discover everything from scratch.
+            </p>
+            <p>
+              <strong>White box testing</strong> gives the tester complete knowledge of internals before
+              a single scan is run — architecture, source code, credentials, network diagrams, everything.
+              This allows the deepest, most thorough testing in the shortest time but does not simulate
+              an uninformed external attacker. White box is ideal for code reviews, logic flaw hunting,
+              and audit efficiency.
+            </p>
+            <p>
+              <strong>Gray box testing</strong> sits in the middle — the tester has some but not all
+              internal information, simulating an insider threat or a sophisticated attacker who has
+              done significant reconnaissance. This is often the most practical choice balancing realism
+              with efficiency.
+            </p>
+            <p>
+              Separately, tests can be categorised by whether the <em>target's security team</em> knows
+              the test is happening. A <strong>blind test</strong> means the tester uses only publicly
+              available information, and the target's security staff <em>is</em> notified. A
+              <strong>double-blind test (stealth assessment)</strong> means the tester uses only public
+              data <em>and</em> the security staff is <em>not</em> notified — this tests the team's
+              detection and response capability in addition to the technical controls. Also called a
+              "zero-knowledge" or "surprise" test.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> "Blind" refers to the <em>tester's knowledge of the target</em>.
+            "Double-blind" additionally means the <em>target's staff don't know testing is occurring</em>.
+            These are not opposite ends of the same spectrum — they are two independent dimensions.
+            Read exam questions carefully for which axis is being tested.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Black, gray, white box testing spectrum">
+              <rect x="10" y="25" width="140" height="55" rx="6" fill="#0d0d0d" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="80" y="48" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="700">Black Box</text>
+              <text x="80" y="62" text-anchor="middle" font-size="8.5" fill="#c0c0c0">No insider knowledge</text>
+              <text x="80" y="73" text-anchor="middle" font-size="8.5" fill="#888">Outsider view</text>
+
+              <rect x="180" y="25" width="140" height="55" rx="6" fill="#1a1a2e" stroke="#888" stroke-width="1.5"/>
+              <text x="250" y="48" text-anchor="middle" font-size="12" fill="#aaa" font-weight="700">Gray Box</text>
+              <text x="250" y="62" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Partial knowledge</text>
+              <text x="250" y="73" text-anchor="middle" font-size="8.5" fill="#888">Insider threat sim</text>
+
+              <rect x="350" y="25" width="140" height="55" rx="6" fill="#f0f0f0" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="420" y="48" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="700">White Box</text>
+              <text x="420" y="62" text-anchor="middle" font-size="8.5" fill="#333">Full knowledge</text>
+              <text x="420" y="73" text-anchor="middle" font-size="8.5" fill="#555">Code + architecture</text>
+
+              <text x="165" y="57" text-anchor="middle" font-size="16" fill="#e53e3e">→</text>
+              <text x="335" y="57" text-anchor="middle" font-size="16" fill="#e53e3e">→</text>
+            </svg>
+            <figcaption>Testing perspectives — Black (outsider, no knowledge) → Gray (partial) → White (full insider knowledge). More knowledge = deeper testing, less realism.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             06 · Specialised Testing Techniques
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">06</span>
+            <h3>Specialised Testing Techniques</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Synthetic transactions</span><span class="fc-val">Scripted fake-user events; test service performance</span></div>
+            <div class="fact-card"><span class="fc-label">Misuse cases</span><span class="fc-val">Use-case with threat actor; models attacker goals</span></div>
+            <div class="fact-card"><span class="fc-label">Fuzzing</span><span class="fc-val">Random/malformed input injection; finds crashes</span></div>
+            <div class="fact-card"><span class="fc-label">War dialing</span><span class="fc-val">Dial phone number ranges to find exposed modems</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Beyond standard scans and pen tests, Domain 6 covers several specialised techniques
+              that test specific aspects of a system's security.
+            </p>
+            <p>
+              <strong>Synthetic transactions</strong> are scripted events that mimic the behaviour of
+              real users. A synthetic transaction might simulate logging in, placing an order, and logging
+              out — all automatically, 24/7. The purpose is to test both performance (is the service
+              responding within SLA?) and security (did the authentication step reject bad credentials?).
+              Synthetic transactions run in controlled environments so the data generated is known and
+              can be audited. They complement Real User Monitoring (RUM), which passively watches actual
+              user interactions rather than scripted ones.
+            </p>
+            <p>
+              <strong>Misuse cases</strong> extend the software engineering concept of use cases by adding
+              threat actors and the tasks <em>they</em> want to perform. A normal use case says "customer
+              logs in and views balance." A misuse case says "attacker attempts SQL injection in the login
+              field to extract the full customer table." Misuse cases drive security requirements during
+              software development and focus penetration test planning.
+            </p>
+            <p>
+              <strong>Fuzzing (fuzz testing)</strong> involves feeding a system random, unexpected, or
+              malformed input in large volumes to find crashes, memory corruption, buffer overflows, or
+              unhandled exceptions. Fuzzers are largely automated. <strong>Static fuzzing</strong> uses
+              a fixed set of known-bad inputs; <strong>dynamic fuzzing</strong> generates inputs based on
+              observed system responses, adapting to find deeper bugs.
+            </p>
+            <p>
+              <strong>War dialing</strong> is the legacy technique of automatically dialling large blocks
+              of phone numbers to find modems, fax machines, or remote-access servers. While seemingly
+              outdated, it still appears on the CISSP exam and is conceptually important — modern
+              equivalents include mass port scanning and internet-wide scanning (e.g. Shodan) for
+              exposed industrial control system ports or default-credential devices.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — Synthetic vs RUM:</strong> Synthetic transactions are <em>scripted</em>
+            and <em>controlled</em> — you know exactly what inputs went in and you verify expected outputs.
+            Real User Monitoring (RUM) passively observes <em>actual</em> user interactions. When an exam
+            question asks about systematically testing whether a critical service is functioning correctly
+            around the clock, the answer is <strong>synthetic transactions</strong>.
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             07 · Code Review &amp; Interface Testing
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">07</span>
+            <h3>Code Review &amp; Interface Testing</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Code review</span><span class="fc-val">Systematic exam of code by someone other than author</span></div>
+            <div class="fact-card"><span class="fc-label">Static analysis</span><span class="fc-val">Analyse code without executing it (SAST)</span></div>
+            <div class="fact-card"><span class="fc-label">Dynamic analysis</span><span class="fc-val">Test running code (DAST) — finds runtime bugs</span></div>
+            <div class="fact-card"><span class="fc-label">Interface testing</span><span class="fc-val">Evaluate data exchange points — APIs, UIs, protocols</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Code review</strong> is a systematic examination of software source code by someone
+              other than the author. The "other than the author" requirement is critical — peer review
+              removes the blind spots that come from writing the code yourself. It is the most cost-effective
+              way to find vulnerabilities: it is far cheaper to find a SQL injection flaw in a code review
+              during development than to discover it in production.
+            </p>
+            <p>
+              Code reviews come in several forms. A <strong>manual code review</strong> involves a skilled
+              reviewer reading through code looking for logic flaws, missing input validation, insecure
+              cryptographic choices, and access control bugs. <strong>Static analysis (SAST)</strong>
+              automates this by scanning the source code without executing it — it can process millions of
+              lines quickly but generates false positives that require human triage. <strong>Dynamic
+              analysis (DAST)</strong> runs the compiled application and injects inputs to observe runtime
+              behaviour — finding issues like race conditions that do not appear in static code.
+            </p>
+            <p>
+              <strong>Interface testing</strong> evaluates the security of exchange points — any place
+              where data flows between systems or between a system and a user. This includes:
+              APIs (do they enforce authentication and input validation?), user interfaces (are they
+              vulnerable to XSS or CSRF?), and protocol interfaces (does the TLS handshake enforce
+              strong cipher suites?). Interface testing asks: "what happens when unexpected or malicious
+              data arrives at this exchange point?"
+            </p>
+            <p>
+              <strong>Boundary Value Analysis (BVA)</strong> is a specific interface-testing technique
+              that focuses on the edges of acceptable input ranges. If a field accepts values 1–100,
+              BVA tests 0, 1, 2, 99, 100, and 101 — the boundaries where logic errors most frequently
+              occur.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip:</strong> "Conducted by someone other than the author" is the defining phrase
+            for a formal <strong>code review</strong>. If an exam scenario describes a developer checking
+            their own code, that is not a code review in the CISSP sense — that is self-review, which has
+            no independent assurance value.
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             08 · Log Review Fundamentals
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">08</span>
+            <h3>Log Review — What to Monitor and Why</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Definition</span><span class="fc-val">Examination of log files to detect security events</span></div>
+            <div class="fact-card"><span class="fc-label">Monitor for</span><span class="fc-val">Errors · Modifications · Breaches</span></div>
+            <div class="fact-card"><span class="fc-label">Log size risk</span><span class="fc-val">Circular overwrite can destroy evidence</span></div>
+            <div class="fact-card"><span class="fc-label">Time sync</span><span class="fc-val">NTP is mandatory for log correlation</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>log review</strong> is the examination of system log files to detect security events
+              or to verify the effectiveness of security controls. Logs are the audit trail of what actually
+              happened on a system — they are the primary forensic evidence source when an incident occurs.
+            </p>
+            <p>
+              Security teams monitor logs for three major categories of events:
+              <strong>Errors</strong> (authentication failures, application crashes, database errors that
+              may indicate an injection attempt), <strong>Modifications</strong> (changes to sensitive
+              files, privilege escalation, account creation — especially on weekends or after hours), and
+              <strong>Breaches</strong> (successful unauthorised access, data exfiltration patterns, lateral
+              movement indicators).
+            </p>
+            <p>
+              <strong>Log size management</strong> is a critical operational concern. Logs will grow
+              indefinitely if not managed. Two common strategies:
+              <strong>Circular overwrite</strong> — the log is treated as a ring buffer; when it fills,
+              the oldest entries are overwritten. The risk is that old entries — which may be critical
+              forensic evidence — are silently destroyed. <strong>Clipping levels</strong> — only log
+              events that exceed a threshold (e.g., more than 5 failed logins) to reduce volume while
+              keeping security-relevant signals. Both must be configured with care.
+            </p>
+            <p>
+              <strong>Timestamp consistency</strong> is non-negotiable for log correlation. Imagine
+              trying to reconstruct an attack across a web server, a database, a firewall, and a domain
+              controller — if each has a different system clock, correlating the sequence of events
+              becomes nearly impossible. <strong>Network Time Protocol (NTP)</strong> synchronises all
+              clocks to a common reference time, making multi-source log correlation reliable and legally
+              defensible in court.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — Circular overwrite risk:</strong> Circular overwrite is a <em>data loss
+            risk for forensic evidence</em>, not a security control. If an exam scenario says "the
+            organisation needs to ensure old log entries are not lost," the answer involves increasing
+            log storage or implementing log shipping/archiving — not circular overwrite. NTP is the
+            solution any time an exam mentions "log correlation" or "consistent timestamps."
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             09 · SIEM — Security Information &amp; Event Management
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">09</span>
+            <h3>SIEM — The Log-Management Lifecycle</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">SIEM purpose</span><span class="fc-val">Aggregate, normalise, correlate, alert on log data</span></div>
+            <div class="fact-card"><span class="fc-label">7 stages</span><span class="fc-val">Generate → Transmit → Collect → Normalise → Analyse → Retain → Dispose</span></div>
+            <div class="fact-card"><span class="fc-label">Normalisation</span><span class="fc-val">Convert all log formats to a common schema</span></div>
+            <div class="fact-card"><span class="fc-label">Retention</span><span class="fc-val">Legal hold period; PCI-DSS = 1 yr; often 7 yrs</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>SIEM (Security Information and Event Management)</strong> platform is the central
+              nervous system of log management. It collects logs from every system across the enterprise —
+              firewalls, endpoints, servers, cloud platforms, applications — and correlates them in real
+              time to detect threats that no single log source would reveal alone.
+            </p>
+            <p>
+              <strong>Stage 1 — Generation:</strong> Log entries are created at the source — an OS kernel
+              event, a firewall deny, a database query. Two key issues arise here: volume (high-activity
+              systems generate enormous log volume) and what to record (clipping levels and circular
+              overwrite, discussed in Section 08).
+            </p>
+            <p>
+              <strong>Stage 2 — Transmission:</strong> Log data is sent from sources to the central
+              collection point. Use encrypted channels (TLS) to prevent tampering in transit. The protocol
+              may be syslog, Windows Event Forwarding, or an agent-based collector.
+            </p>
+            <p>
+              <strong>Stage 3 — Collection / Aggregation:</strong> A log aggregator (often a syslog
+              server or SIEM forwarder) receives logs from all sources, deduplicates, and buffers them
+              before sending to the SIEM for processing.
+            </p>
+            <p>
+              <strong>Stage 4 — Normalisation:</strong> The most technically important stage. Every
+              system logs in a different format — Windows Event Log, CEF, LEEF, plain syslog. Normalisation
+              converts all formats to a common schema so that a firewall "deny" and an IDS "alert" can be
+              correlated by the same rule. Without normalisation, correlation is impossible.
+            </p>
+            <p>
+              <strong>Stage 5 — Analysis:</strong> Correlation rules, anomaly detection, and threat
+              intelligence feeds are applied to the normalised data stream. This is where alerts are
+              generated. Modern SIEMs use machine learning to baseline normal behaviour and flag deviations.
+            </p>
+            <p>
+              <strong>Stage 6 — Retention:</strong> Logs must be kept for a defined period to meet legal,
+              regulatory, and forensic requirements. PCI-DSS requires one year (three months immediately
+              available). Many organisations retain security logs for three to seven years. Retention
+              policies must be written and enforced.
+            </p>
+            <p>
+              <strong>Stage 7 — Disposal:</strong> When the retention period expires, logs must be
+              securely destroyed — just like any other sensitive data. Logs often contain credentials,
+              session tokens, IP addresses, and user behaviour that is personally identifiable. Simply
+              deleting a file is not sufficient; use cryptographic erasure or certified media destruction.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — Normalisation is the enabler:</strong> Without normalisation, a SIEM
+            cannot correlate across vendors. The exam may present a scenario where a SIEM "cannot
+            correlate events from different systems" — the answer is that <strong>normalisation</strong>
+            is missing or misconfigured. Also remember: SIEM does both SIM (historical analysis) and
+            SEM (real-time alerting) in one platform.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 640 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SIEM 7-stage pipeline">
+              <defs>
+                <marker id="arr6c" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                  <polygon points="0 0,6 2.5,0 5" fill="#e53e3e"/>
+                </marker>
+              </defs>
+              <rect x="2" y="18" width="78" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="41" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Generate</text>
+              <text x="41" y="50" text-anchor="middle" font-size="6.5" fill="#aaa">Source events</text>
+              <line x1="80" y1="40" x2="88" y2="40" stroke="#e53e3e" stroke-width="1.2" marker-end="url(#arr6c)"/>
+
+              <rect x="90" y="18" width="78" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="129" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Transmit</text>
+              <text x="129" y="50" text-anchor="middle" font-size="6.5" fill="#aaa">TLS/syslog</text>
+              <line x1="168" y1="40" x2="176" y2="40" stroke="#e53e3e" stroke-width="1.2" marker-end="url(#arr6c)"/>
+
+              <rect x="178" y="18" width="78" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="217" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Collect /</text>
+              <text x="217" y="47" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Aggregate</text>
+              <line x1="256" y1="40" x2="264" y2="40" stroke="#e53e3e" stroke-width="1.2" marker-end="url(#arr6c)"/>
+
+              <rect x="266" y="18" width="78" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="305" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Normalise</text>
+              <text x="305" y="50" text-anchor="middle" font-size="6.5" fill="#aaa">Common schema</text>
+              <line x1="344" y1="40" x2="352" y2="40" stroke="#e53e3e" stroke-width="1.2" marker-end="url(#arr6c)"/>
+
+              <rect x="354" y="18" width="78" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="393" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Analyse</text>
+              <text x="393" y="50" text-anchor="middle" font-size="6.5" fill="#aaa">Correlate, alert</text>
+              <line x1="432" y1="40" x2="440" y2="40" stroke="#e53e3e" stroke-width="1.2" marker-end="url(#arr6c)"/>
+
+              <rect x="442" y="18" width="78" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="481" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Retain</text>
+              <text x="481" y="50" text-anchor="middle" font-size="6.5" fill="#aaa">Policy period</text>
+              <line x1="520" y1="40" x2="528" y2="40" stroke="#e53e3e" stroke-width="1.2" marker-end="url(#arr6c)"/>
+
+              <rect x="530" y="18" width="104" height="44" rx="4" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.2"/>
+              <text x="582" y="37" text-anchor="middle" font-size="7.5" fill="#e53e3e" font-weight="700">Dispose</text>
+              <text x="582" y="50" text-anchor="middle" font-size="6.5" fill="#aaa">Secure destruction</text>
+            </svg>
+            <figcaption>SIEM 7-stage log management pipeline — Generation through Disposal. Normalisation is the pivot point that makes correlation across vendors possible.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             10 · Continuous Monitoring
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">10</span>
+            <h3>Continuous Monitoring &mdash; Always-On Security Visibility</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Point-in-time</span><span class="fc-val">Snapshot — valid at moment of test only</span></div>
+            <div class="fact-card"><span class="fc-label">Continuous</span><span class="fc-val">Ongoing visibility — detects change in real time</span></div>
+            <div class="fact-card"><span class="fc-label">RUM</span><span class="fc-val">Real User Monitoring — passively observes actual users</span></div>
+            <div class="fact-card"><span class="fc-label">Privileged accounts</span><span class="fc-val">High-risk; must be continuously monitored</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Traditional security assessments are <strong>point-in-time</strong> — like taking a
+              photograph. The photo is accurate at the moment it was taken, but the environment changes
+              immediately after. A firewall rule is added. A patch is not applied. An account is
+              misconfigured. <strong>Continuous monitoring</strong> replaces the photograph with a
+              live video feed.
+            </p>
+            <p>
+              NIST SP 800-137 defines a framework for Information Security Continuous Monitoring (ISCM).
+              It involves: defining a monitoring strategy, establishing metrics, implementing monitoring
+              (automated tools, SIEM, vulnerability scanners), analysing data, reporting findings, and
+              responding. The cycle runs indefinitely — hence <em>continuous</em>.
+            </p>
+            <p>
+              <strong>Privileged user accounts</strong> represent the single highest risk in any
+              environment. A compromised domain administrator can read every email, exfiltrate every
+              database, and disable every control. Continuous monitoring of privileged account activity
+              — after-hours logins, unusual command execution, accessing resources outside normal scope —
+              is a critical detective control.
+            </p>
+            <p>
+              <strong>Real User Monitoring (RUM)</strong> passively captures the experience of actual
+              users interacting with a system. Unlike synthetic transactions (scripted) RUM observes real
+              traffic without altering it. RUM is important for detecting both performance degradation and
+              anomalous user behaviour (a user downloading 10x their normal data volume may indicate
+              insider threat or a compromised credential).
+            </p>
+            <p>
+              <strong>User account lifecycle monitoring</strong> is a subset of continuous monitoring
+              that the CISSP exam explicitly tests. User accounts must be promptly <em>suspended</em>
+              (not deleted — preserve evidence) whenever a user departs the organisation or takes an
+              extended leave. Stale, orphaned accounts that remain active after an employee leaves are
+              a common attack vector.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — Suspend, not delete:</strong> When an employee leaves the organisation,
+            the correct action is to <strong>suspend / disable</strong> the account immediately —
+            not delete it. Deletion destroys the audit trail and may violate legal hold requirements.
+            The account (and its data) may need to be preserved as evidence in a future investigation.
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             11 · Security Metrics — KPIs &amp; KRIs
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">11</span>
+            <h3>Security Metrics &mdash; KPIs, KRIs, and What They Measure</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">KPI</span><span class="fc-val">How effective are we? (Performance)</span></div>
+            <div class="fact-card"><span class="fc-label">KRI</span><span class="fc-val">How risky is what we are doing? (Risk exposure)</span></div>
+            <div class="fact-card"><span class="fc-label">Example KPI</span><span class="fc-val">% patches applied within SLA; mean time to detect</span></div>
+            <div class="fact-card"><span class="fc-label">Example KRI</span><span class="fc-val">% systems running unsupported OS; # open critical CVEs</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Metrics are how we demonstrate security value to leadership and drive continuous improvement.
+              Two types dominate Domain 6: <strong>Key Performance Indicators (KPIs)</strong> and
+              <strong>Key Risk Indicators (KRIs)</strong>.
+            </p>
+            <p>
+              <strong>KPIs measure effectiveness</strong> — how well is the security function performing
+              a given task at a given point in time? Examples: What percentage of critical patches were
+              applied within the 30-day SLA? What is the mean time to detect (MTTD) an incident?
+              What is the mean time to respond (MTTR)? What percentage of employees completed security
+              awareness training? These are backward-looking — they measure what was achieved.
+            </p>
+            <p>
+              <strong>KRIs measure risk exposure</strong> — how dangerous is the current state of
+              affairs? Examples: What percentage of production systems are running operating systems
+              that are end-of-life (no patches available)? How many open critical CVSS 9+ vulnerabilities
+              are in production? What is the number of privileged accounts without multi-factor
+              authentication? KRIs are forward-looking — they signal <em>where risk is building</em>
+              before it becomes an incident.
+            </p>
+            <p>
+              Both are essential inputs to the management review (Section 15). KPIs answer "how are we
+              doing?" and KRIs answer "what could hurt us next?" Together they provide the data-driven
+              picture senior leaders need to make strategic security investment decisions.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — KPI vs KRI:</strong> The quickest test: if the metric describes
+            <em>past performance</em> ("we patched 94% of critical CVEs within SLA") → <strong>KPI</strong>.
+            If the metric describes <em>current exposure to future harm</em> ("23 end-of-life servers
+            in production") → <strong>KRI</strong>. The exam will test this distinction directly.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 460 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="KPI vs KRI comparison">
+              <rect x="10" y="15" width="200" height="70" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="110" y="37" text-anchor="middle" font-size="12" fill="#e53e3e" font-weight="700">KPI — Performance</text>
+              <text x="110" y="53" text-anchor="middle" font-size="8.5" fill="#c0c0c0">How effective are we now?</text>
+              <text x="110" y="66" text-anchor="middle" font-size="8" fill="#888">Patch SLA % · MTTD · Training %</text>
+              <text x="110" y="78" text-anchor="middle" font-size="8" fill="#888">← Backward-looking</text>
+
+              <rect x="250" y="15" width="200" height="70" rx="6" fill="#1a1a2e" stroke="#888" stroke-width="1.5"/>
+              <text x="350" y="37" text-anchor="middle" font-size="12" fill="#aaa" font-weight="700">KRI — Risk Exposure</text>
+              <text x="350" y="53" text-anchor="middle" font-size="8.5" fill="#c0c0c0">What could hurt us next?</text>
+              <text x="350" y="66" text-anchor="middle" font-size="8" fill="#888">EOL systems · Open critical CVEs</text>
+              <text x="350" y="78" text-anchor="middle" font-size="8" fill="#888">→ Forward-looking</text>
+            </svg>
+            <figcaption>KPIs measure past performance. KRIs measure current risk exposure (leading indicator of future harm). Both are reported to senior leadership.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             12 · SOC Reports — Type I, Type II, SOC 1/2/3
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">12</span>
+            <h3>SOC Reports &mdash; Third-Party Assurance</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">SOC 1</span><span class="fc-val">Financial reporting controls (SSAE 18 / ISAE 3402)</span></div>
+            <div class="fact-card"><span class="fc-label">SOC 2</span><span class="fc-val">Security Trust Service Criteria — CIA + P + A</span></div>
+            <div class="fact-card"><span class="fc-label">SOC 3</span><span class="fc-val">Public-facing summary of SOC 2 — no restricted data</span></div>
+            <div class="fact-card"><span class="fc-label">Type I vs II</span><span class="fc-val">Design (point-in-time) vs Operating Effectiveness (period)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              When you outsource a business function to a third-party service provider — a cloud host, a
+              payroll processor, a SaaS vendor — you retain <em>accountability</em> for the data you
+              handed them, even though you no longer have direct control. SOC (Service Organization Control)
+              reports are the mechanism by which those service providers prove to you that their controls
+              work.
+            </p>
+            <p>
+              <strong>SOC 1</strong> reports assess controls that are <em>relevant to financial reporting</em>.
+              They matter when the service provider processes transactions or data that affect your financial
+              statements — a payroll processor or an accounts-payable outsourcer. SOC 1 is governed by
+              SSAE 18 in the US (formerly SAS 70) and ISAE 3402 internationally.
+            </p>
+            <p>
+              <strong>SOC 2</strong> reports assess controls relevant to the AICPA's Trust Service Criteria:
+              <strong>Security</strong> (mandatory), <strong>Availability</strong>, <strong>Processing
+              Integrity</strong>, <strong>Confidentiality</strong>, and <strong>Privacy</strong> (optional,
+              included if applicable). SOC 2 is what you demand from a cloud provider or SaaS vendor when
+              you want assurance about data security.
+            </p>
+            <p>
+              <strong>SOC 3</strong> is a public-facing summary version of SOC 2. It contains the auditor's
+              opinion (pass/fail) but not the detailed test results, findings, or control descriptions.
+              Service providers can publish SOC 3 on their websites as a marketing trust signal. You, as a
+              potential customer, cannot make informed procurement decisions on SOC 3 alone — you need SOC 2.
+            </p>
+            <p>
+              All three SOC report types come in <strong>Type I</strong> and <strong>Type II</strong>
+              variants. A <strong>Type I</strong> report assesses whether controls are <em>suitably
+              designed</em> at a single point in time — like a building inspection that confirms the fire
+              sprinklers are installed correctly. A <strong>Type II</strong> report assesses whether
+              controls operated <em>effectively over a period of time</em> (typically 6–12 months) — like
+              reviewing video footage to confirm the sprinklers actually activated when triggered. Type II
+              provides far stronger assurance.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — Type I vs Type II memory trick:</strong> Type I = <strong>I</strong>nstant
+            snapshot — design only, single point in time. Type II = <strong>T</strong>ime period —
+            operating effectiveness over months. Regulators and sophisticated buyers always prefer
+            <strong>Type II SOC 2</strong>. When a cloud vendor shows you only a SOC 3 or only a Type I
+            report, ask for the Type II SOC 2.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 500 115" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SOC report matrix">
+              <!-- headers -->
+              <rect x="180" y="5" width="140" height="28" rx="4" fill="#e53e3e"/>
+              <text x="250" y="23" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">Type I</text>
+              <rect x="330" y="5" width="160" height="28" rx="4" fill="#c0392b"/>
+              <text x="410" y="23" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">Type II</text>
+
+              <!-- row labels -->
+              <rect x="10" y="38" width="155" height="25" rx="3" fill="#1a1a2e" stroke="#555"/>
+              <text x="87" y="55" text-anchor="middle" font-size="9" fill="#ccc">SOC 1 — Financial</text>
+              <rect x="10" y="67" width="155" height="25" rx="3" fill="#1a1a2e" stroke="#555"/>
+              <text x="87" y="84" text-anchor="middle" font-size="9" fill="#ccc">SOC 2 — Security (CIA+P+A)</text>
+              <rect x="10" y="96" width="155" height="15" rx="3" fill="#1a1a2e" stroke="#555"/>
+              <text x="87" y="108" text-anchor="middle" font-size="8.5" fill="#ccc">SOC 3 — Public summary</text>
+
+              <!-- cells -->
+              <rect x="180" y="38" width="140" height="25" rx="3" fill="#1a1a2e" stroke="#e53e3e"/>
+              <text x="250" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Design only — snapshot</text>
+              <rect x="330" y="38" width="160" height="25" rx="3" fill="#1a1a2e" stroke="#c0392b"/>
+              <text x="410" y="55" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Operating effectiveness — period</text>
+
+              <rect x="180" y="67" width="140" height="25" rx="3" fill="#1a1a2e" stroke="#e53e3e"/>
+              <text x="250" y="84" text-anchor="middle" font-size="8.5" fill="#c0c0c0">Design only — snapshot</text>
+              <rect x="330" y="67" width="160" height="25" rx="3" fill="#1a1a2e" stroke="#c0392b"/>
+              <text x="410" y="84" text-anchor="middle" font-size="8.5" fill="#aaa" font-weight="600">★ Gold standard</text>
+
+              <rect x="180" y="96" width="300" height="15" rx="3" fill="#2a2a3e" stroke="#444"/>
+              <text x="330" y="108" text-anchor="middle" font-size="8" fill="#888">Type I/II don't apply — always a public summary only</text>
+            </svg>
+            <figcaption>SOC 1/2/3 × Type I/II matrix. SOC 2 Type II is the gold standard for cloud security assurance — design + operating effectiveness over a period.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             13 · Administrative &amp; BCP/DRP Control Testing
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">13</span>
+            <h3>Administrative Controls, BCP/DRP Testing &amp; Social Engineering</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Admin controls</span><span class="fc-val">Policies &amp; procedures — audited by review</span></div>
+            <div class="fact-card"><span class="fc-label">Backup verification</span><span class="fc-val">Backups are useless without tested restores</span></div>
+            <div class="fact-card"><span class="fc-label">BCP/DRP test</span><span class="fc-val">Tabletop → Walkthrough → Simulation → Full test</span></div>
+            <div class="fact-card"><span class="fc-label">Phishing simulation</span><span class="fc-val">Tests awareness; click rate = KPI</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Not all security controls are technical. <strong>Administrative controls</strong> — policies,
+              procedures, training programmes, separation of duties, job rotation — are equally critical
+              and must be assessed. Auditing administrative controls typically involves reviewing policy
+              documents, interviewing staff, testing whether procedures are actually followed, and checking
+              training completion records.
+            </p>
+            <p>
+              <strong>Privileged account testing</strong> is a high-priority administrative assessment.
+              Auditors look at whether privileged accounts (domain admin, root, DBA) have MFA enforced,
+              whether the principle of least privilege is applied (no one has more access than they need),
+              whether session recordings exist, and whether privileged access is time-bound (just-in-time
+              provisioning). Uncontrolled privileged accounts are among the most exploited attack vectors.
+            </p>
+            <p>
+              <strong>Data backup verification</strong> is a frequently overlooked but exam-critical
+              concept: backups that have never been tested are not reliable. The CISSP exam makes this
+              explicit — backups should not be considered reliable unless they have been <em>verified to
+              successfully restore data</em>. Regular restore tests (to a non-production environment) are
+              mandatory.
+            </p>
+            <p>
+              <strong>BCP/DRP testing</strong> assesses whether business continuity and disaster recovery
+              plans actually work. Four test levels in increasing intensity:
+              (1) <strong>Tabletop exercise</strong> — team discusses the scenario verbally;
+              (2) <strong>Walkthrough / structured walk-through</strong> — team traces through the plan
+              step by step;
+              (3) <strong>Simulation</strong> — team acts as if the disaster occurred, stopping short of
+              actual failover;
+              (4) <strong>Full interruption test</strong> — actual failover to backup systems. Most
+              disruptive; most realistic. BCP and DRP must be tested regularly because environments change.
+            </p>
+            <p>
+              <strong>Social engineering testing</strong> (phishing simulations, vishing calls, pretexting
+              campaigns) tests the human layer. A phishing simulation sends fake phishing emails to
+              employees and measures click rate and credential submission rate. These rates are KPIs for
+              the security awareness programme. High click rates indicate training gaps. The test must be
+              authorised by senior leadership and handled ethically — results are used for training, not
+              punishment.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — BCP vs DRP:</strong> BCP ensures critical <em>business processes</em>
+            remain uninterrupted or are quickly restored. DRP ensures <em>information systems</em>
+            supporting those processes remain operational or are quickly restored. BCP is broader;
+            DRP is IT-focused. Both need periodic testing — a plan that has never been tested is
+            not a plan, it is a document.
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             14 · Writing Technical Reports &amp; Executive Summaries
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">14</span>
+            <h3>Writing Technical Reports &amp; Executive Summaries</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Report sections</span><span class="fc-val">Exec Summary · Background · Methodology · Findings · Recommendations · Appendices</span></div>
+            <div class="fact-card"><span class="fc-label">Asset valuation</span><span class="fc-val">Cost · Income · Market approaches</span></div>
+            <div class="fact-card"><span class="fc-label">Monetary risk</span><span class="fc-val">Asset Value × Probability = Risk ($)</span></div>
+            <div class="fact-card"><span class="fc-label">Audience rule</span><span class="fc-val">Executives = business language; technicians = technical detail</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A technical report is not a scanner printout. The CISSP exam explicitly tests the ability
+              to communicate security findings to <em>different audiences</em> — a skill that distinguishes
+              a senior security professional from a tool operator.
+            </p>
+            <p>
+              <strong>Six elements of a good technical audit report:</strong>
+            </p>
+            <p>
+              <strong>(1) Executive Summary</strong> — one to two pages maximum. Hard-hitting summary of
+              key findings and recommendations in business language. Many senior executives will read
+              only this section. Lead with the most impactful message.
+            </p>
+            <p>
+              <strong>(2) Background</strong> — why was this assessment conducted? What is the scope
+              (and what is explicitly out of scope)? What policies, standards, or regulations does it
+              reference?
+            </p>
+            <p>
+              <strong>(3) Methodology</strong> — how was the test conducted? (Audits must be repeatable.)
+              Include personnel, dates, times, locations, tools used, and any exclusions.
+            </p>
+            <p>
+              <strong>(4) Findings</strong> — grouped logically (by business impact for executives,
+              by technical class for engineers). Each finding must answer "so what?" — the business
+              consequence, not just the technical description.
+            </p>
+            <p>
+              <strong>(5) Recommendations</strong> — mirrors the Findings structure. Answers "now what?"
+              Make it actionable. When writing for a CFO who dislikes capital expenditure, frame expensive
+              recommendations as operational cost savings rather than capital investments.
+            </p>
+            <p>
+              <strong>(6) Appendices</strong> — raw scanner output, evidence screenshots, network diagrams.
+              Provides the technical depth and justification for the findings, without cluttering the
+              main report.
+            </p>
+            <p>
+              <strong>Quantifying risk for the Executive Summary</strong> — expressing risk in monetary
+              terms is the most persuasive way to get leadership attention. The basic formula:
+              <strong>Risk ($) = Asset Value × Probability of Loss</strong>. For example: customer data
+              valued at $1M with a 10% breach probability = $100,000 annual risk exposure. Three methods
+              of asset valuation:
+            </p>
+            <p>
+              <strong>Cost approach</strong> — what did it cost to acquire or create the asset? Simple;
+              good for tangible IT assets. <strong>Income approach</strong> — what expected revenue does
+              the asset generate, divided by the capitalisation rate? Better for information assets with
+              revenue contribution. <strong>Market approach</strong> — what would an equivalent asset
+              fetch on the open market? Requires market transparency data.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — auto-generated reports:</strong> The CISSP exam explicitly warns against
+            reports that are nothing more than automated scanner output with no analysis. A good report
+            tells a <em>story</em> grounded in empirical facts, tailored to its audience, and making
+            a compelling argument for action. If the security posture is genuinely good, the report
+            should say so — do not overemphasise minor findings to justify the engagement.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 520 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Risk quantification formula">
+              <rect x="10" y="20" width="130" height="60" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="75" y="44" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">Asset Value ($)</text>
+              <text x="75" y="60" text-anchor="middle" font-size="8.5" fill="#888">Cost / Income /</text>
+              <text x="75" y="72" text-anchor="middle" font-size="8.5" fill="#888">Market approach</text>
+
+              <text x="155" y="58" text-anchor="middle" font-size="20" fill="#e53e3e">×</text>
+
+              <rect x="175" y="20" width="130" height="60" rx="6" fill="#1a1a2e" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="240" y="44" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">Probability</text>
+              <text x="240" y="60" text-anchor="middle" font-size="8.5" fill="#888">Likelihood of</text>
+              <text x="240" y="72" text-anchor="middle" font-size="8.5" fill="#888">loss occurring</text>
+
+              <text x="320" y="58" text-anchor="middle" font-size="20" fill="#e53e3e">=</text>
+
+              <rect x="335" y="20" width="175" height="60" rx="6" fill="#2a0a0a" stroke="#e53e3e" stroke-width="2"/>
+              <text x="422" y="44" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">Risk Exposure ($)</text>
+              <text x="422" y="60" text-anchor="middle" font-size="8.5" fill="#c0c0c0">e.g. $1M × 10% = $100K</text>
+              <text x="422" y="72" text-anchor="middle" font-size="8.5" fill="#888">Annual exposure figure</text>
+            </svg>
+            <figcaption>Monetary risk formula for executive reporting. Asset Value × Probability = Risk ($). Controls reduce probability; residual risk = what remains after control effectiveness is applied.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             15 · Management Review — Plan-Do-Check-Act
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">15</span>
+            <h3>Management Review &mdash; The Act Phase of PDCA</h3>
+          </div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Purpose</span><span class="fc-val">Senior leadership decides on ISMS strategy</span></div>
+            <div class="fact-card"><span class="fc-label">Inputs</span><span class="fc-val">Audit results · Open items · Customer feedback · Recommendations</span></div>
+            <div class="fact-card"><span class="fc-label">Outputs</span><span class="fc-val">Approve / Reject / Defer recommendations</span></div>
+            <div class="fact-card"><span class="fc-label">Frequency</span><span class="fc-val">Periodic; synced to implementation cycle length</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>management review</strong> is a formal meeting of senior organisational leaders
+              to determine whether the information security management system (ISMS) is effectively
+              accomplishing its goals. It is the <em>Act</em> phase of the PDCA loop — the point where
+              all the data gathered in the Check phase is converted into strategic decisions.
+            </p>
+            <p>
+              <strong>Who must attend:</strong> All key decision-makers. This is not a technical meeting —
+              it is a strategic one. The ISMS gets its authority and resources from top-level buy-in.
+              A management review that does not include the CISO, CIO, CFO, and relevant business unit
+              leaders is undermined before it starts.
+            </p>
+            <p>
+              <strong>Inputs to the management review:</strong>
+              (1) Audit results — both internal and external, with executive summaries;
+              (2) Open items and action items from the <em>previous</em> management review — what was
+              committed and whether it was delivered;
+              (3) Customer feedback — satisfaction surveys, RUM data, social media sentiment;
+              (4) Recommendations for improvement — proposed high-level changes needing leadership
+              approval or resources.
+            </p>
+            <p>
+              <strong>Presenting options:</strong> The ISMS team typically presents three to five options
+              for each major recommendation, ranging from "do nothing" (describing the risk of inaction)
+              to "gold-plated response" (maximum investment). Each option is evaluated against objective
+              criteria: monetary cost (life-cycle cost, not just acquisition), residual risk, operational
+              impact, training requirements, and complexity. This allows leaders to make informed
+              cost-benefit decisions.
+            </p>
+            <p>
+              <strong>Outputs:</strong> Leadership approves, rejects, approves with modifications, or
+              defers recommendations, typically with a request for more data. All decisions become
+              deliverables with owners and due dates. These deliverables become the open-items input
+              to the <em>next</em> management review — closing the loop.
+            </p>
+            <p>
+              <strong>Frequency:</strong> The more immature the ISMS, the more frequently reviews should
+              occur. The review cycle must be synchronised with implementation cycles — if a decision
+              will take twelve months to implement and measure, reviewing every three months yields
+              meaningless data. The review becomes proactive rather than reactive when conducted on a
+              regular, pre-planned schedule.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Exam tip — life-cycle cost:</strong> When presenting recommendations to management,
+            always use <strong>life-cycle cost</strong> (acquisition + implementation + training +
+            maintenance over the system's lifetime), not just the purchase price. A $50,000 tool with
+            $30,000/year maintenance over five years costs $200,000 — far more than the sticker price.
+            Overlooking maintenance costs is flagged in the CISSP curriculum as a common executive
+            communication mistake.
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 500 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Management review input-output flow">
+              <!-- Inputs box -->
+              <rect x="10" y="10" width="160" height="90" rx="6" fill="#1a1a2e" stroke="#555" stroke-width="1.5"/>
+              <text x="90" y="30" text-anchor="middle" font-size="10" fill="#aaa" font-weight="700">INPUTS</text>
+              <text x="90" y="46" text-anchor="middle" font-size="8" fill="#888">• Audit results (+ exec summary)</text>
+              <text x="90" y="59" text-anchor="middle" font-size="8" fill="#888">• Open items from last review</text>
+              <text x="90" y="72" text-anchor="middle" font-size="8" fill="#888">• Customer feedback / RUM</text>
+              <text x="90" y="85" text-anchor="middle" font-size="8" fill="#888">• Improvement recommendations</text>
+
+              <!-- Arrow -->
+              <defs>
+                <marker id="arr6d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                  <polygon points="0 0,8 3,0 6" fill="#e53e3e"/>
+                </marker>
+              </defs>
+              <line x1="170" y1="55" x2="190" y2="55" stroke="#e53e3e" stroke-width="2" marker-end="url(#arr6d)"/>
+
+              <!-- Review box -->
+              <rect x="192" y="25" width="116" height="60" rx="6" fill="#2a0a0a" stroke="#e53e3e" stroke-width="2"/>
+              <text x="250" y="48" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">MANAGEMENT</text>
+              <text x="250" y="63" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">REVIEW</text>
+              <text x="250" y="78" text-anchor="middle" font-size="8" fill="#888">Strategic decision</text>
+
+              <!-- Arrow -->
+              <line x1="308" y1="55" x2="328" y2="55" stroke="#e53e3e" stroke-width="2" marker-end="url(#arr6d)"/>
+
+              <!-- Outputs box -->
+              <rect x="330" y="10" width="160" height="90" rx="6" fill="#1a1a2e" stroke="#555" stroke-width="1.5"/>
+              <text x="410" y="30" text-anchor="middle" font-size="10" fill="#aaa" font-weight="700">OUTPUTS</text>
+              <text x="410" y="46" text-anchor="middle" font-size="8" fill="#888">• Approve / reject / defer recs</text>
+              <text x="410" y="59" text-anchor="middle" font-size="8" fill="#888">• New deliverables + owners</text>
+              <text x="410" y="72" text-anchor="middle" font-size="8" fill="#888">• Due dates for action items</text>
+              <text x="410" y="85" text-anchor="middle" font-size="8" fill="#888">→ Feed next review's inputs</text>
+            </svg>
+            <figcaption>Management review input-output loop. Outputs become the next cycle's open items — creating the continuous PDCA improvement cycle.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════
+             WRAP-UP
+             ═══════════════════════════════════════════════════════ -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header">
+            <span class="layer-badge">✓</span>
+            <h3>Domain 6 Wrap-Up &mdash; What the Exam Will Test</h3>
+          </div>
+          <div class="d4-body">
+            <p>
+              Domain 6 is the <em>evidence domain</em>. Its central message: security controls are only
+              worth claiming if you can <strong>prove</strong> they work. Every topic — from penetration
+              testing to log normalisation to management review — is in service of that proof.
+            </p>
+            <p>
+              The exam loves to test <strong>distinctions</strong> in this domain. VA vs pen-test.
+              Black vs white vs gray box. Blind vs double-blind. Type I vs Type II. SOC 1 vs SOC 2 vs
+              SOC 3. KPI vs KRI. Synthetic transactions vs RUM. Suspend vs delete. Make sure you can
+              answer "what is the difference between X and Y?" for every pair in that list — the exam
+              will present a scenario and ask which one applies.
+            </p>
+            <p>
+              The second major exam theme is <strong>communication</strong>: writing reports for the
+              right audience, quantifying risk in monetary terms, presenting options to leadership with
+              objective criteria, and running effective management reviews. These soft-skill concepts
+              appear in scenario questions testing whether you understand the full accountability chain
+              from the technical team up to the board.
+            </p>
+            <p>
+              Finally, remember the <strong>PDCA loop</strong>. Plan (set goals and scope). Do (run
+              the tests). Check (analyse results — the bulk of Domain 6). Act (management review and
+              implement improvements). Everything in this domain is one step in that loop. If you ever
+              feel lost on a Domain 6 question, ask yourself: "which phase of PDCA is this describing?"
+              — and the answer will point you to the right concept.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Quick-reference exam checklist for Domain 6:</strong>
+            VA = identify &amp; rank (no exploitation) | Pen-test = actively exploit (with authorisation) |
+            Black = no knowledge | White = full knowledge | Gray = partial |
+            Blind = public data only, staff notified | Double-blind = staff not notified |
+            CVE = name | CVSS = score 0–10 | SCAP = automation |
+            SOC 1 = financial | SOC 2 = security (CIA+P+A) | SOC 3 = public summary |
+            Type I = design, snapshot | Type II = operating effectiveness, period |
+            KPI = past performance | KRI = future risk exposure |
+            SIEM stages: Generate → Transmit → Collect → Normalise → Analyse → Retain → Dispose |
+            Suspend (don't delete) departed-user accounts | Backups must be restore-tested to be reliable |
+            Life-cycle cost, not sticker price | PDCA: Plan-Do-Check-Act
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the assessment map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
+  </body>
+</html>

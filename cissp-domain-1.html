@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CISSP Domain 1 notes: Security and Risk Management — governance, ethics, law, policy, risk management, BCP and security awareness." />
+    <title>CISSP Domain 1 | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-1-data.js?v=4" defer></script>
+    <script src="cissp-domain-1.js?v=3" defer></script>
+  </head>
+  <body data-page="work" data-domain-id="1">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 1 &middot; 16% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Security and Risk Management</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            The foundation of the entire CISSP &mdash; aligning security to business strategy through
+            governance, professional ethics, law and compliance, security policy, risk management, business
+            continuity, personnel security, and the awareness programmes that build the human firewall.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 1 is the heaviest-weighted domain (16%) and sets the conceptual foundation for all the
+            others &mdash; twelve outline areas covering ethics, core security concepts, governance, law,
+            policy, risk management, business continuity, personnel security, and security awareness.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.1 &mdash; Professional ethics</h3>
+            <p class="card-copy">Understand, adhere to and promote professional ethics &mdash; the <strong>(ISC)&sup2; Code of Professional Ethics</strong> and organisational codes of conduct.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.2 &mdash; Apply security concepts</h3>
+            <p class="card-copy">The <strong>CIA triad</strong> (confidentiality, integrity, availability), plus authenticity, non-repudiation, and the (DAD / IAAA) foundations.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.3 &mdash; Security governance principles</h3>
+            <p class="card-copy">Aligning security to business strategy, <strong>roles &amp; responsibilities</strong>, due care / due diligence, and governance frameworks.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.4 &mdash; Legal, regulatory &amp; compliance</h3>
+            <p class="card-copy">Cybercrime, licensing &amp; IP, <strong>import/export controls</strong>, transborder data flow, and <strong>privacy</strong> law in a holistic context.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.5 &mdash; Investigation types</h3>
+            <p class="card-copy">Administrative, <strong>criminal, civil, regulatory</strong> and industry-standard investigations and their differing requirements.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.6 &mdash; Security policy &amp; documents</h3>
+            <p class="card-copy">Develop and implement <strong>policy, standards, procedures, baselines and guidelines</strong> &mdash; and which are mandatory.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.7 &mdash; Business Continuity requirements</h3>
+            <p class="card-copy">Identify, analyse, assess, prioritise and implement BC requirements &mdash; including the <strong>BIA</strong>.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.8 &mdash; Personnel security</h3>
+            <p class="card-copy">Hiring (screening), employment (NDAs, AUP), and termination &mdash; plus <strong>separation of duties</strong> and job rotation.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.9 &mdash; Risk management concepts</h3>
+            <p class="card-copy">Identify and assess risk, <strong>ALE / SLE / ARO</strong>, risk treatment (mitigate / accept / transfer / avoid), and frameworks.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.10 &mdash; Threat modeling</h3>
+            <p class="card-copy">Apply threat-modeling concepts and methodologies such as <strong>STRIDE, PASTA and DREAD</strong>.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.11 &mdash; Supply Chain Risk Management</h3>
+            <p class="card-copy">Apply <strong>SCRM</strong> concepts &mdash; vetting suppliers, fourth-party risk, and security in contracts and SLAs.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">1.12 &mdash; Awareness, training &amp; education</h3>
+            <p class="card-copy">Establish and maintain a programme across the three levels &mdash; <strong>awareness, training and education</strong>.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Alignment of Security to Business Strategy
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Aligning security to business strategy.</h2>
+          <p class="section-copy">
+            One map of how security governance nests inside corporate governance and ties every Domain 1
+            governance topic back to the business &mdash; the focus of security, clearly defined roles, import /
+            export and privacy law, professional ethics, the policy-document hierarchy, risk management,
+            procurement, and security awareness. Hover (or tap) any box for its concept, an example, and &mdash;
+            where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Alignment of security to business strategy: corporate governance contains security governance, which spans focus of security (enable business, increase value), clearly defined roles and responsibilities (accountability, responsibility, due care, due diligence), import/export controls (ITAR & EAR, Wassenaar Arrangement), transborder data flow, privacy, ethics ((ISC)2 Code of Professional Ethics), corporate laws and the security policy hierarchy (overarching policy, functional policies, standards, procedures, baselines, guidelines), risk management, procurement (contracts and SLAs), and awareness, training and education.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Alignment of Security Function to Business Strategy</div>
+
+              <div class="ac-row">
+                <!-- ===== Corporate Governance > Security Governance ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Corporate Governance</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Security Governance</div>
+                      <div class="ac-row">
+
+                        <!-- Focus of Security -->
+                        <div class="ac-node">
+                          <div class="ac-box ac-strong">Focus of Security</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Enable Business</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Increase Value</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Roles & Responsibilities -->
+                        <div class="ac-node">
+                          <div class="ac-box ac-strong">Clearly Defined Roles &amp; Responsibilities</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accountability</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Responsibility</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Due Care</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Due Diligence</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Import/export controls -->
+                        <div class="ac-node">
+                          <div class="ac-box">Import/export controls</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>ITAR &amp; EAR</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Wassenaar Arrangement</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Transborder / Privacy -->
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Transborder data flow</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Privacy</span></div></div>
+
+                        <!-- Ethics -->
+                        <div class="ac-node">
+                          <div class="ac-box">Ethics</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>(ISC)&sup2; Code of Professional Ethics</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Policy hierarchy -->
+                        <div class="ac-node">
+                          <div class="ac-box">Corporate Laws</div>
+                          <div class="ac-row">
+                            <div class="ac-node">
+                              <div class="ac-box">Overarching Security Policy</div>
+                              <div class="ac-row">
+                                <div class="ac-node">
+                                  <div class="ac-box">Functional Security Policies</div>
+                                  <div class="ac-row">
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Standards</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Procedures</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Baselines</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Guidelines</span></div></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Risk Management -->
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent"><span>Risk Management</span></div></div>
+
+                        <!-- Procurement -->
+                        <div class="ac-node">
+                          <div class="ac-box">Procurement</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Contracts &amp; SLAs</span></div></div>
+                          </div>
+                        </div>
+
+                        <!-- Awareness -->
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Awareness, Training &amp; Education</span></div></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 1 mirrors the &ldquo;Alignment of Security Function to Business Strategy&rdquo; map for Domain
+            1.3 &mdash; corporate governance containing security governance, which spans the focus of security
+            (enable business, increase value), clearly defined roles &amp; responsibilities (accountability,
+            responsibility, due care, due diligence), import/export controls (ITAR &amp; EAR, Wassenaar),
+            transborder data flow, privacy, professional ethics, the policy-document hierarchy (corporate laws
+            &rarr; overarching policy &rarr; functional policies &rarr; standards / procedures / baselines /
+            guidelines), risk management, procurement (contracts &amp; SLAs), and awareness, training &amp;
+            education.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 2 — Privacy & Intellectual Property (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 2 &mdash; Visual summary</p>
+          <h2 class="section-title">Privacy &amp; intellectual property.</h2>
+          <p class="section-copy">
+            Two legal-and-compliance maps. <strong>Privacy</strong> &mdash; the privacy policy, the categories of
+            personal data and identifiers, the data lifecycle, the eight OECD principles, GDPR (supervisory
+            authority and 72-hour breach reporting), and the rule that you cannot achieve privacy without
+            security. And <strong>Intellectual Property</strong> &mdash; the four protections: trade secret,
+            patent, copyright and trademark. Hover (or tap) any box for its concept, an example, and &mdash;
+            where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Privacy map: privacy policy (standards, procedures, baselines, guidelines); personal data (PII, SPI, PHI, PI and direct, indirect and online identifiers); data lifecycle (creation/update, store, use, share, archive, destroy); OECD guidelines (collection limitation, data quality, purpose specification, use limitation, security safeguards, openness, individual participation, accountability); GDPR (supervisory authority, 72-hour breach reporting); and cannot achieve privacy without security.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Privacy</div>
+
+              <div class="ac-row">
+                <!-- Definition banner -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="privacy-definition"><span>State or condition of being free from being observed or disturbed by other people</span></div></div>
+
+                <!-- Privacy policy -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Privacy policy</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Standards</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Procedures</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Baselines</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Guidelines</span></div></div>
+                  </div>
+                </div>
+
+                <!-- Personal Data -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Personal Data</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>PII</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SPI</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>PHI</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>PI</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Direct Identifiers</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Indirect Identifiers</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Online Identifiers</span></div></div>
+                  </div>
+                </div>
+
+                <!-- Data Lifecycle -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Data Lifecycle</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Creation / Update</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Store</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Use</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Share</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Archive</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Destroy</span></div></div>
+                  </div>
+                </div>
+
+                <!-- OECD Guidelines -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">OECD Guidelines</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Collection Limitation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Quality</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Purpose Specification</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Use Limitation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Security Safeguards</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Openness</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Individual Participation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="oecd-accountability"><span>Accountability</span></div></div>
+                  </div>
+                </div>
+
+                <!-- GDPR -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">GDPR</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="Supervisory Authority"><span>Supervisory Authority (SA)</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Breaches reported within 72 hours</span></div></div>
+                  </div>
+                </div>
+
+                <!-- No privacy without security -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Cannot Achieve Privacy without Security</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Privacy map (Domain 1.4) &mdash; the privacy policy and its documents; the categories of personal data
+            (PII, SPI, PHI, PI) and identifiers (direct, indirect, online); the data lifecycle; the eight OECD
+            privacy principles; GDPR (supervisory authority and the 72-hour breach-notification rule); and the
+            principle that privacy cannot be achieved without security.
+          </p>
+
+          <div class="ac-map" role="img" aria-label="Intellectual property: trade secret, patent, copyright, trademark." style="margin-top:1.5rem;">
+            <div class="ac-map-inner">
+              <div class="ac-title">Intellectual Property</div>
+              <div class="ac-row">
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Trade Secret</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Patent</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Copyright</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Trademark</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Intellectual Property map (Domain 1.4) &mdash; the four legal protections: trade secret (confidential,
+            forever if kept secret), patent (inventions, ~20 years, public disclosure), copyright (original works
+            of expression, automatic, life + 70 years), and trademark (brand identity, renewable indefinitely).
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 3 — Risk Management (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 3 &mdash; Visual summary</p>
+          <h2 class="section-title">Risk management.</h2>
+          <p class="section-copy">
+            One map of the risk-management process &mdash; value the assets, analyse the risk (threats,
+            vulnerabilities, likelihood and impact, quantitatively via ALE or qualitatively), choose a treatment
+            (avoid, transfer, mitigate, accept) with the full taxonomy of controls under mitigation, and anchor
+            it all in a recognised risk framework (NIST RMF, ISO 31000, COSO, ISACA Risk IT). Hover (or tap) any
+            box for its concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Risk management: asset valuation (quantitative, qualitative); risk analysis (threats with threat modeling STRIDE/PASTA/DREAD, vulnerabilities with assessment and pen testing, likelihood, impact, quantitative ALE, qualitative); treatment (avoid, transfer, mitigate with administrative/technical/physical controls, safeguards and countermeasures, control types directive through compensating, functional and assurance, and accept); and risk frameworks (NIST RMF, ISO 31000, COSO, ISACA Risk IT).">
+            <div class="ac-map-inner">
+              <div class="ac-title" data-ac-key="rm-title">Risk Management</div>
+
+              <div class="ac-row">
+                <!-- 1. Asset Valuation -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="asset-valuation">1. Asset Valuation</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="val-quantitative"><span>Quantitative</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="val-qualitative"><span>Qualitative</span></div></div>
+                  </div>
+                </div>
+
+                <!-- 2. Risk Analysis -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="risk-analysis">2. Risk Analysis</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box">Threats</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box">Threat Modeling</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>STRIDE</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>PASTA</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>DREAD</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-accent">Vulnerabilities</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="vapt"><span>Vuln. Assessment &amp; Pen. Testing</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Likelihood</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Impact</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v" data-ac-key="ra-quantitative"><span>Quantitative</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ale"><span>ALE = SLE(Value x Exposure) x ARO</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ra-qualitative"><span>Qualitative</span></div></div>
+                  </div>
+                </div>
+
+                <!-- 3. Treatment -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="treatment">3. Treatment</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Avoid</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Transfer</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Mitigate</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Administrative</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Technical / Logical</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Physical</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Safeguards</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Countermeasures</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Directive</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Deterrent</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Preventative</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Detective</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Corrective</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Recovery</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Compensating</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Functional</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Assurance</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accept</span></div></div>
+                  </div>
+                </div>
+
+                <!-- Risk Frameworks -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Risk Frameworks</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box ac-v" data-ac-key="RMF"><span>RMF (NIST 800-37)</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="rmf-steps"><span>1. Prepare</span><span>2. Categorize</span><span>3. Select</span><span>4. Implement</span><span>5. Assess</span><span>6. Authorize</span><span>7. Monitor</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>ISO 31000</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>COSO</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>ISACA Risk IT</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 3 mirrors the Risk Management concept map for Domain 1.9 &mdash; asset valuation (quantitative
+            / qualitative), risk analysis (threats with threat modeling via STRIDE / PASTA / DREAD,
+            vulnerabilities via assessment &amp; pen testing, likelihood, impact, and the ALE = SLE &times; ARO
+            quantitative calculation), risk treatment (avoid, transfer, mitigate &mdash; with the full control
+            taxonomy by nature and function &mdash; and accept), and the risk frameworks (NIST RMF and its 7
+            steps, ISO 31000, COSO, ISACA Risk IT).
+          </p>
+        </div>
+      </section>
+      <!-- ============================================================
+           DOMAIN 1 — EXPERT INSTRUCTOR GUIDE (TLDR)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Expert Instructor Guide</p>
+          <h2 class="section-title">Domain 1 &mdash; the complete walkthrough, sub-domain by sub-domain.</h2>
+          <p class="section-copy">
+            Domain 1 is the heaviest-weighted domain (16%) and the conceptual foundation for the whole exam.
+            This is your full lecture on it, marching through the official outline <strong>1.1 to 1.12</strong>
+            and unpacking every topic the way ISC&sup2; tests it &mdash; precise definitions, the distinctions
+            that trap people, and a concrete example for each. The three maps above are the skeleton; this is the
+            muscle. Read it top to bottom and you will not need another source for Domain 1.
+          </p>
+        </div>
+
+        <!-- ════════════ 1.1 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.1</p>
+          <h2 class="section-title">Understand, adhere to &amp; promote professional ethics.</h2>
+          <p class="section-copy">Ethics is canon-one material &mdash; quite literally. Every CISSP is bound by the (ISC)&sup2; Code, and you must know its canons in order.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.1</span><h3>The (ISC)&sup2; Code of Professional Ethics</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Canon 1</span><span class="fc-val">Protect society, the common good &amp; infrastructure</span></div>
+            <div class="fact-card"><span class="fc-label">Canon 2</span><span class="fc-val">Act honourably, honestly, justly, legally</span></div>
+            <div class="fact-card"><span class="fc-label">Canon 3</span><span class="fc-val">Diligent, competent service to principals</span></div>
+            <div class="fact-card"><span class="fc-label">Canon 4</span><span class="fc-val">Advance &amp; protect the profession</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The Code has a <strong>preamble</strong> and <strong>four canons that are applied in strict ORDER
+              of priority</strong> &mdash; this ordering is the exam's favourite ethics question. When two canons
+              conflict, the lower-numbered one wins: protecting <em>society and the public</em> (Canon 1)
+              outranks serving your <em>employer/client</em> (Canon 3). Beyond the (ISC)&sup2; Code, organisations
+              adopt their own codes of conduct, and the field has historical ethics references like the Internet
+              Architecture Board's <strong>RFC 1087</strong> ("Ethics and the Internet") and the Computer Ethics
+              Institute's Ten Commandments.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> If a scenario pits your duty to your employer against the public good, choose the <em>public good</em> &mdash; Canon 1 always outranks Canon 3.</div>
+        </div>
+
+        <!-- ════════════ 1.2 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.2</p>
+          <h2 class="section-title">Understand &amp; apply security concepts.</h2>
+          <p class="section-copy">The bedrock vocabulary of the whole CISSP &mdash; the CIA triad and the supporting concepts.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.2</span><h3>CIA Triad, DAD &amp; the Supporting Concepts</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Confidentiality</span><span class="fc-val">Prevent unauthorised disclosure</span></div>
+            <div class="fact-card"><span class="fc-label">Integrity</span><span class="fc-val">Prevent unauthorised alteration</span></div>
+            <div class="fact-card"><span class="fc-label">Availability</span><span class="fc-val">Ensure timely, reliable access</span></div>
+            <div class="fact-card"><span class="fc-label">DAD (opposite)</span><span class="fc-val">Disclosure, Alteration, Destruction</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The <strong>CIA triad</strong> is the goal of all security. <strong>Confidentiality</strong> keeps
+              data secret (encryption, access control); <strong>Integrity</strong> keeps it accurate and
+              unaltered (hashing, checksums, change control); <strong>Availability</strong> keeps it accessible
+              when needed (redundancy, backups, DDoS protection). Their opposites form <strong>DAD</strong>
+              (Disclosure, Alteration, Destruction). Supporting concepts the exam adds: <strong>authenticity</strong>
+              (genuineness), <strong>non-repudiation</strong> (can't deny an action &mdash; via digital
+              signatures), plus privacy and safety. Underpinning access is <strong>IAAA</strong>:
+              Identification &rarr; Authentication &rarr; Authorization &rarr; Accountability (auditing).
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CIA triad">
+              <polygon points="180,16 326,96 34,96" fill="none" stroke="#e53e3e" stroke-width="1.5"/>
+              <text x="180" y="40" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">Confidentiality</text>
+              <text x="70" y="92" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">Integrity</text>
+              <text x="292" y="92" text-anchor="middle" font-size="11" fill="#e53e3e" font-weight="700">Availability</text>
+              <text x="180" y="74" text-anchor="middle" font-size="9" fill="#c0c0c0">protect data &amp; access</text>
+            </svg>
+            <figcaption>The CIA triad &mdash; every control ultimately serves one of these three goals; DAD is their inverse.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ════════════ 1.3 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.3</p>
+          <h2 class="section-title">Evaluate &amp; apply security governance principles.</h2>
+          <p class="section-copy">Aligning security to the business, fixing accountability, and proving leadership did the right thing.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.3</span><h3>Governance, Alignment &amp; Due Care / Due Diligence</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Alignment</span><span class="fc-val">Security enables business strategy</span></div>
+            <div class="fact-card"><span class="fc-label">Accountable vs responsible</span><span class="fc-val">Answerable vs assigned-to-do</span></div>
+            <div class="fact-card"><span class="fc-label">Due diligence</span><span class="fc-val">KNOWING what to do (investigate)</span></div>
+            <div class="fact-card"><span class="fc-label">Due care</span><span class="fc-val">DOING it (prudent action)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Security governance</strong> is senior management providing strategic direction so security
+              <em>aligns to and enables</em> business goals &mdash; it nests inside corporate governance. Roles
+              must be clear: the <strong>accountable</strong> party is ultimately answerable (can't delegate),
+              the <strong>responsible</strong> party does the work. Leadership demonstrates <strong>due
+              diligence</strong> (the ongoing research to KNOW what should be done) and <strong>due care</strong>
+              (actually DOING what a prudent person would &mdash; implementing the controls). Failing due care is
+              negligence and creates legal liability. Governance is supported by frameworks such as
+              <strong>COBIT</strong> (IT governance), <strong>ITIL</strong> (service management), and
+              <strong>ISO/IEC 27001</strong> (ISMS).
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 360 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Due diligence then due care">
+              <defs><marker id="a1a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#e53e3e"/></marker></defs>
+              <rect x="14" y="28" width="150" height="36" rx="6" fill="#1a1a2e" stroke="#e53e3e"/><text x="89" y="46" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">Due Diligence</text><text x="89" y="58" text-anchor="middle" font-size="8" fill="#c0c0c0">KNOW (research)</text>
+              <line x1="164" y1="46" x2="196" y2="46" stroke="#e53e3e" marker-end="url(#a1a)"/>
+              <rect x="198" y="28" width="150" height="36" rx="6" fill="#2a0a12" stroke="#e53e3e"/><text x="273" y="46" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">Due Care</text><text x="273" y="58" text-anchor="middle" font-size="8" fill="#c0c0c0">DO (act prudently)</text>
+            </svg>
+            <figcaption>Due diligence (knowing) informs due care (doing). You investigate first, then act.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ════════════ 1.4 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.4</p>
+          <h2 class="section-title">Legal, regulatory &amp; compliance issues.</h2>
+          <p class="section-copy">A holistic view of the law that touches information security &mdash; crime, intellectual property, privacy, and cross-border controls.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.4</span><h3>Types of Law &amp; Computer Crime</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Criminal</span><span class="fc-val">Against society; jail; beyond reasonable doubt</span></div>
+            <div class="fact-card"><span class="fc-label">Civil (tort)</span><span class="fc-val">Between parties; money; preponderance</span></div>
+            <div class="fact-card"><span class="fc-label">Administrative</span><span class="fc-val">Regulatory agency rules &amp; fines</span></div>
+            <div class="fact-card"><span class="fc-label">Legal systems</span><span class="fc-val">Common, civil (code), religious, customary</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Three categories of law matter. <strong>Criminal law</strong> punishes acts against society
+              (imprisonment/fines; proof <em>beyond a reasonable doubt</em>). <strong>Civil/tort law</strong>
+              resolves disputes between parties (monetary damages; proof by <em>preponderance of the evidence</em>).
+              <strong>Administrative/regulatory law</strong> is agency-made rules (HIPAA, PCI enforcement). The
+              world also runs different legal <em>systems</em>: <strong>common law</strong> (precedent, US/UK),
+              <strong>civil/code law</strong> (statutes, most of Europe), plus religious and customary law.
+              Computer-crime statutes (e.g. the U.S. Computer Fraud and Abuse Act) criminalise unauthorised
+              access and damage.
+            </p>
+          </div>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.4</span><h3>Intellectual Property, Privacy &amp; Cross-Border Controls</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">IP types</span><span class="fc-val">Trade secret, patent, copyright, trademark</span></div>
+            <div class="fact-card"><span class="fc-label">Privacy</span><span class="fc-val">GDPR, HIPAA, GLBA, CCPA; OECD principles</span></div>
+            <div class="fact-card"><span class="fc-label">Import/export</span><span class="fc-val">ITAR, EAR, Wassenaar (crypto/dual-use)</span></div>
+            <div class="fact-card"><span class="fc-label">Transborder</span><span class="fc-val">Data sovereignty; lawful transfer needed</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Intellectual property</strong> (covered in detail on the Layout 2 map): trade secret
+              (forever if kept secret), patent (~20 yrs, public disclosure), copyright (expression, automatic,
+              life+70), trademark (brand, renewable). <strong>Privacy law</strong> &mdash; GDPR (EU, 72-hour
+              breach reporting, up to 4% global turnover fines), HIPAA (health), GLBA (finance), CCPA
+              (California) &mdash; all build on the <strong>OECD</strong> fair-information principles.
+              Cross-border movement of <strong>encryption and dual-use</strong> technology is restricted by
+              <strong>ITAR, EAR and the Wassenaar Arrangement</strong>, and <strong>transborder data flows</strong>
+              trigger data-sovereignty rules requiring approved transfer mechanisms. Remember: you cannot achieve
+              privacy without security.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 1.5 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.5</p>
+          <h2 class="section-title">Requirements for investigation types.</h2>
+          <p class="section-copy">Different investigations carry different burdens of proof and evidence rules.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.5</span><h3>Administrative, Criminal, Civil, Regulatory &amp; Industry-Standard</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Administrative</span><span class="fc-val">Internal policy; lowest formality</span></div>
+            <div class="fact-card"><span class="fc-label">Criminal</span><span class="fc-val">Beyond a reasonable doubt</span></div>
+            <div class="fact-card"><span class="fc-label">Civil</span><span class="fc-val">Preponderance of the evidence</span></div>
+            <div class="fact-card"><span class="fc-label">Regulatory / industry</span><span class="fc-val">Agency rules / standards (e.g. PCI)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The investigation type sets the rules. <strong>Administrative</strong> (internal) investigations
+              have the lowest bar and handle policy violations. <strong>Criminal</strong> investigations require
+              the highest standard &mdash; <em>beyond a reasonable doubt</em> &mdash; and the strictest evidence
+              handling (because liberty is at stake). <strong>Civil</strong> uses the lower <em>preponderance of
+              the evidence</em>. <strong>Regulatory</strong> investigations enforce government rules, and
+              <strong>industry-standard</strong> investigations check against frameworks like PCI-DSS. Because a
+              matter can escalate to criminal, always preserve evidence and chain of custody to the highest
+              standard from the outset (this ties directly to Domain 7).
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 1.6 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.6</p>
+          <h2 class="section-title">Security policy, standards, procedures &amp; guidelines.</h2>
+          <p class="section-copy">The document hierarchy &mdash; and the one type that's optional.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.6</span><h3>The Policy Document Hierarchy</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Policy</span><span class="fc-val">Mandatory, high-level intent (the "why")</span></div>
+            <div class="fact-card"><span class="fc-label">Standards / Baselines</span><span class="fc-val">Mandatory specifics &amp; minimums</span></div>
+            <div class="fact-card"><span class="fc-label">Procedures</span><span class="fc-val">Mandatory step-by-step (the "how")</span></div>
+            <div class="fact-card"><span class="fc-label">Guidelines</span><span class="fc-val">RECOMMENDED &mdash; the only optional one</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Governance documents form a hierarchy. <strong>Policy</strong> is the top-level, mandatory
+              statement of intent from senior management. <strong>Standards</strong> mandate specific technologies
+              and configurations; <strong>baselines</strong> set the mandatory minimum security level;
+              <strong>procedures</strong> give mandatory step-by-step instructions. <strong>Guidelines</strong>
+              are the ONLY discretionary, recommended document &mdash; everything else is mandatory. The exam
+              loves to ask which document is optional (guidelines) and which is highest-level (policy).
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 360 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Policy hierarchy">
+              <rect x="90" y="10" width="180" height="20" rx="3" fill="#3a0a0e" stroke="#e53e3e"/><text x="180" y="24" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">POLICY (mandatory)</text>
+              <rect x="70" y="34" width="220" height="18" rx="3" fill="#2a0a12" stroke="#a0303f"/><text x="180" y="47" text-anchor="middle" font-size="8.5" fill="#f0f0f0">Standards (mandatory)</text>
+              <rect x="70" y="56" width="220" height="18" rx="3" fill="#2a0a12" stroke="#a0303f"/><text x="180" y="69" text-anchor="middle" font-size="8.5" fill="#f0f0f0">Baselines (mandatory)</text>
+              <rect x="70" y="78" width="220" height="18" rx="3" fill="#2a0a12" stroke="#a0303f"/><text x="180" y="91" text-anchor="middle" font-size="8.5" fill="#f0f0f0">Procedures (mandatory)</text>
+              <rect x="70" y="100" width="220" height="20" rx="3" fill="#161616" stroke="#555"/><text x="180" y="114" text-anchor="middle" font-size="8.5" fill="#bbb">Guidelines (RECOMMENDED only)</text>
+            </svg>
+            <figcaption>Top-down mandatory documents &mdash; only guidelines are optional.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ════════════ 1.7 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.7</p>
+          <h2 class="section-title">Business Continuity requirements &amp; the BIA.</h2>
+          <p class="section-copy">Domain 1 owns the <em>planning</em> side of continuity; the BIA is its engine.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.7</span><h3>BIA, Scope &amp; Time Objectives</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">BIA</span><span class="fc-val">Find critical functions, set MTD/RTO/RPO</span></div>
+            <div class="fact-card"><span class="fc-label">MTD</span><span class="fc-val">Max tolerable downtime (= RTO + WRT)</span></div>
+            <div class="fact-card"><span class="fc-label">RPO</span><span class="fc-val">Max data loss &rarr; backup frequency</span></div>
+            <div class="fact-card"><span class="fc-label">Approval</span><span class="fc-val">Senior management owns &amp; signs off</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Domain 1 covers identifying, analysing, assessing, prioritising and implementing BC requirements
+              &mdash; the foundation that Domain 7 later executes. The <strong>Business Impact Analysis (BIA)</strong>
+              is the cornerstone: it identifies critical business functions, the resources they depend on, and the
+              <strong>maximum tolerable downtime (MTD)</strong> for each, then derives the <strong>RTO</strong>
+              (time to recover) and <strong>RPO</strong> (acceptable data loss). It quantifies impact
+              (quantitative + qualitative) and must be approved by <strong>senior management</strong>, who own the
+              continuity strategy. The BCP is the broad plan; the DRP is its IT-recovery subset.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> The BIA &mdash; not the plan &mdash; is the step that <em>identifies critical functions and sets the MTD</em>. And MTD = RTO + WRT.</div>
+        </div>
+
+        <!-- ════════════ 1.8 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.8</p>
+          <h2 class="section-title">Personnel security policies &amp; procedures.</h2>
+          <p class="section-copy">People are the biggest risk &mdash; secure the whole employment lifecycle.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.8</span><h3>Hire &rarr; Employ &rarr; Terminate, Safely</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Hiring</span><span class="fc-val">Screening, background checks, NDA</span></div>
+            <div class="fact-card"><span class="fc-label">Employment</span><span class="fc-val">AUP, least privilege, SoD, job rotation</span></div>
+            <div class="fact-card"><span class="fc-label">Mandatory vacation</span><span class="fc-val">Detects hidden fraud</span></div>
+            <div class="fact-card"><span class="fc-label">Termination</span><span class="fc-val">Revoke access immediately, exit interview</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Personnel security spans the whole lifecycle. <strong>Hiring:</strong> candidate screening,
+              background and reference checks, and signing an <strong>NDA</strong> and acceptable-use agreement.
+              <strong>Employment:</strong> enforce <strong>least privilege</strong> and <strong>need-to-know</strong>,
+              <strong>separation of duties</strong> (no one controls a whole critical process &mdash; prevents
+              fraud), <strong>job rotation</strong> and <strong>mandatory vacation</strong> (which <em>detect</em>
+              fraud), and ongoing awareness. <strong>Termination:</strong> a planned process &mdash; revoke all
+              access immediately (ideally before/at notification), recover assets, disable accounts, and conduct
+              an exit interview. Third-party/contractor personnel need the same controls.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> SoD <em>prevents</em> fraud (needs collusion to beat); job rotation and mandatory vacation <em>detect</em> it. On termination, the priority is <em>immediate access revocation</em>.</div>
+        </div>
+
+        <!-- ════════════ 1.9 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.9</p>
+          <h2 class="section-title">Understand &amp; apply risk management concepts.</h2>
+          <p class="section-copy">The heart of Domain 1 &mdash; identify, assess, and treat risk, with the math the exam loves.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.9</span><h3>Risk Concepts &amp; the Quantitative Math</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Risk</span><span class="fc-val">Threat × Vulnerability (likelihood × impact)</span></div>
+            <div class="fact-card"><span class="fc-label">SLE</span><span class="fc-val">Asset Value × EF (exposure factor)</span></div>
+            <div class="fact-card"><span class="fc-label">ALE</span><span class="fc-val">SLE × ARO (annual loss)</span></div>
+            <div class="fact-card"><span class="fc-label">Residual risk</span><span class="fc-val">What remains after controls</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Risk</strong> exists where a <strong>threat</strong> can exploit a <strong>vulnerability</strong>,
+              measured by <strong>likelihood × impact</strong>. Quantitative analysis uses the formula chain:
+              <strong>SLE</strong> (Single Loss Expectancy) = Asset Value × <strong>EF</strong> (Exposure Factor);
+              <strong>ARO</strong> = Annualised Rate of Occurrence; <strong>ALE</strong> = SLE × ARO. A control is
+              cost-justified when it costs less than the ALE it removes. Qualitative analysis ranks risk on
+              relative scales (heat maps). After treatment, <strong>residual risk</strong> remains &mdash; what's
+              left after controls &mdash; and management must accept it within the organisation's
+              <strong>risk appetite/tolerance</strong>.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ALE formula chain">
+              <rect x="10" y="28" width="100" height="30" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="60" y="42" text-anchor="middle" font-size="8.5" fill="#e53e3e" font-weight="700">SLE</text><text x="60" y="53" text-anchor="middle" font-size="7.5" fill="#c0c0c0">AV × EF</text>
+              <text x="120" y="47" text-anchor="middle" font-size="11" fill="#e53e3e">×</text>
+              <rect x="132" y="28" width="100" height="30" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="182" y="42" text-anchor="middle" font-size="8.5" fill="#e53e3e" font-weight="700">ARO</text><text x="182" y="53" text-anchor="middle" font-size="7.5" fill="#c0c0c0">events / year</text>
+              <text x="242" y="47" text-anchor="middle" font-size="11" fill="#e53e3e">=</text>
+              <rect x="254" y="28" width="100" height="30" rx="5" fill="#3a0a0e" stroke="#e53e3e"/><text x="304" y="42" text-anchor="middle" font-size="8.5" fill="#fff" font-weight="700">ALE</text><text x="304" y="53" text-anchor="middle" font-size="7.5" fill="#c0c0c0">annual $ loss</text>
+            </svg>
+            <figcaption>The quantitative chain: SLE (AV×EF) × ARO = ALE. Spend on a control ≤ the ALE it removes.</figcaption>
+          </figure>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.9</span><h3>Treatment, Controls &amp; Frameworks</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">4 treatments</span><span class="fc-val">Avoid, Transfer, Mitigate, Accept</span></div>
+            <div class="fact-card"><span class="fc-label">By nature</span><span class="fc-val">Administrative, Technical, Physical</span></div>
+            <div class="fact-card"><span class="fc-label">By function</span><span class="fc-val">Directive&rarr;Deterrent&rarr;Preventive&rarr;Detective&rarr;Corrective&rarr;Recovery&rarr;Compensating</span></div>
+            <div class="fact-card"><span class="fc-label">Frameworks</span><span class="fc-val">NIST RMF, ISO 31000, COSO, Risk IT</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Four ways to treat risk: <strong>Avoid</strong> (stop the activity), <strong>Transfer</strong>
+              (insurance/outsource &mdash; share it), <strong>Mitigate</strong> (reduce with controls), or
+              <strong>Accept</strong> (retain within appetite). Mitigation applies <strong>controls</strong>,
+              classified <em>by nature</em> (administrative / technical / physical) and <em>by function</em>
+              (directive, deterrent, preventive, detective, corrective, recovery, compensating). A
+              <strong>safeguard</strong> is a proactive control; a <strong>countermeasure</strong> is reactive to
+              a specific threat. Anchor it all in a framework: <strong>NIST RMF</strong> (SP 800-37, 7 steps),
+              <strong>ISO 31000</strong> (generic risk), <strong>COSO</strong> (enterprise/financial internal
+              control), and <strong>ISACA Risk IT</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 1.10 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.10</p>
+          <h2 class="section-title">Threat modeling concepts &amp; methodologies.</h2>
+          <p class="section-copy">Find the threats by design, before attackers find them in production.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.10</span><h3>STRIDE, PASTA, DREAD &amp; Friends</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">STRIDE</span><span class="fc-val">Spoof, Tamper, Repudiate, Info-disclose, DoS, Elevate</span></div>
+            <div class="fact-card"><span class="fc-label">PASTA</span><span class="fc-val">7-stage, risk-centric, attacker simulation</span></div>
+            <div class="fact-card"><span class="fc-label">DREAD</span><span class="fc-val">Rating: Damage, Reproduce, Exploit, Affected, Discover</span></div>
+            <div class="fact-card"><span class="fc-label">Others</span><span class="fc-val">Attack trees, Trike, VAST</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Threat modeling</strong> structures the hunt for threats early in design.
+              <strong>STRIDE</strong> (Microsoft) classifies threats into six types &mdash; Spoofing, Tampering,
+              Repudiation, Information disclosure, Denial of service, Elevation of privilege.
+              <strong>PASTA</strong> (Process for Attack Simulation and Threat Analysis) is a seven-stage,
+              risk-centric method that ties threats to business objectives and simulates real attacker behaviour.
+              <strong>DREAD</strong> is a rating system (Damage, Reproducibility, Exploitability, Affected users,
+              Discoverability) for ranking threats. Others worth recognising: <strong>attack trees</strong>,
+              <strong>Trike</strong>, and <strong>VAST</strong>. Do it early &mdash; fixing design flaws on paper
+              is far cheaper than in production.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 1.11 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.11</p>
+          <h2 class="section-title">Supply Chain Risk Management (SCRM).</h2>
+          <p class="section-copy">Your security is only as strong as your weakest supplier &mdash; and their suppliers.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.11</span><h3>Third-Party &amp; Fourth-Party Risk</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Third-party</span><span class="fc-val">Your direct vendors &amp; suppliers</span></div>
+            <div class="fact-card"><span class="fc-label">Fourth-party</span><span class="fc-val">Your vendors' vendors (sub-suppliers)</span></div>
+            <div class="fact-card"><span class="fc-label">Bind it</span><span class="fc-val">MSA, SLA, right-to-audit, min security reqs</span></div>
+            <div class="fact-card"><span class="fc-label">Verify</span><span class="fc-val">Assessments, SOC 2, provenance checks</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>SCRM</strong> manages the risk introduced by suppliers across the hardware, software and
+              service supply chain. Assess <strong>third parties</strong> (your direct vendors) AND
+              <strong>fourth parties</strong> (their sub-suppliers, who you don't contract with but still depend
+              on). Control them contractually with a <strong>Master Service Agreement (MSA)</strong>,
+              <strong>SLAs</strong>, minimum security requirements, breach-notification and
+              <strong>right-to-audit</strong> clauses. Verify with on-site assessments, <strong>SOC 2</strong>
+              reports, and component <strong>provenance/integrity</strong> checks (to counter counterfeit or
+              tampered hardware/software). Famous supply-chain attacks (SolarWinds) show why this is now its own
+              outline area.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 1.12 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 1.12</p>
+          <h2 class="section-title">Security awareness, education &amp; training.</h2>
+          <p class="section-copy">The human firewall &mdash; the most cost-effective control there is.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">1.12</span><h3>Awareness vs Training vs Education</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Awareness</span><span class="fc-val">The "WHAT" &mdash; recognition &amp; attention</span></div>
+            <div class="fact-card"><span class="fc-label">Training</span><span class="fc-val">The "HOW" &mdash; specific job skills</span></div>
+            <div class="fact-card"><span class="fc-label">Education</span><span class="fc-val">The "WHY" &mdash; deep understanding</span></div>
+            <div class="fact-card"><span class="fc-label">Reinforce</span><span class="fc-val">Phishing sims, gamification, metrics</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The three escalating levels: <strong>Awareness</strong> changes behaviour and attention &mdash; the
+              <em>what</em> (posters, phishing reminders, recognising threats). <strong>Training</strong> builds
+              specific job skills &mdash; the <em>how</em> (secure-coding workshops, tool training).
+              <strong>Education</strong> develops deeper, conceptual understanding &mdash; the <em>why</em>
+              (degrees, certifications like the CISSP itself). Reinforce continuously with phishing simulations,
+              gamification and metrics, and tailor content by role. Since most breaches start with a human action,
+              this is among the highest-ROI controls you can deploy.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Awareness, training, education">
+              <defs><marker id="a1b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#e53e3e"/></marker></defs>
+              <rect x="6" y="28" width="100" height="32" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="56" y="44" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">Awareness</text><text x="56" y="56" text-anchor="middle" font-size="8" fill="#c0c0c0">WHAT</text>
+              <line x1="106" y1="44" x2="126" y2="44" stroke="#e53e3e" marker-end="url(#a1b)"/>
+              <rect x="128" y="28" width="100" height="32" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="178" y="44" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">Training</text><text x="178" y="56" text-anchor="middle" font-size="8" fill="#c0c0c0">HOW</text>
+              <line x1="228" y1="44" x2="248" y2="44" stroke="#e53e3e" marker-end="url(#a1b)"/>
+              <rect x="250" y="28" width="104" height="32" rx="5" fill="#3a0a0e" stroke="#e53e3e"/><text x="302" y="44" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">Education</text><text x="302" y="56" text-anchor="middle" font-size="8" fill="#c0c0c0">WHY</text>
+            </svg>
+            <figcaption>Awareness (what) → Training (how) → Education (why) &mdash; increasing depth of understanding.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ★ cheat sheet -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">&#9733;</span><h3>High-Yield Exam Cheat Sheet &mdash; Rapid-Fire Distinctions</h3></div>
+          <div class="d4-body">
+            <p><strong>(ISC)&sup2; canons</strong> are applied in ORDER &mdash; protect society (1) beats serve the principal (3).</p>
+            <p><strong>CIA</strong> vs <strong>DAD</strong>; non-repudiation = can't deny it (digital signatures).</p>
+            <p><strong>Accountable</strong> (answerable, can't delegate) vs <strong>responsible</strong> (does the work).</p>
+            <p><strong>Due diligence</strong> = know (research); <strong>due care</strong> = do (act). Failing due care = negligence.</p>
+            <p><strong>Criminal</strong> = beyond reasonable doubt; <strong>civil</strong> = preponderance; <strong>administrative</strong> = agency rules.</p>
+            <p><strong>IP:</strong> trade secret (forever-if-secret), patent (~20y + disclosure), copyright (expression, automatic), trademark (renewable).</p>
+            <p><strong>Policy hierarchy:</strong> policy &rarr; standards &rarr; baselines &rarr; procedures (all mandatory); <strong>guidelines</strong> = optional.</p>
+            <p><strong>BIA</strong> sets the MTD; <strong>MTD = RTO + WRT;</strong> RPO drives backup frequency.</p>
+            <p><strong>SoD prevents</strong> fraud; <strong>job rotation &amp; mandatory vacation detect</strong> it.</p>
+            <p><strong>SLE = AV × EF; ALE = SLE × ARO.</strong> Control cost should be ≤ ALE reduced.</p>
+            <p><strong>Treatments:</strong> Avoid, Transfer, Mitigate, Accept. <strong>Residual risk</strong> = what's left after controls.</p>
+            <p><strong>Safeguard</strong> = proactive; <strong>countermeasure</strong> = reactive. <strong>Compensating</strong> = alternative control.</p>
+            <p><strong>STRIDE</strong> = classify; <strong>DREAD</strong> = rate; <strong>PASTA</strong> = risk-centric 7-stage.</p>
+            <p><strong>Third-party</strong> = your vendor; <strong>fourth-party</strong> = their vendor.</p>
+            <p><strong>Awareness</strong> (what) / <strong>training</strong> (how) / <strong>education</strong> (why).</p>
+            <p><strong>GDPR:</strong> 72-hour breach report; fines up to 4% global turnover; Supervisory Authority enforces.</p>
+          </div>
+        </div>
+
+        <!-- ✓ recap -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">&#10003;</span><h3>Domain 1 in One Breath</h3></div>
+          <div class="d4-body">
+            <p>
+              Security exists to <strong>enable the business</strong>. Hold the <strong>(ISC)&sup2; ethics</strong>
+              (canons in order, society first), pursue the <strong>CIA triad</strong>, and run
+              <strong>security governance</strong> that aligns to corporate strategy with clear
+              <strong>accountability</strong> and demonstrable <strong>due diligence &amp; due care</strong>.
+              Obey the <strong>law</strong> &mdash; criminal/civil/administrative, intellectual property, privacy
+              (GDPR/OECD), and import/export &mdash; and match each <strong>investigation</strong> to its proof
+              standard. Write a proper <strong>policy hierarchy</strong> (only guidelines optional), plan
+              continuity from the <strong>BIA</strong>, and secure <strong>personnel</strong> across hire &rarr;
+              employ &rarr; terminate (SoD prevents, rotation/vacation detect). At the core, do
+              <strong>risk management</strong>: value assets, analyse risk (SLE &rarr; ALE, or qualitative),
+              <strong>treat</strong> it (avoid / transfer / mitigate / accept) with the right
+              <strong>controls</strong>, and accept the residual &mdash; all inside a <strong>framework</strong>
+              (RMF / ISO 31000). <strong>Threat-model</strong> early (STRIDE/PASTA/DREAD), manage
+              <strong>supply-chain</strong> risk (third &amp; fourth parties), and build the human firewall with
+              <strong>awareness, training &amp; education</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the assessment map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
+  </body>
+</html>

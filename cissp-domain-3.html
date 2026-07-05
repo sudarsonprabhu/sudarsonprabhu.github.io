@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CISSP Domain 3 notes: Security Architecture and Engineering — secure design, security models, cryptography, and physical security." />
+    <title>CISSP Domain 3 | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-3-data.js?v=3" defer></script>
+    <script src="cissp-domain-3.js?v=3" defer></script>
+  </head>
+  <body data-page="work" data-domain-id="3">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 3 &middot; 13% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Security Architecture and Engineering</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            Building security in by design &mdash; secure engineering principles, the formal security models,
+            information-system capabilities, the vulnerabilities of modern architectures, cryptography and
+            cryptanalysis, and the physical security of sites and facilities.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 3 spans the engineering of security &mdash; ten outline areas from secure design principles
+            and formal security models, through system capabilities and architecture vulnerabilities, to
+            cryptography, cryptanalysis, and the physical security of sites and facilities.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.1 &mdash; Secure design principles</h3>
+            <p class="card-copy">Research, implement and manage engineering processes using <strong>secure design principles</strong> &mdash; least privilege, defense in depth, zero trust, secure defaults, privacy by design.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.2 &mdash; Security models</h3>
+            <p class="card-copy">The fundamental <strong>security models</strong> &mdash; Bell-LaPadula, Biba, Clark-Wilson, Brewer-Nash and the state machine / lattice foundations.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.3 &mdash; Select controls</h3>
+            <p class="card-copy">Select controls based upon <strong>systems security requirements</strong> &mdash; using evaluation criteria such as Common Criteria (EALs).</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.4 &mdash; Security capabilities of systems</h3>
+            <p class="card-copy"><strong>Memory protection</strong>, <strong>TPM</strong>, secure boot, encryption/decryption, and trusted-computing capabilities.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.5 &mdash; Assess &amp; mitigate architecture vulnerabilities</h3>
+            <p class="card-copy">Vulnerabilities of architectures and designs &mdash; client/server, databases, cloud, IoT, ICS/SCADA, virtualization, containers and serverless.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.6 &mdash; Cryptographic solutions</h3>
+            <p class="card-copy">Select and determine <strong>cryptographic solutions</strong> &mdash; symmetric, asymmetric, hashing, PKI, and key management.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.7 &mdash; Cryptanalytic attacks</h3>
+            <p class="card-copy">Methods of <strong>cryptanalytic attack</strong> &mdash; brute force, frequency analysis, known/chosen-plaintext, side-channel, and more.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.8 &mdash; Site &amp; facility design principles</h3>
+            <p class="card-copy">Apply security principles to <strong>site and facility design</strong> &mdash; including CPTED and layered physical defense.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.9 &mdash; Site &amp; facility security controls</h3>
+            <p class="card-copy">Design the controls &mdash; perimeter, power, HVAC, fire detection &amp; suppression, and environmental protection.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">3.10 &mdash; Information system lifecycle</h3>
+            <p class="card-copy">Manage the <strong>information system lifecycle</strong> &mdash; from requirements and development through operation to secure disposal.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Models, Secure Design Principles & Security Frameworks
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Models, secure design principles &amp; frameworks.</h2>
+          <p class="section-copy">
+            Three maps. <strong>Models</strong> &mdash; the enterprise-architecture frameworks (Zachman, SABSA,
+            TOGAF) and the formal security models, lattice-based (Bell-LaPadula, Biba, Lipner) and rule-based
+            (Clark-Wilson, Brewer-Nash and the access-matrix models). <strong>Secure Design Principles</strong>
+            &mdash; least privilege, defense in depth, zero trust and the rest. And <strong>Security
+            Frameworks</strong> &mdash; the standards and regulations you must recognise. Hover (or tap) any box
+            for its concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Models: enterprise security architecture (Zachman, SABSA, TOGAF); security models, lattice-based (Bell-LaPadula with confidentiality, simple security, star and strong star properties; Biba with integrity, simple integrity and star integrity properties; Lipner) and rule-based (Clark-Wilson with 3 goals of integrity and 3 rules; Brewer-Nash preventing conflicts of interest; Graham-Denning; Harrison-Ruzzo-Ullman).">
+            <div class="ac-map-inner">
+              <div class="ac-title" data-ac-key="models-title">Models</div>
+
+              <div class="ac-row">
+                <!-- Enterprise Security Architecture -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Enterprise Security Architecture</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Zachman</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Sabsa</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>TOGAF</span></div></div>
+                  </div>
+                </div>
+
+                <!-- Security Models -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Security Models</div>
+                  <div class="ac-row">
+                    <!-- Lattice Based -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Lattice Based</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box" data-ac-key="bell-lapadula">Bell-LaPadula</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Confidentiality</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Simple Security Property</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Star Property</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Strong Star Property</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node">
+                          <div class="ac-box">Biba</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Integrity</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Simple Integrity Property</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Star Integrity Property</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="lipner"><span>Lipner</span><small>Implementation</small></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Rule Based -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Rule Based</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box">Clark-Wilson</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cw-goals"><span>3 goals of integrity</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cw-rules"><span>3 Clark-Wilson rules</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node">
+                          <div class="ac-box" data-ac-key="brewer-nash">Brewer-Nash</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="prevent-coi"><span>Prevent conflicts of interest</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="graham-denning"><span>Graham&ndash;Denning</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="hru"><span>Harrison&ndash;Ruzzo&ndash;Ullman</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Models map (Domain 3.2) &mdash; enterprise security architecture (Zachman, SABSA, TOGAF) and the formal
+            security models: lattice-based Bell-LaPadula (confidentiality &mdash; no read up / no write down) and
+            Biba (integrity &mdash; no read down / no write up), Lipner combining both, and the rule-based models
+            Clark-Wilson, Brewer-Nash (Chinese Wall), Graham-Denning and Harrison-Ruzzo-Ullman.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight style="margin-top:1.5rem;">
+          <div class="ac-map" role="img" aria-label="Secure design principles: threat modeling, least privilege, defense in depth, secure defaults, fail securely, separation of duties, keep it simple, zero trust, trust but verify, privacy by design, shared responsibility.">
+            <div class="ac-map-inner d3-info">
+              <div class="ac-title">Secure Design Principles</div>
+              <div class="d3-pill-row">
+                <div class="ac-box">Threat Modeling</div>
+                <div class="ac-box">Least Privilege</div>
+                <div class="ac-box">Defense in Depth</div>
+                <div class="ac-box">Secure Defaults</div>
+                <div class="ac-box">Fail Securely</div>
+                <div class="ac-box">Separation of Duties (SoD)</div>
+                <div class="ac-box">Keep it Simple</div>
+                <div class="ac-box">Zero Trust</div>
+                <div class="ac-box">Trust But Verify</div>
+                <div class="ac-box">Privacy by Design</div>
+                <div class="ac-box">Shared Responsibility</div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Secure Design Principles map (Domain 3.1) &mdash; threat modeling, least privilege, defense in depth,
+            secure defaults, fail securely, separation of duties, keep it simple, zero trust, trust but verify,
+            privacy by design, and cloud shared responsibility.
+          </p>
+
+          <div class="ac-map" role="img" aria-label="Security frameworks: ISO 27001, ISO 27002, NIST 800-53, COBIT, ITIL, HIPAA, SOX, FedRAMP, FISMA, Cyber Kill Chain." style="margin-top:1.5rem;">
+            <div class="ac-map-inner d3-info">
+              <div class="ac-title">Security Frameworks</div>
+              <div class="d3-pill-row">
+                <div class="ac-box">ISO 27001</div>
+                <div class="ac-box">ISO 27002</div>
+                <div class="ac-box">NIST 800-53</div>
+                <div class="ac-box">COBIT</div>
+                <div class="ac-box">ITIL</div>
+                <div class="ac-box">HIPAA</div>
+                <div class="ac-box">SOX</div>
+                <div class="ac-box">FedRAMP</div>
+                <div class="ac-box">FISMA</div>
+                <div class="ac-box">Cyber Kill Chain</div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Security Frameworks map &mdash; ISO 27001 / 27002, NIST 800-53, COBIT, ITIL, HIPAA, SOX, FedRAMP,
+            FISMA, and the Cyber Kill Chain.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 2 — Evaluation Criteria
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 2 &mdash; Visual summary</p>
+          <h2 class="section-title">Evaluation criteria.</h2>
+          <p class="section-copy">
+            One map of how product security is evaluated &mdash; certification (the technical evaluation) and
+            accreditation (management's acceptance), across the three historical criteria: TCSEC (the Orange Book,
+            confidentiality-only, single box, D&ndash;A), ITSEC (European, confidentiality + integrity, networked,
+            assurance E0&ndash;E6), and today's Common Criteria (ISO 15408, with Protection Profile, Target of
+            Evaluation, Security Target, and the EAL1&ndash;EAL7 assurance levels). Hover (or tap) any box for its
+            concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Evaluation criteria: certification and accreditation; TCSEC Orange Book (confidentiality only, single box, functional levels D1 to A1); ITSEC (confidentiality plus integrity, networked, same functional levels as TCSEC, assurance levels E0 to E6); and Common Criteria (ISO 15408, protection profile, target of evaluation, security targets, functional and assurance requirements, and EAL1 to EAL7).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Evaluation Criteria</div>
+
+              <div class="ac-row">
+                <!-- Certification -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Certification</div>
+                  <div class="ac-row">
+
+                    <!-- TCSEC -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">TCSEC (Orange Book)</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Confidentiality only</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Single Box only</span></div></div>
+                        <div class="ac-node">
+                          <div class="ac-box">Functional Levels</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-d1"><span>D1 &ndash; failed or not tested</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-c1"><span>C1 &ndash; Weak protection mechanisms</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-c2"><span>C2 &ndash; Strict login procedures</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-b1"><span>B1 &ndash; Security labels</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-b2"><span>B2 &ndash; Security labels &amp; verification of no covert channels</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-b3"><span>B3 &ndash; Labels, no covert channels, secure during start-up</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="tcsec-a1"><span>A1 &ndash; Verified design</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- ITSEC -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">ITSEC</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Confidentiality + Integrity</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Networked devices</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Same Functional levels as TCSEC</span></div></div>
+                        <div class="ac-node">
+                          <div class="ac-box">Assurance Levels</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E0</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E1</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E2</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E3</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E4</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E5</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E6</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Common Criteria -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Common Criteria</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>ISO 15408</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Protection Profile</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Target of Evaluation</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Security Targets</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Functional &amp; Assurance Requirements</span></div></div>
+                        <div class="ac-node">
+                          <div class="ac-box">Assign EAL</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal1"><span>EAL 1 &ndash; Functionally tested</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal2"><span>EAL 2 &ndash; Structurally tested</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal3"><span>EAL 3 &ndash; Methodically tested &amp; checked</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal4"><span>EAL 4 &ndash; Methodically designed, tested &amp; reviewed</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal5"><span>EAL 5 &ndash; Semi formally designed &amp; tested</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal6"><span>EAL 6 &ndash; Semi formally verified, designed &amp; tested</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eal7"><span>EAL 7 &ndash; Formally verified, designed &amp; tested</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accreditation -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accreditation</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 2 maps the evaluation criteria (Domain 3.3) &mdash; certification (technical evaluation) vs
+            accreditation (management acceptance / ATO); TCSEC / Orange Book (confidentiality-only, single box,
+            ratings D1&ndash;A1); ITSEC (confidentiality + integrity, networked, assurance E0&ndash;E6); and the
+            current Common Criteria / ISO 15408 (Protection Profile, Target of Evaluation, Security Target,
+            functional &amp; assurance requirements, and EAL1&ndash;EAL7).
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 3 — Trusted Computing Base (TCB)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 3 &mdash; Visual summary</p>
+          <h2 class="section-title">Trusted Computing Base.</h2>
+          <p class="section-copy">
+            One map of the TCB &mdash; the totality of protection mechanisms that enforce a system's security
+            policy: the reference monitor concept (subject, mediation, object, and the security kernel that
+            implements it &mdash; complete, isolated, verifiable), the hardware and software components, and the
+            architectural protection mechanisms (process isolation, processor states, OS modes, the ring model,
+            secure memory management, data hiding and defense in depth). Hover (or tap) any box for its concept,
+            an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Trusted Computing Base: reference monitor concept (subject, mediation with rules and logging, object, and security kernel with completeness, isolation, verifiability); hardware components (processor, storage: primary, secondary, virtual memory); software components (system kernel, firmware, middleware); and protection mechanisms (process isolation via memory segmentation and time division multiplexing, processor states problem and supervisor, OS modes user and kernel, ring protection model ring 3 and ring 0, secure memory management, data hiding, defence in depth).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Trusted Computing Base (TCB)</div>
+
+              <div class="ac-row">
+                <!-- Reference Monitor Concept -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Reference Monitor Concept</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Subject</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v"><span>Mediation</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rules</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Logging &amp; Monitoring</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Object</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Security Kernel</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Completeness</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Isolation</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Verifiability</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hardware Components -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Hardware Components</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Processor</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v"><span>Storage</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Primary</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Secondary</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Virtual Memory</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Software Components -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Software Components</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>System Kernel</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Firmware</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Middleware</span></div></div>
+                  </div>
+                </div>
+
+                <!-- Protection Mechanisms -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Protection Mechanisms</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box ac-v"><span>Process Isolation</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Memory Segmentation</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Time Division Multiplexing</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v"><span>Processor States</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Problem</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Supervisor</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v"><span>Operating System Modes</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>User Mode</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Kernel Mode</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v"><span>Ring Protection Model</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ring3"><span>Ring 3: User Programs</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ring0"><span>Ring 0: System Kernel</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Secure Memory Management</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Hiding</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Defence in depth</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 3 maps the Trusted Computing Base (Domain 3.4) &mdash; the reference monitor concept (mediating
+            subject&ndash;object access, implemented by the security kernel, which must be complete, isolated and
+            verifiable), the hardware and software components, and the protection mechanisms (process isolation,
+            processor states, OS modes, the ring protection model, secure memory management, data hiding and
+            defence in depth).
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 4 — Vulnerabilities in Systems & Web-based Vulnerabilities
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 4 &mdash; Visual summary</p>
+          <h2 class="section-title">System &amp; web-based vulnerabilities.</h2>
+          <p class="section-copy">
+            Two maps. <strong>Vulnerabilities in Systems</strong> &mdash; single points of failure, control
+            bypass, TOCTOU race conditions, emanations, covert channels, aggregation/inference, and mobile-device
+            risks (with the OWASP Mobile Top 10), each paired with its mitigation. And <strong>Web-based
+            Vulnerabilities</strong> &mdash; XSS, CSRF, SQL injection and the input-validation defences behind
+            them. Hover (or tap) any box for its concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Vulnerabilities in systems: single point of failure (redundancy), bypass controls (mitigating controls), TOCTOU race conditions (re-authentication), emanations (shielding/TEMPEST, white noise, control zones), covert channels (analysis and design), aggregation and inference (polyinstantiation), and mobile devices (policy/training, remote access security, endpoint security, OWASP Mobile Top 10 M1 to M10).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Vulnerabilities in Systems</div>
+
+              <div class="ac-row">
+                <div class="ac-node">
+                  <div class="ac-box ac-v"><span>Single Point of Failure</span></div>
+                  <div class="ac-row"><div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Redundancy</span></div></div></div>
+                </div>
+                <div class="ac-node">
+                  <div class="ac-box ac-v"><span>Bypass Controls</span></div>
+                  <div class="ac-row"><div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Mitigating Controls</span></div></div></div>
+                </div>
+                <div class="ac-node">
+                  <div class="ac-box ac-v" data-ac-key="toctou"><span>TOCTOU (Race Conditions)</span></div>
+                  <div class="ac-row"><div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="reauth"><span>Increase frequency of Re-authentication</span></div></div></div>
+                </div>
+                <div class="ac-node">
+                  <div class="ac-box">Emanations</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="shielding"><span>Shielding (TEMPEST)</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>White Noise</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Control Zones</span></div></div>
+                  </div>
+                </div>
+                <div class="ac-node">
+                  <div class="ac-box ac-v"><span>Covert Channels</span></div>
+                  <div class="ac-row"><div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Analysis &amp; Design</span></div></div></div>
+                </div>
+                <div class="ac-node">
+                  <div class="ac-box ac-v"><span>Aggregation &amp; Inference</span></div>
+                  <div class="ac-row"><div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Polyinstantiation</span></div></div></div>
+                </div>
+
+                <!-- Mobile Devices -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Mobile Devices</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Policy, training &amp; procedures</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Remote access security</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>End-point security</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">OWASP Mobile Top 10</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m1"><span>M1: Improper Platform Usage</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m2"><span>M2: Insecure Data Storage</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m3"><span>M3: Insecure Communication</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m4"><span>M4: Insecure Authentication</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m5"><span>M5: Insufficient Cryptography</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m6"><span>M6: Insecure Authorization</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m7"><span>M7: Client Code Quality</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m8"><span>M8: Code Tampering</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m9"><span>M9: Reverse Engineering</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="m10"><span>M10: Extraneous Functionality</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Vulnerabilities in Systems (Domain 3.5) &mdash; single point of failure (mitigated by redundancy),
+            bypass controls, TOCTOU race conditions (re-authentication), emanations (shielding/TEMPEST, white
+            noise, control zones), covert channels (covert-channel analysis), aggregation &amp; inference
+            (polyinstantiation), and mobile-device security including the OWASP Mobile Top 10.
+          </p>
+
+          <div class="ac-map" role="img" aria-label="Web-based vulnerabilities: cross-site scripting (stored, reflected, DOM; target client), cross-site request forgery (target server), SQL injection, and input validation (client vs server side, allow lists vs deny lists)." style="margin-top:1.5rem;">
+            <div class="ac-map-inner d3-info">
+              <div class="ac-title">Web-based Vulnerabilities</div>
+
+              <div class="d3-web-grid">
+                <div class="d3-web-card">
+                  <span class="d3-card-kicker">Runs in another user's browser</span>
+                  <div class="ac-box ac-strong" data-ac-key="xss">Cross Site Scripting (XSS)</div>
+                  <div class="d3-pill-row">
+                    <div class="ac-box" data-ac-key="xss-stored">Stored (Persistent)</div>
+                    <div class="ac-box" data-ac-key="xss-reflected">Reflected (Most common)</div>
+                    <div class="ac-box" data-ac-key="xss-dom">DOM</div>
+                  </div>
+                  <div class="ac-box" data-ac-key="toa-client">Target of Attack: Client</div>
+                </div>
+
+                <div class="d3-web-card">
+                  <span class="d3-card-kicker">Abuses an authenticated session</span>
+                  <div class="ac-box ac-strong" data-ac-key="csrf">Cross Site Request Forgery (CSRF)</div>
+                  <div class="ac-box" data-ac-key="toa-server">Target of Attack: Server</div>
+                  <p class="d3-mini-note">Different from XSS: the request is forged, but the browser already has the user's session.</p>
+                </div>
+
+                <div class="d3-web-card">
+                  <span class="d3-card-kicker">Query manipulation</span>
+                  <div class="ac-box ac-strong">SQL Injection</div>
+                  <p class="d3-mini-note">Use prepared statements, least-privilege DB accounts, and validation before data reaches the query layer.</p>
+                </div>
+              </div>
+
+              <div class="d3-tcb-zone">
+                <span class="d3-card-kicker">Common defense layer</span>
+                <div class="d3-flow">
+                  <div class="ac-box ac-strong">Input Validation</div>
+                  <div class="ac-box" data-ac-key="client-vs-server">Client Side vs. Server Side</div>
+                  <div class="ac-box" data-ac-key="allow-vs-deny">Allow Lists vs. Deny Lists</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Web-based Vulnerabilities (Domain 3.5) &mdash; cross-site scripting (stored / reflected / DOM,
+            targeting the client), cross-site request forgery (targeting the server), SQL injection, and the
+            input-validation defences (server-side validation and allow-listing).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the assessment map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
+  </body>
+</html>
