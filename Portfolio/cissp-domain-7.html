@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CISSP Domain 7 notes: Security Operations — investigations, logging & monitoring, incident management, recovery and physical security." />
+    <title>CISSP Domain 7 | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-7-data.js?v=3" defer></script>
+    <script src="cissp-domain-7.js?v=4" defer></script>
+  </head>
+  <body data-page="work" data-domain-id="7">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 7 &middot; 13% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Security Operations</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            Running security day to day &mdash; investigations and digital forensics, logging and monitoring,
+            configuration and change management, incident response, backup and disaster recovery, and the
+            physical and personnel safeguards that keep the lights on.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 7 is the largest and most operational domain &mdash; fifteen outline areas spanning the
+            full run-the-business lifecycle of security, from investigations and monitoring through incident
+            response and disaster recovery to physical and personnel safety.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.1 &mdash; Understand &amp; comply with investigations</h3>
+            <p class="card-copy">
+              Evidence collection &amp; handling, reporting, investigative techniques, <strong>digital
+              forensics</strong>, and artifacts from computers, networks, mobile devices and data sources.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.2 &mdash; Conduct logging &amp; monitoring</h3>
+            <p class="card-copy">
+              <strong>IDS/IPS</strong>, SIEM, continuous monitoring &amp; tuning, egress monitoring, log
+              management, <strong>threat intelligence &amp; hunting</strong>, and UEBA.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.3 &mdash; Perform Configuration Management</h3>
+            <p class="card-copy">
+              Provisioning, <strong>baselining</strong>, and automation &mdash; keeping every asset in a known,
+              hardened, documented state.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.4 &mdash; Foundational security operations concepts</h3>
+            <p class="card-copy">
+              <strong>Need-to-know &amp; least privilege</strong>, separation of duties, privileged account
+              management, job rotation, and SLAs.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.5 &mdash; Apply resource protection</h3>
+            <p class="card-copy">
+              Media management and protection techniques, and protecting <strong>data at rest and in
+              transit</strong>.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.6 &mdash; Conduct incident management</h3>
+            <p class="card-copy">
+              The lifecycle &mdash; <strong>detection, response, mitigation, reporting, recovery, remediation,
+              and lessons learned</strong>.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.7 &mdash; Detection &amp; preventative measures</h3>
+            <p class="card-copy">
+              Firewalls (NGFW, WAF), IDS/IPS, allow/deny-listing, sandboxing, <strong>honeypots &amp;
+              honeynets</strong>, anti-malware, and AI/ML tools.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.8 &mdash; Patch &amp; vulnerability management</h3>
+            <p class="card-copy">
+              Implementing and supporting the processes that keep systems patched and known vulnerabilities
+              remediated.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.9 &mdash; Change management</h3>
+            <p class="card-copy">
+              Understanding and participating in the change-control processes that govern modifications to
+              production environments.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.10 &mdash; Implement recovery strategies</h3>
+            <p class="card-copy">
+              Backup strategies, <strong>hot/cold/warm sites</strong>, resource capacity agreements, multiple
+              processing sites, and resilience / HA / fault tolerance.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.11 &mdash; Implement Disaster Recovery</h3>
+            <p class="card-copy">
+              Response, personnel, communications, assessment, <strong>restoration</strong>, training &amp;
+              awareness, and lessons learned.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.12 &mdash; Test Disaster Recovery Plans</h3>
+            <p class="card-copy">
+              <strong>Read-through, walkthrough, simulation, parallel, and full-interruption</strong> testing,
+              plus stakeholder and regulator communications.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.13 &mdash; Business Continuity planning &amp; exercises</h3>
+            <p class="card-copy">
+              Participating in BCP and the exercises that keep the organisation running through disruption.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.14 &mdash; Implement &amp; manage physical security</h3>
+            <p class="card-copy">
+              <strong>Perimeter</strong> and <strong>internal</strong> security controls protecting facilities,
+              equipment and people.
+            </p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">7.15 &mdash; Personnel safety &amp; security</h3>
+            <p class="card-copy">
+              Travel security, awareness (insider threat, social media, 2FA fatigue), emergency management, and
+              <strong>duress</strong>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Investigations (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Investigations &amp; digital forensics.</h2>
+          <p class="section-copy">
+            One map of how an investigation runs &mdash; secure the scene, then collect and control evidence
+            (Locard's principle, MOM, every source, and the chain of custody), understand the types and rules
+            of evidence, apply the right investigative techniques, match the process to the type of
+            investigation, and document and report it all. Hover (or tap) any box for its concept, an example,
+            and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Investigations hierarchy: secure the scene; collect and control evidence (Locard's principle, MOM, sources including oral/written statements, documents, digital forensics with live, secondary and virtual disk evidence, and e-discovery, and chain of custody); types of evidence (real, direct, secondary, best evidence rule); rules of evidence (authentic, accurate, complete, convincing, admissible); investigative techniques (media, software, network analysis); types of investigations (criminal, civil, regulatory, administrative); and document and report.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Investigations</div>
+
+              <div class="ac-row">
+                <!-- ===== Secure the Scene ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Secure the Scene</span></div></div>
+
+                <!-- ===== Collect & Control Evidence ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Collect &amp; Control Evidence</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Locard's Principle</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>MOM</span></div></div>
+
+                    <!-- Sources -->
+                    <div class="ac-node">
+                      <div class="ac-box">Sources</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Oral / Written statements</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Documents</span></div></div>
+
+                        <!-- Digital Forensics -->
+                        <div class="ac-node">
+                          <div class="ac-box">Digital Forensics</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Live Evidence</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Secondary Storage</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="VM Instance"><span>VM Instance / Virtual Disk</span></div></div>
+                          </div>
+                        </div>
+
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>E Discovery</span></div></div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Chain of Custody</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Types of Evidence ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Types of Evidence</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Real Evidence</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Direct Evidence</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Secondary Evidence</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Best Evidence Rule</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Rules of Evidence ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Rules of Evidence</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Authentic</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accurate</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Complete</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Convincing</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Admissible</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Investigative Techniques ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Investigative Techniques</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Media Analysis</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Software Analysis</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Network Analysis</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Types of Investigations ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Types of Investigations</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Criminal</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Civil</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Regulatory</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Administrative</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Document & Report ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Document &amp; Report</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 1 mirrors the Investigations concept map for Domain 7.1 &mdash; securing the scene; collecting
+            and controlling evidence (Locard's principle, MOM, the sources of evidence including digital
+            forensics by order of volatility, and chain of custody); the types and five rules of evidence; the
+            investigative techniques (media, software, network analysis); the four types of investigation
+            (criminal, civil, regulatory, administrative); and documentation and reporting.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 2 — Incident Response (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 2 &mdash; Visual summary</p>
+          <h2 class="section-title">Incident response lifecycle.</h2>
+          <p class="section-copy">
+            One map of the incident-management lifecycle &mdash; prepare in advance, then triage (detect from
+            your monitoring sources, tell an event from an incident, and deploy the response team), take action
+            and investigate (mitigate / contain, and report to stakeholders), and recover (return to normal,
+            remediate the root cause, and capture lessons learned). Hover (or tap) any box for its concept, an
+            example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Incident response hierarchy: preparation; triage (detection from sources such as SIEM, IDS/IPS, DLP and fire detectors, distinguishing events from incidents, and response with the IR team deployed); action and investigation (mitigation/containment and reporting to relevant stakeholders); and recovery (return to normal, remediation/prevention, and lessons learned to improve the process).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Incident Response</div>
+
+              <div class="ac-row">
+                <!-- ===== Preparation ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Prep.</span></div></div>
+
+                <!-- ===== Triage ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Triage</div>
+                  <div class="ac-row">
+                    <!-- Detection -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong">Detection</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="detection-sources"><span>Sources:</span><small>SIEM, IDS/IPS, DLP, Fire detectors, Etc.</small></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Event</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Incident</span></div></div>
+                      </div>
+                    </div>
+                    <!-- Response -->
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="response"><span>Response</span><small>IR Team Deployed</small></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Action / Investigation ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Action / Investigation</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="mitigation"><span>Mitigation</span><small>Containment</small></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="reporting"><span>Reporting</span><small>Relevant Stakeholders</small></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Recovery ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="recovery-phase">Recovery</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="recovery-step"><span>Recovery</span><small>Return to normal</small></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="remediation"><span>Remediation</span><small>Prevention</small></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="lessons-learned"><span>Lessons Learned</span><small>Improve Process</small></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 2 mirrors the Incident Response concept map for Domain 7.6 &mdash; preparation; triage
+            (detection from monitoring sources, the event-vs-incident distinction, and response with the IR team
+            deployed); action &amp; investigation (mitigation / containment and reporting to relevant
+            stakeholders); and recovery (return to normal, remediation to prevent recurrence, and lessons learned
+            to improve the process).
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 3 — Malware (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 3 &mdash; Visual summary</p>
+          <h2 class="section-title">Malware &amp; anti-malware.</h2>
+          <p class="section-copy">
+            One map of the malware landscape &mdash; the full catalogue of malware types (virus, worm, trojan,
+            ransomware, rootkit and more), the zero-day threat that no signature can catch, and the layered
+            anti-malware defence: policy, prevention (training, allow-listing, segmentation), detection
+            (signature, heuristic, activity and change detection), and continuous updates. Hover (or tap) any
+            box for its concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Malware hierarchy: types of malware (virus, worm, companion, macro, multipartite, polymorphic, trojan, botnets, boot sector, hoaxes/pranks, logic bombs, stealth, ransomware, rootkit, spyware/adware, data diddler/salami attack); zero day; and anti-malware (policy; prevention via training and awareness, allow list and network segmentation; detection via signature-based scanners, heuristic scanners, activity monitors and change detection; and continuous updates).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Malware</div>
+
+              <div class="ac-row">
+                <!-- ===== Types of Malware ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Types of Malware</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Virus</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Worm</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Companion</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Macro</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Multipartite</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Polymorphic</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Trojan</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Botnets</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Boot Sector</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Hoaxes / Pranks</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Logic Bombs</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Stealth</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Ransomware</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rootkit</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Spyware / Adware</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Diddler / Salami Attack</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Zero Day ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Zero Day</span></div></div>
+
+                <!-- ===== Anti-Malware ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Anti-Malware</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Policy</span></div></div>
+
+                    <!-- Prevention -->
+                    <div class="ac-node">
+                      <div class="ac-box">Prevention</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Training &amp; Awareness</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Allow List</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Network Segmentation</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Detection -->
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong" data-ac-key="antimalware-detection">Detection</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Signature Based Scanners</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Heuristic Scanners</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Activity Monitors</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Change Detection</span></div></div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Continuous Updates</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 3 mirrors the Malware concept map for Domain 7.7 &mdash; the types of malware (from virus and
+            worm through ransomware, rootkit and the data diddler / salami attack), the zero-day threat, and the
+            layered anti-malware response: policy, prevention (training &amp; awareness, allow-listing, network
+            segmentation), detection (signature-based and heuristic scanners, activity monitors, change
+            detection), and continuous updates.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 4 — Patching & Change Management (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 4 &mdash; Visual summary</p>
+          <h2 class="section-title">Patching &amp; change management.</h2>
+          <p class="section-copy">
+            Two tightly-linked maps. <strong>Patching</strong> &mdash; determine whether a fix is available
+            (threat intelligence, vendor notification, proactive checking) then implement it
+            <em>through change management</em> (timing and deployment). And <strong>Change Management</strong>
+            itself &mdash; the formal request &rarr; assess &rarr; approve (CCB/CAB/ECAB) &rarr; build &amp;
+            test &rarr; notify &rarr; implement &rarr; validate &rarr; baseline process that governs every
+            production change. Hover (or tap) any box for its concept, an example, and &mdash; where it helps
+            &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Patching hierarchy: determine if a patch is available (threat intelligence, vendor notification, proactively checking via agent, agentless or passive); and implement through change management (timing, and deploy via automated or manual).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Patching</div>
+
+              <div class="ac-row">
+                <!-- ===== Determine if Patch is available ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Determine if Patch is available</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Threat Intelligence</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Vendor Notification</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Pro-actively checking</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Agent</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Agentless</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Passive</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ===== Implement through Change Management ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong ac-accent">Implement through Change Management</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Timing</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Deploy</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Automated</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box"><span>Manual</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Patching map (Domain 7.8) &mdash; determine if a patch is available (threat intelligence, vendor
+            notification, and proactive checking by agent, agentless or passive methods), then implement it
+            through change management (timing, and automated or manual deployment).
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight style="margin-top:1.5rem;">
+          <div class="ac-map" role="img" aria-label="Change management process: change request; assess impact (emergency vs standard); approval (based on impact and severity, by CCB/CAB/ECAB); build and test; notification; implement; validation (test new functionality, regression testing); and version and baseline.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Change Management</div>
+
+              <div class="ac-row">
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Change Request</span></div></div>
+
+                <div class="ac-node">
+                  <div class="ac-box">Assess Impact</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box" data-ac-key="emergency-vs-standard"><span>Emergency Change vs. Standard process</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box">Approval</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box" data-ac-key="approval-basis"><span>Based on impact, severity, etc.</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="ccb-cab-ecab"><span>CCB</span><span>CAB</span><span>ECAB</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Build &amp; Test</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Notification</span></div></div>
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Implement</span></div></div>
+
+                <div class="ac-node">
+                  <div class="ac-box">Validation</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Test New Functionality</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box"><span>Regression Testing</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node ac-leaf"><div class="ac-box"><span>Version &amp; Baseline</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Change Management map (Domain 7.9) &mdash; the ordered process every production change follows:
+            change request, assess impact (emergency vs standard), approval (based on impact/severity, by the
+            CCB / CAB / ECAB), build &amp; test, notification, implement, validation (test new functionality and
+            regression testing), and version &amp; baseline.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 5 — Recovery Strategies (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 5 &mdash; Visual summary</p>
+          <h2 class="section-title">Recovery strategies.</h2>
+          <p class="section-copy">
+            One map of how the organisation stays resilient and recovers &mdash; how systems behave when they
+            fail (fail-soft / -secure / -safe), backup storage (types, validation, data storage and the RPO
+            that drives backup frequency), spare-part readiness, RAID levels, high-availability design
+            (clustering and redundancy), and the recovery sites that resume operations after a disaster. Hover
+            (or tap) any box for its concept, an example, and &mdash; where it helps &mdash; a diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Recovery strategies hierarchy: failure modes (fail-soft, fail-secure, fail-safe); backup storage (archive bit; types of backups including mirror, full, incremental, differential; validation via checksums/CRC; data storage offsite and tape rotation; and RPO); spare parts (cold, warm, hot); RAID levels 0, 1, 5 and 6; high availability system (clustering, redundancy); and recovery sites (types of sites cold, warm, hot, mobile, mirror/redundant; and geographically remote).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Recovery Strategies</div>
+
+              <div class="ac-row">
+                <!-- ===== Failure Modes ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Failure Modes</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Fail-Soft</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Fail-Secure</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Fail-Safe</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Backup Storage ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Backup Storage</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Archive Bit</span></div></div>
+
+                    <div class="ac-node">
+                      <div class="ac-box">Types of Backups</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Mirror</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Full</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Incremental</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Differential</span></div></div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="backup-validation">Validation</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Checksums / CRC</span></div></div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node">
+                      <div class="ac-box">Data Storage</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Offsite</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Tape Rotation</span></div></div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>RPO</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Spare Parts ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Spare Parts</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="spare-cold"><span>Cold</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="spare-warm"><span>Warm</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="spare-hot"><span>Hot</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== RAID ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">RAID</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="raid0"><span>RAID 0 &mdash; Striping</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="raid1"><span>RAID 1 &mdash; Mirroring</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="raid5"><span>RAID 5 &mdash; Parity</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="raid6"><span>RAID 6 &mdash; Double Parity</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== High Availability ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">High Availability System</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Clustering</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Redundancy</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Recovery Sites ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Recovery Sites</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box">Types of Sites</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="site-cold"><span>Cold</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="site-warm"><span>Warm</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="site-hot"><span>Hot</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Mobile</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="site-mirror"><span>Mirror / Redundant</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Geographically remote</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 5 mirrors the Recovery Strategies concept map for Domain 7.10 &mdash; failure modes
+            (fail-soft, fail-secure, fail-safe); backup storage (the archive bit, backup types, validation, data
+            storage and RPO); spare-part readiness (cold, warm, hot); RAID levels 0/1/5/6; high availability
+            (clustering and redundancy); and the recovery sites (cold, warm, hot, mobile, mirror) that must be
+            geographically remote.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 6 — Business Continuity Management (visual summary)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 6 &mdash; Visual summary</p>
+          <h2 class="section-title">Business continuity management.</h2>
+          <p class="section-copy">
+            One map of BCM &mdash; which focuses on the <strong>critical and essential functions</strong> of the
+            business: its goals (people first, then minimise damage, then survival), the Business Impact
+            Analysis (identify critical processes, the RPO / RTO / WRT / MTD time objectives, and owner sign-off
+            on costs), the types of plans (BCP and DRP), the escalating ways to test them, and the restoration
+            order. Hover (or tap) any box for its concept, an example, and &mdash; where it helps &mdash; a
+            diagram.
+          </p>
+        </div>
+
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Business continuity management hierarchy: focuses on critical and essential functions; goals of BCM (safety of people, minimize damage, survival of business); business impact analysis (identify critical processes and systems, measurements of time RPO/RTO/WRT/MTD, owner approval of numbers and costs); types of plans (BCP and DRP); testing plans (read-through/checklist, walkthrough, simulation, parallel, full-interruption); and restoration order (most critical first, dependency charts).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Business Continuity Management (BCM)</div>
+
+              <div class="ac-row">
+                <!-- ===== Focus banner ===== -->
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="bcm-focus"><span>Focuses on critical &amp; essential functions</span></div></div>
+
+                <!-- ===== Goals of BCM ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Goals of BCM</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="safety-of-people"><span>1. Safety of people</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="minimize-damage"><span>2. Minimize damage</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="survival-of-business"><span>3. Survival of business</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Business Impact Assessment ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Business Impact Assessment</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="identify-critical"><span>Identify Critical Processes &amp; Systems</span></div></div>
+
+                    <div class="ac-node">
+                      <div class="ac-box">Measurements of Time</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="rpo-bcm"><span>RPO</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>RTO</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>WRT</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>MTD</span></div></div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="owner-approval"><span>Owner approval of #s and associated costs</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Types of Plans ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Types of Plans</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="Business Continuity Plan"><span>Business Continuity Plan (BCP)</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="Disaster Recovery Plan"><span>Disaster Recovery Plan (DRP)</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Testing Plans ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Testing Plans</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="read-through"><span>Read-through / Checklist</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Walkthrough</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Simulation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Parallel</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="full-interruption"><span>Full-interruption / Full-scale</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== Restoration order ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Restoration order</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="most-critical-first"><span>Most critical first</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Dependency charts</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Layout 6 mirrors the Business Continuity Management concept map for Domain 7.13 &mdash; BCM's focus on
+            critical &amp; essential functions; its goals (safety of people, minimize damage, survival of
+            business); the Business Impact Analysis (identify critical processes &amp; systems, the RPO / RTO /
+            WRT / MTD time objectives, and owner approval of the numbers and costs); the types of plans (BCP and
+            DRP); the escalating test methods (read-through, walkthrough, simulation, parallel,
+            full-interruption); and the restoration order (most critical first, guided by dependency charts).
+          </p>
+        </div>
+      </section>
+      <!-- ============================================================
+           DOMAIN 7 — EXPERT INSTRUCTOR GUIDE (TLDR)
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Expert Instructor Guide</p>
+          <h2 class="section-title">Domain 7 &mdash; the complete walkthrough, sub-domain by sub-domain.</h2>
+          <p class="section-copy">
+            Domain 7 is the biggest, most operational domain on the exam (13%). This is your full lecture on it,
+            marching through the official outline <strong>7.1 to 7.15</strong> and unpacking every topic the way
+            ISC&sup2; tests it &mdash; precise definitions, the distinctions that trap people, and a concrete
+            example for each. The six maps above are the skeleton; this is the muscle. Read it top to bottom and
+            you will not need another source for Domain 7.
+          </p>
+        </div>
+
+        <!-- ════════════ 7.1 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.1</p>
+          <h2 class="section-title">Understand &amp; comply with investigations.</h2>
+          <p class="section-copy">
+            When something goes wrong, you investigate &mdash; lawfully, methodically, and in a way that keeps
+            evidence admissible. This area blends digital forensics with legal process.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.1</span><h3>Types of Investigation &amp; Standards of Proof</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Criminal</span><span class="fc-val">Beyond a reasonable doubt (highest)</span></div>
+            <div class="fact-card"><span class="fc-label">Civil</span><span class="fc-val">Preponderance of evidence (&gt;50%)</span></div>
+            <div class="fact-card"><span class="fc-label">Regulatory</span><span class="fc-val">Industry/agency rules &amp; standards</span></div>
+            <div class="fact-card"><span class="fc-label">Administrative</span><span class="fc-val">Internal policy; lowest formality</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The TYPE of investigation sets the burden of proof and how rigorously evidence must be handled.
+              <strong>Criminal</strong> investigations (a law was broken) demand the highest standard &mdash;
+              <em>beyond a reasonable doubt</em> &mdash; and can end in imprisonment, so evidence handling must be
+              flawless. <strong>Civil</strong> cases (disputes between parties) use the lower
+              <em>preponderance of the evidence</em> (more likely than not). <strong>Regulatory</strong>
+              investigations are run by a government regulator against industry rules, and
+              <strong>administrative</strong> ones are internal (policy violations) with the least formality.
+            </p>
+            <p>
+              The exam's favourite trap: matching the standard of proof to the investigation type. Memorise
+              criminal = beyond reasonable doubt, civil = preponderance.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Because a criminal case may emerge later, always handle evidence to the <em>highest</em> (criminal) standard from the start &mdash; you can't retroactively fix a broken chain of custody.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.1</span><h3>Evidence &mdash; Types, the 5 Rules &amp; Chain of Custody</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Best evidence rule</span><span class="fc-val">Produce the original where possible</span></div>
+            <div class="fact-card"><span class="fc-label">5 rules</span><span class="fc-val">Authentic, Accurate, Complete, Convincing, Admissible</span></div>
+            <div class="fact-card"><span class="fc-label">Chain of custody</span><span class="fc-val">Who/what/when/where, unbroken</span></div>
+            <div class="fact-card"><span class="fc-label">Admissibility</span><span class="fc-val">Lawfully gathered + relevant</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Evidence comes in types &mdash; <strong>real</strong> (the physical object/drive),
+              <strong>direct</strong> (firsthand testimony), <strong>secondary</strong> (copies, admissible when
+              the original is unavailable) &mdash; governed by the <strong>best-evidence rule</strong> (prefer
+              the original). To be useful it must satisfy the <strong>five rules</strong>: authentic, accurate,
+              complete (including <em>exculpatory</em> evidence), convincing, and admissible.
+            </p>
+            <p>
+              The single most important control is the <strong>chain of custody</strong>: a documented,
+              unbroken record of everyone who handled each item, when, and why. Any gap lets the other side
+              argue the evidence was altered and have it excluded. Integrity is proven with <strong>hashing</strong>
+              &mdash; hash the evidence at acquisition and re-verify it later.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Complete&rdquo; means you must include evidence that <em>helps</em> the suspect too &mdash; cherry-picking destroys credibility and admissibility.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.1</span><h3>Digital Forensics &mdash; Order of Volatility &amp; Sound Acquisition</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Order of volatility</span><span class="fc-val">Capture most fleeting first (RAM &rarr; disk)</span></div>
+            <div class="fact-card"><span class="fc-label">Imaging</span><span class="fc-val">Bit-for-bit copy; work on the copy</span></div>
+            <div class="fact-card"><span class="fc-label">Integrity</span><span class="fc-val">Hash original &amp; image; must match</span></div>
+            <div class="fact-card"><span class="fc-label">eDiscovery</span><span class="fc-val">Produce ESI for litigation (EDRM)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Digital forensics is the scientific collection and analysis of digital evidence. The golden rule is
+              the <strong>order of volatility</strong> &mdash; collect the most fleeting data FIRST:
+              CPU/cache &rarr; RAM (live/volatile evidence, lost at power-off) &rarr; disk (secondary storage)
+              &rarr; archival/backups. Pulling the plug to &ldquo;preserve&rdquo; a machine destroys volatile
+              memory evidence (running malware, encryption keys).
+            </p>
+            <p>
+              Acquire disks by making a <strong>bit-for-bit forensic image</strong>, then <strong>hash</strong>
+              both the original and the image so you can prove they match; all analysis happens on the copy so the
+              original is preserved. <strong>eDiscovery</strong> is the legal-process side &mdash; identifying,
+              preserving and producing electronically stored information (ESI) under a litigation hold, following
+              the EDRM model. Don't forget the locations the exam lists: computers, networks, mobile devices, and
+              cloud/VM sources (which add custody and jurisdiction challenges).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Locard's Exchange Principle &mdash; &ldquo;every contact leaves a trace&rdquo; &mdash; is <em>why</em> forensic artifacts exist to be found. And MOM (Motive, Opportunity, Means) frames who could have done it.</div>
+        </div>
+
+        <!-- ════════════ 7.2 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.2</p>
+          <h2 class="section-title">Conduct logging &amp; monitoring activities.</h2>
+          <p class="section-copy">
+            You can't defend what you can't see. This area is about generating, centralising and analysing the
+            telemetry that powers detection &mdash; IDS/IPS, SIEM, threat intelligence, and behaviour analytics.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.2</span><h3>IDS &amp; IPS &mdash; Detection vs. Prevention, Signature vs. Anomaly</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">IDS</span><span class="fc-val">Detects &amp; alerts (out-of-band)</span></div>
+            <div class="fact-card"><span class="fc-label">IPS</span><span class="fc-val">Detects &amp; blocks (inline)</span></div>
+            <div class="fact-card"><span class="fc-label">Signature</span><span class="fc-val">Known patterns; misses zero-day</span></div>
+            <div class="fact-card"><span class="fc-label">Anomaly/behaviour</span><span class="fc-val">Baseline deviation; catches unknown</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              An <strong>IDS</strong> detects and alerts on suspicious activity but sits <em>out of band</em> &mdash;
+              it watches a copy of traffic and can't stop an attack itself. An <strong>IPS</strong> sits
+              <em>inline</em> and can actively <em>block</em>. Both come as <strong>network (NIDS/NIPS)</strong>
+              &mdash; watching a network segment &mdash; or <strong>host (HIDS/HIPS)</strong> &mdash; watching a
+              single system's files, logs and processes.
+            </p>
+            <p>
+              Detection works two ways. <strong>Signature/knowledge-based</strong> matches known attack patterns
+              &mdash; accurate for known threats, blind to zero-days. <strong>Anomaly/behaviour-based</strong>
+              builds a baseline of &ldquo;normal&rdquo; and flags deviations &mdash; can catch unknown attacks but
+              produces more <em>false positives</em> and needs a clean learning period.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 520 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IDS out-of-band versus IPS inline">
+              <rect x="10" y="34" width="120" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="70" y="55" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">Traffic flow</text>
+              <line x1="130" y1="51" x2="200" y2="51" stroke="#888" stroke-width="2" marker-end="url(#a7a)"/>
+              <defs><marker id="a7a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#888"/></marker></defs>
+              <rect x="205" y="34" width="120" height="34" rx="5" fill="#0d0d0d" stroke="#e53e3e"/><text x="265" y="50" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">IPS (inline)</text><text x="265" y="62" text-anchor="middle" font-size="7.5" fill="#c0c0c0">can BLOCK</text>
+              <line x1="325" y1="51" x2="395" y2="51" stroke="#888" stroke-width="2" marker-end="url(#a7a)"/>
+              <rect x="400" y="34" width="110" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="455" y="55" text-anchor="middle" font-size="10" fill="#e53e3e" font-weight="700">Destination</text>
+              <rect x="205" y="6" width="120" height="22" rx="5" fill="#1a1a2e" stroke="#888"/><text x="265" y="21" text-anchor="middle" font-size="9" fill="#aaa">IDS (out-of-band, copy)</text>
+              <line x1="265" y1="34" x2="265" y2="28" stroke="#888" stroke-dasharray="3,2"/>
+            </svg>
+            <figcaption>IPS sits inline and can block; IDS watches a copy out-of-band and only alerts.</figcaption>
+          </figure>
+          <div class="callout"><strong>Exam tip:</strong> A <em>false negative</em> (missed real attack) is more dangerous than a false positive. Anomaly detection lowers false negatives at the cost of more false positives.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.2</span><h3>SIEM, Log Management, Continuous &amp; Egress Monitoring</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">SIEM</span><span class="fc-val">Aggregate + correlate logs, real-time alerts</span></div>
+            <div class="fact-card"><span class="fc-label">Clipping level</span><span class="fc-val">Threshold before alerting (cut noise)</span></div>
+            <div class="fact-card"><span class="fc-label">Continuous monitoring</span><span class="fc-val">Ongoing, near-real-time posture</span></div>
+            <div class="fact-card"><span class="fc-label">Egress monitoring</span><span class="fc-val">Watch data LEAVING (DLP, exfil)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>SIEM</strong> centralises logs from across the estate and <em>correlates</em> them in real
+              time, turning thousands of individual events into a few high-fidelity alerts. It runs the whole
+              <strong>log-management lifecycle</strong>: generation &rarr; transmission (securely) &rarr;
+              collection/aggregation &rarr; normalization &rarr; analysis &rarr; retention &rarr; disposal. Use
+              <strong>NTP-synchronised timestamps</strong> so events from different sources can be correlated, and
+              protect logs from tampering (attackers love to wipe them).
+            </p>
+            <p>
+              <strong>Continuous monitoring</strong> means watching posture and controls ongoing rather than at a
+              point in time (a NIST RMF idea). <strong>Egress (outbound) monitoring</strong> specifically watches
+              data <em>leaving</em> the organisation to catch exfiltration &mdash; this is where DLP lives.
+              <strong>Clipping levels</strong> suppress routine below-threshold events so analysts aren't drowned
+              in noise.
+            </p>
+          </div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.2</span><h3>Threat Intelligence, Threat Hunting &amp; UEBA</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Threat intel</span><span class="fc-val">Context on adversaries (IOCs, TTPs)</span></div>
+            <div class="fact-card"><span class="fc-label">Threat feeds</span><span class="fc-val">Streams of indicators (IPs, hashes)</span></div>
+            <div class="fact-card"><span class="fc-label">Threat hunting</span><span class="fc-val">Proactively seek hidden intruders</span></div>
+            <div class="fact-card"><span class="fc-label">UEBA</span><span class="fc-val">Baseline users/entities, flag anomalies</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Threat intelligence</strong> is contextual knowledge about adversaries &mdash; their
+              indicators of compromise (IOCs) and tactics, techniques and procedures (TTPs, e.g. MITRE ATT&amp;CK)
+              &mdash; delivered via <strong>threat feeds</strong>. <strong>Threat hunting</strong> is the
+              <em>proactive</em> assumption-of-breach discipline: actively searching the environment for attackers
+              who slipped past automated defences, rather than waiting for an alert. <strong>UEBA (User and Entity
+              Behavior Analytics)</strong> uses machine learning to baseline normal behaviour for users and devices
+              and flag deviations &mdash; catching compromised accounts and insider threats that signatures miss.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.3 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.3</p>
+          <h2 class="section-title">Perform Configuration Management.</h2>
+          <p class="section-copy">Keeping every asset in a known, documented, hardened state &mdash; the antidote to configuration drift.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.3</span><h3>Provisioning, Baselining &amp; Automation</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Provisioning</span><span class="fc-val">Stand up assets securely &amp; consistently</span></div>
+            <div class="fact-card"><span class="fc-label">Baselining</span><span class="fc-val">Defined secure standard config</span></div>
+            <div class="fact-card"><span class="fc-label">Automation / IaC</span><span class="fc-val">Repeatable, drift-free config as code</span></div>
+            <div class="fact-card"><span class="fc-label">Goal</span><span class="fc-val">Prevent configuration drift</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Configuration management (CM)</strong> ensures systems are built and maintained to a known
+              good state. <strong>Provisioning</strong> stands up new assets consistently and securely (not
+              hand-built snowflakes). A <strong>baseline</strong> is the documented secure standard configuration
+              &mdash; the reference every system must match (e.g. a hardened CIS Benchmark image).
+              <strong>Automation</strong> &mdash; including Infrastructure as Code &mdash; applies and re-applies
+              that baseline repeatably, eliminating <em>configuration drift</em> (the slow divergence from the
+              standard that opens security gaps). CM is the partner of change management: change management
+              <em>approves</em> a change, CM <em>records</em> the resulting state in the baseline/CMDB.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.4 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.4</p>
+          <h2 class="section-title">Apply foundational security operations concepts.</h2>
+          <p class="section-copy">The classic operational controls that limit what any one person can do &mdash; and the damage any one account can cause.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.4</span><h3>Need-to-Know, Least Privilege &amp; Separation of Duties</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Need-to-know</span><span class="fc-val">Access only the DATA your job needs</span></div>
+            <div class="fact-card"><span class="fc-label">Least privilege</span><span class="fc-val">Only the PERMISSIONS your job needs</span></div>
+            <div class="fact-card"><span class="fc-label">Separation of Duties</span><span class="fc-val">Split critical tasks across people</span></div>
+            <div class="fact-card"><span class="fc-label">Two-person control</span><span class="fc-val">Two people to perform one action</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Need-to-know</strong> and <strong>least privilege</strong> are siblings: need-to-know limits
+              access to the specific <em>information</em> required, while least privilege limits the
+              <em>rights/permissions</em> a user or process holds to the minimum required. <strong>Separation of
+              Duties (SoD)</strong> divides a critical task so no single person can complete it alone &mdash;
+              preventing fraud (the person who requests a payment can't also approve it). Related:
+              <strong>two-person control / dual control</strong> (two people needed to act, e.g. launch keys), and
+              <strong>collusion</strong> (the only way to beat SoD is for multiple people to conspire).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Need-to-know = <em>data</em>; least privilege = <em>permissions</em>. SoD <em>prevents</em> fraud; job rotation and mandatory vacation <em>detect</em> it.</div>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.4</span><h3>Privileged Account Management, Job Rotation &amp; SLAs</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">PAM</span><span class="fc-val">Vault, rotate, monitor admin accounts</span></div>
+            <div class="fact-card"><span class="fc-label">Job rotation</span><span class="fc-val">Move staff roles; detects fraud, builds cover</span></div>
+            <div class="fact-card"><span class="fc-label">Mandatory vacation</span><span class="fc-val">Forced time off exposes hidden fraud</span></div>
+            <div class="fact-card"><span class="fc-label">SLA</span><span class="fc-val">Contracted service/performance levels</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Privileged Account Management (PAM)</strong> tightly controls powerful admin/root accounts
+              &mdash; vaulting credentials, requiring check-out and just-in-time access, rotating passwords, and
+              recording privileged sessions. These accounts are the keys to the kingdom, so they get extra
+              monitoring. <strong>Job rotation</strong> moves people between roles, which both spreads knowledge
+              (no single point of failure) and <em>detects fraud</em> when a successor finds irregularities.
+              <strong>Mandatory vacation</strong> works the same way &mdash; forcing someone away from their
+              duties surfaces fraud that depended on their daily concealment. <strong>SLAs</strong> formally
+              define the service levels (uptime, response times) a provider must meet, with penalties for misses.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.5 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.5</p>
+          <h2 class="section-title">Apply resource protection.</h2>
+          <p class="section-copy">Protecting the media and data the organisation runs on, throughout its life.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.5</span><h3>Media Management &amp; Protecting Data States</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Media management</span><span class="fc-val">Track, mark, store, sanitise media</span></div>
+            <div class="fact-card"><span class="fc-label">At rest</span><span class="fc-val">Encrypt (AES), access control</span></div>
+            <div class="fact-card"><span class="fc-label">In transit</span><span class="fc-val">TLS / VPN / SFTP</span></div>
+            <div class="fact-card"><span class="fc-label">End of life</span><span class="fc-val">Sanitise: clear / purge / destroy</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Media management</strong> applies the full lifecycle to storage media: inventory and
+              <em>mark</em> it with its classification, control where and how it's <em>stored</em> and transported
+              (the most sensitive media gets the strongest handling), and <em>sanitise</em> it at end of life. This
+              ties straight back to Domain 2 &mdash; protect <strong>data at rest</strong> (encryption, access
+              control), <strong>data in transit</strong> (TLS/VPN), and defeat <strong>remanence</strong> when
+              disposing of media (clearing &rarr; purging &rarr; destruction; crypto-erase or shred for SSDs).
+              Source/library protection and proper labelling prevent the wrong media being mounted or leaked.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.6 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.6</p>
+          <h2 class="section-title">Conduct incident management.</h2>
+          <p class="section-copy">The structured lifecycle for handling adverse events &mdash; the order matters, and the exam tests it.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.6</span><h3>The Incident Management Lifecycle</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Event vs incident</span><span class="fc-val">Observable vs adverse (harms CIA)</span></div>
+            <div class="fact-card"><span class="fc-label">First (always)</span><span class="fc-val">Preparation &mdash; before anything happens</span></div>
+            <div class="fact-card"><span class="fc-label">Order</span><span class="fc-val">Detect &rarr; Respond &rarr; Mitigate &rarr; Report &rarr; Recover &rarr; Remediate &rarr; Learn</span></div>
+            <div class="fact-card"><span class="fc-label">Containment</span><span class="fc-val">Mitigation = stop the spread first</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              An <strong>event</strong> is any observable occurrence; an <strong>incident</strong> is an event that
+              harms or threatens confidentiality, integrity or availability. The ISC&sup2; lifecycle runs in order:
+              <strong>Detection &rarr; Response &rarr; Mitigation &rarr; Reporting &rarr; Recovery &rarr;
+              Remediation &rarr; Lessons Learned</strong>, all resting on advance <strong>Preparation</strong>.
+              Containment (mitigation) comes <em>before</em> eradication and recovery &mdash; stop the bleeding
+              first. <strong>Reporting</strong> must meet legal breach-notification deadlines (e.g. GDPR's 72
+              hours). <strong>Remediation</strong> fixes root cause so it can't recur, and <strong>lessons
+              learned</strong> feeds back into preparation, closing the loop.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 560 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Incident lifecycle order">
+              <defs><marker id="a7b" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#e53e3e"/></marker></defs>
+              <g font-size="7.5" fill="#c0c0c0" font-weight="600" text-anchor="middle">
+                <rect x="2" y="26" width="70" height="22" rx="4" fill="#3a0a0e" stroke="#e53e3e"/><text x="37" y="40" fill="#ff9ab0">Prepare</text>
+                <rect x="80" y="26" width="64" height="22" rx="4" fill="#1a1a2e" stroke="#e53e3e"/><text x="112" y="40">Detect</text>
+                <rect x="152" y="26" width="66" height="22" rx="4" fill="#1a1a2e" stroke="#e53e3e"/><text x="185" y="40">Respond</text>
+                <rect x="226" y="26" width="70" height="22" rx="4" fill="#1a1a2e" stroke="#e53e3e"/><text x="261" y="40">Mitigate</text>
+                <rect x="304" y="26" width="64" height="22" rx="4" fill="#1a1a2e" stroke="#e53e3e"/><text x="336" y="40">Report</text>
+                <rect x="376" y="26" width="68" height="22" rx="4" fill="#1a1a2e" stroke="#e53e3e"/><text x="410" y="40">Recover</text>
+                <rect x="452" y="26" width="48" height="22" rx="4" fill="#1a1a2e" stroke="#e53e3e"/><text x="476" y="40">Remed.</text>
+                <rect x="508" y="26" width="50" height="22" rx="4" fill="#3a0a0e" stroke="#e53e3e"/><text x="533" y="40" fill="#ff9ab0">Learn</text>
+              </g>
+              <g stroke="#e53e3e"><line x1="72" y1="37" x2="79" y2="37" marker-end="url(#a7b)"/><line x1="144" y1="37" x2="151" y2="37" marker-end="url(#a7b)"/><line x1="218" y1="37" x2="225" y2="37" marker-end="url(#a7b)"/><line x1="296" y1="37" x2="303" y2="37" marker-end="url(#a7b)"/><line x1="368" y1="37" x2="375" y2="37" marker-end="url(#a7b)"/><line x1="444" y1="37" x2="451" y2="37" marker-end="url(#a7b)"/><line x1="500" y1="37" x2="507" y2="37" marker-end="url(#a7b)"/></g>
+            </svg>
+            <figcaption>The lifecycle order ISC&sup2; tests. Lessons Learned loops back to Preparation.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ════════════ 7.7 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.7</p>
+          <h2 class="section-title">Operate &amp; maintain detection and preventative measures.</h2>
+          <p class="section-copy">The defensive toolbox &mdash; from firewalls to honeypots &mdash; and how the generations of firewall differ.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.7</span><h3>Firewall Generations</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Packet filter</span><span class="fc-val">L3/4 headers; stateless; fast, dumb</span></div>
+            <div class="fact-card"><span class="fc-label">Stateful</span><span class="fc-val">Tracks connection state</span></div>
+            <div class="fact-card"><span class="fc-label">Proxy / App</span><span class="fc-val">L7; inspects content, breaks direct path</span></div>
+            <div class="fact-card"><span class="fc-label">NGFW / WAF</span><span class="fc-val">App-aware + IPS / protects web apps</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Firewalls evolved in generations. <strong>Packet-filtering</strong> (1st gen) checks IP/port headers
+              statelessly &mdash; fast but easily fooled. <strong>Stateful inspection</strong> tracks the state of
+              connections, so it knows a packet belongs to an established session. <strong>Proxy / application-layer
+              </strong> firewalls operate at Layer 7, fully inspecting content and acting as an intermediary (no
+              direct client-server path). <strong>Next-Generation Firewalls (NGFW)</strong> add application
+              awareness, integrated IPS, and threat intelligence; a <strong>Web Application Firewall (WAF)</strong>
+              specifically protects web apps from injection/XSS by inspecting HTTP.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 520 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Firewall generations by OSI layer">
+              <rect x="6" y="28" width="118" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="65" y="46" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">Packet filter</text><text x="65" y="57" text-anchor="middle" font-size="7.5" fill="#c0c0c0">L3/4 &middot; stateless</text>
+              <rect x="132" y="28" width="118" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="191" y="46" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">Stateful</text><text x="191" y="57" text-anchor="middle" font-size="7.5" fill="#c0c0c0">tracks sessions</text>
+              <rect x="258" y="28" width="118" height="34" rx="5" fill="#1a1a2e" stroke="#e53e3e"/><text x="317" y="46" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">Proxy (L7)</text><text x="317" y="57" text-anchor="middle" font-size="7.5" fill="#c0c0c0">content, no direct path</text>
+              <rect x="384" y="28" width="130" height="34" rx="5" fill="#0d0d0d" stroke="#e53e3e"/><text x="449" y="46" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">NGFW / WAF</text><text x="449" y="57" text-anchor="middle" font-size="7.5" fill="#c0c0c0">app-aware + IPS</text>
+              <text x="260" y="18" text-anchor="middle" font-size="8" fill="#888">more inspection &amp; context &rarr;</text>
+            </svg>
+            <figcaption>Each generation inspects deeper &mdash; from headers up to full application content.</figcaption>
+          </figure>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.7</span><h3>Allow/Deny-listing, Sandboxing, Honeypots &amp; AI Tools</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Allow-list</span><span class="fc-val">Only approved runs (default deny)</span></div>
+            <div class="fact-card"><span class="fc-label">Sandboxing</span><span class="fc-val">Detonate/run code in isolation</span></div>
+            <div class="fact-card"><span class="fc-label">Honeypot / -net</span><span class="fc-val">Decoy to lure &amp; study attackers</span></div>
+            <div class="fact-card"><span class="fc-label">AI/ML tools</span><span class="fc-val">Behavioural detection at scale</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Allow-listing</strong> (permit only approved apps, deny all else) beats block-listing for
+              stopping unknown/zero-day malware. <strong>Sandboxing</strong> runs suspicious code in an isolated
+              environment to observe it safely &mdash; the basis of modern malware detonation. A
+              <strong>honeypot</strong> is a decoy system designed to attract and study attackers; a
+              <strong>honeynet</strong> is a whole decoy network of them &mdash; both yield threat intelligence and
+              early warning (beware <em>enticement</em> vs unlawful <em>entrapment</em>). <strong>Third-party
+              security services</strong> (e.g. MSSPs) and <strong>AI/ML-based tools</strong> add scale and
+              behavioural detection beyond static signatures. Don't forget the malware fundamentals from the map:
+              virus (needs host+user) vs worm (self-propagating) vs trojan (deception, no replication), and
+              <strong>zero-day</strong> (no patch, signatures useless &mdash; behaviour-based defence only).
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.8 & 7.9 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domains 7.8 &amp; 7.9</p>
+          <h2 class="section-title">Patch / vulnerability &amp; change management.</h2>
+          <p class="section-copy">Two tightly-coupled disciplines: find &amp; fix weaknesses, and govern every production change.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.8</span><h3>Patch &amp; Vulnerability Management</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Discover</span><span class="fc-val">Threat intel, vendor notices, scanning</span></div>
+            <div class="fact-card"><span class="fc-label">Test first</span><span class="fc-val">Never patch straight to production</span></div>
+            <div class="fact-card"><span class="fc-label">Deploy</span><span class="fc-val">Automated (scale) or manual (sensitive)</span></div>
+            <div class="fact-card"><span class="fc-label">Via change mgmt</span><span class="fc-val">Patches are changes &mdash; control them</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Patch management runs a loop: <strong>determine</strong> a patch is needed (threat intelligence,
+              vendor notifications, and proactive scanning by agent, agentless or passive methods),
+              <strong>test</strong> it in a non-production environment, then <strong>deploy</strong> it
+              &mdash; automated for fleets, manual for sensitive systems &mdash; through change management with
+              proper <strong>timing</strong> (emergency window for actively-exploited flaws, scheduled window
+              otherwise). Vulnerability management is the broader cycle of identify &rarr; prioritise (CVSS) &rarr;
+              remediate &rarr; verify, feeding the patch process.
+            </p>
+          </div>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.9</span><h3>Change Management &amp; the Approval Boards</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Process</span><span class="fc-val">Request &rarr; Assess &rarr; Approve &rarr; Test &rarr; Notify &rarr; Implement &rarr; Validate &rarr; Baseline</span></div>
+            <div class="fact-card"><span class="fc-label">CCB / CAB</span><span class="fc-val">Control / Advisory board approval</span></div>
+            <div class="fact-card"><span class="fc-label">ECAB</span><span class="fc-val">Emergency fast-track approval</span></div>
+            <div class="fact-card"><span class="fc-label">Always</span><span class="fc-val">Rollback plan + documentation</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Change management</strong> ensures no modification hits production ad hoc. Every change is
+              requested (RFC), impact-assessed, approved by the appropriate board, built and tested with a
+              <em>rollback plan</em>, communicated, implemented, validated (functional + regression), and recorded
+              in the baseline. <strong>CCB</strong> (Change Control Board) authorises and oversees;
+              <strong>CAB</strong> (Change Advisory Board) advises on risk/impact; <strong>ECAB</strong>
+              (Emergency CAB) fast-tracks urgent changes &mdash; documented retroactively. Classify changes as
+              <strong>standard</strong> (routine, pre-approved) or <strong>emergency</strong> (urgent, expedited).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> The purpose of change management is to prevent unintended outages and security gaps from uncontrolled changes &mdash; and to provide an audit trail. A rollback plan is mandatory.</div>
+        </div>
+
+        <!-- ════════════ 7.10 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.10</p>
+          <h2 class="section-title">Implement recovery strategies.</h2>
+          <p class="section-copy">Backups, RAID, high availability and recovery sites &mdash; the building blocks of resilience.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.10</span><h3>Backups &amp; the Archive Bit</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Full</span><span class="fc-val">All data; clears archive bit</span></div>
+            <div class="fact-card"><span class="fc-label">Incremental</span><span class="fc-val">Since last backup; clears bit; slow restore</span></div>
+            <div class="fact-card"><span class="fc-label">Differential</span><span class="fc-val">Since last FULL; keeps bit; fast restore</span></div>
+            <div class="fact-card"><span class="fc-label">3-2-1 rule</span><span class="fc-val">3 copies, 2 media, 1 offsite</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The exam loves the backup trio. <strong>Full</strong> copies everything and clears the archive bit.
+              <strong>Incremental</strong> copies what changed since the <em>last backup</em> (full or incremental)
+              and clears the bit &mdash; fastest to back up, slowest to restore (need full + every incremental in
+              order). <strong>Differential</strong> copies what changed since the last <em>full</em> and does NOT
+              clear the bit &mdash; backups grow daily but restore is fast (full + the latest differential).
+              Validate backups with checksums and <em>test restores</em>, keep one copy <strong>offsite</strong>,
+              and remember <strong>RPO</strong> drives backup frequency.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 520 92" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Incremental versus differential restore">
+              <text x="130" y="14" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">INCREMENTAL restore</text>
+              <g font-size="7.5" fill="#c0c0c0" text-anchor="middle">
+                <rect x="8" y="22" width="40" height="20" rx="3" fill="#3a0a0e" stroke="#e53e3e"/><text x="28" y="35">Full</text>
+                <rect x="54" y="22" width="40" height="20" rx="3" fill="#1a1a2e" stroke="#e53e3e"/><text x="74" y="35">Mon</text>
+                <rect x="100" y="22" width="40" height="20" rx="3" fill="#1a1a2e" stroke="#e53e3e"/><text x="120" y="35">Tue</text>
+                <rect x="146" y="22" width="40" height="20" rx="3" fill="#1a1a2e" stroke="#e53e3e"/><text x="166" y="35">Wed</text>
+                <rect x="192" y="22" width="40" height="20" rx="3" fill="#1a1a2e" stroke="#e53e3e"/><text x="212" y="35">Thu</text>
+              </g>
+              <text x="120" y="56" text-anchor="middle" font-size="7" fill="#888">restore needs ALL of them, in order</text>
+              <text x="390" y="14" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="700">DIFFERENTIAL restore</text>
+              <g font-size="7.5" fill="#c0c0c0" text-anchor="middle">
+                <rect x="300" y="22" width="40" height="20" rx="3" fill="#3a0a0e" stroke="#e53e3e"/><text x="320" y="35">Full</text>
+                <rect x="346" y="22" width="40" height="20" rx="3" fill="#1a1a2e" stroke="#555"/><text x="366" y="35" fill="#666">Mon</text>
+                <rect x="392" y="22" width="40" height="20" rx="3" fill="#1a1a2e" stroke="#555"/><text x="412" y="35" fill="#666">Tue</text>
+                <rect x="438" y="22" width="60" height="20" rx="3" fill="#1a1a2e" stroke="#e53e3e"/><text x="468" y="35">Thu (latest)</text>
+              </g>
+              <text x="390" y="56" text-anchor="middle" font-size="7" fill="#888">restore needs only Full + latest differential</text>
+            </svg>
+            <figcaption>Incremental = small backups, slow restore. Differential = bigger backups, fast 2-set restore.</figcaption>
+          </figure>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.10</span><h3>RAID, High Availability &amp; Recovery Sites</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">RAID 0 / 1</span><span class="fc-val">Stripe (speed) / Mirror (copy)</span></div>
+            <div class="fact-card"><span class="fc-label">RAID 5 / 6</span><span class="fc-val">1-disk / 2-disk fault tolerance</span></div>
+            <div class="fact-card"><span class="fc-label">HA</span><span class="fc-val">Clustering + redundancy, no SPOF</span></div>
+            <div class="fact-card"><span class="fc-label">Sites</span><span class="fc-val">Cold &rarr; Warm &rarr; Hot &rarr; Mirror</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>RAID</strong> gives disk fault tolerance (NOT a backup!): RAID 0 stripes for speed with no
+              redundancy, RAID 1 mirrors, RAID 5 survives one disk loss via parity, RAID 6 survives two.
+              <strong>High availability</strong> removes single points of failure through <strong>clustering</strong>
+              (nodes fail over) and <strong>redundancy</strong> (duplicate components). <strong>Recovery sites</strong>
+              trade cost for speed: <strong>cold</strong> (space only, days&ndash;weeks), <strong>warm</strong>
+              (some kit, hours&ndash;days), <strong>hot</strong> (ready, minutes&ndash;hours),
+              <strong>mobile</strong> (portable), and <strong>mirror/redundant</strong> (real-time, instant). And
+              <strong>spare parts</strong> readiness mirrors this: cold (shelf), warm (powered standby), hot
+              (auto-failover). All recovery sites must be <em>geographically remote</em>.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.11 & 7.12 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domains 7.11 &amp; 7.12</p>
+          <h2 class="section-title">Disaster Recovery &mdash; processes &amp; testing.</h2>
+          <p class="section-copy">DR is the technical recovery of IT after a disaster, and you must test the plan to trust it.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.11</span><h3>DR Processes &amp; the Time Objectives</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">RPO</span><span class="fc-val">Max data loss (backward) &rarr; backup freq</span></div>
+            <div class="fact-card"><span class="fc-label">RTO</span><span class="fc-val">Time to restore the system (forward)</span></div>
+            <div class="fact-card"><span class="fc-label">WRT</span><span class="fc-val">Time to verify &amp; resume operations</span></div>
+            <div class="fact-card"><span class="fc-label">MTD</span><span class="fc-val">Total tolerable downtime = RTO + WRT</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The DR process steps the exam lists: <strong>response, personnel, communications, assessment,
+              restoration, training &amp; awareness, and lessons learned</strong>. Underpinning DR are the time
+              objectives. <strong>RPO</strong> is the most data you can lose (sets backup frequency).
+              <strong>RTO</strong> is how long to get the system back. <strong>WRT</strong> is the extra time to
+              validate and resume normal operations. <strong>MTD</strong> (Maximum Tolerable Downtime) is the total
+              a function can be down before unacceptable harm &mdash; and crucially <strong>MTD = RTO + WRT</strong>.
+              RTO must always be shorter than MTD.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 540 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RPO RTO WRT MTD timeline">
+              <line x1="20" y1="50" x2="520" y2="50" stroke="#555"/>
+              <line x1="250" y1="30" x2="250" y2="70" stroke="#e53e3e" stroke-width="2"/><text x="250" y="24" text-anchor="middle" font-size="8" fill="#e53e3e" font-weight="700">INCIDENT</text>
+              <rect x="120" y="40" width="130" height="14" fill="#2a0a12" stroke="#a0303f"/><text x="185" y="50" text-anchor="middle" font-size="8" fill="#ff9ab0" font-weight="700">RPO (data loss)</text>
+              <rect x="250" y="40" width="150" height="14" fill="#1a1a2e" stroke="#a0303f"/><text x="325" y="50" text-anchor="middle" font-size="8" fill="#ff9ab0" font-weight="700">RTO (restore)</text>
+              <rect x="400" y="40" width="110" height="14" fill="#1a1a2e" stroke="#a0303f"/><text x="455" y="50" text-anchor="middle" font-size="8" fill="#ff9ab0" font-weight="700">WRT (resume)</text>
+              <line x1="250" y1="80" x2="510" y2="80" stroke="#e53e3e"/><text x="380" y="92" text-anchor="middle" font-size="8.5" fill="#fff" font-weight="700">MTD = RTO + WRT</text>
+            </svg>
+            <figcaption>RPO looks back (data loss); RTO + WRT look forward and together equal the MTD.</figcaption>
+          </figure>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.12</span><h3>Testing DR Plans &mdash; Low to High Risk</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Read-through</span><span class="fc-val">Checklist review on paper</span></div>
+            <div class="fact-card"><span class="fc-label">Walkthrough</span><span class="fc-val">Tabletop talk-through</span></div>
+            <div class="fact-card"><span class="fc-label">Simulation / Parallel</span><span class="fc-val">Act out / run alt site (prod up)</span></div>
+            <div class="fact-card"><span class="fc-label">Full-interruption</span><span class="fc-val">Shut prod down &mdash; riskiest</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              You climb the testing ladder as confidence grows: <strong>read-through/checklist</strong> (paper
+              review) &rarr; <strong>walkthrough</strong> (tabletop discussion) &rarr; <strong>simulation</strong>
+              (act out a scenario) &rarr; <strong>parallel</strong> (bring up the alternate site alongside
+              production, which stays live) &rarr; <strong>full-interruption</strong> (actually shut production
+              down and cut over &mdash; most thorough, riskiest, needs sign-off). Parallel proves the recovery site
+              <em>without</em> risking production; full-interruption is the only test that proves everything but can
+              cause real downtime if it fails.
+            </p>
+          </div>
+        </div>
+
+        <!-- ════════════ 7.13 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.13</p>
+          <h2 class="section-title">Business Continuity planning &amp; exercises.</h2>
+          <p class="section-copy">The big-picture programme that keeps the business alive &mdash; BCP is broader than DRP.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.13</span><h3>BCM, the BIA &amp; BCP vs DRP</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Goal #1</span><span class="fc-val">Safety of people (always first)</span></div>
+            <div class="fact-card"><span class="fc-label">BIA</span><span class="fc-val">Find critical functions, set MTD/RTO/RPO</span></div>
+            <div class="fact-card"><span class="fc-label">BCP</span><span class="fc-val">Keep the whole business running</span></div>
+            <div class="fact-card"><span class="fc-label">DRP</span><span class="fc-val">Restore IT systems (subset of BCP)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Business Continuity Management</strong> focuses on the organisation's <em>critical and
+              essential functions</em>. Its goals run in order: <strong>safety of people</strong> first, then
+              minimise damage, then survival of the business. The <strong>Business Impact Analysis (BIA)</strong>
+              is the foundation &mdash; it identifies critical processes and systems, sets the time objectives
+              (RPO/RTO/WRT/MTD), quantifies impact, and gets <em>management approval</em> of the numbers and
+              recovery costs. The <strong>BCP</strong> is the broad plan to keep the business operating (people,
+              processes, facilities, comms, tech); the <strong>DRP</strong> is the narrower IT-recovery plan
+              <em>inside</em> it. Restoration order is driven by criticality (most critical first) and
+              <strong>dependency charts</strong> (you can't bring up an app before its database and network).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> BCP &supe; DRP. The BIA &mdash; not the plan &mdash; is the step that <em>identifies critical functions and sets the MTD</em>. Senior management must approve the BIA.</div>
+        </div>
+
+        <!-- ════════════ 7.14 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.14</p>
+          <h2 class="section-title">Implement &amp; manage physical security.</h2>
+          <p class="section-copy">Defence in depth in the physical world &mdash; perimeter inward &mdash; plus life-safety and environmental controls.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.14</span><h3>Perimeter &amp; Internal Controls (CPTED, Layers)</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">CPTED</span><span class="fc-val">Design deters crime (natural surveillance)</span></div>
+            <div class="fact-card"><span class="fc-label">Perimeter</span><span class="fc-val">Fence, lighting, bollards, gates, guards</span></div>
+            <div class="fact-card"><span class="fc-label">Entry</span><span class="fc-val">Mantrap/turnstile defeats tailgating</span></div>
+            <div class="fact-card"><span class="fc-label">People first</span><span class="fc-val">Life safety overrides asset protection</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Physical security is layered defence in depth from the <strong>perimeter</strong> inward:
+              <strong>CPTED</strong> (Crime Prevention Through Environmental Design) uses layout, lighting and
+              natural surveillance to deter intruders; then fencing, bollards, lighting, gates and
+              <strong>security guards</strong> (the most flexible control). At entry points, <strong>mantraps</strong>
+              and turnstiles defeat <em>tailgating/piggybacking</em>, and badges/locks control access.
+              <strong>Internal controls</strong> include cameras (CCTV &mdash; detective), motion sensors, and
+              cable locks. The exam's recurring theme: <strong>human life always comes first</strong> &mdash;
+              egress doors must <em>fail-safe</em> (unlock) for evacuation even if that weakens security.
+            </p>
+          </div>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.14</span><h3>Environmental &amp; Fire Controls</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Power</span><span class="fc-val">UPS (short) + generator (long)</span></div>
+            <div class="fact-card"><span class="fc-label">HVAC</span><span class="fc-val">Temp/humidity; positive pressure</span></div>
+            <div class="fact-card"><span class="fc-label">Fire triangle</span><span class="fc-val">Heat + Fuel + Oxygen</span></div>
+            <div class="fact-card"><span class="fc-label">Suppression</span><span class="fc-val">Water vs gas (clean agent) vs CO&sup2;</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Environmental controls keep facilities running: a <strong>UPS</strong> bridges short outages and a
+              <strong>generator</strong> covers long ones; <strong>HVAC</strong> controls temperature and humidity
+              (too dry &rarr; static; too humid &rarr; corrosion) and uses positive pressure to keep contaminants
+              out. For fire, remember the <strong>fire triangle</strong> (heat, fuel, oxygen &mdash; remove one to
+              suppress). Suppression types: <strong>wet-pipe</strong> sprinklers (water, cheap but harmful to
+              equipment), <strong>dry-pipe/pre-action</strong> (water held back to reduce accidental discharge), and
+              <strong>clean-agent gas</strong> (e.g. FM-200/inert gases) for data centres &mdash; suppresses fire
+              without water damage and is safe-ish for people. Detectors: smoke (ionisation/photoelectric) and heat.
+            </p>
+          </div>
+          <figure class="note-fig">
+            <svg viewBox="0 0 360 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fire classes and agents">
+              <g font-size="8" fill="#e0e0e0">
+                <rect x="6" y="10" width="348" height="18" rx="3" fill="#3a0a0e" stroke="#e53e3e"/><text x="12" y="23" fill="#fff" font-weight="700">CLASS &mdash; FUEL &mdash; AGENT</text>
+                <rect x="6" y="30" width="348" height="15" fill="#161616" stroke="#3a2030"/><text x="12" y="41"><tspan fill="#ff9ab0" font-weight="700">A</tspan> common combustibles (wood/paper) &mdash; water</text>
+                <rect x="6" y="45" width="348" height="15" fill="#161616" stroke="#3a2030"/><text x="12" y="56"><tspan fill="#ff9ab0" font-weight="700">B</tspan> flammable liquids/gas &mdash; CO&sup2; / foam (NOT water)</text>
+                <rect x="6" y="60" width="348" height="15" fill="#161616" stroke="#3a2030"/><text x="12" y="71"><tspan fill="#ff9ab0" font-weight="700">C</tspan> electrical &mdash; CO&sup2; / clean agent (NOT water)</text>
+                <rect x="6" y="75" width="348" height="15" fill="#161616" stroke="#3a2030"/><text x="12" y="86"><tspan fill="#ff9ab0" font-weight="700">C (data centre)</tspan> &mdash; clean-agent gas (FM-200), no water damage</text>
+              </g>
+            </svg>
+            <figcaption>Never use water on electrical (Class C) fires &mdash; data centres use clean-agent gas suppression.</figcaption>
+          </figure>
+        </div>
+
+        <!-- ════════════ 7.15 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 7.15</p>
+          <h2 class="section-title">Address personnel safety &amp; security.</h2>
+          <p class="section-copy">People are the priority and the perimeter &mdash; protect them and train them.</p>
+        </div>
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">7.15</span><h3>Travel, Awareness, Emergencies &amp; Duress</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Travel</span><span class="fc-val">Device/data risk abroad; clean laptops</span></div>
+            <div class="fact-card"><span class="fc-label">Awareness</span><span class="fc-val">Insider threat, social media, 2FA fatigue</span></div>
+            <div class="fact-card"><span class="fc-label">Emergency mgmt</span><span class="fc-val">Evacuation, occupant safety drills</span></div>
+            <div class="fact-card"><span class="fc-label">Duress</span><span class="fc-val">Covert distress signal / panic code</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Personnel safety is the human side of operations. <strong>Travel</strong> security addresses device
+              and data risk abroad (border searches, hostile networks) &mdash; issue clean loaner laptops and use
+              VPNs. <strong>Security training &amp; awareness</strong> targets current threats the exam names:
+              <em>insider threat</em>, <em>social-media</em> oversharing, and <strong>2FA/MFA fatigue</strong>
+              (attackers spamming push prompts until a tired user approves one &mdash; counter with number-matching).
+              <strong>Emergency management</strong> covers evacuation and occupant safety. <strong>Duress</strong>
+              systems give a person under coercion a covert way to signal for help &mdash; a panic button or a
+              duress code that silently alerts security while appearing to comply. Above all, the recurring
+              principle: <strong>human safety outranks every asset</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- ★ cheat sheet -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">&#9733;</span><h3>High-Yield Exam Cheat Sheet &mdash; Rapid-Fire Distinctions</h3></div>
+          <div class="d4-body">
+            <p><strong>Criminal vs civil proof:</strong> beyond a reasonable doubt vs preponderance of the evidence.</p>
+            <p><strong>Chain of custody:</strong> any gap = inadmissible. Prove integrity with hashing.</p>
+            <p><strong>Order of volatility:</strong> capture RAM (volatile) before disk &mdash; never pull the plug first.</p>
+            <p><strong>IDS vs IPS:</strong> detect/alert (out-of-band) vs detect/block (inline).</p>
+            <p><strong>Signature vs anomaly:</strong> known patterns vs baseline deviation (catches zero-day, more false positives).</p>
+            <p><strong>Event vs incident:</strong> observable occurrence vs adverse event harming CIA.</p>
+            <p><strong>Need-to-know vs least privilege:</strong> data vs permissions.</p>
+            <p><strong>SoD prevents fraud; job rotation &amp; mandatory vacation detect it.</strong></p>
+            <p><strong>Incremental vs differential:</strong> clears archive bit / slow restore vs keeps bit / fast restore.</p>
+            <p><strong>RAID 5 vs 6:</strong> survives 1 vs 2 disk failures. RAID is HA, not a backup.</p>
+            <p><strong>Cold/Warm/Hot site:</strong> days&ndash;weeks / hours&ndash;days / minutes&ndash;hours.</p>
+            <p><strong>MTD = RTO + WRT;</strong> RPO drives backup frequency.</p>
+            <p><strong>BCP &supe; DRP;</strong> the BIA sets the MTD; safety of people is always goal #1.</p>
+            <p><strong>DR tests:</strong> read-through &rarr; walkthrough &rarr; simulation &rarr; parallel &rarr; full-interruption (riskiest).</p>
+            <p><strong>CCB/CAB/ECAB:</strong> control / advisory / emergency change approval.</p>
+            <p><strong>Fire:</strong> never water on Class C (electrical) &mdash; use clean-agent gas in data centres.</p>
+          </div>
+        </div>
+
+        <!-- ✓ recap -->
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">&#10003;</span><h3>Domain 7 in One Breath</h3></div>
+          <div class="d4-body">
+            <p>
+              <strong>Investigate</strong> lawfully &mdash; preserve the chain of custody, capture evidence by order
+              of volatility, and match the proof standard to the case. <strong>Monitor</strong> everything &mdash;
+              IDS/IPS feeding a SIEM, threat intel and hunting, UEBA &mdash; and keep assets in a known state with
+              <strong>configuration management</strong>. Enforce <strong>least privilege, need-to-know and
+              separation of duties</strong>, and lock down <strong>privileged accounts</strong>. Run
+              <strong>incident management</strong> in order (prepare &rarr; detect &rarr; respond &rarr; mitigate
+              &rarr; report &rarr; recover &rarr; remediate &rarr; learn), backed by the right <strong>detection
+              &amp; prevention</strong> tech (firewalls, allow-listing, sandboxing, honeypots). Patch through
+              <strong>change management</strong> with a rollback plan. Stay resilient with <strong>backups, RAID,
+              HA and recovery sites</strong>, and recover within the <strong>MTD (= RTO + WRT)</strong>; the
+              <strong>BIA</strong> tells you what's critical, the <strong>BCP/DRP</strong> brings it back, and you
+              <strong>test</strong> the plan from checklist to full-interruption. Finally, secure the
+              <strong>facility and the people</strong> &mdash; because human safety always comes first.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale the assessment map down to fit its panel so it never
+         needs a horizontal scrollbar, regardless of viewport width. */
+      (function () {
+        function fit() {
+          document.querySelectorAll(".ac-map").forEach(function (map) {
+            var inner = map.querySelector(".ac-map-inner");
+            if (!inner) return;
+            var styles = getComputedStyle(map);
+            var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+            inner.style.transform = "none";
+            var avail = map.clientWidth - padX;
+            var natural = inner.scrollWidth;
+            var scale = natural > avail ? avail / natural : 1;
+            inner.style.transform = "scale(" + scale + ")";
+            map.style.height = inner.scrollHeight * scale + padY + "px";
+          });
+        }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        if (document.readyState === "complete") fit();
+      })();
+    </script>
+  </body>
+</html>

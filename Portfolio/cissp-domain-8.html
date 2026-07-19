@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CISSP Domain 8 notes: Software Development Security — secure SDLC, development methodologies, software vulnerabilities, databases, and secure coding." />
+    <title>CISSP Domain 8 | Sudarson Prabhu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="cissp-data.js" defer></script>
+    <script src="cissp.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cissp-domain-8-data.js?v=1" defer></script>
+    <script src="cissp-domain-8.js?v=1" defer></script>
+  </head>
+  <body data-page="work" data-domain-id="8">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Go to homepage"><span class="brand-symbol">SP</span><span class="brand-copy">Sudarson Prabhu</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="index.html" data-page="home">Home</a><a href="work.html" data-page="work">Work</a><a href="about.html" data-page="about">About</a><a href="experience.html" data-page="experience">Experience</a><a href="services.html" data-page="services">Services</a><a href="credentials.html" data-page="credentials">Credentials</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="hero single-hero" data-reveal>
+        <div class="panel hero-main full-span interactive-panel hero-content" data-spotlight>
+          <p id="cissp-domain-badge" class="eyebrow">Domain 8 &middot; 10% average exam weight</p>
+          <h1 id="cissp-domain-title" class="hero-title">Software Development Security</h1>
+          <p id="cissp-domain-summary" class="hero-summary">
+            Building security into software from the first line of the plan &mdash; integrating security across
+            the SDLC, choosing development methodologies, controlling the development ecosystem, assessing the
+            software you build and buy, defeating the classic code weaknesses, securing databases, and applying
+            secure-coding standards.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="cissp-notes.html">Back to CISSP Notes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SUB-DOMAINS — written and explained
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Sub-domains</p>
+          <h2 class="section-title">Exam outline areas.</h2>
+          <p class="section-copy">
+            Domain 8 is about making software trustworthy &mdash; five outline areas from integrating security
+            into the development life cycle, through the development ecosystem and effectiveness testing, to the
+            risk of acquired software and the secure-coding standards that prevent the classic bugs.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">8.1 &mdash; Security in the SDLC</h3>
+            <p class="card-copy">Understand &amp; integrate security throughout the <strong>Software Development Life Cycle</strong> &mdash; development methodologies (Waterfall, Agile, DevOps/DevSecOps), maturity models, operation and maintenance, and change management.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">8.2 &mdash; Development ecosystem controls</h3>
+            <p class="card-copy">Identify &amp; apply security controls in <strong>software-development ecosystems</strong> &mdash; programming languages, libraries, tool sets, IDEs, repositories (SCM), CI/CD pipelines, and application security testing.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">8.3 &mdash; Software security effectiveness</h3>
+            <p class="card-copy">Assess the <strong>effectiveness of software security</strong> &mdash; auditing and logging of changes, and risk analysis and mitigation across the codebase.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">8.4 &mdash; Acquired software security</h3>
+            <p class="card-copy">Assess the security impact of <strong>acquired software</strong> &mdash; commercial-off-the-shelf, open source, third-party and managed services, vendor assessment, contracts and SLAs.</p>
+          </article>
+          <article class="panel detail-card" data-spotlight>
+            <h3 class="card-title">8.5 &mdash; Secure coding standards</h3>
+            <p class="card-copy">Define &amp; apply <strong>secure coding guidelines and standards</strong> &mdash; defeating the classic weaknesses (buffer overflow, injection, XSS/CSRF, TOCTOU), input validation, obfuscation, and secure API/database design.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 1 — Secure Software Development
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 1 &mdash; Visual summary</p>
+          <h2 class="section-title">Secure software development.</h2>
+          <p class="section-copy">
+            One map of Domain 8's core &mdash; baking security into the whole system and software life cycle,
+            the development methodologies (Waterfall, Agile, DevOps), maturity models, APIs, obfuscation,
+            acquiring software, the classic software weaknesses and vulnerabilities, secure programming and
+            maintenance. Hover (or tap) any box for its concept, an example, and &mdash; where it helps &mdash;
+            a diagram.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Secure software development: bake in security, the system and software development life cycles with their phases and methodologies, maturity models, APIs, obfuscation, acquiring software, software weaknesses and vulnerabilities, secure programming and maintenance.">
+            <div class="ac-map-inner">
+              <div class="ac-title" data-ac-key="ssd-title">Secure Software Development</div>
+              <div class="ac-row">
+
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="bake-in">Bake In Security</div></div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="slc">System Life Cycle (SLC)</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong" data-ac-key="sdlc">Software Development Life Cycle (SDLC)</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="plan">Plan + Mgmt Approval</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="requirements">Requirements</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="arch-design">Architecture &amp; Design</div></div>
+                        <div class="ac-node">
+                          <div class="ac-box ac-strong" data-ac-key="development">Development</div>
+                          <div class="ac-row">
+                            <div class="ac-node">
+                              <div class="ac-box" data-ac-key="waterfall">Waterfall</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cannot-go-back">Cannot go back</div></div>
+                              </div>
+                            </div>
+                            <div class="ac-node">
+                              <div class="ac-box" data-ac-key="agile">Agile</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="sprints">Sprints</div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="scrum-master">Scrum Master</div></div>
+                              </div>
+                            </div>
+                            <div class="ac-node">
+                              <div class="ac-box" data-ac-key="devops">DevOps</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="combine-dev">Combine Dev, QA &amp; Ops</div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="secdevops">SecDevOps</div></div>
+                              </div>
+                            </div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="canary">Canary</div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="certification">Certification</div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="accreditation">Accreditation</div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="testing">Testing</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="deployment">Deployment</div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="operation">Operation</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="disposal">Disposal</div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="maturity-models">Maturity Models</div></div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="apis">APIs</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="rest">REST</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="soap">SOAP</div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="obfuscation">Obfuscation</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="obf-lexical">Lexical</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="obf-data">Data</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="obf-control">Control flow</div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="acquire">Acquire Software</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="assess-vendors">Assess vendors</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="contracts-slas">Contracts / SLAs</div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="weaknesses">Software Security Weaknesses &amp; Vulnerabilities</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="buffer-overflow">Buffer Overflows</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="sql-injection">SQL Injection</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="xss-csrf">XSS / CSRF</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="covert-channels">Covert Channels</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="backdoors">Backdoors / Trapdoors</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="memory-reuse">Memory / Object Reuse</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="toctou">TOCTOU</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="citizen-devs">Citizen Developers</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="input-validation">Input Validation</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="session-mgmt">Session Management</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="polyinstantiation">Polyinstantiation</div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="secure-programming">Secure Programming</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="scm">SCM</div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="maintain">Maintain Software</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="soar">SOAR</div></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Secure Software Development (Domain 8.1&ndash;8.5) &mdash; bake security in from the start across the
+            system and software life cycles; pick a methodology (Waterfall's one-way flow, Agile sprints, DevOps
+            /SecDevOps); measure with maturity models; secure APIs (REST/SOAP), obfuscation, and acquired software
+            (vendor assessment, contracts/SLAs); defeat the classic weaknesses (buffer overflow, SQL injection,
+            XSS/CSRF, covert channels, backdoors, memory reuse, TOCTOU, input validation, session management);
+            and use SCM and SOAR to program securely and maintain the software.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 2 — Databases
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 2 &mdash; Visual summary</p>
+          <h2 class="section-title">Databases.</h2>
+          <p class="section-copy">
+            The database exam set (Domain 8.2/8.5) &mdash; the components of a DBMS from hardware up to
+            primary/foreign keys, the mechanisms that maintain data integrity (concurrency, locks and the ACID
+            properties), and SQL injection. Hover (or tap) any box.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Databases: components of a database management system (hardware, software, database, tables, rows, columns, fields, keys, SQL, users, data), maintaining integrity of data (concurrency, locks, ACID), and SQL injection.">
+            <div class="ac-map-inner">
+              <div class="ac-title" data-ac-key="db-title">Databases</div>
+              <div class="ac-row">
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="dbms">Components of a DBMS</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="db-hardware">Hardware</div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong" data-ac-key="db-software">Software</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box ac-strong" data-ac-key="database">Database</div>
+                          <div class="ac-row">
+                            <div class="ac-node">
+                              <div class="ac-box ac-strong" data-ac-key="tables">Tables</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="rows">Rows = Tuples / Records</div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="columns">Columns = Attributes</div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="fields">Fields</div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="keys">Primary &amp; Foreign Keys</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="sql-language">Language (SQL)</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="db-users">Users</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="db-data">Data</div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="integrity">Maintaining Integrity of Data</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="concurrency">Concurrency</div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="locks">Locks</div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-strong" data-ac-key="acid">ACID</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="atomicity">Atomicity</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="consistency">Consistency</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="isolation">Isolation</div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="durability">Durability</div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="db-sqli">SQL Injection</div></div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Databases &mdash; a DBMS is built from hardware, software (the database &rarr; tables &rarr; rows
+            /columns/fields/keys), the SQL language, users and data. Integrity is preserved through concurrency
+            control, locking, and the ACID properties (Atomicity, Consistency, Isolation, Durability). SQL
+            injection is the signature database attack, defeated by parameterised queries and input validation.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           EXPERT TLDR — Domain 8 complete instructor guide
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Expert Instructor Guide</p>
+          <h2 class="section-title">Domain 8 &mdash; the complete walkthrough, sub-domain by sub-domain.</h2>
+          <p class="section-copy">
+            Domain 8 is where security meets the people who build the software (~10% of the exam). This is your
+            full lecture on it, marching through the official outline <strong>8.1 to 8.5</strong> &mdash; precise
+            definitions, the distinctions ISC&sup2; loves to test, and a concrete example for each. The two maps
+            above are the skeleton; this is the muscle.
+          </p>
+        </div>
+
+        <!-- ════════════ 8.1 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 8.1</p>
+          <h2 class="section-title">Understand &amp; integrate security in the SDLC.</h2>
+          <p class="section-copy">
+            Security is not a phase &mdash; it is present in every phase of the software and system life cycles.
+            The single most important idea in the whole domain: <strong>bake it in, don't bolt it on</strong>.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.1</span><h3>The Life Cycles &mdash; SLC &amp; SDLC</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">SDLC</span><span class="fc-val">Plan &rarr; Requirements &rarr; Design &rarr; Dev &rarr; Test &rarr; Deploy</span></div>
+            <div class="fact-card"><span class="fc-label">SLC</span><span class="fc-val">SDLC + Operation + Disposal</span></div>
+            <div class="fact-card"><span class="fc-label">Cheapest fix</span><span class="fc-val">At requirements / design time</span></div>
+            <div class="fact-card"><span class="fc-label">Golden rule</span><span class="fc-val">Bake in security &mdash; never bolt on</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The <strong>Software Development Life Cycle (SDLC)</strong> is the structured process for building
+              software: plan and management approval, requirements, architecture &amp; design, development,
+              testing, and deployment. The wider <strong>System Life Cycle (SLC)</strong> wraps the SDLC and adds
+              the post-launch stages &mdash; <strong>operation</strong> (run, monitor, patch) and
+              <strong>disposal</strong> (secure decommission and data sanitisation). Security activities live in
+              <em>every</em> phase: requirements capture security requirements, design threat-models, development
+              uses secure coding and SAST, testing runs SAST/DAST, and operation patches continuously.
+            </p>
+            <p>
+              The exam rewards one instinct above all: defects cost an order of magnitude more to fix at each
+              later phase, so the earliest phase always wins. A design flaw caught on the whiteboard is a meeting;
+              the same flaw in production is an incident.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> If a stem offers &ldquo;add a security review at the requirements phase&rdquo; against any later-phase fix, the earliest phase is the answer &mdash; cheapest and most effective.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.1</span><h3>Development Methodologies &mdash; Waterfall, Agile, DevOps</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Waterfall</span><span class="fc-val">Sequential; rigid; can't go back</span></div>
+            <div class="fact-card"><span class="fc-label">Agile</span><span class="fc-val">Iterative sprints; flexible</span></div>
+            <div class="fact-card"><span class="fc-label">DevOps</span><span class="fc-val">Continuous CI/CD; Dev+QA+Ops united</span></div>
+            <div class="fact-card"><span class="fc-label">DevSecOps</span><span class="fc-val">Shift left; automate security</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Waterfall</strong> is sequential &mdash; each phase is signed off before the next begins.
+              Predictable and heavily documented, but rigid: you <em>cannot easily go back</em>, so a missed
+              requirement is expensive to fix late. Best for stable, well-understood requirements (regulated,
+              safety-critical). <strong>Agile</strong> is iterative &mdash; short <em>sprints</em> deliver working
+              increments with continuous feedback and the freedom to change direction; a Scrum Master facilitates
+              the process. Security must be planned <em>into every sprint</em> (security stories) or it gets
+              skipped.
+            </p>
+            <p>
+              <strong>DevOps</strong> unifies development, QA and operations into one automated CI/CD flow for
+              fast, frequent releases. Because speed is the point, security must be <em>automated</em> &mdash;
+              adding it as a first-class, shifted-left member of the pipeline makes it
+              <strong>DevSecOps / SecDevOps</strong>. Other terms to know: <strong>maturity models</strong>
+              (SAMM, BSIMM, CMMI) measure how mature and repeatable your practices are, and <strong>canary</strong>
+              releases limit the blast radius of a bad deployment.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Requirements are fixed and fully documented&rdquo; &rarr; Waterfall. &ldquo;Frequent releases, automated pipeline&rdquo; &rarr; DevOps. &ldquo;Security automated into every build&rdquo; &rarr; DevSecOps.</div>
+        </div>
+
+        <!-- ════════════ 8.2 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 8.2</p>
+          <h2 class="section-title">Identify &amp; apply security controls in the development ecosystem.</h2>
+          <p class="section-copy">
+            The tools, repositories and pipelines developers work in are themselves an attack surface &mdash; and
+            the place to automate security testing.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.2</span><h3>Tooling, Repositories &amp; Application Security Testing</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">SCM</span><span class="fc-val">Version control; integrity + audit trail</span></div>
+            <div class="fact-card"><span class="fc-label">SAST</span><span class="fc-val">Static, white-box, on source &mdash; early</span></div>
+            <div class="fact-card"><span class="fc-label">DAST</span><span class="fc-val">Dynamic, black-box, on running app</span></div>
+            <div class="fact-card"><span class="fc-label">SCA</span><span class="fc-val">Scans dependencies for known CVEs</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The development ecosystem is the programming languages, libraries, tool sets, IDEs, runtime and
+              repositories developers use &mdash; each a control point. <strong>Software Configuration Management
+              (SCM)</strong> &mdash; Git and friends &mdash; gives version control, code integrity, protected
+              branches, signed commits, secret scanning and a full audit trail of who changed what. The CI/CD
+              pipeline is where security testing is automated.
+            </p>
+            <p>
+              Know the testing types cold: <strong>SAST</strong> (static analysis) reads the <em>source code</em>
+              &mdash; white-box, early, finds code-level flaws; <strong>DAST</strong> (dynamic analysis) attacks
+              the <em>running application</em> &mdash; black-box, finds runtime and configuration flaws.
+              <strong>IAST</strong> combines both from inside the app; <strong>SCA</strong> (software composition
+              analysis) scans third-party dependencies for known vulnerabilities; and <strong>fuzzing</strong>
+              throws malformed input to find crashes. Use several &mdash; each catches what the others miss.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> SAST = Source (static, white-box); DAST = Dynamic/running (black-box). &ldquo;Find flaws in a vendor's compiled binary you can't see inside&rdquo; &rarr; DAST or fuzzing.</div>
+        </div>
+
+        <!-- ════════════ 8.3 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 8.3</p>
+          <h2 class="section-title">Assess the effectiveness of software security.</h2>
+          <p class="section-copy">
+            Building controls is not enough &mdash; you must measure whether they actually work, and log the
+            changes that could weaken them.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.3</span><h3>Auditing, Logging &amp; Risk Analysis</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Audit &amp; log</span><span class="fc-val">Record changes; detect &amp; attribute</span></div>
+            <div class="fact-card"><span class="fc-label">Risk analysis</span><span class="fc-val">Find, rank &amp; mitigate code risk</span></div>
+            <div class="fact-card"><span class="fc-label">Verification</span><span class="fc-val">Did we build it right? (spec)</span></div>
+            <div class="fact-card"><span class="fc-label">Validation</span><span class="fc-val">Did we build the right thing? (need)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Effectiveness is proven, not assumed. <strong>Auditing and logging of changes</strong> gives the
+              evidence trail &mdash; who changed which code or configuration, when, and why &mdash; so weakening
+              changes are detected and attributable. <strong>Risk analysis and mitigation</strong> identifies,
+              ranks and treats the risks in the codebase (code review findings, SAST/DAST results, dependency
+              CVEs), feeding remediation back into the backlog.
+            </p>
+            <p>
+              Two words the exam pairs: <strong>verification</strong> asks &ldquo;did we build the product
+              <em>right</em>?&rdquo; (against the specification &mdash; testing and review), while
+              <strong>validation</strong> asks &ldquo;did we build the <em>right</em> product?&rdquo; (against the
+              actual need). Both are needed; they are not the same.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Verification = against the <em>spec</em> (build it right); Validation = against the <em>need</em> (build the right thing). Do not swap them.</div>
+        </div>
+
+        <!-- ════════════ 8.4 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 8.4</p>
+          <h2 class="section-title">Assess the security impact of acquired software.</h2>
+          <p class="section-copy">
+            Most software in an enterprise is bought or borrowed, not built &mdash; and you inherit every one of
+            its vulnerabilities.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.4</span><h3>COTS, Open Source &amp; Supply-Chain Risk</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Sources</span><span class="fc-val">COTS &middot; open source &middot; third-party &middot; managed</span></div>
+            <div class="fact-card"><span class="fc-label">Inherit</span><span class="fc-val">Their vulnerabilities become yours</span></div>
+            <div class="fact-card"><span class="fc-label">Assess</span><span class="fc-val">Vendor posture, CVEs, SBOM, licence</span></div>
+            <div class="fact-card"><span class="fc-label">Contract</span><span class="fc-val">SLAs, right to audit, breach notice</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Acquired software comes as <strong>commercial off-the-shelf (COTS)</strong>, <strong>open
+              source</strong>, third-party components, and managed cloud services. Whichever it is, you adopt its
+              flaws &mdash; the <strong>supply-chain risk</strong>. Manage it by <strong>assessing
+              vendors</strong> (security posture, SOC 2 / ISO 27001, vulnerability history, patch cadence),
+              tracking dependencies with a <strong>software bill of materials (SBOM)</strong>, pinning known-good
+              versions, and reviewing licences.
+            </p>
+            <p>
+              The contractual layer is the enforcement: <strong>contracts and SLAs</strong> define availability
+              and support, plus security clauses &mdash; right to audit, breach-notification windows, data
+              handling and liability. If a security obligation isn't written into the contract, it isn't
+              guaranteed. Recent history (SolarWinds, Log4j) is why the exam takes this seriously.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Adopting a library or COTS product means adopting its vulnerabilities &mdash; the right answer usually involves vendor assessment, an SBOM/dependency review, and contractual SLAs, not just &ldquo;trust the vendor&rdquo;.</div>
+        </div>
+
+        <!-- ════════════ 8.5 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 8.5</p>
+          <h2 class="section-title">Define &amp; apply secure coding guidelines and standards.</h2>
+          <p class="section-copy">
+            The hands-on craft: defeat the classic weaknesses at the source-code level, validate all input, and
+            secure APIs and databases.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.5</span><h3>The Classic Software Weaknesses</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Buffer overflow</span><span class="fc-val">Input exceeds buffer &rarr; overwrite memory</span></div>
+            <div class="fact-card"><span class="fc-label">Injection (SQLi)</span><span class="fc-val">Input executed as code &rarr; parameterise</span></div>
+            <div class="fact-card"><span class="fc-label">XSS / CSRF</span><span class="fc-val">Client script / forged request</span></div>
+            <div class="fact-card"><span class="fc-label">TOCTOU</span><span class="fc-val">Race between check and use</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Secure coding is about designing out the recurring flaws. A <strong>buffer overflow</strong> writes
+              past a buffer into adjacent memory (often the return address) &mdash; countered by bounds checking,
+              memory-safe languages, and runtime defences (ASLR, DEP, stack canaries).
+              <strong>SQL injection</strong> and other injection flaws execute attacker input as code &mdash;
+              defeated by <em>parameterised queries</em> and input validation. <strong>XSS</strong> runs script in
+              other users' browsers (fix: output encoding); <strong>CSRF</strong> forges requests using a victim's
+              live session (fix: anti-CSRF tokens, SameSite cookies). <strong>TOCTOU</strong> is a race condition
+              between a permission check and use &mdash; found by <em>code review</em>, not scanning.
+            </p>
+            <p>
+              Round out the list: <strong>covert channels</strong> (storage/timing &mdash; minimise, can't
+              eliminate), <strong>backdoors/trapdoors</strong> (remove maintenance hooks before release),
+              <strong>memory/object reuse</strong> (zeroise buffers so residual data doesn't leak),
+              <strong>citizen developers</strong> (govern low-code/no-code), and weak <strong>session
+              management</strong> (random IDs, HttpOnly/SameSite cookies, timeouts, regenerate on login).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Most of these are input-handling or memory-safety flaws. &ldquo;How are race conditions best found?&rdquo; &rarr; code review (not scanning). &ldquo;Stop SQL injection&rdquo; &rarr; parameterised queries.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">8.5</span><h3>Input Validation, Obfuscation, APIs &amp; Databases</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Input validation</span><span class="fc-val">Server-side, allow-list, never trust</span></div>
+            <div class="fact-card"><span class="fc-label">Obfuscation</span><span class="fc-val">Slows reverse eng &mdash; not primary</span></div>
+            <div class="fact-card"><span class="fc-label">APIs</span><span class="fc-val">REST (stateless) vs SOAP (WS-Security)</span></div>
+            <div class="fact-card"><span class="fc-label">Databases</span><span class="fc-val">ACID + parameterised queries</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Input validation</strong> is the foundation &mdash; never trust input; validate, sanitise
+              and encode it <em>server-side</em> (client checks are for UX and trivially bypassed), preferring
+              <em>allow lists</em> (known-good) over deny lists. <strong>Obfuscation</strong> (lexical, data,
+              control-flow) makes code hard to reverse-engineer to protect IP &mdash; but it is a supplement, not
+              a real control (security through obscurity is never primary).
+            </p>
+            <p>
+              <strong>APIs</strong> are a major modern attack surface: <em>REST</em> is lightweight and stateless
+              (JSON over HTTPS, token auth), while <em>SOAP</em> is a heavier XML protocol with built-in
+              <em>WS-Security</em> for message-level signing/encryption &mdash; secure both with authentication,
+              input validation and rate limiting. For <strong>databases</strong>, know the DBMS components, the
+              <strong>ACID</strong> properties that keep transactions reliable (Atomicity, Consistency, Isolation,
+              Durability), concurrency control via locking, and that SQL injection is beaten by parameterised
+              queries, least-privilege accounts, and <em>polyinstantiation</em> against inference.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Validate <em>server-side</em> with an <em>allow list</em>. REST = stateless JSON; SOAP = XML with native WS-Security. Obfuscation is never a primary control.</div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <span>Sudarson Prabhu R.E</span>
+      <span>Information Security Consultant</span>
+      <span data-year></span>
+    </footer>
+
+    <script>
+      /* Scale each concept map down to fit its panel so it never needs a
+         horizontal scrollbar, regardless of viewport width. Robust against
+         the panel having zero width during the reveal animation. */
+      (function () {
+        function fitMap(map) {
+          var inner = map.querySelector(".ac-map-inner");
+          if (!inner) return;
+          var styles = getComputedStyle(map);
+          var padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+          var padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+          var avail = map.clientWidth - padX;
+          if (avail < 50) return; /* panel not laid out yet — skip */
+          inner.style.transform = "none";
+          var natural = inner.scrollWidth;
+          var scale = natural > avail ? avail / natural : 1;
+          inner.style.transform = "scale(" + scale + ")";
+          map.style.height = inner.scrollHeight * scale + padY + "px";
+        }
+        function fit() { document.querySelectorAll(".ac-map").forEach(fitMap); }
+        window.addEventListener("load", fit);
+        window.addEventListener("resize", fit);
+        /* re-fit each map whenever it actually gets a real size */
+        if (window.ResizeObserver) {
+          var ro = new ResizeObserver(function (entries) {
+            entries.forEach(function (e) { fitMap(e.target); });
+          });
+          document.querySelectorAll(".ac-map").forEach(function (m) { ro.observe(m); });
+        }
+        [100, 300, 700, 1400].forEach(function (d) { setTimeout(fit, d); });
+      })();
+    </script>
+  </body>
+</html>
