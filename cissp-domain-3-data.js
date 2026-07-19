@@ -23,7 +23,7 @@ window.AC_DETAILS = window.AC_DETAILS || {};
 Object.assign(window.AC_DETAILS, {
   /* ============== MODELS ============== */
   "models-title": {
-    t: "Security Models &amp; Architecture (Domain 3.2)",
+    t: "Security Models & Architecture (Domain 3.2)",
     d: "How security is formally structured and proven. Enterprise security architecture frameworks (Zachman, SABSA, TOGAF) organise the big picture, while formal security MODELS (lattice-based like Bell-LaPadula and Biba, and rule-based like Clark-Wilson) give mathematically-defined rules for enforcing confidentiality and integrity.",
     x: "A defence system uses Bell-LaPadula to mathematically guarantee no one can leak Top Secret data to a lower clearance.",
     f: "modelmap"
@@ -223,7 +223,7 @@ Object.assign(window.AC_DETAILS, {
 
   /* ============== SECURITY FRAMEWORKS ============== */
   "Security Frameworks": {
-    t: "Security Frameworks &amp; Standards",
+    t: "Security Frameworks & Standards",
     d: "Established frameworks, standards and regulations that structure a security or governance programme. Choose them by industry, geography and obligation &mdash; the exam expects you to recognise what each one is for.",
     x: "A healthcare SaaS in the US must meet HIPAA, may seek ISO 27001 certification, and uses NIST 800-53 controls."
   },
@@ -1601,3 +1601,1754 @@ Object.assign(window.AC_FIGS, {
     set(p[0], fk);
   });
 })();
+
+/* ============================================================
+   CISSP Domain 3 — Layouts 5-9 hover details (part A: L5 cloud, L6 crypto fundamentals)
+   ============================================================ */
+window.AC_FIGS = window.AC_FIGS || {};
+window.AC_DETAILS = window.AC_DETAILS || {};
+
+Object.assign(window.AC_DETAILS, {
+  /* ================= LAYOUT 5 — CLOUD COMPUTING ================= */
+  "cloud-characteristics": {
+    t: "Cloud Characteristics (NIST SP 800-145)",
+    d: "NIST defines cloud by FIVE essential characteristics: on-demand self-service, broad network access, resource pooling, rapid elasticity and measured service. If an offering lacks one, it isn't really cloud &mdash; a favourite exam discriminator.",
+    x: "A 'private cloud' that needs a ticket and a week to provision a VM fails on-demand self-service."
+  },
+  "On-Demand Self Service": {
+    t: "On-Demand Self-Service",
+    d: "Consumers provision compute and storage THEMSELVES, automatically, without human interaction with the provider. This is what turns infrastructure into a utility.",
+    x: "A developer spins up a server from a console at 2 a.m. with no ticket."
+  },
+  "Broad Network Access": {
+    t: "Broad Network Access",
+    d: "Capabilities are available over the NETWORK through standard mechanisms, from thin or thick clients, anywhere. This also widens the attack surface &mdash; the trade-off the exam wants you to see.",
+    x: "The same SaaS app is reachable from a laptop, phone or API client over HTTPS."
+  },
+  "Resource Pooling": {
+    t: "Resource Pooling (Multi-tenancy)",
+    d: "The provider's resources are POOLED and dynamically assigned across multiple tenants. Multi-tenancy is the core security concern: your data sits on shared hardware with strangers, isolated only logically.",
+    x: "Two competitors' VMs may run on the same physical host, separated by the hypervisor."
+  },
+  "Rapid Elasticity": {
+    t: "Rapid Elasticity",
+    d: "Capacity scales OUT and IN automatically with demand, appearing unlimited to the consumer. Security must scale with it &mdash; auto-created instances need auto-applied hardening.",
+    x: "A retail site triples capacity for Black Friday and shrinks back automatically after."
+  },
+  "Measured Service": {
+    t: "Measured Service",
+    d: "Usage is METERED (pay-per-use) and transparently monitored, providing accountability for both provider and consumer. Metering data also supports capacity planning and anomaly detection.",
+    x: "A sudden billing spike reveals a compromised account mining cryptocurrency."
+  },
+  "Service Models": {
+    t: "Cloud Service Models",
+    d: "IaaS, PaaS and SaaS define WHERE the provider's responsibility ends and yours begins. The lower the stack you rent (IaaS), the more security you own; with SaaS you own little more than your data, users and configuration.",
+    x: "Patching the guest OS is your job in IaaS, the provider's job in SaaS."
+  },
+  "IaaS": {
+    t: "IaaS — Infrastructure as a Service",
+    d: "The provider gives you raw COMPUTE, storage and networking; you install and manage the OS and everything above it. Most control, most responsibility.",
+    x: "AWS EC2 / Azure VMs: you harden and patch the operating system yourself."
+  },
+  "PaaS": {
+    t: "PaaS — Platform as a Service",
+    d: "The provider manages the OS and runtime PLATFORM; you deploy and manage your application and data. You give up OS control but shed its patching burden.",
+    x: "A managed database or app-hosting platform: you bring code and data, they run the stack."
+  },
+  "SaaS": {
+    t: "SaaS — Software as a Service",
+    d: "The provider runs the complete APPLICATION; you manage your data, users and settings. Least responsibility &mdash; but also least visibility, so vet the provider via audits (SOC 2) and contracts.",
+    x: "Microsoft 365: your job is access control and data governance, not servers."
+  },
+  "Deployment Models": {
+    t: "Cloud Deployment Models",
+    d: "WHO shares the infrastructure: public (everyone), private (one org), community (orgs with shared concerns), hybrid (a mix). Choice is driven by data sensitivity, compliance and cost.",
+    x: "A bank keeps regulated workloads private but bursts marketing analytics to public cloud."
+  },
+  "Public": {
+    t: "Public Cloud",
+    d: "Infrastructure open to the GENERAL PUBLIC, owned and operated by a provider. Cheapest and most scalable; strongest dependence on provider assurances and logical isolation between tenants.",
+    x: "AWS, Azure, GCP &mdash; shared data centres, logical tenant separation."
+  },
+  "Private": {
+    t: "Private Cloud",
+    d: "Cloud infrastructure operated for a SINGLE organization (on-prem or hosted). Most control and easiest compliance story; highest cost and least elasticity.",
+    x: "A government agency runs its own OpenStack cloud in its own data centre."
+  },
+  "Community": {
+    t: "Community Cloud",
+    d: "Shared by SEVERAL organizations with common requirements (mission, compliance, jurisdiction). Costs and governance are shared among the community members.",
+    x: "A group of hospitals shares a HIPAA-aligned cloud for health records."
+  },
+  "cloud-hybrid": {
+    t: "Hybrid Cloud",
+    d: "Two or more models (typically private + public) bound together with portability between them. Enables CLOUD BURSTING and data-sensitivity tiering &mdash; but the connection points become the security seams.",
+    x: "Sensitive data stays private; overflow web traffic bursts to public cloud at peak."
+  },
+  "Virtualized Compute": {
+    t: "Virtualized Compute",
+    d: "The three abstraction levels for running workloads: virtual machines (full OS each), containers (shared kernel), serverless (just functions). Each step up trades control for reduced ops burden &mdash; and shifts the isolation boundary you rely on.",
+    x: "VM escape, container breakout and function event-injection are the respective nightmares."
+  },
+  "Virtual Machine": {
+    t: "Virtual Machine",
+    d: "A full guest OS running on a HYPERVISOR. Strongest isolation of the three compute options; heaviest footprint. Key risks: VM escape, sprawl, and snapshots holding sensitive data.",
+    x: "Ten guest VMs share one host; the hypervisor keeps them apart."
+  },
+  "Containers": {
+    t: "Containers",
+    d: "Package the app and its dependencies but SHARE the host kernel &mdash; lighter than VMs, weaker isolation. Secure via image scanning, minimal base images, and never running privileged containers.",
+    x: "A vulnerable kernel exposes every container on the host at once."
+  },
+  "Serverless": {
+    t: "Serverless (FaaS)",
+    d: "You deploy FUNCTIONS; the provider manages everything else, billing per execution. Patching disappears from your plate, but injection via event data, over-broad IAM roles and dependency risk remain yours.",
+    x: "AWS Lambda: no OS to harden, but the function's IAM role can still be dangerously broad."
+  },
+  "Hypervisor": {
+    t: "Hypervisor (Type 1 vs Type 2)",
+    d: "The software that creates and isolates VMs. TYPE 1 (bare-metal) runs directly on hardware &mdash; smaller attack surface, production standard. TYPE 2 (hosted) runs atop a host OS &mdash; convenient, but inherits every host-OS flaw.",
+    x: "ESXi/Hyper-V (Type 1) in the data centre; VirtualBox (Type 2) on a laptop."
+  },
+  "Container Engine": {
+    t: "Container Engine",
+    d: "The runtime that builds, runs and isolates containers on a shared kernel (namespaces + cgroups). It and the orchestrator (Kubernetes) become critical security dependencies &mdash; harden and patch them like a hypervisor.",
+    x: "Docker/containerd &mdash; a runtime escape flaw exposes the whole host."
+  },
+  "Identity Provider": {
+    t: "Identity Provider (IdP)",
+    d: "The system that AUTHENTICATES users and asserts their identity to applications. In cloud architectures the IdP decision &mdash; keep it local or move it to the cloud &mdash; anchors the whole access-control design.",
+    x: "Entra ID (cloud) or on-prem AD (local) asserting identity to hundreds of SaaS apps."
+  },
+  "idp-local": {
+    t: "Local Identity Provider",
+    d: "Identity stays ON-PREMISES (e.g., Active Directory); cloud apps trust it via federation. You keep control of credentials, but you also keep the availability and security burden.",
+    x: "If the on-prem AD or its link goes down, cloud logins stop."
+  },
+  "idp-cloud": {
+    t: "Cloud Identity Provider",
+    d: "Identity is hosted BY a cloud provider. Highly available and feature-rich (MFA, conditional access), but it becomes your single most critical cloud dependency &mdash; protect its admin accounts above all.",
+    x: "Compromise of the cloud IdP's global admin equals compromise of everything."
+  },
+  "cloud-identity": {
+    t: "Cloud Identity Models",
+    d: "HOW identity reaches the cloud: pure cloud accounts, linked accounts, synchronized (password hash sync), or federated (authentication stays home). The exam tests knowing where authentication actually happens in each.",
+    x: "With federation the password never leaves your network; with sync a hash does."
+  },
+  "ci-cloud": {
+    t: "Cloud-only Identity",
+    d: "Accounts created and managed ENTIRELY in the cloud with no on-prem counterpart. Simple for cloud-native orgs; a second identity silo for everyone else.",
+    x: "A startup with no on-prem AD manages everything in Entra ID."
+  },
+  "Linked": {
+    t: "Linked Identity",
+    d: "Separate on-prem and cloud accounts LINKED to the same person &mdash; two credentials, manually or loosely connected. Weakest model: double the attack surface, and deprovisioning is easy to miss.",
+    x: "A leaver's AD account is disabled but their linked cloud account survives."
+  },
+  "Synced": {
+    t: "Synchronized Identity",
+    d: "On-prem accounts (and typically password HASHES) are synchronized into the cloud IdP. One identity, two authentication points; the sync connector becomes sensitive infrastructure.",
+    x: "Entra Connect replicates hashes so users sign in to the cloud with their AD password."
+  },
+  "Federated": {
+    t: "Federated Identity",
+    d: "The cloud app REDIRECTS authentication to your IdP via SAML/OIDC; credentials never leave home. Strongest control &mdash; but your IdP's availability and its token-signing keys become mission-critical.",
+    x: "Stolen ADFS token-signing certificates let attackers forge access to every federated app (Golden SAML)."
+  },
+  "cloud-roles": {
+    t: "Cloud Roles & the Shared Responsibility Split",
+    d: "The customer is always ACCOUNTABLE for their data (data owner/controller); the provider is RESPONSIBLE for security OF the cloud as processor. You can outsource work, never accountability &mdash; the most-tested cloud fact.",
+    x: "After a misconfigured bucket leak, the customer answers to regulators, not AWS."
+  },
+  "Accountable": {
+    t: "Accountable (Cloud Customer)",
+    d: "Ultimate answerability for the data CANNOT be transferred to the provider. The customer, as owner/controller, remains accountable to regulators and data subjects regardless of where processing happens.",
+    x: "GDPR fines land on the controller even when the processor's data centre failed."
+  },
+  "Responsible": {
+    t: "Responsible (Cloud Provider)",
+    d: "The provider is responsible for the tasks it contracts to perform &mdash; security OF the cloud: facilities, hardware, hypervisor. The line moves with service model, which is why contracts and SLAs matter.",
+    x: "AWS patches the hypervisor (their side); you configure the security groups (yours)."
+  },
+  "Cloud Consumer": {
+    t: "Cloud Consumer",
+    d: "The person or organization that USES the cloud service. Owns identity governance, data classification and correct configuration of whatever the model leaves in their hands.",
+    x: "The consumer decides who gets access and how data is classified &mdash; no provider can do that for them."
+  },
+  "owner-controller": {
+    t: "Owner / Controller",
+    d: "The party that determines WHY and HOW personal data is processed (GDPR controller) &mdash; in cloud, that's the customer. Sets classification, retention and lawful basis; carries the accountability.",
+    x: "Your company decides to store EU customer PII in a SaaS CRM &mdash; it is the controller."
+  },
+  "provider-processor": {
+    t: "Cloud Provider / Processor",
+    d: "Processes data ON BEHALF OF the controller under contract (DPA). Must follow instructions, support breach notification, and prove its controls via SOC 2 / ISO 27001 attestations.",
+    x: "The SaaS vendor may not mine your customer data for its own purposes &mdash; it's only a processor."
+  },
+  "Cloud Broker": {
+    t: "Cloud Broker",
+    d: "An intermediary that AGGREGATES, integrates or customizes services between consumers and multiple providers. Simplifies multi-cloud but adds a third party to your trust chain and contracts.",
+    x: "A broker gives one portal and one bill across AWS and Azure services."
+  },
+  "Cloud Auditor": {
+    t: "Cloud Auditor",
+    d: "An INDEPENDENT party that examines cloud controls and produces attestations consumers rely on (SOC reports, ISO certificates) &mdash; how you get assurance without touring the provider's data centre.",
+    x: "You accept a SOC 2 Type 2 report in lieu of auditing the provider yourself."
+  },
+  "cloud-protocols": {
+    t: "Cloud Identity Protocols",
+    d: "The federation alphabet: SPML provisions accounts, SAML asserts authentication, OpenID (Connect) authenticates, OAuth authorizes. Knowing which does WHICH is a guaranteed exam question.",
+    x: "Log in with Google = OpenID Connect; grant the app access to your calendar = OAuth."
+  },
+  "SPML": {
+    t: "SPML — Service Provisioning Markup Language",
+    d: "XML standard for automating account PROVISIONING and deprovisioning across systems. Largely superseded by SCIM in practice, but the exam still names SPML for provisioning.",
+    x: "HR marks a hire; SPML/SCIM creates their accounts in every connected app."
+  },
+  "SAML": {
+    t: "SAML — Security Assertion Markup Language",
+    d: "XML standard for exchanging AUTHENTICATION and authorization assertions between an IdP and service providers &mdash; the workhorse of enterprise web SSO and federation.",
+    x: "Signing in to a SaaS app bounces you to your IdP, which posts back a signed SAML assertion."
+  },
+  "OpenID": {
+    t: "OpenID (Connect)",
+    d: "AUTHENTICATION layer built on OAuth 2.0 &mdash; proves WHO the user is via an ID token (JWT). OpenID answers identity; OAuth alone never does.",
+    x: "'Sign in with Google' returns an ID token asserting the user's identity."
+  },
+  "OAuth": {
+    t: "OAuth 2.0",
+    d: "Delegated AUTHORIZATION: lets an app act on your behalf with scoped access tokens, WITHOUT ever seeing your password. Not authentication &mdash; the classic exam trap.",
+    x: "You grant a scheduling app read-only access to your calendar; it never learns your password."
+  },
+  "Migration": {
+    t: "Cloud Migration",
+    d: "Moving workloads in &mdash; and critically, OUT. Plan the exit (data formats, egress costs, portability) before you enter, or face vendor lock-in. Contracts and SLAs are the control here.",
+    x: "An exit clause guarantees export of all data in open formats within 30 days."
+  },
+  "Data Centric": {
+    t: "Data-Centric Security",
+    d: "In the cloud, the perimeter is gone &mdash; protection must travel WITH THE DATA: classification, encryption with keys you control, rights management and DLP wherever it flows.",
+    x: "A document carries its encryption and usage rights whether it sits in SharePoint or a phone."
+  },
+  "SLA": {
+    t: "SLA — Service Level Agreement",
+    d: "The contractual teeth: measurable commitments (availability, RTO/RPO, breach notification, right to audit, data return/destruction on exit) with penalties. If security isn't in the SLA, it isn't promised.",
+    x: "99.95% uptime, 24-hour breach notice, and certified data destruction at contract end."
+  },
+  "cloud-forensics": {
+    t: "Cloud Forensics",
+    d: "Virtualization is a forensic GIFT: snapshots capture RAM and disk without downtime. But multi-tenancy, provider dependence and jurisdiction complicate acquisition &mdash; pre-negotiate forensic support in the contract.",
+    x: "Instead of pulling a drive, you snapshot the VM and analyse a copy while production runs."
+  },
+  "vm-artifacts": {
+    t: "Snapshot, Virtual Disk, Image",
+    d: "The cloud evidence trio: SNAPSHOT (point-in-time state incl. memory), VIRTUAL DISK (the VMDK/VHD contents), IMAGE (the template it launched from). Hash them and preserve chain of custody like any evidence.",
+    x: "An incident responder snapshots the compromised VM, hashes the export, and works on a copy."
+  },
+  "Data Destruction": {
+    t: "Data Destruction in the Cloud",
+    d: "You can't shred a drive you don't own, and provider media is shared and replicated. Defensible destruction therefore relies on CRYPTO-SHREDDING &mdash; destroy the keys, and every copy becomes ciphertext noise.",
+    x: "At contract exit you destroy the customer-managed keys; all replicas are instantly unreadable."
+  },
+  "crypto-erase": {
+    t: "Crypto Shredding / Crypto Erase",
+    d: "Encrypt data with keys YOU control, then destroy the KEYS to render all copies permanently unrecoverable &mdash; the only sanitization that works across backups and replicas you can't touch.",
+    x: "Deleting the KMS key material 'erases' terabytes across every region at once."
+  },
+
+  /* ================= LAYOUT 6 — CRYPTO SERVICES, TERMINOLOGY, SECRET WRITING ================= */
+  "cs-confidentiality": {
+    t: "Confidentiality (Cryptographic Service)",
+    d: "Keeping data secret from the unauthorized &mdash; delivered by ENCRYPTION (symmetric for bulk, asymmetric for key exchange). The service most people equate with crypto, but only one of five.",
+    x: "AES encrypts the database; only key-holders can read it."
+  },
+  "cs-integrity": {
+    t: "Integrity (Cryptographic Service)",
+    d: "Proving data hasn't CHANGED &mdash; delivered by HASHING: any alteration produces a different digest. Note the map's '= Hashing': on the exam, the integrity service means hash functions (and MACs when keyed).",
+    x: "The downloaded ISO's SHA-256 matches the published digest, so it wasn't tampered with."
+  },
+  "Authenticity": {
+    t: "Authenticity",
+    d: "Proving a message really comes FROM the claimed sender &mdash; via MACs (shared key) or digital signatures (private key). Combined with integrity, it defeats forgery and spoofing.",
+    x: "A digitally signed email verifies against the sender's public key &mdash; it's really from them."
+  },
+  "nonrepudiation": {
+    t: "Non-Repudiation",
+    d: "The sender CANNOT DENY sending (origin) and the receiver cannot deny receiving (delivery). Only ASYMMETRIC crypto provides it &mdash; a symmetric MAC can't, because both parties share the same key. Classic exam trap.",
+    x: "A contract signed with the signer's private key binds them; 'it wasn't me' fails."
+  },
+  "cs-access": {
+    t: "Access Control (Cryptographic Service)",
+    d: "Crypto ENFORCES access: only holders of the right key can decrypt, so key possession becomes the access decision. This is how encryption protects data even after the perimeter fails.",
+    x: "A stolen laptop's FDE means no key, no data &mdash; access denied by mathematics."
+  },
+  "eq-hashing": {
+    t: "Integrity = Hashing",
+    d: "The map's shorthand: the integrity SERVICE is delivered by HASH functions. One-way, fixed-length digest; change one bit of input and the digest changes unrecognizably (avalanche).",
+    x: "File integrity monitoring stores hashes and alerts when a recomputed hash differs."
+  },
+  "Origin": {
+    t: "Non-Repudiation of Origin",
+    d: "Proof of WHO SENT it &mdash; the sender signed with their private key, so they cannot later deny authorship.",
+    x: "The signed purchase order proves the buyer placed it."
+  },
+  "Delivery": {
+    t: "Non-Repudiation of Delivery",
+    d: "Proof the recipient RECEIVED it &mdash; a signed acknowledgement/receipt the receiver cannot later deny.",
+    x: "A signed delivery receipt defeats 'we never got the invoice'."
+  },
+  "Plaintext": {
+    t: "Plaintext",
+    d: "The readable input message before encryption (also 'cleartext'). Plaintext &rarr; encrypt &rarr; ciphertext &rarr; decrypt &rarr; plaintext is the whole pipeline.",
+    x: "The email body before S/MIME encryption is plaintext."
+  },
+  "Encrypt": {
+    t: "Encrypt",
+    d: "Transforming plaintext into unreadable CIPHERTEXT using an algorithm plus a KEY. Strength must live in the key, not in hiding the algorithm (Kerckhoffs).",
+    x: "AES-256-GCM turns the file into ciphertext plus an authentication tag."
+  },
+  "cryptovariable": {
+    t: "Key / Cryptovariable",
+    d: "The SECRET input that individualizes the public algorithm &mdash; the exam's formal term is cryptovariable. Key LENGTH sets the brute-force work factor; key SECRECY is everything (Kerckhoffs).",
+    x: "AES is public; your 256-bit key is the only secret in the system."
+  },
+  "Decrypt": {
+    t: "Decrypt",
+    d: "Reversing encryption with the correct key: ciphertext back to plaintext. Symmetric uses the SAME key; asymmetric uses the pair's OTHER key.",
+    x: "The recipient's private key decrypts what their public key encrypted."
+  },
+  "Key clustering": {
+    t: "Key Clustering",
+    d: "A WEAKNESS where two DIFFERENT keys encrypt the same plaintext into the same ciphertext &mdash; effectively shrinking the keyspace an attacker must search. Good algorithms avoid it.",
+    x: "If K1 and K2 both produce identical ciphertext, an attacker needs either key, not one specific one."
+  },
+  "Work factor": {
+    t: "Work Factor",
+    d: "The TIME AND RESOURCES needed to break the crypto. Nothing is unbreakable; the goal is a work factor exceeding the data's useful life. Longer keys raise it exponentially; Moore's law and quantum erode it.",
+    x: "Data secret for 10 years needs crypto that costs attackers more than 10 years to break."
+  },
+  "iv-nonce": {
+    t: "Initialization Vector / Nonce",
+    d: "A RANDOM or unique starting value that makes identical plaintexts encrypt differently under the same key. IVs must be unpredictable; nonces must NEVER repeat with the same key &mdash; reuse is catastrophic.",
+    x: "WEP died largely because its 24-bit IVs repeated; reused CTR nonces leak the XOR of plaintexts."
+  },
+  "Confusion": {
+    t: "Confusion (Shannon)",
+    d: "Making the relationship between KEY and ciphertext as complex as possible &mdash; implemented by SUBSTITUTION (S-boxes). Each ciphertext bit should depend on the key in an intractable way.",
+    x: "AES's SubBytes step provides confusion."
+  },
+  "Diffusion": {
+    t: "Diffusion (Shannon)",
+    d: "Spreading each PLAINTEXT bit's influence across many ciphertext bits &mdash; implemented by TRANSPOSITION/permutation. Hides statistical patterns of the plaintext.",
+    x: "AES's ShiftRows/MixColumns spread one byte's effect across the whole block."
+  },
+  "Avalanche": {
+    t: "Avalanche Effect",
+    d: "Flip ONE input bit and roughly HALF the output bits change. The observable result of good confusion + diffusion; hashes and ciphers both need it.",
+    x: "SHA-256 of 'test' vs 'Test' shares no recognisable pattern."
+  },
+  "Hidden": {
+    t: "Hidden Writing",
+    d: "Concealing that a message EXISTS at all (vs cryptography, which hides only its meaning). Steganography and null ciphers. Weak alone &mdash; found means read &mdash; so pair it with encryption.",
+    x: "A secret embedded in a photo's pixels raises no suspicion in transit."
+  },
+  "Steganography": {
+    t: "Steganography",
+    d: "Embedding data inside innocuous carriers (image least-significant bits, audio, whitespace). Defeats detection, not decryption; also used for WATERMARKING and by malware for covert exfiltration.",
+    x: "DLP misses the customer list because it left the building inside a holiday photo."
+  },
+  "Null Cipher": {
+    t: "Null Cipher",
+    d: "The plaintext hides IN PLAIN SIGHT within a longer innocent message (e.g., first letter of each word). Historical/novelty grade &mdash; but a neat exam definition to recognise.",
+    x: "'Nice Evening, Wonderful Sunset' &mdash; first letters spell NEWS."
+  },
+  "scrambled": {
+    t: "Scrambled — Cryptography",
+    d: "The message is visibly TRANSFORMED so it can't be understood without the key. Splits into ONE-WAY (hashing &mdash; no decryption) and TWO-WAY (encryption &mdash; symmetric or asymmetric).",
+    x: "An intercepted TLS stream is obviously encrypted &mdash; scrambled, not hidden."
+  },
+  "One-way": {
+    t: "One-Way (Hashing)",
+    d: "Transformation with NO reverse: you can compute the digest but never recover the input. Serves integrity, password storage and signatures &mdash; not confidentiality.",
+    x: "Websites store password hashes; even the admin can't read your password back."
+  },
+  "Two-way": {
+    t: "Two-Way (Encryption)",
+    d: "Reversible with the key: encrypt AND decrypt. Symmetric (one shared key, fast, bulk data) or asymmetric (key pair, slow, key exchange and signatures) &mdash; real systems use both together.",
+    x: "TLS: an asymmetric handshake exchanges a symmetric session key that encrypts the traffic."
+  },
+  "Substitution": {
+    t: "Substitution Ciphers",
+    d: "REPLACE each unit with another (letters, bytes). Vulnerable to FREQUENCY ANALYSIS when the mapping is static. Lives on inside modern ciphers as S-boxes (confusion).",
+    x: "In English ciphertext, the most frequent symbol is probably 'E'."
+  },
+  "caesar": {
+    t: "Caesar Cipher",
+    d: "Shift every letter a fixed number of places (ROT-3 classically) &mdash; a monoalphabetic substitution with a 25-key keyspace. Trivially brute-forced; the exam's canonical 'toy cipher'.",
+    x: "ATTACK &rarr; DWWDFN with shift 3; try all 25 shifts to break."
+  },
+  "Monoalphabetic": {
+    t: "Monoalphabetic Substitution",
+    d: "ONE fixed substitution alphabet for the whole message. Bigger keyspace than Caesar (26! mappings) yet still falls instantly to frequency analysis, because letter statistics survive.",
+    x: "A newspaper cryptogram &mdash; solvable over coffee via letter frequencies."
+  },
+  "Polyalphabetic": {
+    t: "Polyalphabetic Substitution",
+    d: "MULTIPLE alphabets rotate with a keyword (Vigen&egrave;re), flattening frequency patterns. Broken once the key length is deduced (Kasiski) &mdash; but the concept previews the one-time pad.",
+    x: "Vigen&egrave;re with key 'LEMON' shifts each letter by a different amount."
+  },
+  "Running": {
+    t: "Running Key Cipher",
+    d: "The key is a long TEXT (e.g., a book passage) as long as the message. Approaches one-time-pad style &mdash; but natural-language keys have statistics, so it's still breakable.",
+    x: "Page 87 of an agreed novel becomes the key stream."
+  },
+  "One-time Pads": {
+    t: "One-Time Pad",
+    d: "The ONLY provably unbreakable cipher &mdash; IF the key is truly random, as long as the message, used ONCE, and kept secret. Impractical at scale precisely because of key distribution. All four conditions = exam gold.",
+    x: "Cold-war spies burned each pad page after one use; reusing pages (VENONA) broke them."
+  },
+  "Transposition": {
+    t: "Transposition Ciphers",
+    d: "Letters keep their identity but are REARRANGED &mdash; changing order, not symbols. Frequency counts look normal, which is itself a clue. Modern ciphers embed the idea as permutation (diffusion).",
+    x: "Ciphertext with perfectly normal letter frequencies suggests transposition."
+  },
+  "Spartan Scytale": {
+    t: "Spartan Scytale",
+    d: "Wrap a strip around a ROD of specific diameter and write across; unwound, the letters are scrambled. The rod's diameter is the key &mdash; ancient transposition hardware.",
+    x: "The messenger's belt reads as gibberish until wrapped on the matching rod."
+  },
+  "rail-fence": {
+    t: "Rail Fence (Zigzag)",
+    d: "Write the plaintext in a ZIGZAG across N rails, then read row by row. The rail count is the key. Simple transposition, simple to break &mdash; know it by name.",
+    x: "'HELLO WORLD' on 2 rails: HLOWRD + EL OL."
+  },
+  "Hashing": {
+    t: "Hashing",
+    d: "One-way function producing a FIXED-LENGTH digest. Required properties: preimage resistance, second-preimage resistance, COLLISION resistance, avalanche. Serves integrity, password storage, signatures.",
+    x: "Sign the 32-byte SHA-256 digest instead of the 2 GB file."
+  },
+  "MD5": {
+    t: "MD5",
+    d: "128-bit digest &mdash; BROKEN: collisions on demand since 2004. Never acceptable for security; only non-security checksumming. Exam answer: broken, do not use.",
+    x: "The Flame malware forged a Microsoft signature via an MD5 collision."
+  },
+  "SHA-1": {
+    t: "SHA-1",
+    d: "160-bit digest &mdash; BROKEN for collisions (SHAttered, 2017) and deprecated everywhere. Migrate to SHA-2/SHA-3.",
+    x: "Browsers reject SHA-1 TLS certificates outright."
+  },
+  "SHA-2": {
+    t: "SHA-2 (SHA-256 / SHA-512)",
+    d: "The current WORKHORSE family (224&ndash;512-bit digests). No practical breaks; SHA-256 dominates TLS, code signing and blockchain.",
+    x: "Certificate signatures today are almost universally SHA-256."
+  },
+  "SHA-3": {
+    t: "SHA-3 (Keccak)",
+    d: "NIST's 2015 standard on a DIFFERENT internal design (sponge construction) &mdash; a hedge in case SHA-2's construction ever falls, immune to its length-extension quirk. Alternative, not replacement.",
+    x: "If SHA-2 were broken tomorrow, SHA-3 stands on unrelated mathematics."
+  },
+  "Symmetric": {
+    t: "Symmetric Encryption",
+    d: "ONE shared secret key both encrypts and decrypts. FAST &mdash; the bulk-data champion &mdash; but key distribution is the curse: n users need n(n-1)/2 pairwise keys, and no non-repudiation.",
+    x: "100 users &rarr; 4,950 keys; that arithmetic is a rite-of-passage exam question."
+  },
+  "Block": {
+    t: "Block Ciphers",
+    d: "Encrypt FIXED-SIZE blocks (AES: 128 bits) through rounds of substitution and permutation. How blocks chain together is the MODE (ECB&ndash;CTR) &mdash; and mode choice can make or break security.",
+    x: "AES-128 processes sixteen bytes at a time."
+  },
+  "Stream": {
+    t: "Stream Ciphers",
+    d: "Encrypt BIT-BY-BIT by XORing a keystream &mdash; fast, low-latency, ideal for continuous traffic. Fatal rule: never reuse a keystream (key+nonce).",
+    x: "Voice and video links favour stream ciphers (today usually AES in CTR/GCM acting as one)."
+  },
+  "DES": {
+    t: "DES — Data Encryption Standard",
+    d: "56-bit-key block cipher (64-bit blocks), 16 Feistel rounds &mdash; DEAD: brute-forced in under a day since 1998. Historical anchor and the reason 3DES exists.",
+    x: "EFF's Deep Crack machine broke DES in 56 hours in 1998."
+  },
+  "3DES": {
+    t: "3DES — Triple DES",
+    d: "DES three times (Encrypt-Decrypt-Encrypt) for ~112-bit effective strength. A stopgap that bought DES time; slow, small blocks, retired by NIST (2023) &mdash; use AES.",
+    x: "Legacy payment terminals clung to 3DES for years after AES arrived."
+  },
+  "aes": {
+    t: "AES (Rijndael)",
+    d: "THE standard: 128-bit blocks, keys of 128/192/256 bits, substitution-permutation design. Fast in hardware (AES-NI), no practical attacks &mdash; the default answer for symmetric encryption.",
+    x: "AES-256-GCM protects everything from TLS to full-disk encryption."
+  },
+  "CAST-128": {
+    t: "CAST-128",
+    d: "64-bit-block Feistel cipher (40&ndash;128-bit keys), historically used inside PGP. Recognise the name as a symmetric block cipher; modern use is rare.",
+    x: "Older PGP messages were often CAST-128 encrypted."
+  },
+  "SAFER": {
+    t: "SAFER",
+    d: "Secure And Fast Encryption Routine &mdash; a block-cipher family whose variants underpin BLUETOOTH pairing/authentication (SAFER+). Exam recall: SAFER &harr; Bluetooth.",
+    x: "Classic Bluetooth key derivation uses SAFER+."
+  },
+  "Blowfish": {
+    t: "Blowfish",
+    d: "Schneier's free 64-bit-block cipher, keys to 448 bits. Small blocks age poorly &mdash; but its expensive key setup lives on in the BCRYPT password hash.",
+    x: "bcrypt's deliberate slowness against cracking comes from Blowfish's key schedule."
+  },
+  "Twofish": {
+    t: "Twofish",
+    d: "Blowfish's successor: 128-bit blocks, up to 256-bit keys, an AES FINALIST (lost to Rijndael). Secure and unpatented; recognise it as the 'almost-AES'.",
+    x: "VeraCrypt still offers Twofish, alone or cascaded with AES."
+  },
+  "rc56": {
+    t: "RC5 / RC6",
+    d: "Rivest block ciphers famous for data-dependent ROTATIONS and tunable parameters; RC6 was an AES finalist. Distinguish from RC4 (stream)!",
+    x: "RC5 powered distributed.net's long-running key-cracking challenges."
+  },
+  "RC4": {
+    t: "RC4",
+    d: "The once-ubiquitous STREAM cipher &mdash; now PROHIBITED (RFC 7465): its biased keystream leaks plaintext. Killed WEP; removed from TLS. Exam answer: broken stream cipher.",
+    x: "WEP's collapse was RC4 misuse; TLS banned RC4 outright in 2015."
+  },
+  "ecb": {
+    t: "ECB — Electronic Codebook",
+    d: "Each block encrypted INDEPENDENTLY: identical plaintext blocks &rarr; identical ciphertext blocks, so patterns survive. Never use for real data &mdash; the penguin picture proves why.",
+    x: "The ECB-encrypted Tux image still visibly shows the penguin."
+  },
+  "cbc": {
+    t: "CBC — Cipher Block Chaining",
+    d: "Each block is XORed with the PREVIOUS ciphertext block before encryption (random IV first). Hides patterns; encryption is serial; padding-oracle bugs haunt sloppy implementations.",
+    x: "TLS's Lucky13/POODLE eras were CBC padding-oracle attacks."
+  },
+  "cfb": {
+    t: "CFB — Cipher Feedback",
+    d: "Runs the block cipher as a self-synchronizing STREAM: previous ciphertext is re-encrypted to make keystream. Handles odd-sized data; errors propagate one block then heal.",
+    x: "Legacy terminal links used CFB to encrypt character-by-character."
+  },
+  "ofb": {
+    t: "OFB — Output Feedback",
+    d: "Keystream generated by repeatedly encrypting the IV &mdash; independent of the data, so bit errors do NOT propagate. Keystream can be precomputed; never reuse the IV.",
+    x: "Noisy radio links liked OFB: a flipped bit corrupts only itself."
+  },
+  "ctr": {
+    t: "CTR — Counter Mode",
+    d: "Encrypt nonce+COUNTER to make keystream: fully PARALLEL, random access, the modern favourite &mdash; and with authentication bolted on it becomes GCM. Nonce reuse is fatal.",
+    x: "AES-GCM (CTR + auth tag) is today's default authenticated encryption."
+  },
+  "Asymmetric": {
+    t: "Asymmetric Encryption",
+    d: "A mathematically linked KEY PAIR: public encrypts/verifies, private decrypts/signs. Solves key distribution (2n keys, not n(n-1)/2) and enables signatures/non-repudiation &mdash; but ~1000&times; slower, so it transports symmetric keys rather than bulk data.",
+    x: "TLS uses asymmetric crypto for the handshake, symmetric AES for the payload."
+  },
+  "sw-factoring": {
+    t: "Factoring (Hard Problem)",
+    d: "RSA's security rests on the difficulty of FACTORING the product of two huge primes. Easy to multiply, infeasible to reverse at 2048+ bits &mdash; until a large quantum computer runs Shor's algorithm.",
+    x: "Publishing n = p&times;q is safe because recovering p and q is computationally hopeless."
+  },
+  "Discrete Log": {
+    t: "Discrete Logarithm (Hard Problem)",
+    d: "Given g^x mod p, finding x is infeasible &mdash; the foundation of Diffie-Hellman, El Gamal, DSA, and (on curves) ECC. The 'other' hard problem alongside factoring.",
+    x: "DH publishes g^a and g^b openly; only holders of a or b can form the shared secret."
+  },
+  "RSA": {
+    t: "RSA",
+    d: "The factoring-based workhorse: encryption AND signatures with one algorithm. 2048-bit minimum today. Slow &mdash; so it wraps symmetric session keys instead of encrypting data.",
+    x: "The classic TLS pattern: RSA-protected exchange of an AES session key."
+  },
+  "Diffie-Hellmann": {
+    t: "Diffie-Hellman Key Exchange",
+    d: "Two parties derive a SHARED SECRET over a public channel &mdash; the 1976 breakthrough that birthed public-key crypto. Provides agreement, NOT authentication: unauthenticated DH falls to MITM. Ephemeral DH adds forward secrecy.",
+    x: "TLS uses ECDHE (ephemeral) so a later private-key theft can't decrypt recorded sessions."
+  },
+  "ecc": {
+    t: "Elliptic Curve Cryptography (ECC)",
+    d: "Discrete log on ELLIPTIC CURVES: equivalent strength with far smaller keys (ECC-256 &asymp; RSA-3072). Less compute, less power &mdash; the choice for mobile, IoT and modern TLS.",
+    x: "Your phone's TLS handshakes run ECDHE + ECDSA for speed and battery life."
+  },
+  "El Gamal": {
+    t: "El Gamal",
+    d: "Discrete-log ENCRYPTION extending Diffie-Hellman; probabilistic, and the ciphertext is roughly DOUBLE the plaintext size &mdash; its exam-famous drawback. Basis of DSA's design lineage.",
+    x: "GnuPG offers El Gamal encryption keys; note the message expansion."
+  },
+  "DSA": {
+    t: "DSA — Digital Signature Algorithm",
+    d: "NIST's discrete-log SIGNATURE-ONLY standard (FIPS 186). Signs and verifies; never encrypts. Modern practice prefers ECDSA/EdDSA; classic trap: 'encrypt with DSA' is impossible.",
+    x: "Older code-signing and SSH keys used DSA; today it's ECDSA/Ed25519."
+  }
+});
+
+/* ============================================================
+   CISSP Domain 3 — Layouts 5-9 hover details (part B: L7 PKI, L8 cryptanalysis, L9 physical)
+   ============================================================ */
+Object.assign(window.AC_DETAILS, {
+  /* ================= LAYOUT 7 — SIGNATURES, CERTIFICATES, PKI, KEY MANAGEMENT ================= */
+  "Digital Signatures": {
+    t: "Digital Signatures",
+    d: "Hash the message, then encrypt the DIGEST with the sender's PRIVATE key. Anyone can verify with the public key. Delivers integrity + authenticity + NON-REPUDIATION &mdash; the only mechanism giving all three. Signing = private key; verifying = public key. Drill that direction.",
+    x: "Code signing: the vendor signs the installer; your OS verifies it against the vendor's public key."
+  },
+  "ds-integrity": {
+    t: "Integrity (via Digital Signature)",
+    d: "The signature covers the message HASH &mdash; change one bit and verification fails. You get tamper-evidence automatically with every signature.",
+    x: "A modified invoice no longer matches its signed digest."
+  },
+  "verify-owner": {
+    t: "Verify the Owner of a Public Key",
+    d: "THE problem certificates solve: a public key alone says nothing about WHO it belongs to. A certificate is a CA's signed assertion binding identity &harr; public key, replacing per-person trust with trust in the CA.",
+    x: "Without certificates, an attacker could hand you 'the bank's' public key &mdash; theirs."
+  },
+  "Digital Certificates": {
+    t: "Digital Certificates",
+    d: "A signed data structure (X.509) binding a PUBLIC KEY to an identity, issued by a Certificate Authority after vetting. Contains subject, issuer, validity dates, key, and the CA's signature. Trust the CA &rArr; trust every certificate it signs.",
+    x: "The padlock in your browser is an X.509 certificate chain validating to a trusted root."
+  },
+  "X.509": {
+    t: "X.509",
+    d: "THE standard certificate format: version, serial number, subject, issuer, validity period, public key, extensions (SANs, key usage) and the CA signature. Version 3 is current; know the field names.",
+    x: "openssl x509 -text dumps every field of a web server's certificate."
+  },
+  "Replacement": {
+    t: "Certificate Replacement",
+    d: "Certificates EXPIRE by design &mdash; short lifetimes limit exposure from undetected key compromise. Renewal/replacement (ideally automated) is routine operations; expired-cert outages are self-inflicted downtime.",
+    x: "Public TLS certs now cap at 398 days; ACME/Let's Encrypt automates 90-day renewals."
+  },
+  "Revocation": {
+    t: "Certificate Revocation",
+    d: "Killing a certificate BEFORE it expires &mdash; because the private key leaked, the info changed, or the subject left. Two check mechanisms: CRL (download the blacklist) and OCSP (ask about one serial). Heartbleed made this an exam favourite.",
+    x: "After a server-key compromise you revoke immediately; expiry alone would leave a valid-looking stolen key."
+  },
+  "CRL": {
+    t: "CRL — Certificate Revocation List",
+    d: "A CA-signed LIST of revoked serial numbers, downloaded periodically by clients. Simple but STALE between updates and grows large &mdash; the latency window is the classic weakness.",
+    x: "A cert revoked at 09:00 may still pass checks until the next CRL refresh."
+  },
+  "OCSP": {
+    t: "OCSP — Online Certificate Status Protocol",
+    d: "Ask the CA responder in REAL TIME about ONE certificate: good/revoked/unknown. Fresher than CRLs; adds latency and a privacy leak (the responder sees your browsing) &mdash; fixed by OCSP STAPLING, where the server presents a signed recent response.",
+    x: "TLS stapling: the web server attaches its own fresh OCSP proof to the handshake."
+  },
+  "Pinning": {
+    t: "Certificate Pinning",
+    d: "The client hard-codes WHICH certificate or key to expect, rejecting anything else &mdash; even a 'valid' cert from a compromised CA. Defends against rogue-CA MITM; the cost is operational brittleness when keys rotate.",
+    x: "A banking app pins its backend key; a corporate TLS-inspection proxy breaks it by design."
+  },
+  "ca-root": {
+    t: "Certificate Authority (Root of Trust)",
+    d: "The apex of PKI: the root CA's self-signed certificate is distributed in OS/browser trust stores, and every chain must terminate there. Roots are kept OFFLINE and used only to sign intermediates &mdash; root compromise means game over (see DigiNotar).",
+    x: "The DigiNotar root breach let attackers mint valid google.com certs; browsers had to expel the CA."
+  },
+  "Registration Authority": {
+    t: "Registration Authority (RA)",
+    d: "Verifies the requester's IDENTITY before certificate issuance &mdash; the vetting desk. The RA never signs certificates; it approves requests that the CA then signs. Issuing = CA, identity-proofing = RA: exam split.",
+    x: "For an EV cert, the RA checks company registration documents before the CA issues."
+  },
+  "intermediate-ca": {
+    t: "Intermediate / Issuing CA",
+    d: "Sits between the offline root and end-entity certs, doing the day-to-day ISSUING. Compartmentalizes risk: if an intermediate is compromised, revoke it without burning the root. This is why real chains have 3+ links.",
+    x: "Let's Encrypt's R-series intermediates sign your cert; the ISRG root stays offline."
+  },
+  "cert-db": {
+    t: "Certificate Database (Revocation List)",
+    d: "The CA's authoritative RECORD of every certificate issued and its status &mdash; the source from which CRLs and OCSP answers are generated. Its integrity is as critical as the signing key.",
+    x: "Tampering the status DB could 'un-revoke' a stolen certificate."
+  },
+  "cert-store": {
+    t: "Certificate Store (Local)",
+    d: "The LOCAL trust store on each device holding trusted roots (and your own certs/keys). Whoever controls it controls what your machine trusts &mdash; adding a rogue root enables silent TLS interception.",
+    x: "Corporate proxies add their root to managed devices' stores to inspect HTTPS; malware does the same trick maliciously."
+  },
+  "kerckhoff": {
+    t: "Kerckhoffs' Principle",
+    d: "A cryptosystem must stay secure even if EVERYTHING about it except the KEY is public. Security through obscurity fails; open, peer-reviewed algorithms with secret keys win. The philosophical foundation of modern crypto.",
+    x: "AES's full spec is public; only your key protects your data &mdash; and that's the point."
+  },
+  "Generation": {
+    t: "Key Generation",
+    d: "Keys must come from cryptographically secure RANDOM sources (CSPRNG/HSM) with adequate length. Weak entropy quietly poisons everything downstream &mdash; predictable keys equal no keys.",
+    x: "The 2008 Debian OpenSSL bug shrank keyspace to 32,767 possibilities &mdash; every key guessable."
+  },
+  "Distribution": {
+    t: "Key Distribution",
+    d: "Getting the shared secret to the other party WITHOUT interception &mdash; symmetric crypto's oldest problem. Solutions: Diffie-Hellman agreement, out-of-band delivery, or hybrid (asymmetric wraps the symmetric key).",
+    x: "TLS solves distribution live: ECDHE agrees a fresh session key per connection."
+  },
+  "Out-of-band": {
+    t: "Out-of-Band Distribution",
+    d: "Move the key over a DIFFERENT channel than the data &mdash; courier, phone, in person &mdash; so one intercepted channel isn't enough. Secure but unscalable; historically how symmetric keys travelled.",
+    x: "The Wi-Fi password texted to you while the traffic flows on the WLAN itself."
+  },
+  "kd-hybrid": {
+    t: "Hybrid Key Distribution",
+    d: "The pattern that runs the internet: ASYMMETRIC crypto exchanges/wraps a SYMMETRIC session key, then fast symmetric encryption carries the data. Best of both worlds &mdash; RSA/ECDH for the handshake, AES for the bulk.",
+    x: "Every TLS connection: ECDHE handshake &rarr; AES-GCM session."
+  },
+  "Storage": {
+    t: "Key Storage",
+    d: "Keys at rest need HARDWARE protection: TPM on endpoints, HSM in the data centre. Software-stored keys are one memory scrape away from theft; hardware keeps keys non-exportable and operations inside the boundary.",
+    x: "A signing key inside an HSM can sign, but never leave &mdash; even for admins."
+  },
+  "TPM": {
+    t: "TPM — Trusted Platform Module",
+    d: "A tamper-resistant chip ON the device for key storage, sealed secrets, measured/secure boot and attestation. Binds crypto to that specific hardware platform &mdash; the endpoint's root of trust.",
+    x: "BitLocker seals the disk key in the TPM; move the drive elsewhere and it won't unlock."
+  },
+  "HSM": {
+    t: "HSM — Hardware Security Module",
+    d: "Dedicated tamper-RESPONSIVE appliance for enterprise key management: generates keys, performs crypto inside its boundary, zeroizes on attack, FIPS 140 validated. Where CA roots and payment keys live.",
+    x: "The root CA's private key exists only inside an HSM requiring dual-control smart cards."
+  },
+  "Rotation": {
+    t: "Key Rotation",
+    d: "Retire and replace keys on SCHEDULE to limit how much data any one key protects (its cryptoperiod) and how long a silent compromise pays off. Automation makes rotation cheap; forgetting it makes breaches expensive.",
+    x: "Cloud KMS rotates data-encryption keys yearly; sessions rotate per connection."
+  },
+  "Disposition": {
+    t: "Key Disposition",
+    d: "END-OF-LIFE for keys: secure archival (if data must remain readable) or verified destruction. A 'deleted' key that lingers in backups keeps every ciphertext it ever protected at risk.",
+    x: "Decommissioning a database: archive the key under escrow or crypto-shred it deliberately."
+  },
+  "Crypto-shredding": {
+    t: "Crypto-Shredding",
+    d: "Destroy the KEY to render all data encrypted under it permanently unreadable &mdash; sanitization by mathematics. The go-to for cloud and distributed storage where you can't touch the media.",
+    x: "One KMS key deletion 'erases' every replica and backup at once."
+  },
+  "Key Destruction": {
+    t: "Key Destruction",
+    d: "Verified, unrecoverable elimination of key material: zeroization in HSMs, overwrite of software keys, documented and witnessed. The final lifecycle stage &mdash; and the proof auditors ask for.",
+    x: "The HSM's zeroize function wipes keys instantly if tampering is detected."
+  },
+  "Recovery": {
+    t: "Key Recovery",
+    d: "Business insurance against lost keys/leavers: escrowed copies recoverable under CONTROLLED, multi-party procedures. Every recovery path you build is also an attack path &mdash; hence split knowledge and dual control.",
+    x: "An employee departs; the recovery agent restores access to their encrypted files."
+  },
+  "Split Knowledge": {
+    t: "Split Knowledge",
+    d: "No single person KNOWS the whole secret &mdash; the key exists in parts held by different people (e.g., Shamir splitting). Defeats the rogue insider; pairs with dual control.",
+    x: "Three of five key shares must combine to reconstruct the master key."
+  },
+  "Dual Control": {
+    t: "Dual Control",
+    d: "No single person can PERFORM the sensitive action alone &mdash; two people must act together. Split knowledge divides the secret; dual control divides the ACTION. Know the difference cold.",
+    x: "Two smart cards, two PINs, turned within seconds of each other to activate the HSM."
+  },
+  "Key Escrow": {
+    t: "Key Escrow",
+    d: "Keys deposited with a THIRD PARTY for recovery under defined conditions (court order, corporate policy). Recovery insurance vs a juicy target and privacy debate &mdash; remember the Clipper Chip failure.",
+    x: "The 1990s Clipper Chip: government-escrowed keys &mdash; rejected, and still the exam's cautionary tale."
+  },
+
+  /* ================= LAYOUT 8 — CRYPTANALYSIS ================= */
+  "cryptanalytic-attacks": {
+    t: "Cryptanalytic Attacks",
+    d: "Attacks on the MATHEMATICS &mdash; algorithm and key. Ranked by what the attacker HAS: ciphertext only (hardest) &rarr; known plaintext &rarr; chosen plaintext &rarr; chosen ciphertext (strongest position). That ladder is the exam question.",
+    x: "'Attacker can submit ciphertexts for decryption' &rarr; chosen ciphertext attack."
+  },
+  "Brute Force": {
+    t: "Brute Force",
+    d: "Try EVERY key until one works &mdash; defeats everything eventually; key LENGTH decides whether 'eventually' means microseconds or millennia. Each added bit doubles the work: that exponential is the whole defence.",
+    x: "DES's 2^56 fell in 1998; AES-128's 2^128 outlives the sun."
+  },
+  "Ciphertext Only": {
+    t: "Ciphertext-Only Attack",
+    d: "The attacker holds ONLY intercepted ciphertext &mdash; the weakest position and the baseline threat every cipher must survive. Classical ciphers fell to it via frequency analysis; modern ones shouldn't.",
+    x: "Cracking a monoalphabetic cipher from letter frequencies alone."
+  },
+  "Known Plaintext": {
+    t: "Known-Plaintext Attack",
+    d: "The attacker has PAIRS of plaintext and its ciphertext and hunts the key linking them. Predictable message content (headers, greetings) hands these pairs over for free.",
+    x: "Bletchley's cribs: German messages reliably containing 'WETTER' (weather) broke Enigma settings."
+  },
+  "Chosen Plaintext": {
+    t: "Chosen-Plaintext Attack",
+    d: "The attacker gets plaintexts OF THEIR CHOICE encrypted and studies the outputs &mdash; feasible whenever encryption is a service (public key, an encrypting oracle). Modern ciphers must resist even this.",
+    x: "Feed patterned blocks to an ECB oracle and watch identical ciphertext blocks reveal structure."
+  },
+  "Chosen Ciphertext": {
+    t: "Chosen-Ciphertext Attack",
+    d: "The attacker submits CIPHERTEXTS and learns (something about) their decryption &mdash; the strongest standard attacker. Padding oracles are the real-world incarnation; CCA-security is the modern bar.",
+    x: "Bleichenbacher/ROBOT: RSA padding error messages leak the session key byte by byte."
+  },
+  "linear-differential": {
+    t: "Linear & Differential Cryptanalysis",
+    d: "The academic heavy artillery against block ciphers: LINEAR approximates the cipher with linear equations; DIFFERENTIAL traces how input differences propagate. Modern ciphers (AES) are designed with proofs against both.",
+    x: "DES's S-boxes turned out pre-hardened against differential analysis &mdash; the NSA knew in 1974."
+  },
+  "ca-factoring": {
+    t: "Factoring Attack",
+    d: "Attack RSA by factoring its modulus back into p and q &mdash; success equals total key recovery. Advances in factoring (and someday Shor's quantum algorithm) directly retire RSA key sizes.",
+    x: "RSA-768 was factored in 2009; that's why 2048 bits is today's floor."
+  },
+  "cryptographic-attacks": {
+    t: "Cryptographic Attacks",
+    d: "Attacks that SKIP the math and hit the implementation, the protocol, or the people: MITM, replay, side channels, password-cracking economics, coercion. Lesson the exam loves: crypto usually fails around the algorithm, not through it.",
+    x: "Nobody brute-forces AES; they steal the key from a temp file or the admin."
+  },
+  "mitm": {
+    t: "Man-in-the-Middle (MITM / On-Path)",
+    d: "The attacker sits BETWEEN parties, relaying and possibly altering traffic while each side believes the link is direct. Defeats unauthenticated key exchange (raw DH); beaten by AUTHENTICATION &mdash; certificates, signed exchanges.",
+    x: "A rogue Wi-Fi AP terminates your 'secure' session both ways; TLS certificates exist precisely to stop this."
+  },
+  "Replay": {
+    t: "Replay Attack",
+    d: "Capture a VALID message and send it AGAIN &mdash; no decryption needed; the crypto validates for the attacker. Beaten by freshness: timestamps, sequence numbers, nonces, challenge-response.",
+    x: "Re-sending a captured payment authorisation; Kerberos timestamps exist to kill exactly this."
+  },
+  "Pass the Hash": {
+    t: "Pass the Hash",
+    d: "Steal the password HASH and authenticate WITH THE HASH itself &mdash; no cracking required, because NTLM proves knowledge of the hash, not the password. Core lateral-movement technique in Windows breaches.",
+    x: "Mimikatz lifts hashes from LSASS; the attacker is 'logged in' everywhere that account reaches."
+  },
+  "Temporary Files": {
+    t: "Temporary Files",
+    d: "Plaintext and key material LEAK into temp files, swap, hibernation files, crash dumps and editor autosaves &mdash; recoverable long after the 'encrypted' work ended. Encrypt the whole disk and wipe scratch space.",
+    x: "The hibernation file contains the disk-encryption key from RAM at sleep time."
+  },
+  "Implementation": {
+    t: "Implementation Attack",
+    d: "Break the CODE, not the cipher: buffer overflows in crypto libraries, bad RNGs, flawed padding checks, protocol downgrades. The dominant real-world failure mode &mdash; the math was fine, the software wasn't.",
+    x: "Heartbleed read private keys out of OpenSSL memory; AES itself was never touched."
+  },
+  "Side Channel": {
+    t: "Side-Channel Attack",
+    d: "Read secrets from PHYSICAL LEAKAGE of the computation &mdash; power draw, timing, electromagnetic emissions, even sound. Non-invasive and invisible to logs. Counter with constant-time code, shielding and power filtering.",
+    x: "Differential power analysis pulls a smart card's key from its electricity bill, microsecond by microsecond."
+  },
+  "sc-power": {
+    t: "Power Analysis",
+    d: "Correlate a chip's POWER CONSUMPTION with the bits it processes (SPA/DPA) to extract keys &mdash; the classic smart-card killer. Mitigate with power filtering, masking and constant-power logic.",
+    x: "A pay-TV card leaks its key through measurable power spikes per key bit."
+  },
+  "sc-timing": {
+    t: "Timing Attack",
+    d: "Measure HOW LONG operations take &mdash; data-dependent branches, cache hits, early-exit comparisons &mdash; and reconstruct secrets from the differences. The fix is CONSTANT-TIME implementations.",
+    x: "A string comparison that returns early lets attackers guess an API token byte by byte."
+  },
+  "Radiation Emissions": {
+    t: "Radiation Emissions (Emanations)",
+    d: "Electromagnetic leakage from screens, cables and chips reconstructed at a distance &mdash; the van Eck/TEMPEST attack. Countered by shielding, filtering and control zones (ties back to the emanations box in Layout 4).",
+    x: "Reading a monitor's image from the parking lot via its EM emissions."
+  },
+  "Dictionary Attack": {
+    t: "Dictionary Attack",
+    d: "Try LIKELY passwords (wordlists, leaked corpora, mutations) instead of the whole keyspace &mdash; devastating because humans choose words. Beaten by strong passphrases, rate limiting/lockout and slow hashes (bcrypt).",
+    x: "'Summer2024!' falls to a rules-based wordlist in seconds."
+  },
+  "Rainbow Tables": {
+    t: "Rainbow Tables",
+    d: "PRECOMPUTED hash-chain tables trade disk space for instant hash reversal &mdash; compute once, crack forever. Completely neutralized by SALTING, which makes every user's hash unique. Salt kills rainbow tables: the exam sentence.",
+    x: "Unsalted NTLM lookups take seconds from a public table; add a salt and the table is useless."
+  },
+  "Birthday Attack": {
+    t: "Birthday Attack",
+    d: "Finding ANY two inputs that collide needs only ~2^(n/2) tries (the birthday paradox) &mdash; a 128-bit hash gives just 64 bits of collision resistance. This math is what killed MD5 and SHA-1 for signatures.",
+    x: "23 people: 50% shared birthday. Same math forged the Flame malware's MD5 certificate."
+  },
+  "Social Engineering": {
+    t: "Social Engineering (against Crypto)",
+    d: "Skip the ciphertext, work the HUMAN: phish the passphrase, bribe the key-holder, coerce the admin. Usually the cheapest attack in the whole stack &mdash; countered by procedure (split knowledge, dual control) as much as training.",
+    x: "Why crack AES-256 when a convincing 'IT support' call yields the vault password?"
+  },
+  "Purchase Key": {
+    t: "Purchase-Key Attack",
+    d: "Just BUY the secret: bribe an insider, purchase leaked credentials, pay a broker. Rational attackers compare the key's price to the cracking cost. Split knowledge means there's no single person to buy.",
+    x: "A disgruntled admin sells the signing key for a fraction of the data's value."
+  },
+  "Rubber Hose": {
+    t: "Rubber-Hose Cryptanalysis",
+    d: "Extract keys by COERCION &mdash; threats, force, or legal compulsion. No algorithm resists it; mitigations are procedural: split knowledge (no one knows it all) and duress codes/deniable volumes.",
+    x: "Border detention until the phone is unlocked &mdash; the $5 wrench beats the $5M cryptanalysis."
+  },
+
+  /* ================= LAYOUT 9 — PHYSICAL SECURITY ================= */
+  "safety-people": {
+    t: "Safety of People",
+    d: "The unbreakable rule of Domains 3.8-3.9: HUMAN LIFE outranks every asset, always. Any question that pits people against property &mdash; door failure modes, suppression agents, evacuation &mdash; is answered by protecting people first.",
+    x: "Fail-SAFE doors unlock in a fire even though assets become exposed &mdash; people first, always."
+  },
+  "phys-categories": {
+    t: "Physical Control Functions",
+    d: "Physical controls are chosen to DETER, DELAY, DETECT, ASSESS and RESPOND &mdash; in that order, as an attacker experiences them. No single control does all five; the LAYERS together do.",
+    x: "Fence deters, lock delays, sensor detects, camera assesses, guard responds."
+  },
+  "Deter": {
+    t: "Deter",
+    d: "Convince the adversary not to TRY: visible fences, lighting, signage, patrols. Psychological, cheap, and first in the sequence &mdash; every attack prevented here costs nothing downstream.",
+    x: "The lit, fenced, camera-signed facility gets skipped for the dark one next door."
+  },
+  "Delay": {
+    t: "Delay",
+    d: "SLOW the attacker &mdash; locks, barriers, hardened doors &mdash; buying time for detection and response to catch up. Design rule: delay time must EXCEED response time, or the layers fail.",
+    x: "A rated safe that resists entry for 30 minutes only works if guards arrive in 15."
+  },
+  "Detect": {
+    t: "Detect",
+    d: "KNOW the intrusion is happening: motion sensors (PIR), glassbreak, door contacts, camera analytics. Undetected attackers have unlimited time &mdash; detection is what starts the clock for response.",
+    x: "The PIR sensor trips the moment the intruder crosses the lobby at 02:00."
+  },
+  "Assess": {
+    t: "Assess",
+    d: "VERIFY what the alarm actually is before committing response &mdash; real intrusion, wildlife, or a faulty sensor? Cameras and guards do assessment; skipping it breeds alarm fatigue and wasted response.",
+    x: "The operator checks the camera feed: raccoon, not burglar &mdash; no dispatch."
+  },
+  "Respond": {
+    t: "Respond",
+    d: "The action that ENDS the event: guards intervene, doors lock down, police are called. All earlier layers exist only to make response arrive in time &mdash; deter, delay and detect buy the minutes response spends.",
+    x: "Assessed intrusion &rarr; guards converge while remote lockdown seals the wing."
+  },
+  "Layered Defense": {
+    t: "Layered Defense (Physical)",
+    d: "Concentric RINGS from property line to asset: perimeter &rarr; building shell &rarr; interior zones &rarr; the vault. Each layer deters, delays and detects; no single failure reaches the asset. Defense-in-depth, physically.",
+    x: "Fence &rarr; badge lobby &rarr; mantrap &rarr; locked cage &rarr; encrypted disks: five failures needed."
+  },
+  "Perimeter": {
+    t: "Perimeter",
+    d: "The OUTERMOST layer: fences, gates, bollards, natural barriers. Fence heights the exam likes: ~1m deters casual crossing, ~2m+ with barbed wire deters determined intruders. Bollards stop vehicles.",
+    x: "An 8-foot fence with three-strand barbed wire marks a controlled facility."
+  },
+  "Landscape": {
+    t: "Landscape (CPTED)",
+    d: "Crime Prevention Through Environmental Design: shape the ENVIRONMENT to deny concealment and create natural surveillance &mdash; low thorny shrubs, clear sightlines, no hiding spots near entries.",
+    x: "Trimmed hedges under windows remove the burglar's cover; thorny bushes make it painful."
+  },
+  "Grading": {
+    t: "Grading",
+    d: "The SLOPE of the land: grade away from the building so water drains off (flood protection) and avoid terrain that gives attackers elevation or concealment near walls.",
+    x: "A site graded toward the loading dock floods the server room in a storm."
+  },
+  "Cameras": {
+    t: "Cameras (CCTV)",
+    d: "DETERRENT + DETECTION + ASSESSMENT in one: visible domes discourage, monitoring detects, recordings prove. Placement, retention and live monitoring decide value &mdash; unwatched cameras only investigate, never prevent.",
+    x: "The mantrap camera confirms the badge user's face matches the badge holder."
+  },
+  "pir": {
+    t: "Passive Infrared Devices (PIR)",
+    d: "Motion sensors that detect moving HEAT signatures (body warmth) &mdash; passive because they emit nothing. Cheap interior detection; tune against pets, HVAC drafts and sun-heated windows.",
+    x: "After-hours PIR in the corridor trips the alarm on any warm moving body."
+  },
+  "Lighting": {
+    t: "Lighting",
+    d: "The cheapest deterrent and the enabler of cameras and guards. Exam number: critical areas want ~8 feet high, 2 foot-candles. Avoid glare that blinds your own cameras, and light the perimeter evenly &mdash; shadows are corridors.",
+    x: "Continuous perimeter lighting at 2 fc lets cameras identify faces at the fence line."
+  },
+  "badges": {
+    t: "Card Readers / Badges",
+    d: "Electronic ACCESS CONTROL + audit trail at doors. Threats: cloning of legacy 125 kHz cards, tailgating behind valid users, lost badges. Pair with PIN/biometric for critical doors and revoke instantly on loss.",
+    x: "A flipper-cloned prox card opens the door; smart cards with challenge-response don't clone."
+  },
+  "mantraps": {
+    t: "Doors / Mantraps",
+    d: "Two interlocked doors where the second opens only after the first CLOSES &mdash; one authenticated person per cycle. THE control against tailgating/piggybacking; often adds scales or biometrics inside.",
+    x: "The data-centre vestibule traps the tailgater between doors until security arrives."
+  },
+  "Locks": {
+    t: "Locks",
+    d: "The classic DELAY control &mdash; every lock yields to time and skill; its job is slowing entry until detection/response engage. Grades matter (residential vs commercial vs high-security), as do key control policies.",
+    x: "A Grade 1 deadbolt buys minutes; a wafer cabinet lock buys seconds."
+  },
+  "lock-mechanical": {
+    t: "Mechanical Locks",
+    d: "Pin tumbler, warded, combination &mdash; no power, no logs. Vulnerable to picking, bumping and unauthorized key DUPLICATION; master-key systems concentrate that risk. Use restricted keyways for critical doors.",
+    x: "A bump key opens a standard pin tumbler in seconds; restricted blanks can't be copied at kiosks."
+  },
+  "lock-digital": {
+    t: "Digital / Electronic Locks",
+    d: "Keypads, smart cards, biometrics with AUDIT LOGS and instant revocation &mdash; but they inherit cyber failure modes: default codes, replay, power loss. Define fail-safe vs fail-secure per door and life-safety code.",
+    x: "The keypad logs every entry; shoulder-surfing the code defeats it anyway."
+  },
+  "Windows": {
+    t: "Windows",
+    d: "The building shell's WEAKEST points. Options the exam names: tempered, laminated (holds when shattered), wired, polycarbonate/acrylic, plus security FILM &mdash; and sensors (shock, glassbreak) because glass will still break.",
+    x: "Laminated glass stays in its frame after the brick bounces off."
+  },
+  "Shock": {
+    t: "Shock Sensors",
+    d: "Detect the VIBRATION of impact on glass or walls &mdash; alarm on the attempt, before penetration succeeds. Mount on the pane/frame; tune against trucks and hail.",
+    x: "The sensor alarms at the first hammer blow, not after entry."
+  },
+  "Glassbreak": {
+    t: "Glassbreak Detectors",
+    d: "ACOUSTIC sensors recognizing the specific frequency signature of breaking glass, covering whole rooms of windows from one unit. Complements contacts: the contact catches the opened window, glassbreak catches the smashed one.",
+    x: "One ceiling unit hears any of the lobby's twelve panes shatter."
+  },
+  "Walls": {
+    t: "Walls",
+    d: "True barriers run SLAB-TO-SLAB (floor to structural ceiling). The exam trap: partition walls stopping at a drop ceiling let intruders climb OVER into the 'secure' room through the plenum.",
+    x: "The server-room wall ends above the ceiling tiles &mdash; entry is a tile-lift away."
+  },
+  "Skimming": {
+    t: "Skimming",
+    d: "Rogue HARDWARE added to legitimate readers (ATMs, badge readers, fuel pumps) capturing card data + PINs. Counter with tamper-evident inspection, anti-skimming design, and contactless/chip over magstripe.",
+    x: "An overlay on the garage badge reader harvests every credential swiped that week."
+  },
+  "Infrastructure": {
+    t: "Infrastructure (Facility Systems)",
+    d: "The utilities availability depends on: NETWORK cabling, POWER and HVAC. Physical security includes keeping these running and protected &mdash; a perfect firewall can't route around a dead UPS or a cooked server room.",
+    x: "The 'security incident' was a failed CRAC unit thermally shutting down the SAN."
+  },
+  "phys-network": {
+    t: "Network Infrastructure (Physical)",
+    d: "Protect cable runs, patch panels, IDF/MDF closets: locked rooms, conduit, no jacks in public areas, tamper detection. Physical access to the wire equals tap, injection or cut &mdash; encryption is the compensating control.",
+    x: "An unlocked wiring closet lets anyone bridge a rogue AP into the core switch."
+  },
+  "phys-power": {
+    t: "Power",
+    d: "Clean, continuous power is an AVAILABILITY control. Strategy in layers: surge protection + line conditioning for quality, UPS for the gap, generator for the duration. Know the anomaly vocabulary (sag, brownout, spike, surge).",
+    x: "Ride the first 10 minutes on UPS while the generator spins up and takes the load."
+  },
+  "UPS": {
+    t: "UPS — Uninterruptible Power Supply",
+    d: "Battery BRIDGE covering the seconds-to-minutes between outage and generator (or graceful shutdown). Online/double-conversion UPS also conditions power continuously; sized by load and runtime.",
+    x: "The datacentre UPS carries 8 minutes at full load &mdash; the generator needs 45 seconds."
+  },
+  "Generator": {
+    t: "Generator",
+    d: "LONG-DURATION backup power &mdash; hours to days, limited only by FUEL. Needs transfer switching, fuel contracts and, critically, regular UNDER-LOAD testing; an untested generator is a hope, not a control.",
+    x: "Weekly no-load runs plus quarterly load-bank tests keep the diesel honest."
+  },
+  "outages": {
+    t: "Power Outages (Fault / Blackout)",
+    d: "Total LOSS of power: a FAULT is momentary, a BLACKOUT is prolonged. UPS bridges faults; generators outlast blackouts. Precise vocabulary is the exam's favourite power question.",
+    x: "A one-second fault reboots unprotected desktops; the UPS-backed racks don't blink."
+  },
+  "degradation": {
+    t: "Power Degradation (Sag / Brownout / Spike / Surge)",
+    d: "LOW voltage: SAG (momentary) and BROWNOUT (prolonged). HIGH voltage: SPIKE (momentary) and SURGE (prolonged). Low starves and reboots equipment; high burns it. Conditioning and surge protection are the fixes.",
+    x: "The elevator motor's start sags the floor's lights; the lightning strike's spike kills unprotected PSUs."
+  },
+  "HVAC": {
+    t: "HVAC",
+    d: "Heating, ventilation, air conditioning &mdash; availability for electronics AND people. Exam points: POSITIVE pressurization (air pushes out, contaminants stay out), dedicated systems for data centres, and monitoring with alerts.",
+    x: "Positive pressure keeps smoke and dust flowing out the opened door, not in."
+  },
+  "Temperature": {
+    t: "Temperature",
+    d: "Electronics want steady cool &mdash; roughly 15-32&deg;C (ASHRAE window; ~20-25&deg;C classic guidance). HEAT is the killer: monitor at rack level, alert on trends, and remember hot-aisle/cold-aisle containment.",
+    x: "A failed CRAC at 2 a.m. cooks the top-of-rack switches first &mdash; sensors page before servers die."
+  },
+  "Humidity": {
+    t: "Humidity",
+    d: "The 40-60% band (exam classic: 45-55%): too LOW breeds static electricity that zaps components; too HIGH breeds condensation and corrosion. Both extremes destroy hardware &mdash; monitor and control.",
+    x: "A dry winter server room delivers 20 kV static pops to every unearthed technician."
+  },
+  "Air Quality": {
+    t: "Air Quality",
+    d: "Dust clogs heatsinks and filters (thermal failure); corrosive gases eat contacts. Filtration, positive pressure and sealed rooms keep particulates out &mdash; and gaseous suppression discharge needs air handling too.",
+    x: "Construction dust next door triples fan failures within a quarter."
+  },
+  "Fire Detection": {
+    t: "Fire Detection",
+    d: "Three sensing families by fire signature: FLAME (infrared/UV, sees the flicker), SMOKE (ionization/photoelectric, catches particles), HEAT (thermal, slow but false-alarm-proof). Early, accurate detection triggers suppression and evacuation.",
+    x: "VESDA air sampling smells smoldering cable insulation minutes before flames."
+  },
+  "flame": {
+    t: "Flame Detection (Infrared)",
+    d: "Optical sensors seeing the IR/UV FLICKER of actual flames &mdash; near-instant on open fire, blind to smolder. Used where fires ignite fast (fuel, chemicals); needs line of sight.",
+    x: "The generator room's IR detector trips milliseconds after fuel vapour ignites."
+  },
+  "Smoke": {
+    t: "Smoke Detection",
+    d: "Catches fires at the SMOKE stage, before flames: ionization (fast/flaming fires), photoelectric (smoldering fires), or DUAL combining both. Photoelectric favours the smolder-prone office; dual covers all.",
+    x: "The photoelectric unit catches the overheating UPS battery hours before ignition."
+  },
+  "heat": {
+    t: "Heat Detection (Thermal)",
+    d: "Trips on fixed TEMPERATURE or rate-of-rise. Slowest to alarm but nearly immune to false alarms &mdash; the choice for dusty, steamy or smoky-by-nature spaces where smoke detectors cry wolf.",
+    x: "The parking garage uses rate-of-rise heads; exhaust fumes would fool any smoke sensor."
+  },
+  "Ionization": {
+    t: "Ionization Smoke Detector",
+    d: "A tiny radioactive source ionizes air; smoke particles disturb the current &rarr; alarm. Fastest for FLAMING, fast-burning fires with small particles; weaker on smolder; prone to cooking-steam false alarms.",
+    x: "The wastebasket flash fire trips ionization seconds before photoelectric notices."
+  },
+  "Photo-electric": {
+    t: "Photoelectric Smoke Detector",
+    d: "A light beam in a chamber; SMOKE scatters the light onto the sensor &rarr; alarm. Best for SMOLDERING fires with large particles &mdash; exactly how electrical/cable fires start, hence the data-centre preference.",
+    x: "Smoldering wire insulation scatters the beam long before open flame."
+  },
+  "Dual": {
+    t: "Dual Smoke Detector",
+    d: "Ionization + photoelectric in ONE head: fast on flaming AND smoldering fires. The default recommendation when you can't predict the fire type.",
+    x: "Mixed-use floors deploy dual detectors to cover both fire profiles."
+  },
+  "Fire Suppression": {
+    t: "Fire Suppression",
+    d: "Kill one leg of the fire triangle: WATER removes heat, GAS removes/starves oxygen or breaks the chain reaction. Water where people work, gas where electronics live &mdash; and life safety governs every choice (evacuate before CO&#8322;!).",
+    x: "The office gets sprinklers; the server hall gets FM-200 with alarm-then-discharge delay."
+  },
+  "Water": {
+    t: "Water Suppression (Sprinklers)",
+    d: "The four pipe systems: WET (charged, instant, freeze-risk), DRY (air-filled until triggered &mdash; cold spaces), PRE-ACTION (two triggers &mdash; the data-centre pick against accidental discharge), DELUGE (all heads open, everything soaks).",
+    x: "Pre-action requires detector + heat-fused head before any water enters the room."
+  },
+  "Wet": {
+    t: "Wet Pipe Sprinklers",
+    d: "Pipes ALWAYS charged with water; each head fuses independently at temperature. Simplest, cheapest, most reliable &mdash; but any pipe/head failure leaks immediately and freezing bursts pipes.",
+    x: "Office towers standardize on wet pipe; one fused head over the fire discharges alone."
+  },
+  "Dry": {
+    t: "Dry Pipe Sprinklers",
+    d: "Pipes hold pressurized AIR; a head opening releases air, then the valve sends water. Delayed but freeze-proof &mdash; the choice for unheated warehouses, garages and loading docks.",
+    x: "The unheated loading dock's dry system can't burst in January."
+  },
+  "Pre-action": {
+    t: "Pre-Action Sprinklers",
+    d: "TWO independent events required: detection charges the pipes, then a head must still fuse to discharge. Minimizes accidental-discharge risk &mdash; THE water system for data centres and museums.",
+    x: "A knocked sprinkler head alone spills nothing; the pipes are still dry until a detector confirms fire."
+  },
+  "Deluge": {
+    t: "Deluge Systems",
+    d: "ALL heads OPEN; the deluge valve floods every head at once on detection. Maximum water for maximum hazard &mdash; fuel depots, chemical plants, aircraft hangars. Never where electronics or archives live.",
+    x: "The hangar's deluge drowns a fuel-spill fire across the entire floor in seconds."
+  },
+  "Gas": {
+    t: "Gaseous Suppression",
+    d: "Suppress WITHOUT water damage: inert gases (INERGEN, Argonite) drop oxygen below combustion; chemical agents (FM-200) pull heat/break the reaction. Halon's ozone-killing legacy is why these replacements exist. Evacuate before discharge.",
+    x: "The vault floods with FM-200; servers keep running, fire dies, no cleanup."
+  },
+  "INERGEN": {
+    t: "INERGEN (IG-541)",
+    d: "Inert blend of nitrogen, argon and CO&#8322; that lowers oxygen to ~12-14% &mdash; fire can't burn, people can still breathe briefly (the CO&#8322; fraction stimulates breathing). Zero ozone impact, no residue.",
+    x: "INERGEN discharge lets staff exit calmly while the fire suffocates."
+  },
+  "Argonite": {
+    t: "Argonite (IG-55)",
+    d: "50/50 nitrogen-argon inert blend &mdash; same oxygen-displacement principle as INERGEN, no residue, environmentally clean. Recognise both names as inert-gas agents.",
+    x: "The archive room's Argonite system suppresses without touching the manuscripts."
+  },
+  "FM-200": {
+    t: "FM-200 (HFC-227ea)",
+    d: "THE halon replacement: a chemical agent absorbing heat and interrupting combustion at ~7% concentration &mdash; safe for occupied spaces, no residue, discharge in ~10 seconds. The standard data-centre gas.",
+    x: "FM-200 knocks the fire down before the second rack even warms."
+  },
+  "Aero-K": {
+    t: "Aero-K",
+    d: "AEROSOL of micron-scale potassium compounds interrupting the flame's chain reaction &mdash; compact, no pressurized cylinders, minimal residue. Newer condensed-aerosol technology worth recognizing by name.",
+    x: "A small Aero-K unit protects the telecom cabinet where gas bottles won't fit."
+  },
+  "Extinguisher": {
+    t: "Fire Extinguishers (Classes)",
+    d: "Match the CLASS to the fuel: A common combustibles, B liquids, C ELECTRICAL, D metals, K kitchen oils. Wrong class can be lethal &mdash; water on electrical or grease spreads the disaster. PASS: Pull, Aim, Squeeze, Sweep.",
+    x: "A CO&#8322; (BC) extinguisher for the electrical panel; never the water can."
+  },
+  "co2": {
+    t: "CO₂ Suppression",
+    d: "Displaces OXYGEN entirely &mdash; excellent on electrical fires, LETHAL to people at suppressing concentrations. Unoccupied spaces only, with pre-discharge alarms and delays. The life-safety exam answer every time.",
+    x: "The cable vault's CO&#8322; system sounds a 30-second evacuation horn before flooding."
+  }
+});
+
+/* ===== Child-specific infographics =====================================
+   Parents keep their overview figure; every child box below gets its own
+   topic-specific diagram, generated with three small builders so the
+   visual style stays identical across the site. */
+(function () {
+  var G = window.AC_FIGS, D = window.AC_DETAILS;
+  function set(k, f) { if (D[k]) { D[k].f = f; } }
+
+  /* vertical rows, one highlighted */
+  function rows(title, items, hot, note) {
+    var rh = 26, top = 24, h = top + items.length * rh + (note ? 16 : 4);
+    var s = '<svg viewBox="0 0 330 ' + h + '" class="fig" role="img" aria-label="' + title.replace(/<[^>]*>/g, '') + '">';
+    s += '<text x="165" y="14" text-anchor="middle" fill="#f5f5f5" font-size="11" font-weight="700">' + title + '</text>';
+    items.forEach(function (it, i) {
+      var y = top + i * rh, hl = i === hot;
+      s += '<rect x="10" y="' + y + '" width="310" height="' + (rh - 4) + '" rx="4" fill="' + (hl ? '#3a0a0e' : '#161616') + '" stroke="' + (hl ? '#d31324' : '#a0303f') + '"' + (hl ? ' stroke-width="1.6"' : '') + '/>';
+      s += '<text x="16" y="' + (y + 15) + '" font-size="7.6" fill="#e0e0e0"><tspan fill="' + (hl ? '#fff' : '#ff9ab0') + '" font-weight="700">' + it[0] + '</tspan>' + (it[1] ? ' &mdash; ' + it[1] : '') + '</text>';
+    });
+    if (note) { s += '<text x="165" y="' + (h - 5) + '" text-anchor="middle" fill="#a6a6a6" font-size="7">' + note + '</text>'; }
+    return s + '</svg>';
+  }
+
+  /* 2-4 columns, one highlighted */
+  function cols(title, items, hot, note) {
+    var n = items.length, gap = 6, w = (310 - gap * (n - 1)) / n;
+    var mx = 0; items.forEach(function (c) { if (c.length - 1 > mx) { mx = c.length - 1; } });
+    var ch = 26 + mx * 12 + 6, h = 24 + ch + (note ? 17 : 5);
+    var s = '<svg viewBox="0 0 330 ' + h + '" class="fig" role="img" aria-label="' + title.replace(/<[^>]*>/g, '') + '">';
+    s += '<text x="165" y="14" text-anchor="middle" fill="#f5f5f5" font-size="11" font-weight="700">' + title + '</text>';
+    items.forEach(function (c, i) {
+      var x = 10 + i * (w + gap), cx = x + w / 2, hl = i === hot;
+      s += '<rect x="' + x + '" y="24" width="' + w + '" height="' + ch + '" rx="7" fill="' + (hl ? '#3a0a0e' : '#161616') + '" stroke="' + (hl ? '#d31324' : '#a0303f') + '"' + (hl ? ' stroke-width="1.6"' : '') + '/>';
+      s += '<text x="' + cx + '" y="40" text-anchor="middle" font-size="7.8" font-weight="700" fill="' + (hl ? '#fff' : '#ff9ab0') + '">' + c[0] + '</text>';
+      for (var j = 1; j < c.length; j++) {
+        s += '<text x="' + cx + '" y="' + (40 + j * 12) + '" text-anchor="middle" font-size="6.9" fill="' + (j === c.length - 1 ? '#a6a6a6' : '#e0e0e0') + '">' + c[j] + '</text>';
+      }
+    });
+    if (note) { s += '<text x="165" y="' + (h - 5) + '" text-anchor="middle" fill="#a6a6a6" font-size="7">' + note + '</text>'; }
+    return s + '</svg>';
+  }
+
+  /* single-concept card */
+  function card(title, lines, ex) {
+    var h = 34 + lines.length * 13 + (ex ? 26 : 4);
+    var s = '<svg viewBox="0 0 330 ' + h + '" class="fig" role="img" aria-label="' + title.replace(/<[^>]*>/g, '') + '">';
+    s += '<rect x="10" y="4" width="310" height="2" rx="1" fill="#d31324"/>';
+    s += '<text x="165" y="20" text-anchor="middle" fill="#ff9ab0" font-size="10.5" font-weight="700">' + title + '</text>';
+    lines.forEach(function (ln, i) {
+      s += '<text x="165" y="' + (36 + i * 13) + '" text-anchor="middle" font-size="7.8" fill="#e0e0e0">' + ln + '</text>';
+    });
+    if (ex) {
+      var y = 34 + lines.length * 13;
+      s += '<rect x="10" y="' + y + '" width="310" height="20" rx="4" fill="#161616" stroke="#a0303f"/>';
+      s += '<text x="165" y="' + (y + 13) + '" text-anchor="middle" font-size="7.2" fill="#ffd27c">' + ex + '</text>';
+    }
+    return s + '</svg>';
+  }
+
+  /* ================= LAYOUT 5 — CLOUD FIGURES ================= */
+  var SVC = [
+    ["IaaS", "you manage the OS and up &mdash; most control, most work"],
+    ["PaaS", "provider runs the platform &mdash; you bring app + data"],
+    ["SaaS", "provider runs everything &mdash; you govern data, users, config"]
+  ];
+  set("Service Models", "c5svc"); G["c5svc"] = rows("Service Models &mdash; who manages what", SVC, -1, "responsibility shrinks downward &mdash; ACCOUNTABILITY never moves");
+  ["IaaS", "PaaS", "SaaS"].forEach(function (k, i) { G["c5svc" + i] = rows("Service Models &mdash; who manages what", SVC, i, "responsibility shrinks downward &mdash; ACCOUNTABILITY never moves"); set(k, "c5svc" + i); });
+
+  var DEP = [
+    ["PUBLIC", "shared with everyone", "cheapest &middot; most elastic", "logical isolation only"],
+    ["PRIVATE", "one organization", "most control &middot; costly", "easiest compliance"],
+    ["COMMUNITY", "shared mission group", "costs split", "common compliance"],
+    ["HYBRID", "private + public mix", "cloud bursting", "seams need securing"]
+  ];
+  set("Deployment Models", "c5dep"); G["c5dep"] = cols("Deployment Models &mdash; who shares it", DEP, -1);
+  [["Public", 0], ["Private", 1], ["Community", 2], ["cloud-hybrid", 3]].forEach(function (p) { G["c5dep" + p[1]] = cols("Deployment Models &mdash; who shares it", DEP, p[1]); set(p[0], "c5dep" + p[1]); });
+
+  var CHAR = [
+    ["On-Demand Self Service", "provision it yourself, no human at the provider"],
+    ["Broad Network Access", "reachable from anywhere, any client"],
+    ["Resource Pooling", "multi-tenant shared hardware &mdash; the security seam"],
+    ["Rapid Elasticity", "scales out AND back automatically"],
+    ["Measured Service", "metered pay-per-use &mdash; usage is visible"]
+  ];
+  set("cloud-characteristics", "c5ch"); G["c5ch"] = rows("NIST's Five Cloud Characteristics", CHAR, -1, "missing any one? then it isn't cloud (SP 800-145)");
+  ["On-Demand Self Service", "Broad Network Access", "Resource Pooling", "Rapid Elasticity", "Measured Service"].forEach(function (k, i) { G["c5ch" + i] = rows("NIST's Five Cloud Characteristics", CHAR, i, "missing any one? then it isn't cloud (SP 800-145)"); set(k, "c5ch" + i); });
+
+  var CMP = [
+    ["VIRTUAL MACHINE", "full guest OS", "strongest isolation", "risk: VM escape, sprawl"],
+    ["CONTAINERS", "share the host kernel", "light &amp; fast", "risk: kernel = shared fate"],
+    ["SERVERLESS", "just functions", "no OS to patch", "risk: IAM scope, injection"]
+  ];
+  set("Virtualized Compute", "c5cmp"); G["c5cmp"] = cols("Compute Abstraction Levels", CMP, -1, "less to manage &rarr; a different boundary to trust");
+  [["Virtual Machine", 0], ["Containers", 1], ["Serverless", 2]].forEach(function (p) { G["c5cmp" + p[1]] = cols("Compute Abstraction Levels", CMP, p[1]); set(p[0], "c5cmp" + p[1]); });
+
+  var HYP = [
+    ["TYPE 1 &mdash; BARE METAL", "runs on the hardware", "small attack surface", "ESXi, Hyper-V &mdash; production"],
+    ["TYPE 2 &mdash; HOSTED", "runs on a host OS", "inherits host's flaws", "VirtualBox &mdash; desktops/labs"]
+  ];
+  set("Hypervisor", "c5hyp"); G["c5hyp"] = cols("Hypervisor Types", HYP, -1, "compromise the hypervisor = compromise every guest");
+  G["c5ceng"] = card("Container Engine", ["the runtime isolating containers on one kernel", "(namespaces + cgroups) &mdash; Docker, containerd", "harden and patch it like a hypervisor"], "a runtime escape flaw exposes the whole host");
+  set("Container Engine", "c5ceng");
+
+  var IDP = [
+    ["LOCAL IdP", "identity stays on-prem (AD)", "you keep control &amp; burden", "outage stops cloud logins"],
+    ["CLOUD IdP", "identity hosted in cloud", "HA + MFA features built in", "its admins = crown jewels"]
+  ];
+  set("Identity Provider", "c5idp"); G["c5idp"] = cols("Where Identity Lives", IDP, -1);
+  set("idp-local", "c5idp0"); G["c5idp0"] = cols("Where Identity Lives", IDP, 0);
+  set("idp-cloud", "c5idp1"); G["c5idp1"] = cols("Where Identity Lives", IDP, 1);
+
+  var CID = [
+    ["Cloud", "accounts live only in the cloud &mdash; simple, a silo"],
+    ["Linked", "two separate accounts loosely joined &mdash; weakest"],
+    ["Synced", "on-prem accounts + hashes replicated up"],
+    ["Federated", "authentication stays home &mdash; SAML/OIDC redirect"]
+  ];
+  set("cloud-identity", "c5cid"); G["c5cid"] = rows("Cloud Identity Models", CID, -1, "know WHERE authentication actually happens in each");
+  [["ci-cloud", 0], ["Linked", 1], ["Synced", 2], ["Federated", 3]].forEach(function (p) { G["c5cid" + p[1]] = rows("Cloud Identity Models", CID, p[1], "know WHERE authentication actually happens in each"); set(p[0], "c5cid" + p[1]); });
+
+  var RLS = [
+    ["ACCOUNTABLE", "the CUSTOMER &mdash; data owner", "answers to regulators", "can NEVER be outsourced"],
+    ["RESPONSIBLE", "the PROVIDER &mdash; processor", "security OF the cloud", "line moves with model"]
+  ];
+  set("cloud-roles", "c5rls"); G["c5rls"] = cols("Shared Responsibility Split", RLS, -1, "you outsource work &mdash; never accountability");
+  set("Accountable", "c5rls0"); G["c5rls0"] = cols("Shared Responsibility Split", RLS, 0, "you outsource work &mdash; never accountability");
+  set("Responsible", "c5rls1"); G["c5rls1"] = cols("Shared Responsibility Split", RLS, 1, "you outsource work &mdash; never accountability");
+  G["c5con"] = card("Cloud Consumer", ["the org USING the service &mdash; owns identity,", "classification and configuration", "of everything the model leaves in its hands"], "no provider can classify your data for you");
+  set("Cloud Consumer", "c5con");
+  G["c5own"] = card("Owner / Controller", ["decides WHY and HOW data is processed", "sets classification, retention, lawful basis", "GDPR: the controller carries accountability"], "choosing to store EU PII in a SaaS CRM makes you controller");
+  set("owner-controller", "c5own");
+  G["c5prv"] = card("Cloud Provider / Processor", ["processes data ON BEHALF OF the controller", "bound by contract (DPA) and instructions", "proves controls via SOC 2 / ISO 27001"], "the vendor may not mine your data &mdash; processor only");
+  set("provider-processor", "c5prv");
+  G["c5brk"] = card("Cloud Broker", ["intermediary aggregating / integrating", "services across multiple providers", "adds a third party to your trust chain"], "one portal, one bill &mdash; one more contract to vet");
+  set("Cloud Broker", "c5brk");
+  G["c5aud"] = card("Cloud Auditor", ["independent examiner of provider controls", "produces the attestations you rely on", "SOC reports &middot; ISO certificates"], "a SOC 2 Type 2 substitutes for touring the data centre");
+  set("Cloud Auditor", "c5aud");
+
+  var PRT = [
+    ["SPML", "PROVISIONING accounts (SCIM is the modern kin)"],
+    ["SAML", "AUTHENTICATION assertions &mdash; enterprise web SSO"],
+    ["OpenID", "AUTHENTICATION on OAuth &mdash; proves WHO you are"],
+    ["OAuth", "AUTHORIZATION &mdash; delegated, scoped access; never authN"]
+  ];
+  set("cloud-protocols", "c5prt"); G["c5prt"] = rows("Identity Protocol Alphabet", PRT, -1, "which one does WHICH job = guaranteed exam question");
+  [["SPML", 0], ["SAML", 1], ["OpenID", 2], ["OAuth", 3]].forEach(function (p) { G["c5prt" + p[1]] = rows("Identity Protocol Alphabet", PRT, p[1], "which one does WHICH job = guaranteed exam question"); set(p[0], "c5prt" + p[1]); });
+
+  G["c5mig"] = card("Cloud Migration", ["plan the EXIT before you enter:", "data formats, egress costs, portability", "or accept vendor lock-in as the price"], "exit clause: full export in open formats within 30 days");
+  set("Migration", "c5mig");
+  G["c5dc"] = card("Data-Centric Security", ["the perimeter is gone &mdash; protection travels", "WITH the data: classification, encryption,", "rights management, DLP wherever it flows"], "the document is protected in SharePoint and on a phone alike");
+  set("Data Centric", "c5dc");
+  G["c5sla"] = card("SLA &mdash; the Contractual Teeth", ["availability &middot; RTO/RPO &middot; breach notice", "right to audit &middot; data return on exit", "if it isn't in the SLA, it isn't promised"], "99.95% uptime + 24-hour breach notification + penalties");
+  set("SLA", "c5sla");
+  G["c5for"] = card("Cloud Forensics", ["snapshots capture RAM + disk with no downtime", "but multi-tenancy and jurisdiction complicate it", "pre-negotiate forensic support in the contract"], "snapshot the VM, hash the export, analyse the copy");
+  set("cloud-forensics", "c5for");
+  G["c5art"] = card("Snapshot &middot; Virtual Disk &middot; Image", ["SNAPSHOT: point-in-time state incl. memory", "VIRTUAL DISK: the VMDK/VHD contents", "IMAGE: the template it launched from"], "hash them and keep chain of custody like any evidence");
+  set("vm-artifacts", "c5art");
+  G["c5dd"] = card("Cloud Data Destruction", ["you can't shred a drive you don't own", "and provider media is shared + replicated", "so destruction = destroying the KEYS"], "crypto-shredding is the only sanitization that spans replicas");
+  set("Data Destruction", "c5dd");
+  G["c5ce"] = card("Crypto Shredding / Crypto Erase", ["encrypt with keys YOU control, then", "destroy the keys &mdash; every copy, backup and", "replica becomes permanent ciphertext"], "one KMS key deletion 'erases' terabytes in every region");
+  set("crypto-erase", "c5ce");
+
+  /* ================= LAYOUT 6 — CRYPTO FUNDAMENTALS FIGURES ================= */
+  var CSV = [
+    ["Confidentiality", "encryption keeps it secret"],
+    ["Integrity", "hashing proves it unchanged"],
+    ["Authenticity", "MAC / signature proves the sender"],
+    ["Non-Repudiation", "asymmetric only &mdash; can't deny origin/delivery"],
+    ["Access Control", "no key, no data &mdash; enforced by math"]
+  ];
+  [["cs-confidentiality", 0], ["cs-integrity", 1], ["Authenticity", 2], ["nonrepudiation", 3], ["cs-access", 4]].forEach(function (p) {
+    G["c6sv" + p[1]] = rows("Five Cryptographic Services", CSV, p[1], "symmetric gives the first three &mdash; only ASYMMETRIC gives non-repudiation");
+    set(p[0], "c6sv" + p[1]);
+  });
+  set("eq-hashing", "c6sv1");
+  var OD = [
+    ["ORIGIN", "sender can't deny SENDING", "signed with sender's private key"],
+    ["DELIVERY", "receiver can't deny RECEIVING", "signed acknowledgement back"]
+  ];
+  set("Origin", "c6od0"); G["c6od0"] = cols("Non-Repudiation: Two Directions", OD, 0);
+  set("Delivery", "c6od1"); G["c6od1"] = cols("Non-Repudiation: Two Directions", OD, 1);
+
+  G["c6pt"] = card("Plaintext", ["the readable input before encryption", "plaintext &rarr; encrypt &rarr; ciphertext", "&rarr; decrypt &rarr; plaintext again"], "the email body before S/MIME wraps it");
+  set("Plaintext", "c6pt");
+  G["c6en"] = card("Encrypt", ["plaintext + algorithm + KEY = ciphertext", "the strength must live in the key,", "never in hiding the algorithm"], "AES-256-GCM: ciphertext plus authentication tag");
+  set("Encrypt", "c6en");
+  G["c6kv"] = card("Key / Cryptovariable", ["the ONLY secret in a modern system", "length sets brute-force work factor", "secrecy is everything (Kerckhoffs)"], "AES is public; your 256 bits are not");
+  set("cryptovariable", "c6kv");
+  G["c6de"] = card("Decrypt", ["ciphertext + the right key = plaintext", "symmetric: the SAME key", "asymmetric: the pair's OTHER key"], "the private key opens what the public key sealed");
+  set("Decrypt", "c6de");
+  G["c6kc"] = card("Key Clustering (weakness)", ["two DIFFERENT keys produce the", "same ciphertext from one plaintext", "&mdash; effectively shrinks the keyspace"], "an attacker needs either key, not one specific key");
+  set("Key clustering", "c6kc");
+  G["c6wf"] = card("Work Factor", ["time + resources needed to break it", "goal: work factor &gt; the data's useful life", "each key bit DOUBLES the brute-force cost"], "10-year secrets need crypto worth more than 10 years of attack");
+  set("Work factor", "c6wf");
+  G["c6iv"] = card("IV / Nonce", ["random or unique start value: identical", "plaintexts encrypt differently per message", "NEVER reuse a nonce with the same key"], "WEP's repeating 24-bit IVs are the cautionary tale");
+  set("iv-nonce", "c6iv");
+  var SHAN = [
+    ["CONFUSION", "key &harr; ciphertext link is intractable", "done by SUBSTITUTION (S-boxes)"],
+    ["DIFFUSION", "one plaintext bit spreads everywhere", "done by PERMUTATION (transposition)"]
+  ];
+  set("Confusion", "c6sh0"); G["c6sh0"] = cols("Shannon's Two Pillars", SHAN, 0, "their visible result = the avalanche effect");
+  set("Diffusion", "c6sh1"); G["c6sh1"] = cols("Shannon's Two Pillars", SHAN, 1, "their visible result = the avalanche effect");
+  G["c6av"] = card("Avalanche Effect", ["flip ONE input bit &rarr;", "about HALF the output bits change", "the visible proof of confusion + diffusion"], "SHA-256 of 'test' vs 'Test': no resemblance");
+  set("Avalanche", "c6av");
+
+  var HS = [
+    ["HIDDEN", "conceal that a message EXISTS", "steganography &middot; null cipher", "found = read"],
+    ["SCRAMBLED", "transform it &mdash; cryptography", "one-way or two-way", "found &ne; read"]
+  ];
+  set("Hidden", "c6hs0"); G["c6hs0"] = cols("Secret Writing: Two Roads", HS, 0);
+  set("scrambled", "c6hs1"); G["c6hs1"] = cols("Secret Writing: Two Roads", HS, 1);
+  G["c6st"] = card("Steganography", ["data hidden inside innocent carriers", "(image LSBs, audio, whitespace)", "defeats DETECTION, not decryption"], "the customer list leaves inside a holiday photo &mdash; DLP blind");
+  set("Steganography", "c6st");
+  G["c6nc"] = card("Null Cipher", ["plaintext hidden in plain sight inside", "a longer innocent message", "(e.g. first letter of every word)"], "'Nice Evening, Wonderful Sunset' &rarr; NEWS");
+  set("Null Cipher", "c6nc");
+  var OW = [
+    ["ONE-WAY", "hashing &mdash; no reverse exists", "integrity &middot; passwords &middot; signatures"],
+    ["TWO-WAY", "encryption &mdash; reversible with key", "symmetric or asymmetric"]
+  ];
+  set("One-way", "c6ow0"); G["c6ow0"] = cols("One-Way vs Two-Way", OW, 0);
+  set("Two-way", "c6ow1"); G["c6ow1"] = cols("One-Way vs Two-Way", OW, 1);
+
+  var HL = [
+    ["MD5", "128-bit &mdash; BROKEN (collisions since 2004)"],
+    ["SHA-1", "160-bit &mdash; BROKEN (SHAttered 2017)"],
+    ["SHA-2", "256/512-bit &mdash; today's workhorse"],
+    ["SHA-3", "Keccak sponge &mdash; the different-math hedge"]
+  ];
+  set("Hashing", "c6hl"); G["c6hl"] = rows("Hash Family Status Board", HL, -1, "properties: one-way &middot; fixed length &middot; collision resistant &middot; avalanche");
+  [["MD5", 0], ["SHA-1", 1], ["SHA-2", 2], ["SHA-3", 3]].forEach(function (p) { G["c6hl" + p[1]] = rows("Hash Family Status Board", HL, p[1]); set(p[0], "c6hl" + p[1]); });
+
+  var SA = [
+    ["SYMMETRIC", "ONE shared key", "fast &mdash; bulk data", "n(n-1)/2 keys &middot; no non-repud."],
+    ["ASYMMETRIC", "public + private PAIR", "~1000&times; slower", "2n keys &middot; signatures possible"]
+  ];
+  set("Symmetric", "c6sa0"); G["c6sa0"] = cols("Symmetric vs Asymmetric", SA, 0, "real systems use BOTH: asymmetric handshake, symmetric bulk");
+  set("Asymmetric", "c6sa1"); G["c6sa1"] = cols("Symmetric vs Asymmetric", SA, 1, "real systems use BOTH: asymmetric handshake, symmetric bulk");
+  var BS = [
+    ["BLOCK", "fixed-size chunks (AES: 128-bit)", "rounds of substitute + permute", "mode choice matters (ECB!)"],
+    ["STREAM", "bit-by-bit keystream XOR", "fast, low latency", "NEVER reuse the keystream"]
+  ];
+  set("Block", "c6bs0"); G["c6bs0"] = cols("Block vs Stream", BS, 0);
+  set("Stream", "c6bs1"); G["c6bs1"] = cols("Block vs Stream", BS, 1);
+
+  var ALG = [
+    ["DES", "56-bit &mdash; dead since 1998 (Deep Crack)"],
+    ["3DES", "EDE &asymp;112-bit &mdash; retired 2023, use AES"],
+    ["AES (Rijndael)", "128/192/256 &mdash; THE standard answer"],
+    ["CAST-128", "64-bit blocks &mdash; old PGP cipher"],
+    ["SAFER", "the Bluetooth-pairing family (SAFER+)"],
+    ["Blowfish", "448-bit keys &mdash; lives on inside bcrypt"],
+    ["Twofish", "AES finalist &mdash; the 'almost-AES'"],
+    ["RC5 / RC6", "data-dependent rotations; RC6 = finalist"],
+    ["RC4", "STREAM cipher &mdash; prohibited (RFC 7465)"]
+  ];
+  [["DES", 0], ["3DES", 1], ["aes", 2], ["CAST-128", 3], ["SAFER", 4], ["Blowfish", 5], ["Twofish", 6], ["rc56", 7], ["RC4", 8]].forEach(function (p) {
+    G["c6al" + p[1]] = rows("Symmetric Cipher Roster", ALG, p[1]);
+    set(p[0], "c6al" + p[1]);
+  });
+
+  var MOD = [
+    ["ECB", "independent blocks &mdash; patterns SURVIVE. Never use"],
+    ["CBC", "XOR with previous block + IV &mdash; serial; padding oracles"],
+    ["CFB", "self-syncing stream from prior ciphertext"],
+    ["OFB", "precomputable keystream &mdash; errors don't propagate"],
+    ["CTR", "nonce+counter &mdash; parallel, modern (&rarr; GCM)"]
+  ];
+  [["ecb", 0], ["cbc", 1], ["cfb", 2], ["ofb", 3], ["ctr", 4]].forEach(function (p) {
+    G["c6md" + p[1]] = rows("Block Cipher Modes", MOD, p[1], "the ECB penguin is the reason mode choice matters");
+    set(p[0], "c6md" + p[1]);
+  });
+
+  var AF = [
+    ["FACTORING", "product of two primes", "RSA lives here", "Shor's algorithm looms"],
+    ["DISCRETE LOG", "g^x mod p is one-way", "DH &middot; El Gamal &middot; DSA &middot; ECC", "curves shrink the keys"]
+  ];
+  set("sw-factoring", "c6af0"); G["c6af0"] = cols("Asymmetric Hard Problems", AF, 0);
+  set("Discrete Log", "c6af1"); G["c6af1"] = cols("Asymmetric Hard Problems", AF, 1);
+  G["c6rsa"] = card("RSA", ["factoring-based &mdash; encrypts AND signs", "2048-bit minimum today", "slow: wraps session keys, not bulk data"], "classic TLS: RSA carries the AES session key");
+  set("RSA", "c6rsa");
+  G["c6dh"] = card("Diffie-Hellman", ["derive a SHARED SECRET over a public channel", "agreement, NOT authentication &mdash; raw DH falls to MITM", "ephemeral (DHE/ECDHE) adds forward secrecy"], "TLS runs ECDHE so recorded traffic stays dead after key theft");
+  set("Diffie-Hellmann", "c6dh");
+  G["c6ecc"] = card("Elliptic Curve (ECC)", ["discrete log on curves &mdash; same strength,", "far smaller keys (ECC-256 &asymp; RSA-3072)", "the mobile / IoT / modern-TLS choice"], "your phone's handshakes: ECDHE + ECDSA");
+  set("ecc", "c6ecc");
+  G["c6eg"] = card("El Gamal", ["discrete-log ENCRYPTION from DH", "drawback the exam loves:", "ciphertext &asymp; DOUBLE the plaintext size"], "GnuPG's El Gamal keys show the message expansion");
+  set("El Gamal", "c6eg");
+  G["c6dsa"] = card("DSA", ["NIST's discrete-log SIGNATURE-ONLY standard", "signs and verifies &mdash; never encrypts", "trap: 'encrypt with DSA' is impossible"], "modern practice: ECDSA / Ed25519 instead");
+  set("DSA", "c6dsa");
+
+  var SUB = [
+    ["Caesar", "fixed shift &mdash; 25 keys, brute-force by hand"],
+    ["Monoalphabetic", "one alphabet &mdash; frequency analysis kills it"],
+    ["Polyalphabetic", "rotating alphabets (Vigen&egrave;re) &mdash; flattens frequencies"],
+    ["Running", "book-text key &mdash; long but statistical"],
+    ["One-time Pad", "random &middot; as long &middot; used once &middot; secret = UNBREAKABLE"]
+  ];
+  set("Substitution", "c6su"); G["c6su"] = rows("Substitution Ladder", SUB, -1, "each step fixes the last one's weakness");
+  [["caesar", 0], ["Monoalphabetic", 1], ["Polyalphabetic", 2], ["Running", 3], ["One-time Pads", 4]].forEach(function (p) { G["c6su" + p[1]] = rows("Substitution Ladder", SUB, p[1], "each step fixes the last one's weakness"); set(p[0], "c6su" + p[1]); });
+  var TRA = [
+    ["SPARTAN SCYTALE", "strip wrapped on a rod", "rod diameter = the key"],
+    ["RAIL FENCE", "zigzag across N rails", "rail count = the key"]
+  ];
+  set("Transposition", "c6tr"); G["c6tr"] = cols("Transposition Ciphers", TRA, -1, "letters keep identity, lose position &mdash; frequencies look normal");
+  set("Spartan Scytale", "c6tr0"); G["c6tr0"] = cols("Transposition Ciphers", TRA, 0);
+  set("rail-fence", "c6tr1"); G["c6tr1"] = cols("Transposition Ciphers", TRA, 1);
+
+  /* ================= LAYOUT 7 — PKI FIGURES ================= */
+  G["dsflow"] = '<svg viewBox="0 0 330 132" class="fig" role="img" aria-label="Digital signature flow">'
+    + '<text x="165" y="13" text-anchor="middle" fill="#f5f5f5" font-size="11" font-weight="700">Digital Signature &mdash; Sign Private, Verify Public</text>'
+    + '<rect x="8" y="24" width="70" height="34" rx="6" fill="#161616" stroke="#a0303f"/><text x="43" y="39" text-anchor="middle" fill="#ff9ab0" font-size="7.4" font-weight="700">MESSAGE</text><text x="43" y="51" text-anchor="middle" fill="#e0e0e0" font-size="6.6">any size</text>'
+    + '<rect x="94" y="24" width="70" height="34" rx="6" fill="#161616" stroke="#a0303f"/><text x="129" y="39" text-anchor="middle" fill="#ff9ab0" font-size="7.4" font-weight="700">HASH</text><text x="129" y="51" text-anchor="middle" fill="#e0e0e0" font-size="6.6">fixed digest</text>'
+    + '<rect x="180" y="24" width="140" height="34" rx="6" fill="#3a0a0e" stroke="#d31324"/><text x="250" y="39" text-anchor="middle" fill="#fff" font-size="7.4" font-weight="700">ENCRYPT DIGEST with</text><text x="250" y="51" text-anchor="middle" fill="#ffd27c" font-size="7">sender&apos;s PRIVATE key = signature</text>'
+    + '<path d="M78 41 L94 41 M164 41 L180 41" stroke="#d31324" stroke-width="1.5"/>'
+    + '<rect x="8" y="72" width="312" height="30" rx="6" fill="#161616" stroke="#a0303f"/>'
+    + '<text x="164" y="85" text-anchor="middle" fill="#e0e0e0" font-size="7.4">receiver: decrypt signature with sender&apos;s <tspan fill="#ff9ab0" font-weight="700">PUBLIC key</tspan>, re-hash the message, compare</text>'
+    + '<text x="164" y="96" text-anchor="middle" fill="#a6a6a6" font-size="6.8">match &rArr; integrity + authenticity + NON-REPUDIATION</text>'
+    + '<text x="165" y="122" text-anchor="middle" fill="#ffd27c" font-size="7.2" font-weight="700">drill it: SIGN = private &middot; VERIFY = public (encryption is the reverse)</text></svg>';
+  set("Digital Signatures", "dsflow");
+  G["c7dsi"] = card("Integrity via Signature", ["the signature covers the message HASH", "change one bit &rarr; verification fails", "tamper-evidence comes free with every signature"], "the altered invoice no longer matches its signed digest");
+  set("ds-integrity", "c7dsi");
+
+  G["pkichain"] = '<svg viewBox="0 0 330 138" class="fig" role="img" aria-label="PKI chain of trust">'
+    + '<text x="165" y="13" text-anchor="middle" fill="#f5f5f5" font-size="11" font-weight="700">PKI &mdash; Chain of Trust</text>'
+    + '<rect x="100" y="22" width="130" height="26" rx="6" fill="#3a0a0e" stroke="#d31324"/><text x="165" y="34" text-anchor="middle" fill="#fff" font-size="7.6" font-weight="700">ROOT CA (offline)</text><text x="165" y="44" text-anchor="middle" fill="#e0e0e0" font-size="6.4">self-signed &middot; in every trust store</text>'
+    + '<path d="M165 48 L165 58" stroke="#d31324" stroke-width="1.5"/>'
+    + '<rect x="100" y="58" width="130" height="26" rx="6" fill="#161616" stroke="#a0303f"/><text x="165" y="70" text-anchor="middle" fill="#ff9ab0" font-size="7.6" font-weight="700">INTERMEDIATE CA</text><text x="165" y="80" text-anchor="middle" fill="#e0e0e0" font-size="6.4">does the daily issuing &middot; revocable</text>'
+    + '<path d="M165 84 L165 94" stroke="#d31324" stroke-width="1.5"/>'
+    + '<rect x="100" y="94" width="130" height="26" rx="6" fill="#161616" stroke="#a0303f"/><text x="165" y="106" text-anchor="middle" fill="#ff9ab0" font-size="7.6" font-weight="700">END-ENTITY CERT</text><text x="165" y="116" text-anchor="middle" fill="#e0e0e0" font-size="6.4">your server / user / code cert</text>'
+    + '<rect x="8" y="58" width="80" height="26" rx="6" fill="#161616" stroke="#a0303f"/><text x="48" y="70" text-anchor="middle" fill="#ff9ab0" font-size="7" font-weight="700">RA</text><text x="48" y="80" text-anchor="middle" fill="#e0e0e0" font-size="6.2">vets identity, never signs</text>'
+    + '<path d="M88 71 L100 71" stroke="#a0303f" stroke-width="1.2" stroke-dasharray="3 2"/>'
+    + '<rect x="242" y="58" width="80" height="26" rx="6" fill="#161616" stroke="#a0303f"/><text x="282" y="70" text-anchor="middle" fill="#ff9ab0" font-size="7" font-weight="700">CERT DB</text><text x="282" y="80" text-anchor="middle" fill="#e0e0e0" font-size="6.2">status &rarr; CRL / OCSP</text>'
+    + '<path d="M230 71 L242 71" stroke="#a0303f" stroke-width="1.2" stroke-dasharray="3 2"/>'
+    + '<text x="165" y="132" text-anchor="middle" fill="#a6a6a6" font-size="6.8">root compromise = game over (DigiNotar) &mdash; that&apos;s why roots stay offline</text></svg>';
+  set("ca-root", "pkichain");
+  set("intermediate-ca", "pkichain");
+
+  G["c7dc"] = card("Digital Certificates", ["a CA-signed binding: identity &harr; public key", "trust the CA &rArr; trust everything it signs", "X.509 v3 is the format"], "the browser padlock = a chain validating to a trusted root");
+  set("Digital Certificates", "c7dc");
+  G["c7vo"] = card("Verify the Owner of a Public Key", ["a public key alone proves NOTHING about", "who holds it &mdash; certificates solve exactly this", "by having a trusted CA vouch for the binding"], "without certs, 'the bank's key' could be anyone's");
+  set("verify-owner", "c7vo");
+  G["c7x509"] = card("X.509", ["the standard certificate format:", "subject &middot; issuer &middot; validity &middot; public key", "extensions (SANs, key usage) &middot; CA signature"], "openssl x509 -text shows every field");
+  set("X.509", "c7x509");
+  G["c7rep"] = card("Certificate Replacement", ["certificates EXPIRE by design &mdash;", "short lifetimes cap silent-compromise damage", "automate renewal or inherit outages"], "public TLS caps at 398 days; ACME renews every 90");
+  set("Replacement", "c7rep");
+  var REV = [
+    ["CRL", "download the signed blacklist", "simple &middot; STALE between updates", "grows large"],
+    ["OCSP", "ask about ONE serial, live", "fresh &middot; adds latency + privacy leak", "fixed by STAPLING"]
+  ];
+  set("Revocation", "c7rev"); G["c7rev"] = cols("Revocation Checking", REV, -1, "kill a cert BEFORE expiry &mdash; key leak, role change, mis-issue");
+  set("CRL", "c7rev0"); G["c7rev0"] = cols("Revocation Checking", REV, 0);
+  set("OCSP", "c7rev1"); G["c7rev1"] = cols("Revocation Checking", REV, 1, "stapling: the server hands over its own fresh signed proof");
+  G["c7pin"] = card("Certificate Pinning", ["the client hard-codes WHICH cert/key to accept", "beats rogue-CA MITM &mdash; even 'valid' certs fail", "cost: brittle when keys rotate"], "the banking app pins its backend; inspection proxies break it by design");
+  set("Pinning", "c7pin");
+  G["c7ra"] = card("Registration Authority", ["the vetting desk: verifies IDENTITY", "before issuance &mdash; approves requests", "the CA signs; the RA never does"], "EV cert: RA checks company papers, then the CA issues");
+  set("Registration Authority", "c7ra");
+  G["c7db"] = card("Certificate Database", ["the CA's authoritative issued-and-status record", "&mdash; the source feeding CRLs and OCSP", "its integrity equals the signing key's"], "tamper it and a stolen cert becomes 'un-revoked'");
+  set("cert-db", "c7db");
+  G["c7cs"] = card("Certificate Store (Local)", ["each device's trust store of root CAs", "control it and you control what's trusted", "a rogue root = silent TLS interception"], "corp proxies add their root to inspect HTTPS; malware copies the trick");
+  set("cert-store", "c7cs");
+  G["c7kk"] = card("Kerckhoffs' Principle", ["the system stays secure with EVERYTHING", "public except the KEY", "obscurity is not a control"], "AES's spec is public &mdash; that's a feature, not a leak");
+  set("kerckhoff", "c7kk");
+
+  var KLC = [
+    ["Generation", "CSPRNG / HSM randomness &mdash; weak entropy poisons all"],
+    ["Distribution", "DH &middot; out-of-band &middot; hybrid wrap"],
+    ["Storage", "TPM on devices &middot; HSM in the DC"],
+    ["Rotation", "limit each key's cryptoperiod"],
+    ["Disposition", "archive under escrow or destroy verifiably"],
+    ["Recovery", "escrow &middot; split knowledge &middot; dual control"]
+  ];
+  [["Generation", 0], ["Distribution", 1], ["Storage", 2], ["Rotation", 3], ["Disposition", 4], ["Recovery", 5]].forEach(function (p) {
+    G["c7kl" + p[1]] = rows("Key Lifecycle", KLC, p[1], "every stage is an attack surface &mdash; manage all six");
+    set(p[0], "c7kl" + p[1]);
+  });
+  G["c7ob"] = card("Out-of-Band Distribution", ["move the key on a DIFFERENT channel", "than the data &mdash; courier, phone, in person", "secure but unscalable"], "the Wi-Fi password arrives by SMS, not over the WLAN");
+  set("Out-of-band", "c7ob");
+  G["c7hy"] = card("Hybrid Distribution", ["asymmetric wraps a symmetric session key,", "symmetric carries the bulk &mdash;", "the pattern that runs the whole internet"], "every TLS connection: ECDHE handshake &rarr; AES-GCM session");
+  set("kd-hybrid", "c7hy");
+  var HW = [
+    ["TPM", "chip ON the device", "sealed keys &middot; measured boot", "binds crypto to the platform"],
+    ["HSM", "dedicated appliance", "tamper-responsive &middot; FIPS 140", "keys never leave the boundary"]
+  ];
+  set("TPM", "c7hw0"); G["c7hw0"] = cols("Hardware Key Protection", HW, 0, "BitLocker seals to the TPM; CA roots live in HSMs");
+  set("HSM", "c7hw1"); G["c7hw1"] = cols("Hardware Key Protection", HW, 1, "BitLocker seals to the TPM; CA roots live in HSMs");
+  G["c7csh"] = card("Crypto-Shredding", ["destroy the KEY &rarr; all data under it", "is permanently unreadable everywhere", "sanitization by mathematics"], "one key deletion erases every replica and backup at once");
+  set("Crypto-shredding", "c7csh");
+  G["c7kdz"] = card("Key Destruction", ["verified, unrecoverable elimination:", "HSM zeroization, documented + witnessed", "the proof auditors ask to see"], "the HSM zeroizes instantly on tamper detection");
+  set("Key Destruction", "c7kdz");
+  var SKDC = [
+    ["SPLIT KNOWLEDGE", "no one KNOWS it all", "the secret is divided", "e.g. 3-of-5 key shares"],
+    ["DUAL CONTROL", "no one ACTS alone", "the action needs two people", "two cards, two PINs, together"]
+  ];
+  set("Split Knowledge", "c7sk0"); G["c7sk0"] = cols("Split Knowledge vs Dual Control", SKDC, 0, "divide the SECRET vs divide the ACTION &mdash; know the difference cold");
+  set("Dual Control", "c7sk1"); G["c7sk1"] = cols("Split Knowledge vs Dual Control", SKDC, 1, "divide the SECRET vs divide the ACTION &mdash; know the difference cold");
+  G["c7ke"] = card("Key Escrow", ["keys deposited with a third party,", "recoverable under defined conditions", "insurance &mdash; and a juicy target (Clipper Chip)"], "court-ordered recovery works; so might an attacker who owns the escrow");
+  set("Key Escrow", "c7ke");
+
+  /* ================= LAYOUT 8 — CRYPTANALYSIS FIGURES ================= */
+  var CAT = [
+    ["Brute Force", "try every key &mdash; key length is the defence"],
+    ["Ciphertext Only", "just intercepts &mdash; weakest position"],
+    ["Known Plaintext", "has plaintext&ndash;ciphertext pairs (cribs)"],
+    ["Chosen Plaintext", "gets chosen inputs encrypted (oracle)"],
+    ["Chosen Ciphertext", "gets decryptions too &mdash; strongest attacker"],
+    ["Linear &amp; Differential", "the academic block-cipher artillery"],
+    ["Factoring", "break RSA's modulus into p &times; q"]
+  ];
+  set("cryptanalytic-attacks", "c8ca"); G["c8ca"] = rows("Cryptanalytic Attack Ladder", CAT, -1, "ranked by what the attacker HAS &mdash; that ranking is the exam question");
+  [["Brute Force", 0], ["Ciphertext Only", 1], ["Known Plaintext", 2], ["Chosen Plaintext", 3], ["Chosen Ciphertext", 4], ["linear-differential", 5], ["ca-factoring", 6]].forEach(function (p) {
+    G["c8ca" + p[1]] = rows("Cryptanalytic Attack Ladder", CAT, p[1], "ranked by what the attacker HAS");
+    set(p[0], "c8ca" + p[1]);
+  });
+
+  var CGA = [
+    ["Man-in-the-middle", "sit between &mdash; beaten by authentication"],
+    ["Replay", "resend a valid message &mdash; beaten by freshness"],
+    ["Pass the Hash", "the hash IS the credential (NTLM)"],
+    ["Temporary Files", "plaintext lingers in swap / temp / dumps"],
+    ["Implementation", "break the code, not the cipher (Heartbleed)"],
+    ["Dictionary", "try LIKELY passwords &mdash; humans pick words"],
+    ["Rainbow Tables", "precomputed hashes &mdash; SALT kills them"],
+    ["Birthday", "collisions in 2^(n/2) &mdash; killed MD5/SHA-1"]
+  ];
+  set("cryptographic-attacks", "c8cg"); G["c8cg"] = rows("Implementation &amp; People Attacks", CGA, -1, "crypto fails AROUND the algorithm, rarely through it");
+  [["mitm", 0], ["Replay", 1], ["Pass the Hash", 2], ["Temporary Files", 3], ["Implementation", 4], ["Dictionary Attack", 5], ["Rainbow Tables", 6], ["Birthday Attack", 7]].forEach(function (p) {
+    G["c8cg" + p[1]] = rows("Implementation &amp; People Attacks", CGA, p[1]);
+    set(p[0], "c8cg" + p[1]);
+  });
+
+  var SCH = [
+    ["POWER", "key bits in the power draw", "SPA / DPA &mdash; smart-card killer"],
+    ["TIMING", "secrets in the microseconds", "fix: constant-time code"],
+    ["RADIATION", "EM emanations at a distance", "van Eck / TEMPEST"]
+  ];
+  set("Side Channel", "c8sc"); G["c8sc"] = cols("Side Channels &mdash; Physical Leakage", SCH, -1, "non-invasive, invisible to logs &mdash; the math is never touched");
+  set("sc-power", "c8sc0"); G["c8sc0"] = cols("Side Channels &mdash; Physical Leakage", SCH, 0);
+  set("sc-timing", "c8sc1"); G["c8sc1"] = cols("Side Channels &mdash; Physical Leakage", SCH, 1);
+  set("Radiation Emissions", "c8sc2"); G["c8sc2"] = cols("Side Channels &mdash; Physical Leakage", SCH, 2);
+
+  var SE = [
+    ["PURCHASE KEY", "bribe / buy the secret", "cheaper than cracking", "split knowledge = no one to buy"],
+    ["RUBBER HOSE", "coercion &mdash; force or law", "no algorithm resists it", "the $5 wrench beats the math"]
+  ];
+  set("Social Engineering", "c8se"); G["c8se"] = cols("Attacking the Human", SE, -1, "usually the cheapest attack in the entire stack");
+  set("Purchase Key", "c8se0"); G["c8se0"] = cols("Attacking the Human", SE, 0);
+  set("Rubber Hose", "c8se1"); G["c8se1"] = cols("Attacking the Human", SE, 1);
+
+  /* ================= LAYOUT 9 — PHYSICAL SECURITY FIGURES ================= */
+  G["c9sp"] = card("Safety of People", ["human life outranks EVERY asset, always", "door failure modes, suppression agents,", "evacuation &mdash; all answered people-first"], "fail-SAFE doors unlock in a fire even though assets get exposed");
+  set("safety-people", "c9sp");
+  var PFN = [
+    ["Deter", "convince them not to try &mdash; fence, lights, signs"],
+    ["Delay", "slow them down &mdash; locks, barriers; delay &gt; response time"],
+    ["Detect", "know it's happening &mdash; PIR, contacts, analytics"],
+    ["Assess", "verify what it is &mdash; cameras, guards; kill false alarms"],
+    ["Respond", "end it &mdash; guards, lockdown, police"]
+  ];
+  set("phys-categories", "c9fn"); G["c9fn"] = rows("Control Functions &mdash; the attacker's timeline", PFN, -1, "no control does all five &mdash; the LAYERS do");
+  [["Deter", 0], ["Delay", 1], ["Detect", 2], ["Assess", 3], ["Respond", 4]].forEach(function (p) {
+    G["c9fn" + p[1]] = rows("Control Functions &mdash; the attacker's timeline", PFN, p[1]);
+    set(p[0], "c9fn" + p[1]);
+  });
+  var PLD = [
+    ["Perimeter", "fence &middot; gates &middot; bollards &middot; CPTED"],
+    ["Building shell", "walls &middot; windows &middot; hardened doors"],
+    ["Interior zones", "badges &middot; mantraps &middot; locked areas"],
+    ["The asset", "cage &middot; safe &middot; rack lock &middot; encryption"]
+  ];
+  set("Layered Defense", "c9ld"); G["c9ld"] = rows("Physical Layers &mdash; outside in", PLD, -1, "each ring deters, delays and detects &mdash; one failure reaches nothing");
+  G["c9pm"] = card("Perimeter", ["the outermost ring: fences, gates, bollards", "~1m deters casual, ~2m+ barbed deters determined", "bollards stop the vehicle attack"], "8-foot fence + three-strand barbed wire = controlled facility");
+  set("Perimeter", "c9pm");
+  G["c9lsc"] = card("Landscape (CPTED)", ["design the environment against crime:", "clear sightlines, no concealment near entries,", "natural surveillance and territoriality"], "low thorny shrubs under windows &mdash; no cover, painful to try");
+  set("Landscape", "c9lsc");
+  G["c9gr"] = card("Grading", ["slope the land AWAY from the building", "&mdash; water drains off (flood control)", "and no terrain advantage near walls"], "a site graded toward the dock floods the server room");
+  set("Grading", "c9gr");
+  G["c9cam"] = card("Cameras (CCTV)", ["deter + detect + ASSESS in one control", "value depends on placement, retention,", "and someone actually watching"], "the mantrap camera matches the face to the badge");
+  set("Cameras", "c9cam");
+  G["c9pir"] = card("Passive Infrared (PIR)", ["motion via moving HEAT signatures", "passive &mdash; emits nothing itself", "tune against pets, drafts, hot windows"], "the corridor PIR trips on any warm body after hours");
+  set("pir", "c9pir");
+  G["c9lt"] = card("Lighting", ["cheapest deterrent; enables cameras &amp; guards", "exam numbers: ~8 ft high, 2 foot-candles", "even coverage &mdash; shadows are corridors"], "glare pointed outward blinds intruders, not your cameras");
+  set("Lighting", "c9lt");
+  G["c9bd"] = card("Card Readers / Badges", ["electronic access + audit trail per door", "threats: cloning (125 kHz), tailgating, loss", "critical doors: badge + PIN/biometric"], "a cloned prox card opens it; challenge-response smart cards don't clone");
+  set("badges", "c9bd");
+  G["c9mt"] = card("Doors / Mantraps", ["two interlocked doors &mdash; second opens", "only after the first closes: ONE person per cycle", "THE control against tailgating/piggybacking"], "the vestibule traps the tailgater between doors");
+  set("mantraps", "c9mt");
+  var LCK = [
+    ["MECHANICAL", "no power, no logs", "picking &middot; bumping &middot; key copies", "restricted keyways help"],
+    ["DIGITAL", "logs + instant revocation", "default codes &middot; replay &middot; power", "define fail-safe vs fail-secure"]
+  ];
+  set("Locks", "c9lk"); G["c9lk"] = cols("Locks &mdash; the classic delay control", LCK, -1, "every lock yields to time &mdash; its job is buying detection time");
+  set("lock-mechanical", "c9lk0"); G["c9lk0"] = cols("Locks &mdash; the classic delay control", LCK, 0);
+  set("lock-digital", "c9lk1"); G["c9lk1"] = cols("Locks &mdash; the classic delay control", LCK, 1);
+  G["c9wn"] = card("Windows", ["the shell's weakest points &mdash; know the glass:", "tempered, LAMINATED (holds when shattered),", "wired, polycarbonate, security film"], "laminated glass stays in the frame after the brick");
+  set("Windows", "c9wn");
+  var WSN = [
+    ["SHOCK", "feels the IMPACT vibration", "alarms on the attempt itself"],
+    ["GLASSBREAK", "hears the break frequency", "one unit covers a whole room"]
+  ];
+  set("Shock", "c9ws0"); G["c9ws0"] = cols("Window Sensors", WSN, 0, "contact catches the opened window; these catch the smashed one");
+  set("Glassbreak", "c9ws1"); G["c9ws1"] = cols("Window Sensors", WSN, 1, "contact catches the opened window; these catch the smashed one");
+  G["c9wl"] = card("Walls", ["true barriers run SLAB-TO-SLAB", "partition walls ending at drop ceilings", "let intruders climb over through the plenum"], "the 'secure' room is one ceiling tile away from open");
+  set("Walls", "c9wl");
+  G["c9sk"] = card("Skimming", ["rogue hardware on legitimate readers", "harvesting cards + PINs (ATM, badge, fuel)", "counter: inspection, tamper-evidence, chip"], "an overlay on the garage reader captures a week of badges");
+  set("Skimming", "c9sk");
+  G["c9inf"] = card("Infrastructure", ["availability's physical layer:", "network runs, POWER and HVAC", "a firewall can't route around a cooked room"], "the 'incident' was a failed CRAC unit, not a hacker");
+  set("Infrastructure", "c9inf");
+  G["c9nw"] = card("Network (Physical)", ["locked closets, conduit, no public jacks", "access to the wire = tap, inject or cut", "encryption is the compensating control"], "an unlocked IDF lets anyone bridge a rogue AP to the core");
+  set("phys-network", "c9nw");
+  var PWR = [
+    ["UPS", "battery bridge &mdash; seconds to minutes"],
+    ["Generator", "hours to days &mdash; limited by FUEL; test under load"],
+    ["Outages", "FAULT (momentary) &middot; BLACKOUT (prolonged)"],
+    ["Degradation", "SAG/BROWNOUT low &middot; SPIKE/SURGE high"]
+  ];
+  set("phys-power", "c9pw"); G["c9pw"] = rows("Power Protection Stack", PWR, -1, "condition the quality, bridge the gap, outlast the outage");
+  set("UPS", "c9pw0"); G["c9pw0"] = rows("Power Protection Stack", PWR, 0);
+  set("Generator", "c9pw1"); G["c9pw1"] = rows("Power Protection Stack", PWR, 1);
+  set("outages", "c9pw2"); G["c9pw2"] = rows("Power Protection Stack", PWR, 2);
+  set("degradation", "c9pw3"); G["c9pw3"] = rows("Power Protection Stack", PWR, 3, "momentary vs prolonged &times; low vs high = the four exam words");
+  G["c9hv"] = card("HVAC", ["availability for electronics AND people", "POSITIVE pressurization keeps contaminants out", "dedicated + monitored for data centres"], "positive pressure pushes smoke OUT the opened door");
+  set("HVAC", "c9hv");
+  G["c9tp"] = card("Temperature", ["steady cool &mdash; ~20-25&deg;C classic guidance", "heat kills: monitor at rack level, alert on trends", "hot-aisle / cold-aisle containment"], "the failed CRAC cooks top-of-rack switches first");
+  set("Temperature", "c9tp");
+  G["c9hu"] = card("Humidity", ["the 40-60% band (classic: 45-55%)", "too LOW &rarr; static discharge zaps chips", "too HIGH &rarr; condensation and corrosion"], "a dry winter room delivers 20 kV static pops");
+  set("Humidity", "c9hu");
+  G["c9aq"] = card("Air Quality", ["dust clogs cooling &rarr; thermal failure", "corrosive gases eat contacts", "filtration + positive pressure + sealing"], "construction next door triples fan failures in a quarter");
+  set("Air Quality", "c9aq");
+  var FDET = [
+    ["FLAME (IR)", "sees the flicker", "instant on open fire", "blind to smolder"],
+    ["SMOKE", "catches particles", "ionization / photo-electric / dual", "the early-warning family"],
+    ["HEAT (thermal)", "fixed temp or rate-of-rise", "slowest, fewest false alarms", "for dusty/steamy spaces"]
+  ];
+  set("Fire Detection", "c9fd"); G["c9fd"] = cols("Fire Detection Families", FDET, -1, "match the sensor to the fire signature the space produces");
+  set("flame", "c9fd0"); G["c9fd0"] = cols("Fire Detection Families", FDET, 0);
+  set("Smoke", "c9fd1"); G["c9fd1"] = cols("Fire Detection Families", FDET, 1);
+  set("heat", "c9fd2"); G["c9fd2"] = cols("Fire Detection Families", FDET, 2);
+  var SMK = [
+    ["IONIZATION", "fast FLAMING fires", "small particles disturb the current", "steam false alarms"],
+    ["PHOTO-ELECTRIC", "SMOLDERING fires", "smoke scatters the light beam", "data-centre favourite"],
+    ["DUAL", "both in one head", "covers either fire profile", "the default pick"]
+  ];
+  set("Ionization", "c9sm0"); G["c9sm0"] = cols("Smoke Detector Types", SMK, 0, "electrical fires smolder first &mdash; photoelectric catches them");
+  set("Photo-electric", "c9sm1"); G["c9sm1"] = cols("Smoke Detector Types", SMK, 1, "electrical fires smolder first &mdash; photoelectric catches them");
+  set("Dual", "c9sm2"); G["c9sm2"] = cols("Smoke Detector Types", SMK, 2);
+  var FSUP = [
+    ["WATER", "removes HEAT", "wet &middot; dry &middot; pre-action &middot; deluge", "where people work"],
+    ["GAS", "starves OXYGEN / breaks the reaction", "inert gases &middot; FM-200 &middot; CO&#8322;", "where electronics live"]
+  ];
+  set("Fire Suppression", "c9fs"); G["c9fs"] = cols("Suppression &mdash; kill a triangle leg", FSUP, -1, "life safety governs the choice &mdash; evacuate before CO&#8322;");
+  var WTR = [
+    ["Wet", "pipes always charged &mdash; instant, freeze risk"],
+    ["Dry", "air until triggered &mdash; unheated spaces"],
+    ["Pre-action", "TWO triggers required &mdash; the data-centre pick"],
+    ["Deluge", "all heads open &mdash; fuel depots, hangars"]
+  ];
+  set("Water", "c9wt"); G["c9wt"] = rows("Sprinkler Pipe Systems", WTR, -1, "accidental-discharge risk drops as you go down the list");
+  [["Wet", 0], ["Dry", 1], ["Pre-action", 2], ["Deluge", 3]].forEach(function (p) {
+    G["c9wt" + p[1]] = rows("Sprinkler Pipe Systems", WTR, p[1]);
+    set(p[0], "c9wt" + p[1]);
+  });
+  var GAS = [
+    ["INERGEN (IG-541)", "N&#8322;+Ar+CO&#8322; &mdash; drops O&#8322; to ~12-14%, breathable briefly"],
+    ["Argonite (IG-55)", "50/50 N&#8322;/Ar &mdash; same principle, no residue"],
+    ["FM-200", "THE halon replacement &mdash; safe occupied, ~10 s knock-down"],
+    ["Aero-K", "potassium aerosol &mdash; compact, no pressure cylinders"]
+  ];
+  set("Gas", "c9gs"); G["c9gs"] = rows("Gaseous Agents", GAS, -1, "halon's ozone legacy is why all of these exist");
+  [["INERGEN", 0], ["Argonite", 1], ["FM-200", 2], ["Aero-K", 3]].forEach(function (p) {
+    G["c9gs" + p[1]] = rows("Gaseous Agents", GAS, p[1]);
+    set(p[0], "c9gs" + p[1]);
+  });
+  G["c9ext"] = card("Extinguisher Classes", ["A combustibles &middot; B liquids &middot; C ELECTRICAL", "D metals &middot; K kitchen oils &mdash; match or make it worse", "PASS: Pull, Aim, Squeeze, Sweep"], "CO&#8322; (BC) for the electrical panel &mdash; never the water can");
+  set("Extinguisher", "c9ext");
+  G["c9co2"] = card("CO&#8322; Suppression", ["displaces oxygen entirely &mdash; great on", "electrical fires, LETHAL to people at dose", "unoccupied spaces + pre-discharge alarms only"], "the cable vault sounds a 30-second evacuation horn first");
+  set("co2", "c9co2");
+})();
+
+Object.assign(window.AC_DETAILS, {
+  "Block Modes": {
+    t: "Block Cipher Modes",
+    d: "HOW successive blocks are chained together during encryption &mdash; the mode, not the cipher, decides whether patterns survive and how errors propagate. ECB is broken by design; CBC through CTR each trade off parallelism, error handling and security differently.",
+    x: "Same AES key, same plaintext: ECB leaks the picture, CBC/CTR don't."
+  }
+});
+
+Object.assign(window.AC_DETAILS, {
+  "scrambled-root": {
+    t: "Secret Writing (Domain 3.6)",
+    d: "The exam's master tree for hiding information: HIDDEN (concealing that a message exists &mdash; steganography, null ciphers) versus SCRAMBLED/cryptography (transforming it &mdash; one-way hashing and two-way symmetric/asymmetric encryption), plus the classical substitution and transposition ciphers that started it all.",
+    x: "Every cipher and hash on the CISSP exam fits somewhere in this one tree."
+  }
+});
+
+Object.assign(window.AC_DETAILS, {
+  "Cryptographic Services": {
+    t: "Cryptographic Services (Domain 3.6)",
+    d: "The five things cryptography actually buys you: confidentiality, integrity, authenticity, non-repudiation and access control. Every crypto question on the exam ultimately asks which of these five a mechanism provides.",
+    x: "TLS in one sentence: confidentiality (encryption) + integrity (MAC) + authenticity (certificate) all at once."
+  },
+  "Cryptographic Terminology": {
+    t: "Cryptographic Terminology (Domain 3.6)",
+    d: "The exam's core vocabulary: plaintext/ciphertext, the key (cryptovariable), key clustering, work factor, IV/nonce, and Shannon's confusion/diffusion/avalanche. Fluency here is what separates a fast exam from a slow one.",
+    x: "A question describing 'flip one bit, half the output changes' is testing whether you know the word avalanche."
+  }
+});
+
+Object.assign(window.AC_DETAILS, {
+  "pki-root": {
+    t: "PKI (Domain 3.6)",
+    d: "Public Key Infrastructure &mdash; the hierarchy of CAs, RAs and databases that let strangers trust a public key without ever meeting. Every certificate on the internet traces back to an offline Root CA through this structure.",
+    x: "The browser padlock only means something because a PKI hierarchy backs it."
+  },
+  "key-mgmt-root": {
+    t: "Key Management (Domain 3.6)",
+    d: "The full lifecycle that keeps cryptographic keys trustworthy: generation, distribution, storage, rotation, disposition and recovery, all resting on Kerckhoffs' Principle. Weak key management defeats even perfect algorithms.",
+    x: "AES-256 is useless if the key sits in a plaintext config file forever."
+  }
+});

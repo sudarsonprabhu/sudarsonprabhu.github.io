@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   function esc(value) {
     return String(value)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/&(?!#?[a-zA-Z0-9]+;)/g, "&amp;").replace(/</g, "&lt;")
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
   // normalise a detail value (string | {d,x,f,bullets}) into a consistent object

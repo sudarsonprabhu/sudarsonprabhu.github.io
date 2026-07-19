@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,8 +16,8 @@
     <script src="cissp-data.js" defer></script>
     <script src="cissp.js" defer></script>
     <script src="script.js" defer></script>
-    <script src="cissp-domain-3-data.js?v=3" defer></script>
-    <script src="cissp-domain-3.js?v=3" defer></script>
+    <script src="cissp-domain-3-data.js?v=8" defer></script>
+    <script src="cissp-domain-3.js?v=5" defer></script>
   </head>
   <body data-page="work" data-domain-id="3">
     <canvas id="particle-canvas" class="particle-canvas"></canvas>
@@ -617,6 +617,1728 @@
           </p>
         </div>
       </section>
+
+      <!-- ============================================================
+           LAYOUT 5 — Cloud Computing
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 5 &mdash; Visual summary</p>
+          <h2 class="section-title">Cloud computing.</h2>
+          <p class="section-copy">
+            One map of cloud security (Domain 3.5) &mdash; the five NIST characteristics, service and deployment
+            models, virtualized compute, cloud identity, the split of roles between customer and provider,
+            identity protocols, migration, forensics and data destruction. Hover (or tap) any box.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Cloud computing map: characteristics, service and deployment models, virtualized compute, identity, roles, protocols, migration, forensics and data destruction.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Cloud Computing</div>
+              <div class="ac-row">
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cloud-characteristics">Characteristics</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>On-Demand Self Service</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Broad Network Access</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Resource Pooling</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rapid Elasticity</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Measured Service</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Service Models</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>IaaS</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>PaaS</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SaaS</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Deployment Models</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Public</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Private</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Community</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cloud-hybrid"><span>Hybrid</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Virtualized Compute</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Virtual Machine</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Containers</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Serverless</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Hypervisor</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Container Engine</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Identity Provider</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="idp-local"><span>Local</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="idp-cloud"><span>Cloud</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cloud-identity">Cloud identity</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ci-cloud"><span>Cloud</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Linked</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Synced</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Federated</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cloud-roles">Roles</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Accountable</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Responsible</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Cloud Consumer</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="owner-controller"><span>Owner / Controller</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="provider-processor"><span>Cloud Provider / Processor</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Cloud Broker</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Cloud Auditor</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cloud-protocols">Protocols</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SPML</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SAML</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OpenID</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OAuth</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Migration</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Data Centric</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SLA</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cloud-forensics">Forensics</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="vm-artifacts"><span>Snapshot, Virtual Disk, Image</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Data Destruction</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="crypto-erase"><span>Crypto Shredding / Crypto Erase</span></div></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Cloud Computing (Domain 3.5) &mdash; NIST's five characteristics, IaaS/PaaS/SaaS, the four deployment
+            models, VMs vs containers vs serverless, cloud identity models, accountable-vs-responsible role split,
+            SPML/SAML/OpenID/OAuth, data-centric migration with SLAs, forensics via snapshots, and
+            crypto-shredding for defensible destruction.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 6 — Cryptographic Services, Terminology & Secret Writing
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 6 &mdash; Visual summary</p>
+          <h2 class="section-title">Cryptography fundamentals.</h2>
+          <p class="section-copy">
+            Three maps (Domain 3.6). <strong>Cryptographic Services</strong> &mdash; what crypto buys you.
+            <strong>Terminology</strong> &mdash; the exam vocabulary. And the classic <strong>Secret
+            Writing</strong> tree &mdash; hidden vs scrambled, one-way vs two-way, symmetric vs asymmetric,
+            and the historical ciphers. Hover (or tap) any box.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Cryptography fundamentals: cryptographic services (confidentiality, integrity via hashing, authenticity, non-repudiation of origin and delivery, access control), cryptographic terminology (plaintext, encrypt, key, decrypt, key clustering, work factor, initialization vector, confusion, diffusion, avalanche), and the secret-writing tree — hidden (steganography, null cipher) versus scrambled cryptography, one-way hashing, two-way symmetric and asymmetric, substitution and transposition ciphers.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Cryptography Fundamentals</div>
+              <div class="ac-row">
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Cryptographic Services</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cs-confidentiality"><span>Confidentiality</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="cs-integrity">Integrity</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="eq-hashing"><span>= Hashing</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Authenticity</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="nonrepudiation">Non-Repudiation</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Origin</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Delivery</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cs-access"><span>Access Control</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Cryptographic Terminology</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Plaintext</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Encrypt</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cryptovariable"><span>Key / Crypto variable</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Decrypt</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Key clustering</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Work factor</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iv-nonce"><span>Initialization vector / Nonce</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Confusion</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Diffusion</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Avalanche</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="scrambled-root">Secret Writing</div>
+                  <div class="ac-row">
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Hidden</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Steganography</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Null Cipher</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="scrambled">Scrambled (Cryptography)</div>
+                  <div class="ac-row">
+
+                    <div class="ac-node">
+                      <div class="ac-box">One-way</div>
+                      <div class="ac-row">
+                        <div class="ac-node">
+                          <div class="ac-box">Hashing</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>MD5</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SHA-1</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SHA-2</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SHA-3</span></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ac-node">
+                      <div class="ac-box">Two-way</div>
+                      <div class="ac-row">
+
+                        <div class="ac-node">
+                          <div class="ac-box">Symmetric</div>
+                          <div class="ac-row">
+                            <div class="ac-node">
+                              <div class="ac-box">Block</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>DES</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>3DES</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="aes"><span>AES (Rijndael)</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>CAST-128</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>SAFER</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Blowfish</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Twofish</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="rc56"><span>RC5 / RC6</span></div></div>
+                                <div class="ac-node">
+                                  <div class="ac-box">Block Modes</div>
+                                  <div class="ac-row">
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ecb"><span>ECB</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cbc"><span>CBC</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cfb"><span>CFB</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ofb"><span>OFB</span></div></div>
+                                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ctr"><span>CTR</span></div></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="ac-node">
+                              <div class="ac-box">Stream</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>RC4</span></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="ac-node">
+                          <div class="ac-box">Asymmetric</div>
+                          <div class="ac-row">
+                            <div class="ac-node">
+                              <div class="ac-box" data-ac-key="sw-factoring">Factoring</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>RSA</span></div></div>
+                              </div>
+                            </div>
+                            <div class="ac-node">
+                              <div class="ac-box">Discrete Log</div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Diffie-Hellmann</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ecc"><span>Elliptic Curve (ECC)</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>El Gamal</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>DSA</span></div></div>
+                              </div>
+                            </div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent"><span>Digital Certificates</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent"><span>Digital Signatures</span></div></div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Substitution</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="caesar"><span>Caesar Cypher</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Monoalphabetic</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Polyalphabetic</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Running</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>One-time Pads</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Transposition</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Spartan Scytale</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="rail-fence"><span>Rail Fence (zigzag)</span></div></div>
+                  </div>
+                </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Cryptography fundamentals (Domain 3.6) &mdash; the five services, the exam vocabulary (confusion,
+            diffusion, avalanche, work factor, IV/nonce, key clustering), and the secret-writing tree: hidden
+            (steganography, null cipher) vs scrambled; one-way hashing (MD5, SHA family); two-way symmetric
+            (block/stream, DES&rarr;AES, modes ECB&ndash;CTR) and asymmetric (factoring &rarr; RSA; discrete log
+            &rarr; DH, ECC, El Gamal, DSA); and the classical substitution/transposition ciphers.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 7 — Digital Signatures, Certificates, PKI & Key Management
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 7 &mdash; Visual summary</p>
+          <h2 class="section-title">Signatures, certificates, PKI &amp; key management.</h2>
+          <p class="section-copy">
+            The trust machinery of cryptography (Domain 3.6). <strong>Digital Signatures</strong> prove integrity,
+            authenticity and non-repudiation. <strong>Digital Certificates</strong> bind a public key to its
+            owner. <strong>PKI</strong> is the infrastructure that makes it work, and <strong>Key
+            Management</strong> is the lifecycle that keeps keys safe. Hover (or tap) any box.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="PKI and key management: digital signatures provide integrity, authenticity and non-repudiation; digital certificates verify the owner of a public key via X.509, revocation (CRL, OCSP), replacement and pinning; PKI is the certificate authority hierarchy; key management is the key lifecycle.">
+            <div class="ac-map-inner">
+              <div class="ac-title">PKI &amp; Key Management</div>
+              <div class="ac-row">
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Digital Signatures</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ds-integrity"><span>Integrity</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Authenticity</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="nonrepudiation">Non-repudiation</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Origin</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Delivery</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Digital Certificates</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="verify-owner"><span>Verify the owner of a Public Key</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>X.509</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Replacement</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Revocation</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>CRL</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OCSP</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Pinning</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="pki-root">PKI</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ca-root"><span>Certificate Authority (Root of Trust)</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Registration Authority</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="intermediate-ca"><span>Intermediate / Issuing CA</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cert-db"><span>Certificate DB (Revocation List)</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cert-store"><span>Certificate Store (Local)</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="key-mgmt-root">Key Management</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="kerckhoff"><span>Kerchhoff's Principle</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Generation</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Distribution</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Diffie-Hellmann</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Out-of-band</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="kd-hybrid"><span>Hybrid</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box">Storage</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>TPM</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>HSM</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rotation</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Disposition</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Crypto-shredding</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Key Destruction</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box">Recovery</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Split Knowledge</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Dual Control</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Key Escrow</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            PKI &amp; key management (Domain 3.6) &mdash; digital signatures (sign with the private key, verify
+            with the public), X.509 certificates with CRL/OCSP revocation and pinning, the CA/RA/intermediate
+            hierarchy rooted in the offline Root CA, and the key lifecycle from generation and Diffie-Hellman
+            exchange through TPM/HSM storage, rotation, crypto-shredding, and escrow with split knowledge and
+            dual control.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 8 — Cryptanalysis
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 8 &mdash; Visual summary</p>
+          <h2 class="section-title">Cryptanalysis.</h2>
+          <p class="section-copy">
+            How crypto gets broken (Domain 3.7). <strong>Cryptanalytic attacks</strong> target the algorithm
+            and keys with escalating attacker knowledge &mdash; from brute force to chosen ciphertext. <strong>
+            Cryptographic attacks</strong> target the implementation and the people around it &mdash; side
+            channels, rainbow tables, and rubber-hose persuasion. Hover (or tap) any box.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Cryptanalysis: cryptanalytic attacks (brute force through chosen ciphertext, linear and differential, factoring) and cryptographic attacks (MITM, replay, pass the hash, side channels, dictionary, rainbow tables, birthday, social engineering).">
+            <div class="ac-map-inner">
+              <div class="ac-title">Cryptanalysis</div>
+              <div class="ac-row">
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cryptanalytic-attacks">Cryptanalytic Attacks</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Brute Force</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Ciphertext Only</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Known Plaintext</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Chosen Plaintext</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Chosen Ciphertext</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="linear-differential"><span>Linear &amp; Differential</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ca-factoring"><span>Factoring</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="cryptographic-attacks">Cryptographic Attacks</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="mitm"><span>Man-in-the-middle</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Replay</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Pass the Hash</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Temporary Files</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Implementation</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Side Channel</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="sc-power"><span>Power</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="sc-timing"><span>Timing</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Radiation Emissions</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Dictionary Attack</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rainbow Tables</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Birthday Attack</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Social Engineering</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Purchase Key</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Rubber Hose</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Cryptanalysis (Domain 3.7) &mdash; the attack ladder by attacker knowledge (ciphertext-only &rarr;
+            known plaintext &rarr; chosen plaintext &rarr; chosen ciphertext), brute force vs work factor,
+            linear/differential analysis, factoring RSA, and the implementation-level attacks: MITM, replay,
+            pass-the-hash, temporary files, side channels (power, timing, emanations), dictionary and rainbow
+            tables (beaten by salting), birthday collisions, and social engineering including key purchase and
+            rubber-hose coercion.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           LAYOUT 9 — Physical Security
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Layout 9 &mdash; Visual summary</p>
+          <h2 class="section-title">Physical security.</h2>
+          <p class="section-copy">
+            Sites and facilities (Domains 3.8 &amp; 3.9). Safety of people always comes first; then a layered
+            defense that deters, delays, detects, assesses and responds &mdash; perimeter to walls, locks to
+            mantraps &mdash; backed by resilient infrastructure (power, HVAC) and fire detection and
+            suppression. Hover (or tap) any box.
+          </p>
+        </div>
+        <div class="panel cissp-notes ac-fullbleed" data-spotlight>
+          <div class="ac-map" role="img" aria-label="Physical security: safety of people, layered defense with deter, delay, detect, assess, respond; perimeter, cameras, lighting, badges, mantraps, locks, windows, walls; power and HVAC infrastructure; fire detection and suppression.">
+            <div class="ac-map-inner">
+              <div class="ac-title">Physical Security</div>
+              <div class="ac-row">
+
+                <div class="ac-node ac-leaf"><div class="ac-box ac-v ac-accent" data-ac-key="safety-people"><span>Safety of people</span></div></div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="phys-categories">Categories of Controls</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Deter</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Delay</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Detect</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Assess</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Respond</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Layered Defense</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box">Perimeter</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Landscape</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Grading</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Cameras</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="pir"><span>Passive Infrared Devices</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Lighting</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="badges"><span>Card Readers / Badges</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="mantraps"><span>Doors / Mantraps</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Locks</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="lock-mechanical"><span>Mechanical</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="lock-digital"><span>Digital</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box">Windows</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Shock</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Glassbreak</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Walls</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Skimming</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Infrastructure</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="phys-network"><span>Network</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="phys-power">Power</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>UPS</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Generator</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="outages"><span>Power Outages</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="degradation"><span>Power Degradation</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box">HVAC</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Temperature</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Humidity</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Air Quality</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Fire Detection</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="flame"><span>Flame (Infrared)</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box">Smoke</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Ionization</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Photo-electric</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Dual</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="heat"><span>Heat (Thermal)</span></div></div>
+                  </div>
+                </div>
+
+                <div class="ac-node">
+                  <div class="ac-box ac-strong">Fire Suppression</div>
+                  <div class="ac-row">
+                    <div class="ac-node">
+                      <div class="ac-box">Water</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Wet</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Dry</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Pre-action</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Deluge</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node">
+                      <div class="ac-box">Gas</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>INERGEN</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Argonite</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>FM-200</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Aero-K</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Extinguisher</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="co2"><span>CO&#8322;</span></div></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="cissp-source-note" style="margin-top:1rem;">
+            Physical Security (Domains 3.8&ndash;3.9) &mdash; life safety first; layered defense running deter
+            &rarr; delay &rarr; detect &rarr; assess &rarr; respond; CPTED landscaping and grading; cameras,
+            PIR sensors, lighting, badge readers, mantraps against piggybacking; mechanical vs digital locks;
+            hardened windows and slab-to-slab walls; power protection (UPS, generator, sags/surges); HVAC with
+            positive pressure and 45&ndash;60% humidity; flame/smoke/heat detection; and water vs gas
+            suppression &mdash; wet/dry/pre-action/deluge pipes, inert gases, FM-200, and CO&#8322;'s life-safety
+            warning.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           EXPERT TLDR — Domain 3 complete instructor guide
+           ============================================================ -->
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <p class="section-label">Expert Instructor Guide</p>
+          <h2 class="section-title">Domain 3 &mdash; the complete walkthrough, sub-domain by sub-domain.</h2>
+          <p class="section-copy">
+            Domain 3 is the engineering heart of the CISSP (~13% of the exam) &mdash; where business and risk
+            requirements become technical controls. This is your full lecture on it, marching through the
+            official outline <strong>3.1 to 3.10</strong>: precise definitions, the distinctions ISC&sup2;
+            loves to test, a concrete example for every concept, and the reference sources to dig deeper.
+            The nine maps above are the skeleton; this is the muscle. Read it top to bottom and you will not
+            need another source for Domain 3.
+          </p>
+        </div>
+
+        <!-- ════════════ 3.1 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.1</p>
+          <h2 class="section-title">Research, implement &amp; manage engineering processes using secure design principles.</h2>
+          <p class="section-copy">
+            Good architecture starts with a handful of timeless principles. Every later control is easier
+            &mdash; and cheaper &mdash; when these are baked in at design time.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.1</span><h3>Economy of Mechanism, KISS &amp; Open vs Closed Systems</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Economy of mechanism</span><span class="fc-val">Keep it small &amp; simple &mdash; complexity breeds flaws</span></div>
+            <div class="fact-card"><span class="fc-label">Unused features</span><span class="fc-val">Remove in DESIGN &mdash; not just disable</span></div>
+            <div class="fact-card"><span class="fc-label">Open system</span><span class="fc-val">Standards-based; security from implementation</span></div>
+            <div class="fact-card"><span class="fc-label">Obscurity</span><span class="fc-val">NEVER a valid primary strategy</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Economy of mechanism</strong> (one of Saltzer &amp; Schroeder's classic eight principles)
+              says security mechanisms should be as <em>simple and small</em> as possible: every extra feature is
+              extra attack surface and something else to audit, test and misconfigure. Its corollary &mdash;
+              <strong>avoid unnecessary functionality</strong> &mdash; means unneeded features are removed at
+              design time, not merely shipped disabled (a disabled feature is one config change from becoming a
+              vulnerability). <strong>Keep It Simple (KISS)</strong> extends this to structure: separate the
+              security-critical functions into small, isolated, rigorously tested components.
+            </p>
+            <p>
+              <strong>Open systems</strong> are built on agreed industry standards &mdash; more widely understood
+              and more widely targeted, so their security must come from robust implementation, secure coding and
+              defense in depth. <strong>Closed systems</strong> are proprietary and rely partly on
+              <em>security through obscurity</em> &mdash; the exam's point is unambiguous: obscurity can
+              <em>supplement</em> defences but is <strong>never</strong> a valid primary strategy, because the
+              moment the secret leaks, security collapses. Contrast that with <strong>Kerckhoffs' principle</strong>
+              in cryptography: assume everything except the key is public.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://www.cs.virginia.edu/~evans/cs551/saltzer/" target="_blank" rel="noopener">Saltzer &amp; Schroeder &mdash; The Protection of Information</a> &middot; <a href="https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final" target="_blank" rel="noopener">NIST SP 800-160 (Systems Security Engineering)</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> A vendor claiming their product is secure &ldquo;because nobody knows how it works&rdquo; is the classic obscurity trap &mdash; the answer is always that obscurity alone is never sufficient.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.1</span><h3>The Core Principles &mdash; Least Privilege to Shared Responsibility</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Least privilege</span><span class="fc-val">Minimum rights, minimum time</span></div>
+            <div class="fact-card"><span class="fc-label">Defense in depth</span><span class="fc-val">Layered controls; no single point of failure</span></div>
+            <div class="fact-card"><span class="fc-label">Fail securely</span><span class="fc-val">Default deny on failure (unless life safety)</span></div>
+            <div class="fact-card"><span class="fc-label">SoD</span><span class="fc-val">No single person completes a critical task</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Threat modeling</strong> asks &ldquo;what can go wrong?&rdquo; at design time &mdash; using
+              STRIDE to classify threats, PASTA to simulate attacks against business impact, or DREAD to rank them
+              (all covered in Domain 1; here they drive architecture decisions). <strong>Least privilege</strong>
+              grants only the rights the job needs, for only as long as needed &mdash; ideally
+              <em>Just-In-Time</em>. <strong>Defense in depth</strong> layers administrative, technical and
+              physical controls so one failure never reaches the asset. <strong>Secure defaults</strong> means the
+              system ships in its most secure configuration: default-deny, features off, no default passwords.
+            </p>
+            <p>
+              <strong>Fail securely</strong> is the failure-mode principle: when a control fails, it should fail
+              CLOSED (blocking access) &mdash; the standard for secure design &mdash; unless human life requires
+              <em>fail open</em> (emergency exits). <strong>Separation of duties</strong> splits critical tasks so
+              fraud requires collusion; <strong>privacy by design</strong> embeds privacy as the DEFAULT setting
+              from the start (now codified in GDPR Article 25); and <strong>shared responsibility</strong>
+              recognises that in cloud and outsourced models, security duties are split by contract &mdash; but
+              accountability never transfers.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://owasp.org/www-project-developer-guide/draft/foundations/security_principles/" target="_blank" rel="noopener">OWASP Secure Design Principles</a> &middot; <a href="https://gdpr-info.eu/art-25-gdpr/" target="_blank" rel="noopener">GDPR Art. 25 &mdash; Data protection by design &amp; default</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> A door controller loses power and there is no life-safety constraint &rarr; <em>fail secure</em> (locked). Any question where people could be trapped &rarr; <em>fail safe/open</em>. People &gt; property, every single time.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.1</span><h3>Zero Trust &mdash; Never Trust, Always Verify</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">The tuple</span><span class="fc-val">Identity + device posture + context</span></div>
+            <div class="fact-card"><span class="fc-label">Per-request</span><span class="fc-val">Every request re-verified; no carried trust</span></div>
+            <div class="fact-card"><span class="fc-label">Three pillars</span><span class="fc-val">Always Verify &middot; Least Privilege &middot; Assume Breach</span></div>
+            <div class="fact-card"><span class="fc-label">Standard</span><span class="fc-val">NIST SP 800-207</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Zero Trust rejects the idea of a &ldquo;trusted internal network&rdquo;. Nothing is automatically
+              trusted for being inside the perimeter: <strong>every request is authenticated, authorized and
+              encrypted</strong>, evaluated against the decision tuple of <em>user identity + device posture +
+              context</em> (time, location, prior behaviour). A successful login this morning means nothing this
+              afternoon &mdash; past trust is never carried forward.
+            </p>
+            <p>
+              The three pillars: <strong>Always Verify</strong> (per-request checks), <strong>Least
+              Privilege</strong> (minimum access, ideally Just-In-Time), and <strong>Assume Breach</strong>
+              (design as if the attacker is already inside &mdash; segment aggressively to limit the blast
+              radius). The classic failure Zero Trust fixes: once on the VPN, a user could reach everything.
+              That flat internal trust violates both Assume Breach and Least Privilege. Contrast with the legacy
+              <strong>trust-but-verify</strong> stance &mdash; allow, then audit the logs afterwards.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener">NIST SP 800-207 &mdash; Zero Trust Architecture</a> &middot; <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank" rel="noopener">CISA Zero Trust Maturity Model</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Scenario: a familiar user, but an unrecognised device in a new country. Zero Trust re-evaluates the <em>whole tuple</em> on that request &mdash; identity alone never wins access.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.1</span><h3>Confinement, Bounds &amp; Isolation</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Bounds</span><span class="fc-val">The LIMITS set on a process (memory, resources)</span></div>
+            <div class="fact-card"><span class="fc-label">Confinement</span><span class="fc-val">The RESTRICTION of what it may touch</span></div>
+            <div class="fact-card"><span class="fc-label">Isolation</span><span class="fc-val">The ENFORCEMENT of that restriction</span></div>
+            <div class="fact-card"><span class="fc-label">Payoff</span><span class="fc-val">A compromised process can't reach its neighbours</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Three linked containment concepts the exam distinguishes precisely. <strong>Bounds</strong> set
+              strict limits on the resources a process may use &mdash; properly enforced memory bounds are what
+              prevent a <em>buffer overflow</em> from writing past its allocation. <strong>Confinement</strong>
+              is the act of restricting a process to those bounds, limiting what it can read, write or invoke.
+              <strong>Isolation</strong> is the physical or logical means by which confinement is enforced, so a
+              compromised process cannot read, corrupt or interfere with another's data.
+            </p>
+            <p>
+              Remember the chain: <em>bounds set the limits &rarr; confinement is the restriction &rarr;
+              isolation enforces it</em>. Sandboxes, containers and VMs are all isolation mechanisms at different
+              strengths &mdash; and Domain 3's memory protections (process isolation, hardware segmentation,
+              ASLR) are this principle implemented in silicon and OS code.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;A program wrote past the end of its buffer&rdquo; &rarr; the concept not enforced is <em>bounds</em>. If the question asks what stops process A reading process B's memory &rarr; <em>isolation</em>.</div>
+        </div>
+
+        <!-- ════════════ 3.2 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.2</p>
+          <h2 class="section-title">Understand the fundamental concepts of security models.</h2>
+          <p class="section-copy">
+            A security model translates a policy (&ldquo;no leaking secrets&rdquo;) into precise, enforceable
+            rules (&ldquo;no write down&rdquo;). Know each model's GOAL first &mdash; the rules follow.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.2</span><h3>Model Families &mdash; State Machine, Information Flow, Noninterference, Lattice</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">State machine</span><span class="fc-val">Secure in every state &amp; transition</span></div>
+            <div class="fact-card"><span class="fc-label">Information flow</span><span class="fc-val">Controls WHERE data may move</span></div>
+            <div class="fact-card"><span class="fc-label">Noninterference</span><span class="fc-val">High actions invisible to low subjects</span></div>
+            <div class="fact-card"><span class="fc-label">Lattice</span><span class="fc-val">Levels + labels; bounds of access</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Before the named models, know the four foundations. A <strong>state machine model</strong> proves a
+              system is secure by showing every possible state and every transition between states preserves the
+              security policy &mdash; if it starts secure and every transition is secure, it stays secure.
+              <strong>Information flow models</strong> (the basis of both Bell-LaPadula and Biba) control where
+              information is allowed to move, blocking flows that violate policy.
+            </p>
+            <p>
+              <strong>Noninterference</strong> demands that actions at a higher level are completely invisible at
+              lower levels &mdash; a low-clearance user should not even be able to <em>infer</em> that a
+              high-level action occurred (this is the theory behind defeating covert channels).
+              <strong>Lattice-based</strong> models arrange classification levels and compartments into a lattice;
+              every subject/object pair has a least upper bound and greatest lower bound defining what access is
+              possible. BLP and Biba are both lattice, information-flow, state-machine models &mdash; which is why
+              those descriptors appear together in exam answers.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;A user deduces classified activity from system slow-downs&rdquo; &rarr; a <em>noninterference</em> failure (and a timing covert channel). Match the family before the named model.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.2</span><h3>Bell-LaPadula vs Biba &mdash; Mirror Images</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">BLP goal</span><span class="fc-val">CONFIDENTIALITY (military heritage)</span></div>
+            <div class="fact-card"><span class="fc-label">BLP rules</span><span class="fc-val">No Read Up &middot; No Write Down</span></div>
+            <div class="fact-card"><span class="fc-label">Biba goal</span><span class="fc-val">INTEGRITY (mirror of BLP)</span></div>
+            <div class="fact-card"><span class="fc-label">Biba rules</span><span class="fc-val">No Read Down &middot; No Write Up</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Bell-LaPadula</strong> protects secrets. The <em>Simple Security Property</em> = No Read Up
+              (a SECRET subject cannot read TOP SECRET); the <em>Star (*) Property</em> = No Write Down (a SECRET
+              subject cannot write into an UNCLASSIFIED file &mdash; that would leak); the <em>Strong Star</em>
+              variant confines subjects to read/write at exactly their own level. The first mathematically proven
+              model, built for the US military.
+            </p>
+            <p>
+              <strong>Biba</strong> inverts it for integrity: <em>Simple Integrity</em> = No Read Down (don't base
+              decisions on dirty, low-integrity data) and <em>Star Integrity</em> = No Write Up (a low-integrity
+              source must not corrupt high-integrity records), plus the <em>Invocation Property</em> &mdash; a
+              subject may not invoke (request services of) a higher-integrity subject. Know Biba's weaknesses
+              cold: it addresses integrity ONLY (no confidentiality or availability), doesn't manage access
+              control administration, doesn't prevent covert channels, and has no mechanism for changing
+              classification levels.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Memory hook &mdash; in BLP the "S" rules protect Secrecy on reads; in Biba the rules flip direction. If the scenario worries about <em>leaks</em> &rarr; BLP; about <em>corruption/trustworthiness</em> &rarr; Biba.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.2</span><h3>Clark-Wilson, Brewer-Nash &amp; the Access-Matrix Models</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Clark-Wilson</span><span class="fc-val">Subject &rarr; Program &rarr; Object; SoD</span></div>
+            <div class="fact-card"><span class="fc-label">Brewer-Nash</span><span class="fc-val">Chinese Wall; blocks conflicts of interest</span></div>
+            <div class="fact-card"><span class="fc-label">Graham-Denning</span><span class="fc-val">8 rules for subjects/objects/rights</span></div>
+            <div class="fact-card"><span class="fc-label">HRU</span><span class="fc-val">Can rights LEAK? (the safety problem)</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Clark-Wilson</strong> is commercial integrity: subjects never touch data directly &mdash;
+              every change goes through a certified <em>Transformation Procedure</em> (the access triple
+              Subject &rarr; Program &rarr; Object), well-formed transactions keep data consistent, an
+              <em>Integrity Verification Procedure</em> audits it, and enforced <strong>separation of
+              duties</strong> means fraud requires collusion. Think banking: nobody edits the ledger directly,
+              and no one both creates and approves a payment.
+            </p>
+            <p>
+              <strong>Brewer-Nash (Chinese Wall)</strong> is the information-flow model against conflicts of
+              interest: the moment you access Client A's data, a wall dynamically drops between you and every
+              competitor of Client A in the same conflict class &mdash; access rights change based on your own
+              history. <strong>Graham-Denning</strong> defines the eight protection rules for securely creating/
+              deleting subjects and objects and granting/transferring/revoking rights; <strong>Harrison-Ruzzo-
+              Ullman (HRU)</strong> extends it to ask whether a right can ever <em>leak</em> to an unauthorised
+              subject &mdash; the &ldquo;safety problem&rdquo;, undecidable in the general case. <strong>Lipner</strong>
+              simply combines BLP + Biba when you need confidentiality AND integrity together.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;A consultant who touched Client A is suddenly blocked from Client A's competitor&rdquo; &rarr; Brewer-Nash, every time. &ldquo;Users must go through validated programs, never direct to data&rdquo; &rarr; Clark-Wilson.</div>
+        </div>
+
+        <!-- ════════════ 3.3 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.3</p>
+          <h2 class="section-title">Select controls based upon systems security requirements.</h2>
+          <p class="section-copy">
+            How do you know a product is as secure as the vendor claims? Independent evaluation against a
+            published standard &mdash; and a formal management decision to accept the residual risk.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.3</span><h3>Common Criteria &mdash; PP, ST, TOE &amp; the EAL Ladder</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">PP</span><span class="fc-val">Protection Profile &mdash; what a CATEGORY requires</span></div>
+            <div class="fact-card"><span class="fc-label">ST</span><span class="fc-val">Security Target &mdash; what the VENDOR claims</span></div>
+            <div class="fact-card"><span class="fc-label">TOE</span><span class="fc-val">Target of Evaluation &mdash; the product tested</span></div>
+            <div class="fact-card"><span class="fc-label">EAL4</span><span class="fc-val">Commercial max; EAL7 = formally verified</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Evaluation criteria evolved in three generations: <strong>TCSEC</strong> (the US Orange Book &mdash;
+              confidentiality only, ratings D through A1), <strong>ITSEC</strong> (Europe &mdash; added integrity
+              and availability, split Functionality from Effectiveness/assurance), and today's global standard
+              <strong>Common Criteria (ISO/IEC 15408)</strong>. In CC vocabulary: the <strong>Protection
+              Profile</strong> states what a product category must do (&ldquo;what is required&rdquo;), the
+              <strong>Security Target</strong> is the vendor's specific claim (&ldquo;what is promised&rdquo;),
+              and the <strong>Target of Evaluation</strong> is the actual product tested (&ldquo;what is
+              evaluated&rdquo;).
+            </p>
+            <p>
+              The <strong>EAL ladder</strong>: EAL1 functionally tested &rarr; EAL2 structurally tested &rarr;
+              EAL3 methodically tested &amp; checked &rarr; EAL4 methodically designed, tested and reviewed (the
+              commercial ceiling) &rarr; EAL5 semiformally designed &rarr; EAL6 semiformally verified &rarr; EAL7
+              formally verified (mathematical proof). Critical nuance: a higher EAL means more rigorous
+              <em>evaluation of the claims</em> &mdash; not necessarily more security features.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://www.commoncriteriaportal.org/" target="_blank" rel="noopener">Common Criteria Portal</a> &middot; <a href="https://www.iso.org/standard/72891.html" target="_blank" rel="noopener">ISO/IEC 15408</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> PP = requirements, ST = claims, TOE = product. And EAL4 is &ldquo;the most common for commercial products&rdquo; &mdash; a recurring right answer.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.3</span><h3>Certification, Accreditation &amp; Authorization to Operate</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Certification</span><span class="fc-val">TECHNICAL evaluation of controls</span></div>
+            <div class="fact-card"><span class="fc-label">Accreditation</span><span class="fc-val">MANAGEMENT acceptance of risk</span></div>
+            <div class="fact-card"><span class="fc-label">ATO</span><span class="fc-val">Senior official's risk-based approval</span></div>
+            <div class="fact-card"><span class="fc-label">Order</span><span class="fc-val">Certify first, then accredit</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Certification</strong> is the comprehensive technical evaluation of a system's security
+              controls against requirements &mdash; done by assessors, producing evidence. <strong>
+              Accreditation</strong> is the formal <em>management decision</em> to accept the residual risk and
+              authorise operation, made on the strength of that evidence. Certification evaluates; accreditation
+              approves &mdash; and it must be repeated when significant changes occur.
+            </p>
+            <p>
+              In US federal practice (NIST RMF, SP 800-37) the accreditation decision is the
+              <strong>Authorization to Operate (ATO)</strong>, granted by the Authorizing Official. The four
+              possible decisions: Authorization to Operate, Common Control Authorization, Authorization to Use
+              (accepting another agency's authorization), and Denial of Authorization.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/37/r2/final" target="_blank" rel="noopener">NIST SP 800-37 Rev 2 &mdash; Risk Management Framework</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Who accepts the risk? Always <em>management</em> (the AO) &mdash; never the assessor, never the engineer. Technical people certify; leaders accredit.</div>
+        </div>
+
+        <!-- ════════════ 3.4 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.4</p>
+          <h2 class="section-title">Understand security capabilities of information systems.</h2>
+          <p class="section-copy">
+            The hardware and OS mechanisms that make enforcement possible &mdash; from CPU privilege rings to
+            the trusted chips that anchor everything.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.4</span><h3>CPU &amp; Memory Fundamentals &mdash; Rings, States &amp; Protection</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Ring 0 / Ring 3</span><span class="fc-val">Kernel (highest priv) / apps (lowest)</span></div>
+            <div class="fact-card"><span class="fc-label">Multitasking</span><span class="fc-val">One CPU switching fast (illusion)</span></div>
+            <div class="fact-card"><span class="fc-label">Multiprocessing</span><span class="fc-val">Multiple CPUs &mdash; TRUE parallelism</span></div>
+            <div class="fact-card"><span class="fc-label">ASLR</span><span class="fc-val">Randomises memory layout each boot</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              CPU anatomy: the <strong>ALU</strong> performs the actual mathematical/logical operations; the
+              <strong>Control Unit</strong> directs instructions but executes nothing itself; <strong>
+              registers</strong> are the CPU's tiny high-speed internal memory. Execution vocabulary:
+              <strong>multitasking</strong> = one CPU context-switching fast enough to fake parallelism;
+              <strong>multiprocessing</strong> = true parallel execution on multiple CPUs/cores;
+              <strong>multithreading</strong> = lightweight threads sharing one process's memory. The
+              <strong>protection ring</strong> model puts the kernel in Ring 0 (full hardware access) and user
+              applications in Ring 3 &mdash; higher number, lower privilege &mdash; matching the processor's
+              <em>supervisor vs problem</em> states and the OS's <em>kernel vs user</em> modes.
+            </p>
+            <p>
+              Memory protection is layered: <strong>process isolation</strong> gives each process its own address
+              space; <strong>hardware segmentation</strong> enforces boundaries in silicon (stronger than OS
+              logic alone); and <strong>ASLR</strong> randomises where the stack, heap and libraries load at each
+              boot, so exploits can't rely on predictable addresses. Also know <em>virtual memory</em>
+              (paging/swap &mdash; secrets can persist in the swap file) and <em>data hiding</em> (each layer
+              exposes only what the layer above needs).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Single-core CPU appears to run many apps at once&rdquo; &rarr; multitasking, not multiprocessing. &ldquo;Which component adds two numbers?&rdquo; &rarr; the ALU. &ldquo;Defeats predictable-address exploits&rdquo; &rarr; ASLR.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.4</span><h3>TCB, Reference Monitor &amp; Security Kernel</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">TCB</span><span class="fc-val">Everything you TRUST &mdash; keep it small</span></div>
+            <div class="fact-card"><span class="fc-label">Reference monitor</span><span class="fc-val">The concept: mediate EVERY access</span></div>
+            <div class="fact-card"><span class="fc-label">Security kernel</span><span class="fc-val">The implementation of the monitor</span></div>
+            <div class="fact-card"><span class="fc-label">Three rules</span><span class="fc-val">Always enforce &middot; non-bypassable &middot; verifiable</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The <strong>Trusted Computing Base</strong> is ALL the hardware, software and firmware critical to
+              security &mdash; bounded by the <em>security perimeter</em>. If any TCB component is compromised,
+              the whole system is at risk, which is why the cardinal rule is <strong>keep the TCB small</strong>:
+              every component a vendor adds to the trusted core enlarges the attack surface.
+            </p>
+            <p>
+              The <strong>Reference Monitor</strong> is the abstract &ldquo;security brain&rdquo;: every access by
+              every subject to every object must be checked, the checks can never be bypassed, and the mechanism
+              must be small enough to verify. The <strong>Security Kernel</strong> is its concrete implementation
+              &mdash; the core OS code inside the TCB that actually makes and enforces the access decisions.
+              One-line hierarchy: <em>TCB = what you trust; Reference Monitor = what must be enforced; Security
+              Kernel = how it is enforced.</em>
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Always enforced, cannot be bypassed, verifiable&rdquo; &mdash; those three properties in a question stem = Reference Monitor, not the kernel (the kernel is the implementation).</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.4</span><h3>Hardware Roots of Trust &mdash; TPM vs HSM</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">TPM</span><span class="fc-val">Chip ON the motherboard; per-device</span></div>
+            <div class="fact-card"><span class="fc-label">HSM</span><span class="fc-val">Network appliance; high-volume keys</span></div>
+            <div class="fact-card"><span class="fc-label">TPM functions</span><span class="fc-val">Attestation &middot; Binding &middot; Sealing</span></div>
+            <div class="fact-card"><span class="fc-label">Standard</span><span class="fc-val">FIPS 140-3 validates crypto modules</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>TPM (Trusted Platform Module)</strong> is a cryptographic coprocessor chip integrated on
+              the motherboard &mdash; the hardware root of trust for secure/measured boot and local data
+              protection. Its three exam functions: <strong>attestation</strong> (proving system integrity to a
+              third party via cryptographic hashes of the boot chain), <strong>binding</strong> (tying encrypted
+              data to this specific device), and <strong>sealing</strong> (releasing the key only when the
+              hardware is in a known-good, untampered state &mdash; how BitLocker works).
+            </p>
+            <p>
+              An <strong>HSM (Hardware Security Module)</strong> is a dedicated, tamper-responsive network
+              appliance for high-volume cryptographic operations and centralized key management &mdash; keys are
+              generated, used and destroyed inside its boundary and can be non-exportable. CA root keys and
+              payment-processing keys live in HSMs, validated against <strong>FIPS 140-3</strong>. The
+              distinction is pure exam gold: TPM = integrated chip, one device; HSM = standalone appliance,
+              enterprise scale.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://trustedcomputinggroup.org/resource/tpm-library-specification/" target="_blank" rel="noopener">TCG TPM 2.0 Specification</a> &middot; <a href="https://csrc.nist.gov/pubs/fips/140-3/final" target="_blank" rel="noopener">NIST FIPS 140-3</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Key released only if the machine boots into a known-good state&rdquo; &rarr; <em>sealing</em>. &ldquo;Millions of key operations, centrally managed&rdquo; &rarr; HSM. Don't confuse attestation (prove to others) with sealing (condition the key).</div>
+        </div>
+
+        <!-- ════════════ 3.5 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.5</p>
+          <h2 class="section-title">Assess &amp; mitigate the vulnerabilities of security architectures, designs &amp; solution elements.</h2>
+          <p class="section-copy">
+            Every architecture &mdash; from a single binary to a global cloud &mdash; has characteristic
+            weaknesses. This is the exam's biggest 3.x area: client to server, database to SCADA, VM to
+            serverless.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.5</span><h3>Code-Level Flaws &mdash; Race Conditions, TOCTOU, Buffer Overflows, Covert Channels</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">TOCTOU</span><span class="fc-val">Swap between the CHECK and the USE</span></div>
+            <div class="fact-card"><span class="fc-label">Found by</span><span class="fc-val">CODE REVIEW &mdash; not scanning</span></div>
+            <div class="fact-card"><span class="fc-label">Buffer overflow</span><span class="fc-val">Input exceeds allocation; overwrites memory</span></div>
+            <div class="fact-card"><span class="fc-label">Covert channels</span><span class="fc-val">Storage vs Timing; minimise, can't eliminate</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>race condition</strong> exists when the outcome wrongly depends on the timing of
+              concurrent access to a shared resource; <strong>TOCTOU</strong> (Time-of-Check to Time-of-Use) is
+              its most common form &mdash; the attacker swaps the resource (say, replaces a checked file with a
+              symlink to <code>/etc/shadow</code>) in the microseconds between authorization and use. Because
+              these are logic flaws, they are found by <em>code review</em>, not vulnerability scanning &mdash; a
+              detail the exam tests directly. Mitigate by shrinking the window and re-validating at the moment of
+              use.
+            </p>
+            <p>
+              A <strong>buffer overflow</strong> happens when software accepts more input than the buffer holds
+              and the excess overwrites adjacent memory &mdash; countered by good coding practice, source-code
+              scanners, developer education and <em>strongly-typed languages</em>, plus runtime defences (bounds
+              enforcement, ASLR). <strong>Covert channels</strong> move information in ways policy never intended:
+              <em>storage</em> channels signal by modifying stored objects, <em>timing</em> channels by modulating
+              event timing. In complex systems they can only be minimised through covert-channel analysis at
+              design time &mdash; never fully eliminated. Related leakage: <strong>emanations</strong>
+              (electromagnetic leakage &mdash; see TEMPEST in 3.7/3.9).
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://cwe.mitre.org/data/definitions/367.html" target="_blank" rel="noopener">CWE-367 (TOCTOU)</a> &middot; <a href="https://owasp.org/www-community/vulnerabilities/Buffer_Overflow" target="_blank" rel="noopener">OWASP &mdash; Buffer Overflow</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;How are race conditions best identified?&rdquo; &rarr; code review. Not pen testing, not vulnerability scanning. It appears verbatim.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.5</span><h3>Databases &amp; Data Inference &mdash; Aggregation, Inference, Polyinstantiation</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Aggregation</span><span class="fc-val">Combine harmless pieces &rarr; sensitive whole</span></div>
+            <div class="fact-card"><span class="fc-label">Inference</span><span class="fc-val">DEDUCE secrets from visible data</span></div>
+            <div class="fact-card"><span class="fc-label">Polyinstantiation</span><span class="fc-val">Different versions per clearance level</span></div>
+            <div class="fact-card"><span class="fc-label">Also know</span><span class="fc-val">Views, content-dependent access control</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Databases fail in ways firewalls can't see. <strong>Aggregation</strong>: many individually
+              harmless records, combined, become sensitive (a full troop-movement picture from unclassified
+              logistics rows). <strong>Inference</strong>: a user <em>deduces</em> information beyond their
+              clearance from what they can legitimately see (the department's budget jumped the month a
+              classified project started). The classic defence is <strong>polyinstantiation</strong> &mdash;
+              keeping multiple versions of the same record at different classification levels so lower-cleared
+              users see a plausible cover story instead of a telling gap.
+            </p>
+            <p>
+              Round out with standard database controls: <em>views</em> restrict which columns/rows a user sees,
+              content- and context-dependent access control filter by data value and by access history, and
+              noninterference (3.2) is the formal theory underneath all of it.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Aggregation = combining; inference = deducing. If the question says the user &ldquo;put pieces together&rdquo; it's aggregation; if they &ldquo;figured out&rdquo; something hidden, it's inference &mdash; and polyinstantiation is the named fix.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.5</span><h3>ICS / SCADA, Embedded &amp; IoT</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">DCS</span><span class="fc-val">Process control &middot; state-driven &middot; one site</span></div>
+            <div class="fact-card"><span class="fc-label">SCADA</span><span class="fc-val">Data gathering &middot; event-driven &middot; wide area</span></div>
+            <div class="fact-card"><span class="fc-label">Best control</span><span class="fc-val">AIR-GAP when patching isn't feasible</span></div>
+            <div class="fact-card"><span class="fc-label">Zigbee</span><span class="fc-val">IoT mesh; close range; 128-bit symmetric</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Industrial Control Systems</strong> run physical processes, so their priority order flips:
+              <em>availability and integrity before confidentiality</em> &mdash; and attacks have physical-world
+              consequences (valves, turbines, power grids). Distinguish <strong>DCS</strong> (Distributed Control
+              System: state-driven process control across a limited area, like one plant) from
+              <strong>SCADA</strong> (Supervisory Control and Data Acquisition: event-driven data gathering and
+              monitoring across large geographic areas, like a pipeline). Patching is often impossible &mdash;
+              systems run non-stop and field devices may be physically unreachable &mdash; so
+              <strong>air-gapping</strong> (with network segmentation and one-way data diodes) is the primary
+              compensating control.
+            </p>
+            <p>
+              <strong>Embedded systems</strong> are dedicated-function, limited-power platforms with very long
+              service lives &mdash; the same constraints in miniature. For <strong>IoT</strong>, the recurring
+              issues are weak authentication, unpatchable firmware and default credentials; keep IoT on isolated
+              network segments. Know <strong>Zigbee</strong> by name: a low-power, low-throughput, close-proximity
+              IoT protocol whose communications are encrypted with a 128-bit symmetric algorithm.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final" target="_blank" rel="noopener">NIST SP 800-82 Rev 3 &mdash; OT Security</a> &middot; <a href="https://www.cisa.gov/topics/industrial-control-systems" target="_blank" rel="noopener">CISA &mdash; ICS Security</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> DCS = process, state-driven, small footprint; SCADA = data, event-driven, huge footprint. And when the stem says &ldquo;can't patch the PLCs&rdquo;, the answer is air-gap/segment &mdash; not &ldquo;patch harder&rdquo;.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.5</span><h3>Virtualization, Containers, Serverless &amp; Microservices</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Type 1 / Type 2</span><span class="fc-val">Bare-metal (servers) / hosted (desktops)</span></div>
+            <div class="fact-card"><span class="fc-label">VM sprawl</span><span class="fc-val">Unmanaged VM growth = unpatched targets</span></div>
+            <div class="fact-card"><span class="fc-label">Containers</span><span class="fc-val">Share the host kernel &mdash; secure the HOST</span></div>
+            <div class="fact-card"><span class="fc-label">Serverless</span><span class="fc-val">CSP runs ALL infra; event-driven, stateless</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>Type 1 (bare-metal)</strong> hypervisor runs directly on hardware &mdash; small attack
+              surface, the data-centre standard; <strong>Type 2 (hosted)</strong> runs atop a host OS and inherits
+              all its flaws &mdash; fine for desktops and labs. The hypervisor is absolute: compromise it
+              (<em>VM escape</em>) and every guest falls. The governance failure is <strong>VM sprawl</strong>
+              &mdash; VMs multiplying beyond the team's ability to track and patch. <strong>Containers</strong>
+              package an app with its dependencies but <em>share the host OS kernel</em>, so the single most
+              critical control is hardening the host (plus using only trusted, scanned images &mdash; compromised
+              images/repositories are the primary container risk).
+            </p>
+            <p>
+              <strong>Serverless</strong>: you write code, the CSP manages ALL infrastructure &mdash; event-driven
+              execution in stateless, short-lived containers. Your attack surface shrinks (the CSP patches), but
+              you lose visibility, and over-permissioned function roles and event injection become the new risks.
+              <strong>Microservices</strong> build the app as small, loosely-coupled independent services &mdash;
+              which multiplies inter-service network connections, each of which must be authenticated and
+              encrypted, with security designed in from day one. And the exam's favourite distinction:
+              microservices &ne; containers &mdash; a microservice may run without a container, and a container
+              can hold a monolith.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/190/final" target="_blank" rel="noopener">NIST SP 800-190 &mdash; Container Security</a> &middot; <a href="https://owasp.org/www-project-serverless-top-10/" target="_blank" rel="noopener">OWASP Serverless Top 10</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;All containers on one host &mdash; what do you secure first?&rdquo; &rarr; the host OS kernel. &ldquo;Dozens of untracked, unpatched VMs&rdquo; &rarr; VM sprawl.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.5</span><h3>Cloud &mdash; Models, Multitenancy, CASB &amp; Mobile Fleets</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Greatest concern</span><span class="fc-val">MULTITENANCY (shared hardware)</span></div>
+            <div class="fact-card"><span class="fc-label">Data residency</span><span class="fc-val">LEGAL review first &mdash; encryption &ne; compliance</span></div>
+            <div class="fact-card"><span class="fc-label">CASB</span><span class="fc-val">Policy enforcement between user &amp; cloud</span></div>
+            <div class="fact-card"><span class="fc-label">Mobile</span><span class="fc-val">COMS best &rarr; COPE &rarr; CYOD &rarr; BYOD least</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The service models split responsibility (IaaS: you manage OS-up; PaaS: apps-up; SaaS: users and
+              data only), the deployment models split tenancy (public, private, community, hybrid) &mdash; and
+              SaaS-on-public-cloud gives the most cost saving with the least administrative overhead. The
+              customer always remains <em>accountable</em> for data, identity and configuration. The single
+              greatest cloud security concern the exam names is <strong>multitenancy</strong> &mdash; your data on
+              the same physical hardware as strangers', separated only logically. And <strong>data
+              residency</strong>: moving data across borders triggers the destination's jurisdiction &mdash;
+              encryption does NOT exempt you from sovereignty laws; a legal review comes first.
+            </p>
+            <p>
+              A <strong>CASB</strong> (Cloud Access Security Broker) sits in the traffic path between users and
+              cloud services: real-time monitoring, policy enforcement <em>before</em> data reaches the cloud,
+              scanning of data at rest, and exposure of shadow IT. Endpoint fleet policy, strongest to weakest:
+              <strong>COMS</strong> (corporate-owned, fully controlled &mdash; best posture) &rarr;
+              <strong>COPE</strong> (corporate-owned, personally enabled) &rarr; <strong>CYOD</strong> (choose
+              from an approved list) &rarr; <strong>BYOD</strong> (least control &mdash; compensate with MDM +
+              MFA, remote wipe and containerisation).
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/145/final" target="_blank" rel="noopener">NIST SP 800-145 &mdash; Cloud Definition</a> &middot; <a href="https://cloudsecurityalliance.org/research/guidance" target="_blank" rel="noopener">CSA Security Guidance</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Biggest worry about public cloud?&rdquo; &rarr; multitenancy. &ldquo;Tool that finds shadow IT and enforces policy before upload?&rdquo; &rarr; CASB. &ldquo;Is encryption enough for residency laws?&rdquo; &rarr; No &mdash; legal review.</div>
+        </div>
+
+        <!-- ════════════ 3.6 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.6</p>
+          <h2 class="section-title">Select &amp; determine cryptographic solutions.</h2>
+          <p class="section-copy">
+            The heaviest-weighted slice of Domain 3. Master the PAIN framework, the symmetric/asymmetric split,
+            hashing, PKI and the key lifecycle &mdash; and always know WHICH key does WHAT.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.6</span><h3>Goals &amp; Vocabulary &mdash; PAIN, Kerckhoffs, Confusion &amp; Diffusion</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">P&middot;A&middot;I&middot;N</span><span class="fc-val">Privacy &middot; Authentication &middot; Integrity &middot; Non-repudiation</span></div>
+            <div class="fact-card"><span class="fc-label">Privacy</span><span class="fc-val">Encrypt with RECEIVER's public key</span></div>
+            <div class="fact-card"><span class="fc-label">Authentication</span><span class="fc-val">Sign with SENDER's private key</span></div>
+            <div class="fact-card"><span class="fc-label">Integrity</span><span class="fc-val">HASHING &mdash; never encryption</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The <strong>PAIN</strong> memory aid maps each cryptographic goal to its mechanism and its key:
+              <strong>P</strong>rivacy (confidentiality) = encrypt with the <em>receiver's public key</em>;
+              <strong>A</strong>uthentication = sign with the <em>sender's private key</em>;
+              <strong>I</strong>ntegrity = <em>hashing</em> (never encryption &mdash; the single most common trap
+              in this domain); <strong>N</strong>on-repudiation = a hash encrypted with the <em>sender's private
+              key</em>, i.e. a digital signature. Note that only asymmetric mechanisms can give non-repudiation
+              &mdash; a shared symmetric key can never prove <em>which</em> holder acted.
+            </p>
+            <p>
+              Core vocabulary: <strong>Kerckhoffs' principle</strong> &mdash; the system must stay secure with
+              everything public except the key. <strong>Work factor</strong> &mdash; the cost/time to break the
+              crypto; it must exceed the data's useful life, and each added key bit doubles it.
+              <strong>IV/nonce</strong> &mdash; a random/unique start value so identical plaintexts encrypt
+              differently; nonce reuse is catastrophic. Shannon's pair: <strong>confusion</strong> (substitution
+              hides the key-ciphertext relationship) and <strong>diffusion</strong> (permutation spreads each
+              plaintext bit's influence); their visible result is the <strong>avalanche effect</strong> &mdash;
+              flip one input bit and about half the output changes. <strong>Key clustering</strong> (two keys
+              producing the same ciphertext) is an algorithm weakness.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines" target="_blank" rel="noopener">NIST Cryptographic Standards</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Read every crypto stem asking &ldquo;which key?&rdquo; against PAIN. Encrypt-to-someone = their public key. Prove-it-was-you = your private key. &ldquo;Verify integrity only&rdquo; = hash, no keys at all.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.6</span><h3>Symmetric Cryptography &mdash; Algorithms, Modes &amp; the Key-Count Problem</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Key count</span><span class="fc-val">n(n&minus;1)/2 &mdash; 10 users = 45 keys</span></div>
+            <div class="fact-card"><span class="fc-label">AES</span><span class="fc-val">128-bit block; 128/192/256 keys &mdash; the standard</span></div>
+            <div class="fact-card"><span class="fc-label">DES / 3DES</span><span class="fc-val">Broken (56-bit) / retired stopgap</span></div>
+            <div class="fact-card"><span class="fc-label">ECB</span><span class="fc-val">Patterns survive &mdash; never use</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Symmetric crypto uses ONE shared secret key &mdash; fast and ideal for bulk data, but crippled by
+              distribution: every pair needs its own key, so <strong>n(n&minus;1)/2</strong> keys (10 people = 45)
+              and the key must travel <em>out-of-band</em>. <strong>Stream ciphers</strong> XOR a pseudorandom
+              keystream bit-by-bit (RC4 &mdash; now prohibited); <strong>block ciphers</strong> process fixed
+              blocks (most algorithms). The roster: <strong>DES</strong> broken (56-bit key, brute-forced since
+              1998); <strong>3DES</strong> the transitional stopgap (retired); <strong>AES/Rijndael</strong> the
+              current standard (128-bit blocks; 128/192/256-bit keys); plus recognition names Blowfish/Twofish,
+              CAST-128, SAFER (Bluetooth), RC5/RC6.
+            </p>
+            <p>
+              <strong>Modes</strong> decide how blocks chain: <strong>ECB</strong> encrypts blocks independently
+              so patterns survive (the famous penguin) &mdash; never use it; <strong>CBC</strong> chains with the
+              previous block + IV; <strong>CFB/OFB</strong> run the block cipher as a stream; <strong>CTR</strong>
+              turns a counter into keystream &mdash; parallel, modern, and with authentication becomes GCM
+              (authenticated encryption). Mode choice, not algorithm choice, is what usually sinks
+              implementations.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/fips/197/final" target="_blank" rel="noopener">FIPS 197 &mdash; AES</a> &middot; <a href="https://csrc.nist.gov/pubs/sp/800/38/a/final" target="_blank" rel="noopener">NIST SP 800-38A &mdash; Block Cipher Modes</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> The key-count arithmetic appears constantly: symmetric = n(n&minus;1)/2, asymmetric = 2n. If 10 users need 45 keys, adding the 11th adds 10 more.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.6</span><h3>Asymmetric Cryptography &mdash; RSA, ECC, Diffie-Hellman, ElGamal &amp; Quantum</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">RSA</span><span class="fc-val">Factoring two large primes; 2048-bit floor</span></div>
+            <div class="fact-card"><span class="fc-label">ECC</span><span class="fc-val">Highest strength/bit &mdash; 256 &asymp; RSA-3072</span></div>
+            <div class="fact-card"><span class="fc-label">Diffie-Hellman</span><span class="fc-val">Key EXCHANGE only; MITM if unauthenticated</span></div>
+            <div class="fact-card"><span class="fc-label">QKD</span><span class="fc-val">Quantum key exchange; provably eavesdrop-proof</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Asymmetric crypto uses a mathematically linked pair &mdash; public key shared freely, private key
+              never. <strong>RSA</strong> rests on the difficulty of factoring the product of two large primes
+              (1024/2048/4096-bit keys; slow, so it wraps session keys rather than bulk data).
+              <strong>ECC</strong> delivers the highest strength per bit &mdash; 256-bit ECC &asymp; 3072-bit RSA
+              &mdash; making it the choice for mobile, smart cards and IoT. <strong>Diffie-Hellman</strong> is key
+              <em>exchange only</em>: two parties derive a shared secret over an open channel, but with no
+              authentication it falls to man-in-the-middle &mdash; pair it with certificates.
+              <strong>ElGamal</strong> extends DH's discrete-log maths to encryption and signatures (cost:
+              ciphertext doubles in size). In practice everything is <strong>hybrid</strong>: asymmetric
+              handshake, symmetric session (TLS).
+            </p>
+            <p>
+              Forward-looking: a large quantum computer running Shor's algorithm breaks RSA/DH/ECC, which is why
+              NIST has standardised <strong>post-quantum</strong> algorithms (ML-KEM/ML-DSA, FIPS 203-205).
+              <strong>QKD</strong> (Quantum Key Distribution) uses photon physics to exchange keys with provable
+              eavesdropping detection &mdash; but remember: it distributes keys only; it does not encrypt
+              messages.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/projects/post-quantum-cryptography" target="_blank" rel="noopener">NIST Post-Quantum Cryptography</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Small keys, constrained device&rdquo; &rarr; ECC. &ldquo;Agree a key over an open network&rdquo; &rarr; DH &mdash; with the MITM caveat. &ldquo;Provably secure key sharing via photons&rdquo; &rarr; QKD, key exchange only.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.6</span><h3>Hashing, Digital Signatures &amp; Blockchain</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Hash</span><span class="fc-val">One-way, fixed-length, NO keys</span></div>
+            <div class="fact-card"><span class="fc-label">Signature</span><span class="fc-val">Hash encrypted with sender's PRIVATE key</span></div>
+            <div class="fact-card"><span class="fc-label">Verified with</span><span class="fc-val">Sender's PUBLIC key</span></div>
+            <div class="fact-card"><span class="fc-label">Salting</span><span class="fc-val">Unique random value; defeats rainbow tables</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              A <strong>hash</strong> is a one-way function: variable input &rarr; fixed digest, using no keys,
+              serving integrity only. Status board: MD5 and SHA-1 broken (collisions); SHA-2 the workhorse; SHA-3
+              the different-maths hedge. The <strong>birthday attack</strong> finds two messages with the same
+              digest (collisions come at 2^(n/2), not 2^n) &mdash; defend with stronger algorithms and
+              <strong>salting</strong>: a unique random value per user, added before hashing and changed on
+              password update. A keyed hash (<strong>HMAC</strong>) adds authenticity but still not
+              non-repudiation.
+            </p>
+            <p>
+              A <strong>digital signature</strong> = the message hash encrypted with the <em>sender's private
+              key</em>; the recipient verifies by decrypting with the <em>sender's public key</em> and comparing
+              digests &mdash; delivering authenticity, integrity AND non-repudiation in one mechanism (DSA/ECDSA
+              sign only, never encrypt). <strong>Blockchain</strong> applies these primitives &mdash; chained
+              hashes across a distributed, decentralised ledger &mdash; to give integrity, non-repudiation and
+              tamper-resistance in distributed environments.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/fips/180-4/upd1/final" target="_blank" rel="noopener">FIPS 180-4 &mdash; Secure Hash Standard</a> &middot; <a href="https://csrc.nist.gov/pubs/fips/186-5/final" target="_blank" rel="noopener">FIPS 186-5 &mdash; Digital Signature Standard</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Integrity comes from HASHING, never from encryption &mdash; ISC&sup2;'s favourite trap. And the signature key directions: sign = sender's private; verify = sender's public. Drill until reflexive.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.6</span><h3>PKI &amp; Key Management &mdash; CA/RA, CRL/OCSP, Escrow &amp; Split Knowledge</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">CA vs RA</span><span class="fc-val">CA SIGNS; RA only verifies identity</span></div>
+            <div class="fact-card"><span class="fc-label">CRL vs OCSP</span><span class="fc-val">Periodic list (delay) vs real-time query</span></div>
+            <div class="fact-card"><span class="fc-label">Stapling</span><span class="fc-val">Server pre-fetches OCSP proof; cuts CA load</span></div>
+            <div class="fact-card"><span class="fc-label">Split knowledge</span><span class="fc-val">No one holds the whole key</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>PKI</strong> creates, manages, distributes and revokes X.509 certificates &mdash; binding
+              identities to public keys so strangers can trust each other. Roles: the <strong>CA</strong> is the
+              trusted root that creates and <em>signs</em> certificates; the <strong>RA</strong> establishes and
+              verifies the requester's identity but never signs; intermediates do the daily issuing so the
+              offline root stays safe; and for true non-repudiation PKI needs a reliable time source for
+              <em>secure timestamping</em>. Revocation: a <strong>CRL</strong> is a periodically published
+              blacklist &mdash; inherently stale between updates; <strong>OCSP</strong> queries status in real
+              time; <strong>OCSP stapling</strong> has the web server pre-fetch the signed response and attach it
+              to the handshake, cutting both latency and CA load. <strong>Pinning</strong> hard-codes the expected
+              certificate/key in the client, defeating rogue-CA MITM.
+            </p>
+            <p>
+              Key management lifecycle: generation (CSPRNG/HSM entropy) &rarr; distribution (DH, out-of-band, or
+              hybrid wrap) &rarr; storage (TPM/HSM) &rarr; rotation (limit each key's cryptoperiod) &rarr;
+              disposition (crypto-shredding, verified destruction) &rarr; recovery. The recovery controls:
+              <strong>split knowledge</strong> (two+ people each hold a portion; none can reconstruct alone),
+              <strong>dual control</strong> (two people must act together &mdash; divides the ACTION, where split
+              knowledge divides the SECRET), and <strong>key escrow</strong> (a trusted third party holds copies
+              for emergency/legal recovery).
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final" target="_blank" rel="noopener">NIST SP 800-57 &mdash; Key Management</a> &middot; <a href="https://datatracker.ietf.org/doc/html/rfc5280" target="_blank" rel="noopener">RFC 5280 &mdash; X.509 PKI</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Who verifies identity vs who signs?&rdquo; &rarr; RA verifies, CA signs. &ldquo;Real-time revocation with less CA load?&rdquo; &rarr; OCSP + stapling. Split knowledge vs dual control = secret vs action.</div>
+        </div>
+
+        <!-- ════════════ 3.7 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.7</p>
+          <h2 class="section-title">Understand methods of cryptanalytic attacks.</h2>
+          <p class="section-copy">
+            Crypto rarely falls to mathematics &mdash; it falls to implementations, physics and people. Rank the
+            classic attacks by attacker knowledge, then split physical attacks into passive vs active.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.7</span><h3>The Knowledge Ladder &amp; Implementation Attacks</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Hardest</span><span class="fc-val">Ciphertext-only (least info)</span></div>
+            <div class="fact-card"><span class="fc-label">Ladder</span><span class="fc-val">CO &rarr; Known-PT &rarr; Chosen-PT &rarr; Chosen-CT</span></div>
+            <div class="fact-card"><span class="fc-label">Brute force</span><span class="fc-val">Defence = increase KEY LENGTH</span></div>
+            <div class="fact-card"><span class="fc-label">Pass-the-Hash</span><span class="fc-val">Authenticate with the stolen hash itself</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Rank attacks by what the attacker HAS: <strong>ciphertext-only</strong> (hardest &mdash; only
+              intercepts); <strong>known-plaintext</strong> (plaintext-ciphertext pairs &mdash; Bletchley's
+              cribs); <strong>chosen-plaintext</strong> (attacker gets chosen inputs encrypted);
+              <strong>chosen-ciphertext</strong> (gets decryptions too &mdash; the strongest position, needs
+              access to the decryption system). <strong>Linear &amp; differential cryptanalysis</strong> are the
+              academic block-cipher attacks; <strong>factoring</strong> targets RSA's modulus directly. Against
+              <strong>brute force</strong> the single most effective defence is simply increasing key length
+              &mdash; each bit doubles the work.
+            </p>
+            <p>
+              Implementation-level: <strong>Pass-the-Hash</strong> captures an NTLM hash (Mimikatz) and
+              authenticates with the hash directly &mdash; no cracking needed, which is why hashes deserve
+              password-grade protection. <strong>Replay</strong> re-sends captured packets &mdash; killed by
+              timestamps, nonces and sequence numbers. <strong>Temporary files</strong>, swap and crash dumps
+              leak plaintext long after the &ldquo;encrypted&rdquo; work ended. <strong>Ransomware</strong>
+              weaponises encryption against you &mdash; primarily an attack on data <em>integrity/availability</em>.
+              Password-focused: <strong>dictionary</strong> attacks try likely words; <strong>rainbow
+              tables</strong> use precomputed hash chains &mdash; completely neutralised by salting.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://attack.mitre.org/techniques/T1550/002/" target="_blank" rel="noopener">MITRE ATT&amp;CK &mdash; Pass the Hash</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Which attack is hardest for the attacker?&rdquo; &rarr; ciphertext-only. &ldquo;Best brute-force defence?&rdquo; &rarr; longer keys. &ldquo;Authenticated with a hash, never cracked it&rdquo; &rarr; Pass-the-Hash.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.7</span><h3>Physical Attacks &mdash; Side-Channel vs Fault Injection vs TEMPEST</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Side-channel</span><span class="fc-val">PASSIVE &mdash; observe timing/power/EM</span></div>
+            <div class="fact-card"><span class="fc-label">Fault injection</span><span class="fc-val">ACTIVE &mdash; voltage spikes, clock glitches</span></div>
+            <div class="fact-card"><span class="fc-label">TEMPEST</span><span class="fc-val">Intercept EM emanations at a distance</span></div>
+            <div class="fact-card"><span class="fc-label">Faraday cage</span><span class="fc-val">Fully absorbs/contains the emissions</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The examiner's favourite split: if the attacker only <em>watches</em>, it's passive; if they
+              <em>change the device's behaviour</em>, it's active. <strong>Side-channel attacks</strong> are
+              passive &mdash; observing timing variations, power consumption (SPA/DPA), cache access or EM
+              emissions to recover keys without ever touching the algorithm's mathematics. They're hard to detect
+              because nothing is disturbed. <strong>Fault injection</strong> is active &mdash; deliberately
+              injecting voltage spikes or clock glitches to force exploitable errors; countered by shielding,
+              output blocking, and erasing keys after N failed attempts.
+            </p>
+            <p>
+              <strong>TEMPEST / emanation eavesdropping</strong> intercepts the electromagnetic emissions leaking
+              from equipment (the van-Eck &ldquo;read the screen from the parking lot&rdquo; attack). Defences in
+              strength order: a <strong>Faraday cage</strong> (metal-mesh enclosure that fully absorbs EM
+              signals), <strong>white noise</strong> (broadcast false signals to mask the real ones), and
+              <strong>control zones</strong> (restrict the physical areas signals can reach). Social routes
+              complete the picture: <strong>purchase-key</strong> (bribe/buy the secret) and
+              <strong>rubber-hose</strong> (coercion) &mdash; countered procedurally by split knowledge and dual
+              control, because no algorithm resists a wrench.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Measuring how long operations take = side-channel (passive). Glitching the voltage = fault injection (active). Van in the parking lot reading EM = TEMPEST; the full block is a Faraday cage.</div>
+        </div>
+
+        <!-- ════════════ 3.8 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.8</p>
+          <h2 class="section-title">Apply security principles to site &amp; facility design.</h2>
+          <p class="section-copy">
+            Physical security begins on the architect's drawing board &mdash; shaping behaviour with CPTED,
+            hardening what remains, and sequencing controls in the order an intruder meets them.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.8</span><h3>CPTED, Target Hardening &amp; the Six D's</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">CPTED</span><span class="fc-val">PSYCHOLOGICAL &mdash; shapes behaviour</span></div>
+            <div class="fact-card"><span class="fc-label">3 strategies</span><span class="fc-val">Access Control &middot; Surveillance &middot; Territorial</span></div>
+            <div class="fact-card"><span class="fc-label">Target hardening</span><span class="fc-val">PHYSICAL denial &mdash; locks, bollards, bars</span></div>
+            <div class="fact-card"><span class="fc-label">Six D's</span><span class="fc-val">Deter &rarr; Deny &rarr; Detect &rarr; Delay &rarr; Determine &rarr; Decide</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>CPTED</strong> (Crime Prevention Through Environmental Design) reduces crime by shaping how
+              people <em>feel and behave</em> in a space &mdash; legitimate users feel ownership, intruders feel
+              exposed. Its three strategies: <strong>Natural Access Control</strong> (physical elements guide and
+              restrict entry/exit paths &mdash; hedges funnelling visitors past reception);
+              <strong>Natural Surveillance</strong> (maximise visibility &mdash; low landscaping, open sightlines,
+              windows on walkways); <strong>Territorial Reinforcement</strong> (clear boundaries create ownership
+              &mdash; signage, pavement changes, defined property lines). <strong>Target hardening</strong> is the
+              contrast: physical barriers that simply DENY access &mdash; bollards, reinforced doors, grilles. A
+              strong programme layers both: CPTED discourages and channels; hardening denies what remains.
+            </p>
+            <p>
+              The facility planning sequence: risk assessment &rarr; critical path analysis &rarr; site selection
+              (cost, location, size, neighbours) &rarr; facility design (CPTED) &rarr; control implementation
+              &rarr; KPI monitoring. And the physical-security order of operations &mdash; the <strong>Six
+              D's</strong>: <em>Deter</em> (discourage the attempt), <em>Deny</em> (block it), <em>Detect</em>
+              (sense it), <em>Delay</em> (slow it), <em>Determine</em> (assess what it is), <em>Decide</em>
+              (choose the response). Strict order &mdash; the exam tests the sequence.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://www.cpted.net/" target="_blank" rel="noopener">International CPTED Association</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> CPTED = behavioural/psychological; target hardening = physical/absolute. Open sightlines &rarr; Natural Surveillance; funnelled paths &rarr; Natural Access Control; boundary markers &rarr; Territorial Reinforcement.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.8</span><h3>Server Rooms, SCIFs &amp; Restricted Areas</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Location</span><span class="fc-val">CORE of the building &mdash; no windows</span></div>
+            <div class="fact-card"><span class="fc-label">Entry</span><span class="fc-val">ONE exclusive controlled entrance</span></div>
+            <div class="fact-card"><span class="fc-label">Air</span><span class="fc-val">Positive pressurisation &mdash; air flows OUT</span></div>
+            <div class="fact-card"><span class="fc-label">SCIF</span><span class="fc-val">Clearance-only compartmented facility</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The server room is a single point of catastrophic failure: physical access to the console bypasses
+              every logical control (pull drives, reset credentials, plant implants). Design rules the exam
+              expects verbatim: locate it in the <strong>core of the building</strong> (never an exterior wall),
+              give it <strong>one exclusive controlled entry</strong> (single entrance = best control; multiple
+              entrances exist only for emergency evacuation), <strong>no windows</strong>, and
+              <strong>positive pressurisation</strong> &mdash; internal air pressure higher than outside, so air
+              flows outward when doors open and dust, smoke and contaminants can never drift in.
+            </p>
+            <p>
+              A <strong>SCIF</strong> (Sensitive Compartmented Information Facility) goes further: a hardened,
+              access-controlled area for top-secret work requiring clearance and per-visit approval &mdash;
+              typically with TEMPEST shielding, no personal electronics, and continuous monitoring. Same
+              philosophy, government-grade execution.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> An architect proposing a server room on an exterior wall, with windows and two entrances, is a walking exam question &mdash; every one of those choices is wrong. Core, single entry, no windows, positive pressure.</div>
+        </div>
+
+        <!-- ════════════ 3.9 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.9</p>
+          <h2 class="section-title">Design site &amp; facility security controls.</h2>
+          <p class="section-copy">
+            The concrete controls: perimeter and entry, power and climate, fire detection and suppression &mdash;
+            with life safety governing every choice.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.9</span><h3>Perimeter &amp; Entry &mdash; Fences, Alarms, Locks, Mantraps</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Fences</span><span class="fc-val">3-4ft casual &middot; 6-7ft most &middot; 8ft+wire determined</span></div>
+            <div class="fact-card"><span class="fc-label">Alarms</span><span class="fc-val">Deterrent &middot; Repellent &middot; Notification (silent)</span></div>
+            <div class="fact-card"><span class="fc-label">Fail states</span><span class="fc-val">Fail-secure = server rooms; fail-safe = people</span></div>
+            <div class="fact-card"><span class="fc-label">Mantrap</span><span class="fc-val">Strongest vs tailgating &amp; piggybacking</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              <strong>Fence heights</strong> are pure memorisation: 3&ndash;4 ft deters casual trespassers only;
+              6&ndash;7 ft deters most intruders; 8+ ft topped with barbed/razor wire is required for determined
+              intruders. <strong>Intrusion alarms</strong> come in three roles: <em>deterrent</em> (make the
+              attack harder/discourage it), <em>repellent</em> (sirens and lights to drive the intruder off), and
+              <em>notification</em> (a SILENT alert so responders act without tipping the intruder). Locks are
+              <strong>delay controls</strong>, not absolute barriers &mdash; every lock (combination, cipher,
+              smart) can be picked or shimmed; they buy time for detection and response.
+            </p>
+            <p>
+              Electronic locks need a declared <strong>fail state</strong>: <em>fail-secure</em> (stays locked on
+              power loss &mdash; required for server rooms) vs <em>fail-safe</em> (opens &mdash; wherever human
+              egress matters). Cards: <strong>magnetic-stripe</strong> is trivially cloned and insufficient;
+              <strong>smart cards</strong> carry a chip and support MFA. Entry abuse: <strong>tailgating</strong>
+              = following someone through WITHOUT their knowledge; <strong>piggybacking</strong> = WITH their
+              consent. A <strong>turnstile</strong> merely manages throughput; a <strong>mantrap</strong> &mdash;
+              interlocked double doors isolating one person per cycle, often guard-monitored &mdash; is the
+              strongest control against both.
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Tailgating vs piggybacking is decided by one word: <em>consent</em>. And &ldquo;strongest control against both&rdquo; is always the mantrap &mdash; never the turnstile.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.9</span><h3>Power &amp; Environment &mdash; Anomalies, HVAC, Humidity</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">High voltage</span><span class="fc-val">Spike (momentary) &middot; Surge (prolonged)</span></div>
+            <div class="fact-card"><span class="fc-label">Low voltage</span><span class="fc-val">Sag (momentary) &middot; Brownout (prolonged)</span></div>
+            <div class="fact-card"><span class="fc-label">No power</span><span class="fc-val">Fault (momentary) &middot; Blackout (prolonged)</span></div>
+            <div class="fact-card"><span class="fc-label">Climate</span><span class="fc-val">15&ndash;32&deg;C &middot; 20&ndash;80% humidity</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The six power anomalies form a 3&times;2 grid the exam loves: high voltage &mdash;
+              <strong>spike</strong> (momentary) and <strong>surge</strong> (prolonged); low voltage &mdash;
+              <strong>sag/dip</strong> (momentary) and <strong>brownout</strong> (prolonged); total loss &mdash;
+              <strong>fault</strong> (momentary) and <strong>blackout</strong> (prolonged). Defend in layers:
+              surge protection and line conditioning for quality, UPS to bridge the gap, generator (tested under
+              load, fuelled by contract) for the duration.
+            </p>
+            <p>
+              Climate numbers: temperature <strong>15&ndash;32&deg;C</strong> (59&ndash;89.6&deg;F); humidity
+              <strong>20&ndash;80%</strong>. Too-high humidity corrodes components; too-low breeds static
+              electricity (those winter shocks around the racks are a warning sign). Cooling vocabulary:
+              <em>sensible</em> cooling removes heat; <em>latent</em> cooling removes moisture. HVAC for critical
+              rooms is dedicated, monitored and positively pressurised &mdash; and in a fire it must
+              automatically <strong>shut down</strong> (next panel).
+            </p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Build the grid in your head: momentary/prolonged &times; high/low/none = spike/surge, sag/brownout, fault/blackout. &ldquo;Voltage dropped for several minutes&rdquo; &rarr; brownout.</div>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.9</span><h3>Fire &mdash; Detection, Extinguisher Classes &amp; Suppression Systems</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Golden rule</span><span class="fc-val">LIFE SAFETY above everything</span></div>
+            <div class="fact-card"><span class="fc-label">Detectors</span><span class="fc-val">Ionization = earliest; photoelectric = smoke</span></div>
+            <div class="fact-card"><span class="fc-label">Data centre</span><span class="fc-val">Preaction water &middot; FM-200 gas</span></div>
+            <div class="fact-card"><span class="fc-label">Classes</span><span class="fc-val">A common &middot; B liquid &middot; C electrical &middot; D metal</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              Every fire decision starts from the golden rule: <strong>life safety over assets, always</strong>.
+              Detection by fire stage: <strong>ionization</strong> detectors sense the charged particles of the
+              <em>incipient</em> stage &mdash; the earliest possible warning, before visible smoke;
+              <strong>photoelectric</strong> detectors trigger when visible smoke scatters/blocks a light beam
+              (stage 2); heat detectors are slowest but false-alarm-proof. The earlier the detection, the less
+              damage from both the fire and its suppression. Extinguisher classes: <strong>A</strong> ordinary
+              combustibles, <strong>B</strong> flammable/petroleum liquids, <strong>C</strong> electrical,
+              <strong>D</strong> combustible metals (magnesium, sodium) &mdash; the wrong class makes it worse.
+            </p>
+            <p>
+              Water systems: <strong>wet pipe</strong> (always charged &mdash; fastest, leak risk);
+              <strong>dry pipe</strong> (compressed air until triggered &mdash; for freezing climates);
+              <strong>preaction</strong> (two-stage: fills on detection, releases only when a head melts &mdash;
+              BEST for data centres because staff can abort a false alarm); <strong>deluge</strong> (all heads at
+              once &mdash; never for electronics). Gas: <strong>FM-200 / Aero-K</strong> are the modern safe
+              standards; <strong>Halon is banned</strong> (ozone depletion + health hazard); CO&#8322; is
+              effective but lethal &mdash; unoccupied spaces with pre-discharge alarms only. And during any fire,
+              <strong>HVAC shuts down automatically</strong> &mdash; otherwise it spreads smoke and feeds the
+              fire oxygen.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://www.nfpa.org/codes-and-standards" target="_blank" rel="noopener">NFPA Codes &amp; Standards</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> &ldquo;Sprinklers that won't dump water on a false alarm&rdquo; &rarr; preaction. &ldquo;Earliest possible warning&rdquo; &rarr; ionization. &ldquo;Replace the Halon&rdquo; &rarr; FM-200/Aero-K.</div>
+        </div>
+
+        <!-- ════════════ 3.10 ════════════ -->
+        <div class="section-head" style="margin-top:1.5rem;">
+          <p class="section-label">Sub-domain 3.10</p>
+          <h2 class="section-title">Manage the information system lifecycle.</h2>
+          <p class="section-copy">
+            Security is a property of the whole lifecycle &mdash; from the first requirement to the last wiped
+            disk. Bolting it on later is the most expensive mistake in engineering.
+          </p>
+        </div>
+
+        <div class="note-panel" data-reveal>
+          <div class="d4-panel-header"><span class="layer-badge">3.10</span><h3>Security Across the System Lifecycle</h3></div>
+          <div class="d4-fact-grid">
+            <div class="fact-card"><span class="fc-label">Phases</span><span class="fc-val">Requirements &rarr; Design &rarr; Build &rarr; Operate &rarr; Retire</span></div>
+            <div class="fact-card"><span class="fc-label">Cheapest fix</span><span class="fc-val">At REQUIREMENTS/design time</span></div>
+            <div class="fact-card"><span class="fc-label">Operations</span><span class="fc-val">Config &amp; change management, patching</span></div>
+            <div class="fact-card"><span class="fc-label">Retirement</span><span class="fc-val">Sanitise media &mdash; NIST SP 800-88</span></div>
+          </div>
+          <div class="d4-body">
+            <p>
+              The lifecycle runs: <strong>stakeholder needs &amp; requirements</strong> (security requirements
+              defined alongside functional ones) &rarr; <strong>architecture &amp; design</strong> (threat
+              modeling, secure design principles from 3.1, evaluation criteria from 3.3) &rarr;
+              <strong>development &amp; implementation</strong> (secure coding, testing, certification) &rarr;
+              <strong>integration &amp; verification</strong> (does the built system meet the security
+              requirements?) &rarr; <strong>operations &amp; maintenance</strong> (configuration and change
+              management, patching, continuous monitoring &mdash; and re-accreditation on significant change)
+              &rarr; <strong>retirement/disposal</strong>.
+            </p>
+            <p>
+              Two lifecycle truths the exam rewards: defects cost orders of magnitude more to fix the later
+              they're found &mdash; which is the entire argument for security-by-design; and systems are most
+              vulnerable during <em>transitions</em> (upgrades, migrations, decommissioning). At end of life,
+              media must be sanitised to NIST SP 800-88 (clear/purge/destroy &mdash; see Domain 2) or
+              crypto-shredded where you can't touch the physical media (cloud). A retired system that still holds
+              live data isn't retired &mdash; it's abandoned.
+            </p>
+            <p><em>Dig deeper:</em> <a href="https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final" target="_blank" rel="noopener">NIST SP 800-160 &mdash; Systems Security Engineering</a> &middot; <a href="https://csrc.nist.gov/pubs/sp/800/88/r2/final" target="_blank" rel="noopener">NIST SP 800-88 &mdash; Media Sanitization</a></p>
+          </div>
+          <div class="callout"><strong>Exam tip:</strong> Whenever a stem offers &ldquo;add security review at requirements phase&rdquo; against any later-phase fix, the earliest phase wins &mdash; cheapest, most effective, and ISC&sup2;'s philosophy in one answer.</div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer">

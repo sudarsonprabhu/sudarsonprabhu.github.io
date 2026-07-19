@@ -15,9 +15,8 @@ function doPost(e) {
     
     // 2. Handle by Type
     if (data.type === 'pageview') {
-      savePageView(data);
-      const stats = getStats();
-      return createJsonResponse({ ok: true, message: 'Page view logged', uniqueVisitors: stats.uniqueVisitors, totalViews: stats.totalViews });
+      // Ignore pageviews for now or append to a 'Stats' sheet if expanded
+      return createJsonResponse({ ok: true, message: 'Page view logged' });
     }
     
     if (data.type === 'lead') {
@@ -26,9 +25,9 @@ function doPost(e) {
       return createJsonResponse({ ok: true, message: 'Enquiry submitted successfully' });
     }
     
+    // To handle arbitrary options or ping requests from the stats endpoint logic
     if (data.action === 'stats') {
-      const stats = getStats();
-      return createJsonResponse({ ok: true, uniqueVisitors: stats.uniqueVisitors, totalViews: stats.totalViews });
+       return createJsonResponse({ ok: true, views: '--' });
     }
     
     return createJsonResponse({ ok: false, message: 'Invalid payload type' });
@@ -38,17 +37,17 @@ function doPost(e) {
   }
 }
 
+// Note: Google Apps Script Web Apps automatically handle OPTIONS preflight.
 function doGet(e) {
-  if (e.parameter && e.parameter.action === 'stats') {
-    const stats = getStats();
-    return createJsonResponse({ ok: true, uniqueVisitors: stats.uniqueVisitors, totalViews: stats.totalViews });
+  if (e.parameter.action === 'stats') {
+    return createJsonResponse({ ok: true, views: '--' });
   }
   return createJsonResponse({ ok: true, message: 'Backend is running' });
 }
 
 function parseFormData(e) {
   if (e.parameter) {
-    return e.parameter;
+    return e.parameter; // Handles URLSearchParams sent by fetch
   }
   return {};
 }
@@ -72,14 +71,11 @@ function verifyTurnstile(token) {
   return result.success;
 }
 
-// ─── LEADS SHEET ───────────────────────────────────────────
-
-function getLeadsSheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = ss.getSheetByName('Leads');
+function saveLeadToSheet(data) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   
-  if (!sheet) {
-    sheet = ss.insertSheet('Leads');
+  // Create headers if they don't exist (when the sheet is blank)
+  if (sheet.getLastRow() === 0) {
     sheet.appendRow([
       'Date Submitted', 
       'Full Name', 
@@ -95,12 +91,7 @@ function getLeadsSheet() {
     sheet.setFrozenRows(1);
   }
   
-  return sheet;
-}
-
-function saveLeadToSheet(data) {
-  const sheet = getLeadsSheet();
-  
+  // Append the data
   sheet.appendRow([
     data.submittedAt || new Date().toISOString(),
     data.fullName || '',
@@ -114,93 +105,26 @@ function saveLeadToSheet(data) {
   ]);
 }
 
-// ─── PAGE VIEWS SHEET ──────────────────────────────────────
-
-function getPageViewsSheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = ss.getSheetByName('PageViews');
-  
-  if (!sheet) {
-    sheet = ss.insertSheet('PageViews');
-    sheet.appendRow([
-      'Timestamp',
-      'Visitor ID',
-      'Page',
-      'Path',
-      'Referrer',
-      'Title',
-      'Language',
-      'Screen Width',
-      'User Agent',
-      'Source URL'
-    ]);
-    sheet.getRange('A1:J1').setFontWeight('bold');
-    sheet.setFrozenRows(1);
-  }
-  
-  return sheet;
-}
-
-function savePageView(data) {
-  const sheet = getPageViewsSheet();
-  
-  sheet.appendRow([
-    data.viewedAt || new Date().toISOString(),
-    data.visitorId || '',
-    data.page || '',
-    data.path || '',
-    data.referrer || '',
-    data.title || '',
-    data.language || '',
-    data.screenWidth || '',
-    data.userAgent || '',
-    data.sourceUrl || ''
-  ]);
-}
-
-function getStats() {
-  const sheet = getPageViewsSheet();
-  const lastRow = sheet.getLastRow();
-  
-  if (lastRow <= 1) {
-    return { totalViews: 0, uniqueVisitors: 0 };
-  }
-  
-  const totalViews = lastRow - 1; // Exclude header row
-  
-  // Get unique visitor IDs from column B (Visitor ID)
-  const visitorIds = sheet.getRange(2, 2, lastRow - 1, 1).getValues();
-  const uniqueSet = new Set();
-  
-  visitorIds.forEach(function(row) {
-    const id = (row[0] || '').toString().trim();
-    if (id) {
-      uniqueSet.add(id);
-    }
-  });
-  
-  return { totalViews: totalViews, uniqueVisitors: uniqueSet.size };
-}
-
-// ─── EMAIL NOTIFICATION ────────────────────────────────────
-
 function sendEmailNotification(data) {
-  const subject = '⭐ New Website Enquiry: ' + (data.interest || 'Consulting') + ' from ' + (data.fullName || 'Someone');
+  const subject = `⭐ New Website Enquiry: ${data.interest || 'Consulting'} from ${data.fullName || 'Someone'}`;
   
-  const body = 
-    'You have received a new enquiry through your portfolio website.\n\n' +
-    'Details:\n' +
-    '-------------------------------------------------\n' +
-    'Name:     ' + (data.fullName || 'N/A') + '\n' +
-    'Email:    ' + (data.email || 'N/A') + '\n' +
-    'Phone:    ' + (data.phone || 'N/A') + '\n' +
-    'Company:  ' + (data.company || 'N/A') + '\n' +
-    'Interest: ' + (data.interest || 'N/A') + '\n' +
-    'Source:   ' + (data.sourceUrl || 'N/A') + '\n' +
-    'Date:     ' + (data.submittedAt || new Date().toISOString()) + '\n\n' +
-    'Message:\n' +
-    '-------------------------------------------------\n' +
-    (data.message || 'No message provided.') + '\n';
+  const body = `
+You have received a new enquiry through your portfolio website.
+
+Details:
+-------------------------------------------------
+Name:     ${data.fullName || 'N/A'}
+Email:    ${data.email || 'N/A'}
+Phone:    ${data.phone || 'N/A'}
+Company:  ${data.company || 'N/A'}
+Interest: ${data.interest || 'N/A'}
+Source:   ${data.sourceUrl || 'N/A'}
+Date:     ${data.submittedAt || new Date().toISOString()}
+
+Message:
+-------------------------------------------------
+${data.message || 'No message provided.'}
+  `;
   
   MailApp.sendEmail({
     to: NOTIFICATION_EMAIL,

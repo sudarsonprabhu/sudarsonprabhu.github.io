@@ -19,7 +19,6 @@
 </head>
 
 <body data-page="home">
-  <canvas id="particle-canvas" class="particle-canvas"></canvas>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
@@ -38,7 +37,7 @@
       <a href="about.html" data-page="about">About</a>
       <a href="experience.html" data-page="experience">Experience</a>
       <a href="services.html" data-page="services">Services</a>
-
+      <a href="credentials.html" data-page="credentials">Credentials</a>
     </nav>
   </header>
 
@@ -85,7 +84,7 @@
         <div class="hero-quick-grid">
           <article class="quick-card">
             <span class="quick-label">Current role</span>
-            <span class="quick-value">Security Consultant</span>
+            <span class="quick-value">Associate Information Security Consultant</span>
             <span class="quick-copy">Payatu Security Consulting Pvt Ltd</span>
           </article>
           <article class="quick-card">
@@ -104,50 +103,47 @@
 
     <section class="section" data-reveal>
       <div class="section-head">
-        <p class="section-label">Proven Impact</p>
-        <h2 class="section-title">Delivering security that makes business sense.</h2>
+        <p class="section-label">At A Glance</p>
+        <h2 class="section-title">The short version of what I do.</h2>
         <p class="section-copy">
-          I don't just draft policies; I build security structures that protect revenue and accelerate compliance. I
-          translate complex regulatory requirements into practical operational controls, helping businesses pass audits
-          smoothly, reduce their exposure, and confidently prove their security posture to partners.
+          I help organizations turn governance, risk, and compliance into something practical,
+          credible, and business ready. My work is centered on building trust, reducing
+          uncertainty, and helping teams move forward with confidence.
         </p>
       </div>
 
       <div class="summary-grid">
         <article class="panel stat-card">
-          <span class="stat-value">Audit & Compliance</span>
+          <span class="stat-value">Governance With Purpose</span>
           <span class="stat-label">
-            Passing audits and unlocking B2B deals by translating complex frameworks into practical everyday controls,
-            rather than just delivering theoretical policies.
+            Building security governance that is practical, scalable, and aligned with business
+            priorities.
           </span>
         </article>
         <article class="panel stat-card">
-          <span class="stat-value">Risk Remediation</span>
+          <span class="stat-value">Audit-Ready Confidence</span>
           <span class="stat-label">
-            Preventing catastrophic downtime by taking raw vulnerability data and building prioritized, risk-rated
-            execution plans that your IT teams can seamlessly follow.
+            Helping organizations prepare for RBI, DFSA, ISO, and assurance reviews with
+            structure and clarity.
           </span>
         </article>
         <article class="panel stat-card">
-          <span class="stat-value">vCISO Leadership</span>
+          <span class="stat-value">Risk Into Action</span>
           <span class="stat-label">
-            Delivering immense cost savings and strategic direction by acting as a hands-on fractional executive who
-            actively aligns security with your business goals.
+            Turning risks, findings, and compliance gaps into focused actions that strengthen
+            controls.
           </span>
         </article>
         <article class="panel stat-card">
-          <span class="stat-value">Executive Reporting</span>
+          <span class="stat-value">Leadership Visibility</span>
           <span class="stat-label">
-            Guiding board-level security investments by translating deeply technical security findings into
-            crystal-clear, decision-ready performance metrics.
+            Delivering clear reporting, remediation direction, and decision-ready insight for
+            leadership teams.
           </span>
         </article>
         <article class="panel stat-card">
-          <span class="stat-value">Culture & Awareness</span>
-          <span class="stat-label">
-            Turning human error into an active defense layer by deploying context-driven, role-based security training
-            instead of generic annual compliance videos.
-          </span>
+          <span class="stat-value" id="view-count">--</span>
+          <span class="stat-label">Professionals exploring my portfolio and work profile</span>
         </article>
       </div>
     </section>
@@ -174,10 +170,10 @@
 
         <a class="panel teaser-card" href="about.html">
           <p class="card-kicker">About</p>
-          <h3 class="card-title">Profile, certifications, and academic foundation</h3>
+          <h3 class="card-title">Professional summary, strengths, and working style</h3>
           <p class="card-copy">
-            Read more about how I approach security governance, risk-led execution, and view my formal credentials and
-            measurable outcomes.
+            Read more about how I approach security governance, risk-led execution, and
+            business-facing advisory.
           </p>
           <span class="card-link">Open About</span>
         </a>
@@ -202,6 +198,15 @@
           <span class="card-link">Open Services</span>
         </a>
 
+        <a class="panel teaser-card" href="credentials.html">
+          <p class="card-kicker">Credentials</p>
+          <h3 class="card-title">Certifications, education, achievements, and frameworks</h3>
+          <p class="card-copy">
+            See formal credentials, measurable outcomes, and the standards and tools that shape
+            my work.
+          </p>
+          <span class="card-link">Open Credentials</span>
+        </a>
       </div>
     </section>
 
@@ -287,15 +292,6 @@
           <p class="card-copy">
             Cybersecurity gap assessments aligned to RBI, IRDA, SEBI, and other regulatory
             frameworks ; identifying control gaps and building audit-ready remediation plans.
-          </p>
-          <span class="card-link">Learn More &rarr;</span>
-        </a>
-
-        <a class="panel service-card" href="services.html#soc2" id="svc-soc2">
-          <h3 class="card-title">SOC 2 Readiness &amp; Attestation</h3>
-          <p class="card-copy">
-            SOC 2 Type 1 and Type 2 preparation ; Trust Services Criteria scoping, control mapping,
-            gap remediation, evidence collection, and CPA audit facilitation.
           </p>
           <span class="card-link">Learn More &rarr;</span>
         </a>
@@ -442,7 +438,8 @@
 
           <div class="form-footer">
             <p class="form-status" id="form-status">
-              Please fill your details below to reach out to us.
+              Configure the backend URL and Turnstile site key in `config.js` to enable secure
+              enquiry storage and email alerts.
             </p>
             <button class="button button-primary" type="submit" id="form-submit">
               Send Enquiry
@@ -468,7 +465,6 @@
     <span>Sudarson Prabhu R.E</span>
     <span>Information Security Consultant</span>
     <span data-year></span>
-    <span class="footer-views"><span id="view-count">--</span> portfolio views</span>
   </footer>
 </body>
 

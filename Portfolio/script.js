@@ -120,29 +120,20 @@ function animateNumber(element, target) {
 }
 
 async function trackPageView() {
-  if (pageViewTrackInFlight) {
+  if (!hasBackend() || pageViewTrackInFlight || !hasTurnstile()) {
+    return;
+  }
+
+  if (pageViewWidgetId === null || typeof window.turnstile === "undefined") {
     return;
   }
 
   try {
     pageViewTrackInFlight = true;
-    const sessionTracked = sessionStorage.getItem("portfolio_session_tracked");
-    
-    if (!sessionTracked) {
-      // Increment global counter on new unique session
-      const response = await fetch("https://abacus.jasoncameron.dev/hit/sudarsonprabhu/portfolio_views");
-      const data = await response.json();
-      
-      if (data && data.value) {
-        localStorage.setItem("portfolio_total_views", data.value.toString());
-      }
-      
-      sessionStorage.setItem("portfolio_session_tracked", "true");
-    }
+    window.turnstile.execute("#pageview-turnstile");
   } catch (error) {
-    console.error("Page view tracking failed:", error);
-  } finally {
     pageViewTrackInFlight = false;
+    console.error("Page view tracking failed:", error);
   }
 }
 
@@ -151,23 +142,30 @@ async function loadViewCount() {
     return;
   }
 
+  if (!hasBackend()) {
+    viewCountElement.textContent = "--";
+    return;
+  }
+
   try {
-    // Fetch real-time global count on load
-    const response = await fetch("https://abacus.jasoncameron.dev/get/sudarsonprabhu/portfolio_views");
-    let count;
-    
-    if (response.ok) {
-      const data = await response.json();
-      count = data.value || 1;
-      localStorage.setItem("portfolio_total_views", count.toString());
-    } else {
-      count = parseInt(localStorage.getItem("portfolio_total_views")) || 1;
+    const response = await fetch(toUrl(backendUrl, { action: "stats" }));
+
+    if (!response.ok) {
+      throw new Error(`Stats request failed with status ${response.status}`);
     }
-    
-    animateNumber(viewCountElement, count);
+
+    const data = await response.json();
+
+    if (data && data.ok === false) {
+      throw new Error(data.message || "Stats request failed");
+    }
+
+    const uniqueVisitors = Number(data.uniqueVisitors || data.totalViews || 0);
+
+    animateNumber(viewCountElement, uniqueVisitors);
   } catch (error) {
-    const fallbackCount = parseInt(localStorage.getItem("portfolio_total_views")) || 1;
-    animateNumber(viewCountElement, fallbackCount);
+    console.error("View count lookup failed:", error);
+    viewCountElement.textContent = "--";
   }
 }
 
@@ -219,9 +217,37 @@ function getPageViewTurnstileElement() {
   return element;
 }
 
-async function submitPageView() {
-  pageViewTrackInFlight = false;
-  loadViewCount();
+async function submitPageView(token) {
+  try {
+    const response = await postToBackend({
+      type: "pageview",
+      visitorId,
+      page: currentPage,
+      path: window.location.pathname,
+      referrer: document.referrer,
+      title: document.title,
+      language: navigator.language || "",
+      screenWidth: window.innerWidth,
+      userAgent: navigator.userAgent || "",
+      sourceUrl: window.location.href,
+      viewedAt: new Date().toISOString(),
+      turnstileToken: token,
+    });
+
+    if (!response.ok) {
+      throw new Error(response.message || "Unknown page view error");
+    }
+  } catch (error) {
+    console.error("Page view tracking failed:", error);
+  } finally {
+    pageViewTrackInFlight = false;
+
+    if (typeof window.turnstile !== "undefined" && pageViewWidgetId !== null) {
+      window.turnstile.reset(pageViewWidgetId);
+    }
+
+    loadViewCount();
+  }
 }
 
 function setupTurnstileWidget(attempt = 0) {
@@ -268,7 +294,51 @@ function setupTurnstileWidget(attempt = 0) {
   });
 }
 
-function setupPageViewTurnstile() {
+function setupPageViewTurnstile(attempt = 0) {
+  if (!hasBackend() || !hasTurnstile()) {
+    return;
+  }
+
+  const pageViewContainer = getPageViewTurnstileElement();
+
+  if (!pageViewContainer) {
+    return;
+  }
+
+  if (typeof window.turnstile === "undefined") {
+    if (attempt < 20) {
+      window.setTimeout(() => setupPageViewTurnstile(attempt + 1), 150);
+    } else {
+      loadViewCount();
+    }
+
+    return;
+  }
+
+  if (pageViewWidgetId !== null) {
+    return;
+  }
+
+  pageViewWidgetId = window.turnstile.render(pageViewContainer, {
+    sitekey: turnstileSiteKey,
+    theme: "dark",
+    action: "portfolio_pageview",
+    appearance: "interaction-only",
+    execution: "execute",
+    callback(token) {
+      submitPageView(token);
+    },
+    "expired-callback"() {
+      pageViewTrackInFlight = false;
+      loadViewCount();
+    },
+    "error-callback"() {
+      pageViewTrackInFlight = false;
+      console.error("Page view verification failed.");
+      loadViewCount();
+    },
+  });
+
   trackPageView();
 }
 
@@ -277,7 +347,13 @@ function setupEnquiryForm() {
     return;
   }
 
-  setStatus("Please fill out the form below and complete verification to send your enquiry.");
+  if (!hasBackend()) {
+    setStatus("Add your backend URL in config.js before using the enquiry form.");
+  } else if (!hasTurnstile()) {
+    setStatus("Add your Turnstile site key in config.js before using the enquiry form.");
+  } else {
+    setStatus("Complete the verification challenge and submit the enquiry form.");
+  }
 
   enquiryForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -465,7 +541,6 @@ setupTurnstileWidget();
 setupPageViewTurnstile();
 setupRevealOnScroll();
 setupInteractivePanels();
-trackPageView();
 loadViewCount();
 
 function setupParticleSystem() {
