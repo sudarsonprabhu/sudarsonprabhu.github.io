@@ -16,8 +16,8 @@
     <script src="cissp-data.js" defer></script>
     <script src="cissp.js" defer></script>
     <script src="script.js" defer></script>
-    <script src="cissp-domain-6-data.js?v=3" defer></script>
-    <script src="cissp-domain-6.js?v=4" defer></script>
+    <script src="cissp-domain-6-data.js?v=4" defer></script>
+    <script src="cissp-domain-6.js?v=5" defer></script>
   </head>
   <body data-page="work" data-domain-id="6">
     <canvas id="particle-canvas" class="particle-canvas"></canvas>
@@ -128,7 +128,7 @@
         </div>
 
         <div class="panel cissp-notes ac-fullbleed" data-spotlight>
-          <div class="ac-map" role="img" aria-label="Security assessment and testing hierarchy: validation, verification and rigour; testing a system by level; testing techniques; testers and assessors including third-party SOC reports and roles; and metrics.">
+          <div class="ac-map" role="img" aria-label="Security assessment and testing hierarchy: validation, verification and rigour; testing a system by level; testing techniques including code coverage (statement, branch/decision, condition, loop and path coverage); testers and assessors including third-party SOC reports and roles; and metrics including test coverage.">
             <div class="ac-map-inner">
               <div class="ac-title">Security Assessment and Testing</div>
 
@@ -210,6 +210,18 @@
                       </div>
                     </div>
 
+                    <!-- Code Coverage -->
+                    <div class="ac-node">
+                      <div class="ac-box" data-ac-key="code-coverage">Code Coverage</div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cc-statement"><span>Statement Coverage</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cc-branch"><span>Branch / Decision Coverage</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cc-condition"><span>Condition Coverage</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cc-loop"><span>Loop Coverage</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="cc-path"><span>Path Coverage</span></div></div>
+                      </div>
+                    </div>
+
                     <!-- Operational -->
                     <div class="ac-node">
                       <div class="ac-box">Operational</div>
@@ -261,6 +273,7 @@
                     <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Focus</span></div></div>
                     <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>KPIs</span></div></div>
                     <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>KRIs</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="metric-test-coverage"><span>Test Coverage</span></div></div>
                   </div>
                 </div>
               </div>

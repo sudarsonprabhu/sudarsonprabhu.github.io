@@ -253,6 +253,36 @@ Object.assign(window.AC_DETAILS, {
     d: "Re-running previously passed tests after a change (patch, fix, new feature) to confirm the change did not break existing functionality — or silently reintroduce a security flaw that was fixed before.",
     x: "A patch fixes a payment bug; regression testing confirms it didn't accidentally re-open a login vulnerability that was closed last month."
   },
+  "code-coverage": {
+    t: "Code Coverage",
+    d: "A family of white-box metrics that measure how much of the source code was actually exercised by a test suite, expressed as a percentage. Unlike general 'test coverage' (how much of the SYSTEM's scope was assessed), code coverage measures how much of the CODE ITSELF was exercised — statements, branches, conditions, loops or paths. High code coverage reduces (but never eliminates) the chance an untested code path hides a defect.",
+    x: "A CI pipeline reports 85% statement coverage after the unit-test suite runs, flagging the untested 15% for review before release."
+  },
+  "cc-statement": {
+    t: "Statement Coverage",
+    d: "The percentage of executable statements in the code that were run at least once by the test suite. The most basic and easiest coverage metric to achieve, but weak — a statement can execute without every logical outcome around it being tested.",
+    x: "A function with 20 lines of code where tests execute 18 of them has 90% statement coverage — even if some conditional branches inside those lines were never tested both ways."
+  },
+  "cc-branch": {
+    t: "Branch / Decision Coverage",
+    d: "The percentage of branches (the TRUE and FALSE outcome of every decision point — if/else, switch, loops) that were each exercised at least once. Stronger than statement coverage because it forces both outcomes of every decision to be tested, not just one path through it.",
+    x: "For 'if (isAdmin) { grantAccess(); }', full branch coverage requires one test where isAdmin is true AND one where it's false — testing only the true case leaves a branch uncovered."
+  },
+  "cc-condition": {
+    t: "Condition Coverage",
+    d: "Goes deeper than branch coverage: every individual boolean sub-expression within a compound condition must be evaluated to both true and false, not just the overall decision. Necessary because a compound condition can reach 100% branch coverage while individual sub-conditions are never independently tested.",
+    x: "For 'if (isAdmin OR isOwner)', condition coverage requires test cases that make isAdmin true/false AND isOwner true/false independently — not just two tests that happen to make the whole expression true and false."
+  },
+  "cc-loop": {
+    t: "Loop Coverage",
+    d: "Tests that a loop executes correctly across its full range of behaviour — typically zero times (skipped), exactly once, and more than once — because loop boundary conditions (off-by-one errors, infinite loops) are a classic source of defects.",
+    x: "Testing a 'for each item in cart' checkout function with an empty cart (zero iterations), one item, and multiple items catches bugs that only appear at those loop boundaries."
+  },
+  "cc-path": {
+    t: "Path Coverage",
+    d: "The most thorough (and most expensive) code coverage metric: every possible route through the code — every combination of branches — is exercised at least once. Guarantees the deepest testing, but the number of paths grows exponentially with each added decision, making 100% path coverage impractical for anything but small, critical functions.",
+    x: "A function with 10 sequential if-statements has up to 1,024 possible paths; achieving full path coverage there is rarely feasible, so it's reserved for small, high-assurance code like cryptographic routines."
+  },
 
   /* ----- Testers / Assessors ----- */
   "Testers / Assessors": {
@@ -361,6 +391,11 @@ Object.assign(window.AC_DETAILS, {
     t: "Key Risk Indicators (KRIs)",
     d: "Forward-looking metrics that signal rising risk and exposure before an incident occurs — an early-warning system. KPIs look back at performance; KRIs look ahead at risk.",
     x: "A climbing number of unpatched critical vulnerabilities or failed login spikes is a KRI warning that a breach is becoming more likely."
+  },
+  "metric-test-coverage": {
+    t: "Test Coverage",
+    d: "The metric describing what percentage of a system's SCOPE was actually examined by a given assessment — a broader, higher-level cousin of code coverage. A vulnerability scan that only touches the web DMZ has low test coverage; one spanning internal segments, endpoints, databases and APIs has high test coverage. Always ask what was left out of scope, since gaps there are coverage gaps.",
+    x: "A pentest report that only covers external-facing web apps has low test coverage if the internal network, APIs and databases were never in scope."
   }
 });
 /* ============================================================
