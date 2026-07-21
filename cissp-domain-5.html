@@ -16,8 +16,8 @@
     <script src="cissp-data.js" defer></script>
     <script src="cissp.js" defer></script>
     <script src="script.js" defer></script>
-    <script src="cissp-domain-5-data.js?v=3" defer></script>
-    <script src="cissp-domain-5.js?v=4" defer></script>
+    <script src="cissp-domain-5-data.js?v=4" defer></script>
+    <script src="cissp-domain-5.js?v=5" defer></script>
   </head>
   <body data-page="work" data-domain-id="5">
     <canvas id="particle-canvas" class="particle-canvas"></canvas>
@@ -291,7 +291,7 @@
         </div>
 
         <div class="panel cissp-notes ac-fullbleed" data-spotlight>
-          <div class="ac-map" role="img" aria-label="Single sign-on and federated access hierarchy: SSO within an organisation (Kerberos, Sesame) and federated identity across organisations (Trust Relationship, SAML, WS-Federation, OpenID, OAuth).">
+          <div class="ac-map" role="img" aria-label="Single sign-on and federated access hierarchy: SSO within an organisation (Kerberos with its components and attacks — Pass-the-Ticket, Kerberoasting, Golden Ticket, Silver Ticket, Password Guessing — and Sesame), federated identity across organisations (Trust Relationship, SAML, WS-Federation, OpenID, OAuth), and general IAM attacks (Session Hijacking, Session Fixation, Replay Attack, Credential Stuffing, Vertical/Horizontal Privilege Escalation, Transitive Trust).">
             <div class="ac-map-inner">
               <div class="ac-title">Single Sign-on / Federated Access</div>
               <div class="ac-intro">Allows users to access multiple systems with a single set of credentials</div>
@@ -315,6 +315,16 @@
                             <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Ticket Granting Service</span></div></div>
                             <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Service Tickets</span></div></div>
                             <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Service</span></div></div>
+                          </div>
+                        </div>
+                        <div class="ac-node">
+                          <div class="ac-box" data-ac-key="kerberos-attacks">Attacks</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="kerb-pass-the-ticket"><span>Pass-the-Ticket</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="kerb-kerberoasting"><span>Kerberoasting</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="kerb-golden-ticket"><span>Golden Ticket</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="kerb-silver-ticket"><span>Silver Ticket</span></div></div>
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="kerb-password-guessing"><span>Password Guessing</span></div></div>
                           </div>
                         </div>
                       </div>
@@ -364,6 +374,25 @@
                     <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>WS-Federation</span></div></div>
                     <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OpenID</span></div></div>
                     <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>OAuth</span></div></div>
+                  </div>
+                </div>
+
+                <!-- ===== IAM Attacks ===== -->
+                <div class="ac-node">
+                  <div class="ac-box ac-strong" data-ac-key="iam-attacks">IAM Attacks</div>
+                  <div class="ac-row">
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v"><span>Session Hijacking</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iam-session-fixation"><span>Session Fixation</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iam-replay-attack"><span>Replay Attack</span></div></div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iam-credential-stuffing"><span>Credential Stuffing</span></div></div>
+                    <div class="ac-node">
+                      <div class="ac-box ac-v" data-ac-key="iam-privilege-escalation"><span>Privilege Escalation</span></div>
+                      <div class="ac-row">
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iam-vertical-privesc"><span>Vertical</span></div></div>
+                        <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iam-horizontal-privesc"><span>Horizontal</span></div></div>
+                      </div>
+                    </div>
+                    <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="iam-transitive-trust"><span>Transitive Trust</span></div></div>
                   </div>
                 </div>
               </div>

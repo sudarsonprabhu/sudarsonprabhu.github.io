@@ -503,6 +503,36 @@ Object.assign(window.AC_DETAILS, {
     d: "The moving parts of a Kerberos exchange: the user/client, the KDC (housing the Authentication Service and Ticket Granting Service), the tickets (TGT and service tickets), and the target service.",
     x: "In AD: the workstation (client), the domain controller (KDC), the TGT issued at logon, and the file server (service).",
   },
+  "kerberos-attacks": {
+    t: "Attacks — Kerberos",
+    d: "Kerberos's trust in tickets and its reliance on the KDC create a distinct attack surface: attacks either steal/forge tickets to impersonate a principal, or exploit the KDC's inability to detect offline password guessing. Every attack here ultimately abuses the fact that a valid-looking ticket is treated as proof of identity.",
+    x: "A red team obtains domain admin not by cracking a password, but by forging a Golden Ticket from a stolen KRBTGT hash.",
+  },
+  "kerb-pass-the-ticket": {
+    t: "Pass-the-Ticket",
+    d: "An attacker steals a valid Kerberos ticket (TGT or service ticket) from a compromised machine's memory and reuses it on another system to impersonate the victim — no password needed, just the live ticket.",
+    x: "Malware dumps a logged-in admin's TGT from LSASS memory and an attacker replays it from their own machine to access file shares as that admin.",
+  },
+  "kerb-kerberoasting": {
+    t: "Kerberoasting",
+    d: "An attacker with any valid domain account requests service tickets (TGS) for service accounts, then cracks the encrypted portion offline (it's encrypted with the service account's password hash) to recover that account's plaintext password — no elevated access needed to request the tickets.",
+    x: "An attacker requests TGS tickets for every SPN in the domain, then runs an offline cracking tool against them to recover a weak service-account password.",
+  },
+  "kerb-golden-ticket": {
+    t: "Golden Ticket",
+    d: "The most severe Kerberos attack: forging a TGT using the KDC's own KRBTGT account hash. A forged TGT bypasses the Authentication Service entirely, granting the attacker complete, persistent control over the domain — they can mint tickets for any user, including ones that don't exist.",
+    x: "After dumping the KRBTGT hash from a domain controller, an attacker forges TGTs to impersonate any user at will, indefinitely — even after that user's password is reset.",
+  },
+  "kerb-silver-ticket": {
+    t: "Silver Ticket",
+    d: "A less severe cousin of the Golden Ticket: forging a Service Ticket using a specific service account's hash (not the KRBTGT). Grants access to only that one service, but is harder to detect because it never touches the KDC/Authentication Service.",
+    x: "An attacker forges a Service Ticket for a SQL server using the service account's hash, gaining access to that database without ever contacting the domain controller.",
+  },
+  "kerb-password-guessing": {
+    t: "Password Guessing (KDC Weakness)",
+    d: "Because the Authentication Service will respond to any AS-REQ, the KDC cannot itself detect or throttle a dictionary or brute-force attack against initial authentication — this is also the basis of AS-REP Roasting, where accounts with pre-authentication disabled can be offline-cracked from a single unauthenticated request.",
+    x: "An attacker scripts repeated AS-REQ logon attempts against a list of usernames, and the KDC has no built-in way to notice the pattern.",
+  },
   "User / Client": {
     d: "The principal requesting access — the user and their workstation that initiate the Kerberos exchange and cache the tickets they receive.",
     x: "An employee's laptop logging into the Windows domain.",
@@ -602,6 +632,47 @@ Object.assign(window.AC_DETAILS, {
   "OAuth": {
     d: "OAuth 2.0 — an AUTHORIZATION framework (not authentication) that lets a user grant a third-party app limited, delegated access to their resources without sharing their password, using access tokens.",
     x: "Allowing a photo-printing app to access your Google Photos without giving it your Google password.",
+  },
+
+  "iam-attacks": {
+    t: "IAM Attacks",
+    d: "The attack surface that sits on top of SSO and federation itself — once one identity unlocks many systems, stealing or abusing that identity's session, trust relationship, or privilege level becomes far more valuable to an attacker than attacking any single application.",
+    x: "An attacker who steals one SSO session cookie can move laterally across every connected app the user was entitled to, without ever seeing a password.",
+  },
+  "iam-session-fixation": {
+    t: "Session Fixation",
+    d: "The attacker sets or plants a known session ID on the victim BEFORE they log in (e.g. via a crafted link), then simply uses that same known ID once the victim authenticates — hijacking the session without ever having to steal a token. Defeated by regenerating the session ID at the moment of authentication.",
+    x: "An attacker emails a link containing a pre-set session ID; when the victim logs in using that link, the attacker reuses the same ID to ride the now-authenticated session.",
+  },
+  "iam-replay-attack": {
+    t: "Replay Attack",
+    d: "Capturing valid authentication data (a ticket, token, or credential exchange) in transit and re-sending it later to gain unauthorised access. Defeated by time-stamps, nonces, and one-time values — the same defence Kerberos tickets and OTPs rely on.",
+    x: "An attacker sniffs an unencrypted authentication exchange and resends the captured data to authenticate as the victim minutes later.",
+  },
+  "iam-credential-stuffing": {
+    t: "Credential Stuffing",
+    d: "Replaying username/password pairs stolen from one breached site against many other sites, exploiting the fact that users reuse passwords. Especially dangerous against an SSO front door, since one reused password can unlock everything behind it.",
+    x: "An attacker takes a leaked list of email/password pairs from an unrelated breach and scripts login attempts against the corporate SSO portal.",
+  },
+  "iam-privilege-escalation": {
+    t: "Privilege Escalation",
+    d: "Gaining rights beyond what was granted. Comes in two directions the exam distinguishes precisely: vertical (climbing to a higher privilege tier) and horizontal (moving sideways to another account's resources at the same tier). Both exploit missing boundaries — just different ones.",
+    x: "A support ticket system that lets a standard agent invoke an admin-only API endpoint is a privilege-escalation flaw.",
+  },
+  "iam-vertical-privesc": {
+    t: "Vertical Privilege Escalation",
+    d: "A lower-privileged user elevates themselves to a higher privilege level, exploiting a vulnerability or misconfiguration to gain rights they were never assigned.",
+    x: "A standard employee exploits an unpatched flaw in an internal app to gain local administrator rights on their workstation.",
+  },
+  "iam-horizontal-privesc": {
+    t: "Horizontal Privilege Escalation",
+    d: "A user gains access to another user's resources at the SAME privilege level, without elevating their own rights. Often overlooked because no privilege boundary is technically crossed — an account boundary is. Across a network, this is also called lateral movement.",
+    x: "A bank customer manipulates a URL parameter to view a different customer's account statement, without ever needing admin rights.",
+  },
+  "iam-transitive-trust": {
+    t: "Transitive Trust (Federation Risk)",
+    d: "Because every relying party in a federation trusts the identity provider's assertions, a single IdP compromise cascades to expose every application that relies on it — the 'all eggs in one basket' problem of federation at scale. Closely related: SAML session tokens that aren't revoked when an account is disabled break real-time deprovisioning, leaving a window where a terminated user's token still works.",
+    x: "An attacker who compromises the corporate IdP can now forge assertions and log in to every SaaS app the company federates with — HR, finance, code repos — in one stroke.",
   },
 });
 
