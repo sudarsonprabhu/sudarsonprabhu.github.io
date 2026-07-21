@@ -316,8 +316,98 @@ Object.assign(window.AC_DETAILS, {
   },
   "detection-sources": {
     t: "Detection Sources",
-    d: "The feeds and sensors that surface events for detection — SIEM, IDS/IPS, DLP, antivirus, firewalls, even physical sensors like fire detectors. Centralising and correlating many sources is what turns raw signals into actionable detection.",
+    d: "The feeds and sensors that surface events for detection — SIEM, IDS, IPS, DLP, and physical sensors like fire detectors. Centralising and correlating many sources is what turns raw signals into actionable detection.",
     x: "Logs from IDS/IPS, DLP and endpoint AV all feed the SIEM, which correlates them into a single high-fidelity alert."
+  },
+  "source-siem": {
+    t: "SIEM — Security Information and Event Management",
+    d: "A platform that aggregates, normalises and correlates logs and alerts from many sources (IDS/IPS, DLP, firewalls, endpoints, servers) into a single view, so analysts can spot patterns no single source would reveal alone.",
+    x: "The SIEM correlates a failed-login spike from the firewall with a suspicious process alert from EDR and raises one combined incident ticket."
+  },
+  "source-ids": {
+    t: "IDS — Intrusion Detection System",
+    d: "A passive monitoring control: it inspects traffic or host activity, detects suspicious behaviour, and alerts — but does not block anything itself. Detective, not preventive.",
+    x: "An IDS sensor spots a known exploit signature in network traffic and sends an alert to the SOC, but the traffic still reaches its destination."
+  },
+  "ids-nids": {
+    t: "NIDS — Network-based IDS",
+    d: "Monitors traffic on a network segment (often via a SPAN/mirror port or tap), watching for malicious patterns across many hosts at once. Blind to encrypted payloads and to activity that never crosses the monitored segment.",
+    x: "A NIDS sensor on the DMZ uplink flags a burst of SQL-injection-style requests aimed at the web server."
+  },
+  "ids-hids": {
+    t: "HIDS — Host-based IDS",
+    d: "Runs on an individual host, watching local logs, file integrity, and system calls for that machine. Sees encrypted/local activity a NIDS can't, but only for the host it's installed on.",
+    x: "A HIDS agent on a file server alerts when a critical system file is modified outside a change window."
+  },
+  "ids-signature": {
+    t: "Signature-based Detection",
+    d: "Matches activity against a database of known attack patterns (like antivirus signatures). Very accurate for known threats and low false positives, but blind to novel or zero-day attacks until the signature is written.",
+    x: "The IDS flags traffic matching a published exploit signature for a specific CVE within hours of the signature being released."
+  },
+  "ids-anomaly": {
+    t: "Anomaly-based (Behaviour-based) Detection",
+    d: "Builds a baseline of 'normal' behaviour and alerts on statistically significant deviations. Can catch novel/zero-day attacks that have no signature, but tends to produce more false positives and needs tuning.",
+    x: "A user account that normally logs in from one country suddenly authenticates from three countries within an hour, triggering an anomaly alert."
+  },
+  "source-ips": {
+    t: "IPS — Intrusion Prevention System",
+    d: "An active control: like an IDS, but sits inline in the traffic path so it can automatically block or drop malicious traffic in real time, not just alert on it. Preventive, not just detective.",
+    x: "An IPS inline on the perimeter automatically drops packets matching a known exploit signature before they reach the internal network."
+  },
+  "ips-inline": {
+    t: "Inline / In-band IPS",
+    d: "Deployed directly in the traffic path (not on a mirrored copy), which is what lets an IPS actually block traffic rather than only alert. The trade-off is that it becomes a potential bottleneck or single point of failure.",
+    x: "All perimeter traffic passes through the inline IPS appliance before reaching the firewall, so malicious packets can be dropped immediately."
+  },
+  "ips-nips": {
+    t: "NIPS — Network-based IPS",
+    d: "The inline, blocking counterpart to a NIDS: monitors and actively intervenes on traffic across a network segment or chokepoint.",
+    x: "A NIPS at the WAN edge automatically blocks an IP address after it repeatedly triggers exploit signatures."
+  },
+  "ips-hips": {
+    t: "HIPS — Host-based IPS",
+    d: "The inline, blocking counterpart to a HIDS: runs on an individual host and can actively stop malicious actions (e.g. terminate a process, block a syscall) on that machine.",
+    x: "A HIPS agent kills a process the moment it tries to inject code into another running process on the endpoint."
+  },
+  "source-dlp": {
+    t: "DLP — Data Loss Prevention",
+    d: "Controls that detect and prevent sensitive data (PII, IP, financial data) from leaving the organisation in unauthorised ways, typically via content inspection, contextual rules and pattern/fingerprint matching.",
+    x: "DLP blocks an employee from emailing a spreadsheet containing customer credit-card numbers to a personal email address."
+  },
+  "dlp-network": {
+    t: "Network DLP",
+    d: "Inspects data in motion as it crosses the network (email, web uploads, FTP) and blocks or quarantines transfers that violate policy.",
+    x: "Network DLP intercepts an outbound upload containing regulated health records and blocks it at the gateway."
+  },
+  "dlp-endpoint": {
+    t: "Endpoint DLP",
+    d: "Runs on the user's device and controls data leaving via local channels — USB drives, printing, clipboard, screenshots — that never touch the network.",
+    x: "Endpoint DLP blocks a user from copying a file tagged 'confidential' onto a USB drive."
+  },
+  "dlp-cloud": {
+    t: "Cloud / Storage DLP (data at rest)",
+    d: "Scans data already stored — cloud drives, SaaS apps, file shares, databases — to find and flag sensitive data sitting at rest, often applying labels or access restrictions after the fact.",
+    x: "Cloud DLP scans a shared drive, finds a file full of unmasked social security numbers, and automatically restricts its sharing settings."
+  },
+  "source-fire": {
+    t: "Fire Detectors",
+    d: "Physical/environmental detective controls that sense the byproducts of fire (smoke, heat, flame) and trigger alarms and suppression systems, protecting facilities, people and equipment as part of physical security.",
+    x: "A data centre uses multiple detector types together so a fire is caught early regardless of how it develops."
+  },
+  "fire-smoke": {
+    t: "Smoke Detectors",
+    d: "Detect smoke particles — ionization types react fastest to fast-flaming fires, photoelectric types react faster to smouldering/smoky fires. Usually the earliest warning of the three types.",
+    x: "A photoelectric smoke detector picks up a smouldering cable fire behind a server rack before any flame is visible."
+  },
+  "fire-heat": {
+    t: "Heat / Thermal Detectors",
+    d: "Trigger at a fixed temperature threshold or on a rapid rate-of-rise in temperature. Slower to react than smoke detectors but far less prone to false alarms, so they're common in areas like server rooms or kitchens where smoke is a poor signal.",
+    x: "A rate-of-rise heat detector in the server room avoids false alarms from dust while still catching a genuine fast-developing fire."
+  },
+  "fire-flame": {
+    t: "Flame Detectors",
+    d: "Sense the UV or IR light given off by an actual flame. Reacts fastest of all three types once flame is present, but is typically the most expensive and can be prone to false positives from sunlight or other IR/UV sources.",
+    x: "A UV flame detector in a chemical storage area triggers suppression within seconds of ignition."
   },
   "Event": {
     t: "Event",

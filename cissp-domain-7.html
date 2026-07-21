@@ -302,7 +302,7 @@
         </div>
 
         <div class="panel cissp-notes ac-fullbleed" data-spotlight>
-          <div class="ac-map" role="img" aria-label="Incident response hierarchy: preparation; triage (detection from sources such as SIEM, IDS/IPS, DLP and fire detectors, distinguishing events from incidents, and response with the IR team deployed); action and investigation (mitigation/containment and reporting to relevant stakeholders); and recovery (return to normal, remediation/prevention, and lessons learned to improve the process).">
+          <div class="ac-map" role="img" aria-label="Incident response hierarchy: preparation; triage (detection from sources — SIEM, IDS with its NIDS/HIDS and signature/anomaly-based types, IPS with its inline/NIPS/HIPS types, DLP with its network/endpoint/cloud types, and fire detectors with smoke, heat and flame types — distinguishing events from incidents, and response with the IR team deployed); action and investigation (mitigation/containment and reporting to relevant stakeholders); and recovery (return to normal, remediation/prevention, and lessons learned to improve the process).">
             <div class="ac-map-inner">
               <div class="ac-title">Incident Response</div>
 
@@ -318,7 +318,49 @@
                     <div class="ac-node">
                       <div class="ac-box ac-strong">Detection</div>
                       <div class="ac-row">
-                        <div class="ac-node ac-leaf"><div class="ac-box ac-withsub" data-ac-key="detection-sources"><span>Sources:</span><small>SIEM, IDS/IPS, DLP, Fire detectors, Etc.</small></div></div>
+                        <div class="ac-node">
+                          <div class="ac-box" data-ac-key="detection-sources">Sources</div>
+                          <div class="ac-row">
+                            <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="source-siem"><span>SIEM</span></div></div>
+
+                            <div class="ac-node">
+                              <div class="ac-box ac-v" data-ac-key="source-ids"><span>IDS</span></div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ids-nids"><span>NIDS &mdash; Network</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ids-hids"><span>HIDS &mdash; Host</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ids-signature"><span>Signature-based</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ids-anomaly"><span>Anomaly-based</span></div></div>
+                              </div>
+                            </div>
+
+                            <div class="ac-node">
+                              <div class="ac-box ac-v" data-ac-key="source-ips"><span>IPS</span></div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ips-inline"><span>Inline / In-band</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ips-nips"><span>NIPS &mdash; Network</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="ips-hips"><span>HIPS &mdash; Host</span></div></div>
+                              </div>
+                            </div>
+
+                            <div class="ac-node">
+                              <div class="ac-box ac-v" data-ac-key="source-dlp"><span>DLP</span></div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="dlp-network"><span>Network DLP</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="dlp-endpoint"><span>Endpoint DLP</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="dlp-cloud"><span>Cloud / Storage DLP</span></div></div>
+                              </div>
+                            </div>
+
+                            <div class="ac-node">
+                              <div class="ac-box ac-v" data-ac-key="source-fire"><span>Fire Detectors</span></div>
+                              <div class="ac-row">
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="fire-smoke"><span>Smoke</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="fire-heat"><span>Heat / Thermal</span></div></div>
+                                <div class="ac-node ac-leaf"><div class="ac-box ac-v" data-ac-key="fire-flame"><span>Flame</span></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div class="ac-node ac-leaf"><div class="ac-box"><span>Event</span></div></div>
                         <div class="ac-node ac-leaf"><div class="ac-box"><span>Incident</span></div></div>
                       </div>
